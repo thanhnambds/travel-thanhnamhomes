@@ -1,0 +1,79 @@
+{
+  "source": "mock-flight-provider",
+  "updated_at": "2026-05-17T08:00:00+07:00",
+  "currency": "VND",
+  "flights": [
+    {
+      "flight_id": "HAN-PQC-VJ455-2026-06-22",
+      "origin": "HAN",
+      "destination": "PQC",
+      "airline": "Vietjet Air",
+      "flight_number": "VJ455",
+      "departure_date": "2026-06-22",
+      "departure_time": "08:20",
+      "arrival_time": "10:30",
+      "price": 1650000,
+      "fare_conditions": "Giá tham khảo, hành lý và điều kiện đổi/hủy tùy hạng vé."
+    },
+    {
+      "flight_id": "PQC-HAN-VJ456-2026-06-24",
+      "origin": "PQC",
+      "destination": "HAN",
+      "airline": "Vietjet Air",
+      "flight_number": "VJ456",
+      "departure_date": "2026-06-24",
+      "departure_time": "15:10",
+      "arrival_time": "17:20",
+      "price": 1720000,
+      "fare_conditions": "Giá tham khảo, hành lý và điều kiện đổi/hủy tùy hạng vé."
+    },
+    {
+      "flight_id": "HAN-DAD-VN171-2026-06-18",
+      "origin": "HAN",
+      "destination": "DAD",
+      "airline": "Vietnam Airlines",
+      "flight_number": "VN171",
+      "departure_date": "2026-06-18",
+      "departure_time": "09:15",
+      "arrival_time": "10:40",
+      "price": 1380000,
+      "fare_conditions": "Giá tham khảo, điều kiện đổi/hủy theo hạng đặt chỗ."
+    },
+    {
+      "flight_id": "DAD-HAN-VN174-2026-06-20",
+      "origin": "DAD",
+      "destination": "HAN",
+      "airline": "Vietnam Airlines",
+      "flight_number": "VN174",
+      "departure_date": "2026-06-20",
+      "departure_time": "16:20",
+      "arrival_time": "17:45",
+      "price": 1420000,
+      "fare_conditions": "Giá tham khảo, điều kiện đổi/hủy theo hạng đặt chỗ."
+    },
+    {
+      "flight_id": "HAN-CXR-QH1413-2026-06-25",
+      "origin": "HAN",
+      "destination": "CXR",
+      "airline": "Bamboo Airways",
+      "flight_number": "QH1413",
+      "departure_date": "2026-06-25",
+      "departure_time": "07:40",
+      "arrival_time": "09:35",
+      "price": 1540000,
+      "fare_conditions": "Giá tham khảo, điều kiện hành lý và hoàn/hủy cần kiểm tra lại."
+    },
+    {
+      "flight_id": "CXR-HAN-QH1414-2026-06-27",
+      "origin": "CXR",
+      "destination": "HAN",
+      "airline": "Bamboo Airways",
+      "flight_number": "QH1414",
+      "departure_date": "2026-06-27",
+      "departure_time": "14:25",
+      "arrival_time": "16:20",
+      "price": 1600000,
+      "fare_conditions": "Giá tham khảo, điều kiện hành lý và hoàn/hủy cần kiểm tra lại."
+    }
+  ]
+}

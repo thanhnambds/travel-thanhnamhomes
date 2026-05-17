@@ -1,0 +1,31 @@
+{
+  "siteUrl": "https://travel.thanhnamhomes.vn",
+  "zaloUrl": "https://zalo.me/0965325555",
+  "defaultDepartureCity": "HAN",
+  "defaultMarginPercent": 8,
+  "defaultFees": 350000,
+  "priceNote": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng vé, phòng và chính sách của nhà cung cấp. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+  "destinations": {
+    "phu-quoc": {
+      "name": "Phú Quốc",
+      "airport": "PQC",
+      "marginPercent": 8,
+      "preferredNights": 2,
+      "audiences": ["gia đình", "cặp đôi", "nhóm bạn"]
+    },
+    "da-nang": {
+      "name": "Đà Nẵng",
+      "airport": "DAD",
+      "marginPercent": 7,
+      "preferredNights": 2,
+      "audiences": ["gia đình", "cặp đôi", "nhóm bạn"]
+    },
+    "nha-trang": {
+      "name": "Nha Trang",
+      "airport": "CXR",
+      "marginPercent": 8,
+      "preferredNights": 2,
+      "audiences": ["gia đình", "cặp đôi", "nhóm bạn"]
+    }
+  }
+}
