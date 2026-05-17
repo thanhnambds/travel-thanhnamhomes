@@ -9,36 +9,36 @@ export function ComboCard({ combo, compact = false }: { combo: Combo; compact?: 
   const config = getConfig();
 
   return (
-    <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+    <article className="w-full overflow-hidden rounded-[22px] border border-brand-hairline bg-white">
       <div className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-coral">{combo.destination}</p>
-          <h2 className="mt-2 text-2xl font-semibold leading-tight text-brand-ink">{combo.title}</h2>
+        <div className="p-7 pb-2">
+          <p className="mono-label text-sm uppercase text-brand-coral">{combo.destination}</p>
+          <h2 className="display-type mt-4 max-w-2xl text-4xl font-normal leading-none text-brand-primary">{combo.title}</h2>
         </div>
-        <span className="rounded-md bg-brand-mist px-3 py-1 text-sm font-semibold text-brand-teal">
+        <span className="m-7 rounded-full bg-brand-greenWash px-4 py-1.5 text-sm font-medium text-brand-green">
           {combo.status}
         </span>
       </div>
 
-      <div className="mt-5 grid gap-3 text-sm text-slate-700 md:grid-cols-2">
+      <div className="grid gap-3 p-7 text-sm text-brand-slate md:grid-cols-2">
         <Fact icon={<CalendarDays size={18} />} label="Thời gian" value={`${formatDate(combo.start_date)} - ${formatDate(combo.end_date)} (${combo.duration})`} />
         <Fact icon={<Users size={18} />} label="Khách" value={`${combo.guests.adults} người lớn, ${combo.guests.children} trẻ em`} />
         <Fact icon={<Plane size={18} />} label="Chuyến bay" value={combo.flight_summary} />
         <Fact icon={<Hotel size={18} />} label="Khách sạn" value={`${combo.hotel_name}, ${combo.room_type}, ${combo.meal_plan}`} />
       </div>
 
-      <div className="mt-5 rounded-lg bg-slate-50 p-4">
-        <p className="text-sm text-slate-600">Giá tham khảo cho combo</p>
-        <p className="mt-1 text-3xl font-semibold text-brand-ink">{formatVnd(combo.total_price)}</p>
+      <div className="mx-7 rounded-lg bg-brand-stone p-5">
+        <p className="text-sm text-brand-slate">Giá tham khảo cho combo</p>
+        <p className="display-type mt-2 text-5xl font-normal leading-none text-brand-primary">{formatVnd(combo.total_price)}</p>
       </div>
 
       {!compact && (
         <>
-          <div className="mt-5 grid gap-5 md:grid-cols-2">
+          <div className="grid gap-5 p-7 md:grid-cols-2">
             <List title="Bao gồm" items={combo.included} />
             <List title="Không bao gồm" items={combo.excluded} />
           </div>
-          <div className="mt-5 grid gap-4 text-sm leading-6 text-slate-700 md:grid-cols-2">
+          <div className="grid gap-4 px-7 text-sm leading-6 text-brand-slate md:grid-cols-2">
             <p>
               <strong>Điều kiện hoàn/hủy:</strong> {combo.cancellation_policy}
             </p>
@@ -46,17 +46,17 @@ export function ComboCard({ combo, compact = false }: { combo: Combo; compact?: 
               <strong>Chính sách trẻ em:</strong> {combo.child_policy}
             </p>
           </div>
-          <div className="mt-5">
+          <div className="p-7">
             <PriceNote text={combo.price_note} />
           </div>
         </>
       )}
 
-      <div className="mt-5 flex flex-wrap gap-3">
-        <a className="focus-ring rounded-md bg-brand-teal px-4 py-2 font-semibold text-white" href={config.zaloUrl}>
+      <div className="flex flex-wrap gap-3 p-7 pt-5">
+        <a className="focus-ring rounded-full bg-brand-primary px-6 py-3 text-sm font-medium text-white" href={config.zaloUrl}>
           Kiểm tra giá qua Zalo
         </a>
-        <Link className="focus-ring rounded-md border border-slate-300 px-4 py-2 font-semibold text-brand-ink" href="/combo-hom-nay/">
+        <Link className="focus-ring rounded-full border border-brand-hairline px-6 py-3 text-sm font-medium text-brand-primary" href="/combo-hom-nay/">
           Chi tiết combo
         </Link>
       </div>
@@ -66,10 +66,10 @@ export function ComboCard({ combo, compact = false }: { combo: Combo; compact?: 
 
 function Fact({ icon, label, value }: { icon: ReactNode; label: string; value: string }) {
   return (
-    <div className="flex gap-3 rounded-md border border-slate-200 p-3">
-      <div className="mt-0.5 text-brand-teal">{icon}</div>
+    <div className="flex min-h-28 gap-3 rounded-lg border border-brand-border p-4">
+      <div className="mt-0.5 text-brand-green">{icon}</div>
       <p>
-        <span className="block font-semibold text-brand-ink">{label}</span>
+        <span className="block font-medium text-brand-primary">{label}</span>
         {value}
       </p>
     </div>
@@ -79,8 +79,8 @@ function Fact({ icon, label, value }: { icon: ReactNode; label: string; value: s
 function List({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
-      <h3 className="font-semibold text-brand-ink">{title}</h3>
-      <ul className="mt-2 space-y-2 text-sm leading-6 text-slate-700">
+      <h3 className="text-2xl font-normal text-brand-primary">{title}</h3>
+      <ul className="mt-3 space-y-2 text-sm leading-6 text-brand-slate">
         {items.map((item) => (
           <li key={item}>- {item}</li>
         ))}

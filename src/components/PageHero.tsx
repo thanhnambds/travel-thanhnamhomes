@@ -1,10 +1,10 @@
 export function PageHero({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
   return (
     <section className="bg-white">
-      <div className="container-page py-10 md:py-14">
-        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand-coral">{eyebrow}</p>
-        <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-tight text-brand-ink">{title}</h1>
-        <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">{description}</p>
+      <div className="container-page py-16 md:py-24">
+        <p className="mono-label text-sm uppercase text-brand-coral">{eyebrow}</p>
+        <h1 className="display-type mt-6 max-w-5xl text-6xl font-normal leading-none text-brand-primary md:text-7xl">{title}</h1>
+        <p className="mt-7 max-w-3xl text-xl leading-8 text-brand-slate">{description}</p>
       </div>
     </section>
   );

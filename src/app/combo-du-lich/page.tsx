@@ -22,17 +22,17 @@ export default function ComboTravelPage() {
         title="Combo vé máy bay và khách sạn cho khách cần tư vấn nhanh"
         description="MVP ưu tiên Phú Quốc, Đà Nẵng và Nha Trang. Dữ liệu dùng để lọc nhu cầu, không thay thế báo giá chính thức."
       />
-      <section className="container-page grid gap-4 py-10 md:grid-cols-3">
+      <section className="container-page grid gap-4 py-16 md:grid-cols-3">
         <DestinationCard href="/combo-phu-quoc/" title="Combo Phú Quốc" description="Resort, biển đảo, lịch trình nghỉ dưỡng 3N2Đ." />
         <DestinationCard href="/combo-da-nang/" title="Combo Đà Nẵng" description="Bay từ Hà Nội, khách sạn gần biển hoặc trung tâm." />
         <DestinationCard href="/combo-nha-trang/" title="Combo Nha Trang" description="Khách sạn biển, phù hợp gia đình và nhóm bạn." />
       </section>
       {combo && (
-        <section className="container-page pb-10">
+        <section className="container-page pb-16">
           <ComboCard combo={combo} />
         </section>
       )}
-      <section className="container-page pb-10">
+      <section className="container-page pb-16">
         <PriceNote />
       </section>
       <Faq />

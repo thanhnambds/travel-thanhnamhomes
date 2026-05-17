@@ -6,14 +6,26 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          ink: "#17324d",
-          teal: "#0f766e",
-          coral: "#d85a3a",
-          mist: "#eef6f4"
+          black: "#000000",
+          ink: "#212121",
+          primary: "#17171c",
+          green: "#003c33",
+          navy: "#071829",
+          blue: "#1863dc",
+          coral: "#ff7759",
+          softCoral: "#ffad9b",
+          stone: "#eeece7",
+          greenWash: "#edfce9",
+          blueWash: "#f1f5ff",
+          muted: "#93939f",
+          slate: "#75758a",
+          hairline: "#d9d9dd",
+          border: "#e5e7eb",
+          focus: "#4c6ee6"
         }
       },
       boxShadow: {
-        soft: "0 18px 45px rgba(15, 35, 52, 0.10)"
+        soft: "0 18px 45px rgba(0, 0, 0, 0.06)"
       }
     }
   },

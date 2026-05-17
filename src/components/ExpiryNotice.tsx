@@ -12,7 +12,7 @@ export function ExpiryNotice({ expiresAt }: { expiresAt: string }) {
   if (!expired) return null;
 
   return (
-    <div className="rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm font-medium text-amber-950">
+    <div className="rounded-lg border border-brand-softCoral bg-white p-5 text-sm font-medium text-brand-primary">
       Combo đã hết hiệu lực, vui lòng liên hệ để kiểm tra giá mới.
     </div>
   );

@@ -40,18 +40,18 @@ export function ChatbotWidget({ combo, zaloUrl }: { combo: Combo | null; zaloUrl
   return (
     <div className="fixed bottom-4 right-4 z-40">
       {open && (
-        <div className="mb-3 w-[calc(100vw-32px)] max-w-md rounded-lg border border-slate-200 bg-white shadow-soft">
-          <div className="flex items-center justify-between border-b border-slate-200 p-4">
+        <div className="mb-3 w-[calc(100vw-32px)] max-w-md overflow-hidden rounded-[22px] border border-brand-hairline bg-white shadow-soft">
+          <div className="flex items-center justify-between border-b border-brand-hairline bg-brand-primary p-4 text-white">
             <div>
-              <p className="font-semibold text-brand-ink">Tư vấn combo</p>
-              <p className="text-xs text-slate-500">Bot chỉ lọc nhu cầu từ dữ liệu có sẵn.</p>
+              <p className="font-medium">Tư vấn combo</p>
+              <p className="text-xs text-brand-muted">Bot chỉ lọc nhu cầu từ dữ liệu có sẵn.</p>
             </div>
-            <button className="focus-ring rounded-md p-2 text-slate-600" onClick={() => setOpen(false)} aria-label="Đóng chat">
+            <button className="focus-ring rounded-full p-2 text-white" onClick={() => setOpen(false)} aria-label="Đóng chat">
               <X size={18} />
             </button>
           </div>
           <div className="max-h-[70vh] space-y-3 overflow-auto p-4">
-            <p className="rounded-lg bg-brand-mist p-3 text-sm leading-6 text-brand-ink">
+            <p className="rounded-lg bg-brand-stone p-3 text-sm leading-6 text-brand-ink">
               Em cần vài thông tin để tóm tắt nhu cầu. Giá và tình trạng chỗ sẽ được Thanh Nam kiểm tra lại qua Zalo.
             </p>
             <div className="grid gap-3">
@@ -70,7 +70,7 @@ export function ChatbotWidget({ combo, zaloUrl }: { combo: Combo | null; zaloUrl
               <label className="text-sm font-medium text-brand-ink">
                 Ưu tiên
                 <select
-                  className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm"
+                  className="mt-1 w-full rounded-md border border-brand-hairline bg-white px-3 py-2 text-sm"
                   value={form.priority}
                   onChange={(event) => setForm({ ...form, priority: event.target.value })}
                 >
@@ -80,15 +80,15 @@ export function ChatbotWidget({ combo, zaloUrl }: { combo: Combo | null; zaloUrl
                 </select>
               </label>
             </div>
-            <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Tóm tắt gửi Zalo</p>
-              <p className="mt-2 text-sm leading-6 text-slate-700">{summary}</p>
+            <div className="rounded-lg border border-brand-hairline bg-brand-blueWash p-3">
+              <p className="mono-label text-xs uppercase text-brand-slate">Tóm tắt gửi Zalo</p>
+              <p className="mt-2 text-sm leading-6 text-brand-ink">{summary}</p>
             </div>
-            <p className="text-xs leading-5 text-slate-500">
+            <p className="text-xs leading-5 text-brand-slate">
               Chatbot không cam kết còn vé, còn phòng hoặc giữ giá. Dữ liệu chỉ là tham khảo tại thời điểm cập nhật.
             </p>
             <a
-              className="focus-ring flex items-center justify-center gap-2 rounded-md bg-brand-teal px-4 py-3 font-semibold text-white"
+              className="focus-ring flex items-center justify-center gap-2 rounded-full bg-brand-primary px-4 py-3 text-sm font-medium text-white"
               href={zaloUrl}
               target="_blank"
               rel="noreferrer"
@@ -125,7 +125,7 @@ function Field({
     <label className="text-sm font-medium text-brand-ink">
       {label}
       <input
-        className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm"
+        className="mt-1 w-full rounded-md border border-brand-hairline px-3 py-2 text-sm focus:border-brand-focus focus:outline-none"
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}

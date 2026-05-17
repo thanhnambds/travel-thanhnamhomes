@@ -15,13 +15,13 @@ const faqs = [
 
 export function Faq() {
   return (
-    <section className="container-page py-10">
-      <h2 className="text-2xl font-semibold text-brand-ink">Câu hỏi thường gặp</h2>
-      <div className="mt-5 grid gap-3">
+    <section className="container-page py-16">
+      <h2 className="display-type text-5xl font-normal leading-none text-brand-primary">Câu hỏi thường gặp</h2>
+      <div className="mt-8 border-y border-brand-hairline">
         {faqs.map((faq) => (
-          <details className="rounded-lg border border-slate-200 bg-white p-4" key={faq.q}>
-            <summary className="cursor-pointer font-semibold text-brand-ink">{faq.q}</summary>
-            <p className="mt-3 text-sm leading-6 text-slate-600">{faq.a}</p>
+          <details className="border-b border-brand-hairline bg-white py-5 last:border-b-0" key={faq.q}>
+            <summary className="cursor-pointer text-2xl font-normal text-brand-primary">{faq.q}</summary>
+            <p className="mt-4 max-w-3xl text-sm leading-6 text-brand-slate">{faq.a}</p>
           </details>
         ))}
       </div>

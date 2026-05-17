@@ -24,7 +24,7 @@ export default function TodayComboPage() {
         title="Combo được duyệt để tư vấn trong ngày"
         description="Nội dung được tạo từ dữ liệu tĩnh và chỉ dùng làm gợi ý bán lead. Giá cần được kiểm tra lại trước khi giữ dịch vụ."
       />
-      <section className="container-page py-10">
+      <section className="container-page py-16">
         {combo ? (
           <div className="space-y-4">
             <ExpiryNotice expiresAt={combo.expires_at} />
@@ -32,7 +32,7 @@ export default function TodayComboPage() {
             <AdminLog combo={combo} />
           </div>
         ) : (
-          <div className="rounded-lg border border-dashed border-slate-300 bg-white p-6 text-slate-600">
+          <div className="rounded-[22px] border border-dashed border-brand-hairline bg-white p-7 text-brand-slate">
             Chưa có combo published.
           </div>
         )}
