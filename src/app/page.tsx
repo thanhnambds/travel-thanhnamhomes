@@ -170,7 +170,12 @@ function TravelHero({ zaloUrl }: { zaloUrl: string }) {
                   href={card.href}
                   key={card.title}
                 >
-                  <img className="h-full w-full object-cover transition duration-500 group-hover:scale-105" src={card.image} alt={card.title} />
+                  <div
+                    aria-label={card.title}
+                    className="absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-105"
+                    role="img"
+                    style={{ backgroundImage: `url(${card.image})` }}
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 p-5">
                     <p className="text-xs text-white/70">{card.label}</p>
