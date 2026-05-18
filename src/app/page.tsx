@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 import { ClipboardCheck, MessageCircle, Plane } from "lucide-react";
 import { ComboCard } from "@/components/ComboCard";
@@ -12,31 +11,7 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="bg-white">
-        <div className="container-page grid min-h-[calc(100vh-116px)] gap-14 py-16 lg:grid-cols-[1.04fr_0.96fr] lg:py-24">
-          <div className="flex flex-col justify-center">
-            <p className="mono-label mb-6 text-sm uppercase text-brand-coral">Travel Thanh Nam Homes</p>
-            <h1 className="display-type max-w-4xl text-6xl font-normal leading-none text-brand-primary md:text-7xl lg:text-8xl">
-              Tuyệt tác kỳ nghỉ, thiết kế riêng bằng Trợ lý AI tinh tế
-            </h1>
-            <p className="mt-8 max-w-2xl text-xl leading-8 text-brand-slate">
-              Hệ thống kết nối trực tiếp cổng dữ liệu vé máy bay thời gian thực và bảng giá phòng đối tác. Nhận ngay
-              phương án Combo (Vé bay + Khách sạn) tối ưu chuẩn gu chỉ sau 30 giây trò chuyện cùng Trợ lý AI.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-5">
-              <Link className="focus-ring rounded-full bg-brand-primary px-7 py-3.5 text-sm font-medium text-white" href="/combo-hom-nay/">
-                Khám phá Combo HOT hôm nay
-              </Link>
-              <a className="focus-ring text-sm font-medium text-brand-primary underline underline-offset-4" href={config.zaloUrl}>
-                Trực tiếp trao đổi qua Zalo
-              </a>
-            </div>
-          </div>
-          <div className="flex items-center rounded-[22px] bg-brand-greenWash p-6">
-            {combo ? <ComboCard combo={combo} compact /> : <EmptyCombo />}
-          </div>
-        </div>
-      </section>
+      <TravelHero zaloUrl={config.zaloUrl} />
 
       <section className="container-page py-20">
         <p className="mx-auto max-w-2xl text-center text-sm font-medium uppercase tracking-wider text-brand-coral">
@@ -58,6 +33,21 @@ export default function HomePage() {
             title="Trợ lý AI thấu cảm"
             text="Trò chuyện tự nhiên, tinh chỉnh mọi chi tiết xung quanh chuyến đi (hành lý, nâng hạng phòng, chính sách trẻ em) một cách tức thì."
           />
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="container-page grid gap-10 lg:grid-cols-[0.78fr_1.22fr]">
+          <div>
+            <p className="mono-label text-sm uppercase text-brand-coral">Today's curated offer</p>
+            <h2 className="display-type mt-4 text-5xl leading-none text-brand-primary md:text-6xl">Combo được chọn cho hôm nay</h2>
+            <p className="mt-6 text-brand-slate">
+              Dữ liệu được tạo từ bảng giá phòng và nguồn vé bay tham khảo. Thanh Nam kiểm tra lại trước khi giữ dịch vụ.
+            </p>
+          </div>
+          <div className="rounded-[22px] bg-brand-greenWash p-6">
+            {combo ? <ComboCard combo={combo} compact /> : <EmptyCombo />}
+          </div>
         </div>
       </section>
 
@@ -99,6 +89,110 @@ export default function HomePage() {
         <PriceNote />
       </section>
     </>
+  );
+}
+
+function TravelHero({ zaloUrl }: { zaloUrl: string }) {
+  const cards = [
+    {
+      title: "Phú Quốc",
+      label: "Sunset resort",
+      href: "/combo-phu-quoc/",
+      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      title: "Đà Nẵng",
+      label: "My Khe beach",
+      href: "/combo-da-nang/",
+      image: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      title: "Nha Trang",
+      label: "Bay view",
+      href: "/combo-nha-trang/",
+      image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=600&q=80"
+    }
+  ];
+
+  return (
+    <section className="bg-[#b7b7b7] px-4 py-8 md:px-10 md:py-14">
+      <div
+        className="relative mx-auto min-h-[720px] max-w-[1480px] overflow-hidden rounded-none bg-cover bg-center text-white shadow-[0_35px_80px_rgba(0,0,0,0.28)]"
+        style={{
+          backgroundImage:
+            "linear-gradient(90deg, rgba(0,0,0,0.56), rgba(0,0,0,0.18) 48%, rgba(0,0,0,0.10)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85')"
+        }}
+      >
+        <div className="absolute left-0 top-0 h-1 w-1/2 bg-[#f8bf2c]" />
+        <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between px-7 py-7 md:px-10">
+          <a className="focus-ring flex items-center gap-3 rounded-sm text-xs font-semibold uppercase tracking-[0.28em]" href="/">
+            <span className="grid h-7 w-7 place-items-center rounded-full border border-white/80 text-base">◎</span>
+            Travel Thanh Nam
+          </a>
+          <nav className="hidden items-center gap-9 text-xs font-semibold uppercase tracking-[0.14em] text-white/85 lg:flex">
+            <a className="border-b border-[#f8bf2c] pb-1 text-white" href="/">Home</a>
+            <a href="/combo-hom-nay/">Combo</a>
+            <a href="/combo-du-lich/">Destinations</a>
+            <a href="/ve-may-bay-khach-san/">Flights</a>
+            <a href="/lien-he/">Contact</a>
+          </nav>
+          <a className="focus-ring rounded-full border border-white/50 px-5 py-2 text-xs font-semibold uppercase tracking-[0.14em]" href={zaloUrl}>
+            Zalo
+          </a>
+        </div>
+
+        <div className="relative z-10 grid min-h-[720px] content-end gap-10 px-7 pb-14 pt-32 md:px-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+          <div className="pb-8">
+            <div className="mb-5 h-1 w-6 bg-white" />
+            <p className="text-lg text-white/90">Vietnam Luxury Combo</p>
+            <h1 className="mt-3 max-w-xl text-6xl font-semibold uppercase leading-[0.92] tracking-tight md:text-8xl">
+              AI Travel Escape
+            </h1>
+            <p className="mt-7 max-w-md text-sm leading-6 text-white/75">
+              Thiết kế combo vé bay và khách sạn theo gu nghỉ dưỡng của bạn. Gợi ý nhanh, kiểm tra lại giá thật qua Zalo
+              trước khi giữ dịch vụ.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a className="focus-ring rounded-full bg-[#f8bf2c] px-4 py-3 text-sm font-semibold text-brand-primary" href="/combo-hom-nay/">
+                Khám phá combo
+              </a>
+              <a className="focus-ring rounded-full border border-white/60 px-6 py-3 text-xs font-semibold uppercase tracking-[0.12em]" href={zaloUrl}>
+                Tư vấn Zalo
+              </a>
+            </div>
+          </div>
+
+          <div className="overflow-hidden">
+            <div className="flex gap-6 overflow-x-auto pb-6">
+              {cards.map((card) => (
+                <a
+                  className="group relative h-72 min-w-[210px] overflow-hidden rounded-lg bg-black/30 shadow-[0_20px_40px_rgba(0,0,0,0.30)]"
+                  href={card.href}
+                  key={card.title}
+                >
+                  <img className="h-full w-full object-cover transition duration-500 group-hover:scale-105" src={card.image} alt={card.title} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-5">
+                    <p className="text-xs text-white/70">{card.label}</p>
+                    <p className="mt-2 text-2xl font-semibold uppercase leading-none">{card.title}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+            <div className="flex items-center gap-5">
+              <div className="flex gap-3">
+                <span className="grid h-14 w-14 place-items-center rounded-full border border-white/55 text-2xl">‹</span>
+                <span className="grid h-14 w-14 place-items-center rounded-full border border-white/55 text-2xl">›</span>
+              </div>
+              <div className="h-px flex-1 bg-white/35">
+                <div className="h-px w-1/3 bg-[#f8bf2c]" />
+              </div>
+              <p className="text-5xl font-semibold leading-none">03</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
