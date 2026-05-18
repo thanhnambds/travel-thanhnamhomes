@@ -21,7 +21,9 @@ const config: Config = {
           slate: "#75758a",
           hairline: "#d9d9dd",
           border: "#e5e7eb",
-          focus: "#4c6ee6"
+          focus: "#4c6ee6",
+          gold: "#f8bf2c",
+          videoGray: "#b7b7b7"
         }
       },
       boxShadow: {

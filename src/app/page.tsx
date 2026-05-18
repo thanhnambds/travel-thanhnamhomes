@@ -94,16 +94,16 @@ export default function HomePage() {
 
 function TravelHero({ zaloUrl }: { zaloUrl: string }) {
   return (
-    <section className="bg-[#b7b7b7] px-4 py-8 md:px-10 md:py-14">
-      <div className="travel-hero-shell relative mx-auto min-h-[720px] max-w-[1480px] overflow-hidden bg-cover bg-center text-white shadow-[0_35px_80px_rgba(0,0,0,0.28)]">
-        <div className="absolute left-0 top-0 h-1 w-1/2 bg-[#f8bf2c]" />
+    <section className="bg-brand-videoGray px-4 py-8 md:px-10 md:py-14">
+      <div className="travel-hero-shell relative mx-auto min-h-[720px] max-w-[1480px] overflow-hidden bg-cover bg-center text-white shadow-2xl">
+        <div className="absolute left-0 top-0 h-1 w-1/2 bg-brand-gold" />
         <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between px-7 py-7 md:px-10">
           <a className="focus-ring flex items-center gap-3 rounded-sm text-xs font-semibold uppercase tracking-[0.28em]" href="/">
             <span className="grid h-7 w-7 place-items-center rounded-full border border-white/80 text-base">◎</span>
             Travel Thanh Nam
           </a>
           <nav className="hidden items-center gap-9 text-xs font-semibold uppercase tracking-[0.14em] text-white/85 lg:flex">
-            <a className="border-b border-[#f8bf2c] pb-1 text-white" href="/">Home</a>
+            <a className="border-b border-brand-gold pb-1 text-white" href="/">Home</a>
             <a href="/combo-hom-nay/">Combo</a>
             <a href="/combo-du-lich/">Destinations</a>
             <a href="/ve-may-bay-khach-san/">Flights</a>
@@ -126,7 +126,7 @@ function TravelHero({ zaloUrl }: { zaloUrl: string }) {
               trước khi giữ dịch vụ.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a className="focus-ring rounded-full bg-[#f8bf2c] px-4 py-3 text-sm font-semibold text-brand-primary" href="/combo-hom-nay/">
+              <a className="focus-ring rounded-full bg-brand-gold px-4 py-3 text-sm font-semibold text-brand-primary" href="/combo-hom-nay/">
                 Khám phá combo
               </a>
               <a className="focus-ring rounded-full border border-white/60 px-6 py-3 text-xs font-semibold uppercase tracking-[0.12em]" href={zaloUrl}>
@@ -147,7 +147,7 @@ function TravelHero({ zaloUrl }: { zaloUrl: string }) {
                 <span className="grid h-14 w-14 place-items-center rounded-full border border-white/55 text-2xl">›</span>
               </div>
               <div className="h-px flex-1 bg-white/35">
-                <div className="h-px w-1/3 bg-[#f8bf2c]" />
+                <div className="h-px w-1/3 bg-brand-gold" />
               </div>
               <p className="text-5xl font-semibold leading-none">03</p>
             </div>
@@ -170,7 +170,7 @@ function HeroDestinationCard({
   title: string;
 }) {
   return (
-    <a className="group relative h-72 min-w-[210px] overflow-hidden rounded-lg bg-black/30 shadow-[0_20px_40px_rgba(0,0,0,0.30)]" href={href}>
+    <a className="group relative h-72 min-w-[210px] overflow-hidden rounded-lg bg-black/30 shadow-2xl" href={href}>
       <div className={`${imageClass} absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-105`} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
       <div className="absolute bottom-0 left-0 p-5">
