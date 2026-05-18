@@ -209,9 +209,10 @@ function SliderContainer({
     <div className="min-w-0 overflow-hidden pb-2">
       <motion.div className="flex items-end gap-6 overflow-x-auto pb-7 pr-[12vw] lg:pr-0" layout>
         <AnimatePresence mode="popLayout">
-          {items.map((item) => (
+          {items.map((item, index) => (
             <CardItem
               active={active.key === item.key}
+              index={index}
               item={item}
               key={item.key}
               onClick={() => handleCardClick(item.key)}
@@ -253,13 +254,19 @@ function SliderContainer({
 
 function CardItem({
   active,
+  index,
   item,
   onClick,
 }: {
   active: boolean;
+  index: number;
   item: Destination;
   onClick: () => void;
 }) {
+  // Create a slight opposite offset for images inside inactive cards
+  // When they slide to index 0 (active), x animates to 0, creating a parallax slide.
+  const parallaxX = index * 26;
+
   return (
     <motion.button
       animate={{ opacity: active ? 1 : 0.78, y: active ? -8 : 0 }}
@@ -273,9 +280,10 @@ function CardItem({
     >
       <motion.div
         animate={{
-          scale: active ? 1.08 : 1.02
+          scale: active ? 1.14 : 1.02,
+          x: parallaxX
         }}
-        className={`${item.cardClass} absolute inset-y-0 -left-8 -right-8 bg-cover bg-center will-change-transform`}
+        className={`${item.cardClass} absolute inset-y-0 -left-10 -right-10 bg-cover bg-center will-change-transform`}
         transition={cardTransition}
       />
       <div className={`absolute inset-0 transition-colors duration-500 ${
