@@ -93,36 +93,9 @@ export default function HomePage() {
 }
 
 function TravelHero({ zaloUrl }: { zaloUrl: string }) {
-  const cards = [
-    {
-      title: "Phú Quốc",
-      label: "Sunset resort",
-      href: "/combo-phu-quoc/",
-      image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-      title: "Đà Nẵng",
-      label: "My Khe beach",
-      href: "/combo-da-nang/",
-      image: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-      title: "Nha Trang",
-      label: "Bay view",
-      href: "/combo-nha-trang/",
-      image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=600&q=80"
-    }
-  ];
-
   return (
     <section className="bg-[#b7b7b7] px-4 py-8 md:px-10 md:py-14">
-      <div
-        className="relative mx-auto min-h-[720px] max-w-[1480px] overflow-hidden rounded-none bg-cover bg-center text-white shadow-[0_35px_80px_rgba(0,0,0,0.28)]"
-        style={{
-          backgroundImage:
-            "linear-gradient(90deg, rgba(0,0,0,0.56), rgba(0,0,0,0.18) 48%, rgba(0,0,0,0.10)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85')"
-        }}
-      >
+      <div className="travel-hero-shell relative mx-auto min-h-[720px] max-w-[1480px] overflow-hidden bg-cover bg-center text-white shadow-[0_35px_80px_rgba(0,0,0,0.28)]">
         <div className="absolute left-0 top-0 h-1 w-1/2 bg-[#f8bf2c]" />
         <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between px-7 py-7 md:px-10">
           <a className="focus-ring flex items-center gap-3 rounded-sm text-xs font-semibold uppercase tracking-[0.28em]" href="/">
@@ -164,25 +137,9 @@ function TravelHero({ zaloUrl }: { zaloUrl: string }) {
 
           <div className="overflow-hidden">
             <div className="flex gap-6 overflow-x-auto pb-6">
-              {cards.map((card) => (
-                <a
-                  className="group relative h-72 min-w-[210px] overflow-hidden rounded-lg bg-black/30 shadow-[0_20px_40px_rgba(0,0,0,0.30)]"
-                  href={card.href}
-                  key={card.title}
-                >
-                  <div
-                    aria-label={card.title}
-                    className="absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-105"
-                    role="img"
-                    style={{ backgroundImage: `url(${card.image})` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-5">
-                    <p className="text-xs text-white/70">{card.label}</p>
-                    <p className="mt-2 text-2xl font-semibold uppercase leading-none">{card.title}</p>
-                  </div>
-                </a>
-              ))}
+              <HeroDestinationCard href="/combo-phu-quoc/" imageClass="travel-card-phu-quoc" label="Sunset resort" title="Phú Quốc" />
+              <HeroDestinationCard href="/combo-da-nang/" imageClass="travel-card-da-nang" label="My Khe beach" title="Đà Nẵng" />
+              <HeroDestinationCard href="/combo-nha-trang/" imageClass="travel-card-nha-trang" label="Bay view" title="Nha Trang" />
             </div>
             <div className="flex items-center gap-5">
               <div className="flex gap-3">
@@ -198,6 +155,29 @@ function TravelHero({ zaloUrl }: { zaloUrl: string }) {
         </div>
       </div>
     </section>
+  );
+}
+
+function HeroDestinationCard({
+  href,
+  imageClass,
+  label,
+  title
+}: {
+  href: string;
+  imageClass: string;
+  label: string;
+  title: string;
+}) {
+  return (
+    <a className="group relative h-72 min-w-[210px] overflow-hidden rounded-lg bg-black/30 shadow-[0_20px_40px_rgba(0,0,0,0.30)]" href={href}>
+      <div className={`${imageClass} absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-105`} />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+      <div className="absolute bottom-0 left-0 p-5">
+        <p className="text-xs text-white/70">{label}</p>
+        <p className="mt-2 text-2xl font-semibold uppercase leading-none">{title}</p>
+      </div>
+    </a>
   );
 }
 
