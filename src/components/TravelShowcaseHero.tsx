@@ -16,7 +16,8 @@ type Destination = {
   copy: string;
 };
 
-const transition = { duration: 0.8, ease: [0.25, 1, 0.5, 1] } as const;
+const transition = { duration: 0.65, ease: [0.22, 1, 0.36, 1] } as const;
+const cardTransition = { duration: 0.5, ease: [0.22, 1, 0.36, 1] } as const;
 
 const destinations: Destination[] = [
   {
@@ -55,12 +56,37 @@ const destinations: Destination[] = [
 ];
 
 export function TravelShowcaseHero({ zaloUrl }: { zaloUrl: string }) {
-  const [activeKey, setActiveKey] = useState(destinations[0].key);
-  const active = destinations.find((item) => item.key === activeKey) ?? destinations[0];
-  const activeIndex = destinations.findIndex((item) => item.key === activeKey);
+  const [items, setItems] = useState(destinations);
+  const active = items[0];
+  const activeIndex = destinations.findIndex((item) => item.key === active.key);
 
   const move = (direction: -1 | 1) => {
-    setActiveKey(destinations[(activeIndex + direction + destinations.length) % destinations.length].key);
+    setItems((prev) => {
+      const next = [...prev];
+      if (direction === 1) {
+        const first = next.shift();
+        next.push(first!);
+      } else {
+        const last = next.pop();
+        next.unshift(last!);
+      }
+      return next;
+    });
+  };
+
+  const handleCardClick = (clickedKey: string) => {
+    setItems((prev) => {
+      const index = prev.findIndex((item) => item.key === clickedKey);
+      const next = [...prev];
+      if (index === 0) {
+        const first = next.shift();
+        next.push(first!);
+      } else {
+        const removed = next.splice(0, index);
+        next.push(...removed);
+      }
+      return next;
+    });
   };
 
   return (
@@ -68,15 +94,14 @@ export function TravelShowcaseHero({ zaloUrl }: { zaloUrl: string }) {
       <div className="absolute inset-0">
         {destinations.map((item) => (
           <motion.div
-            className={`${item.heroClass} absolute inset-0 bg-cover bg-center transition-[opacity,transform,filter] duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-              activeKey === item.key ? "scale-100 opacity-100 blur-0" : "scale-105 opacity-0 blur-[2px]"
-            }`}
+            className={`${item.heroClass} absolute inset-0 bg-cover bg-center will-change-[opacity,transform]`}
             animate={{
-              opacity: activeKey === item.key ? 1 : 0,
-              scale: activeKey === item.key ? 1 : 1.08
+              opacity: active.key === item.key ? 1 : 0,
+              scale: active.key === item.key ? 1 : 1.06,
+              filter: active.key === item.key ? "blur(0px)" : "blur(2px)"
             }}
             key={item.key}
-            transition={transition}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           />
         ))}
       </div>
@@ -115,10 +140,10 @@ export function TravelShowcaseHero({ zaloUrl }: { zaloUrl: string }) {
 
           <SliderContainer
             activeIndex={activeIndex}
-            activeKey={activeKey}
-            items={destinations}
+            active={active}
+            items={items}
             move={move}
-            setActiveKey={setActiveKey}
+            handleCardClick={handleCardClick}
           />
         </div>
       </div>
@@ -169,30 +194,30 @@ function ActiveDestinationText({ active, zaloUrl }: { active: Destination; zaloU
 
 function SliderContainer({
   activeIndex,
-  activeKey,
+  active,
   items,
   move,
-  setActiveKey
+  handleCardClick
 }: {
   activeIndex: number;
-  activeKey: string;
+  active: Destination;
   items: Destination[];
   move: (direction: -1 | 1) => void;
-  setActiveKey: (key: string) => void;
+  handleCardClick: (key: string) => void;
 }) {
   return (
     <div className="min-w-0 overflow-hidden pb-2">
       <motion.div className="flex items-end gap-6 overflow-x-auto pb-7 pr-[12vw] lg:pr-0" layout>
-        {items.map((item, index) => (
-          <CardItem
-            active={activeKey === item.key}
-            activeIndex={activeIndex}
-            index={index}
-            item={item}
-            key={item.key}
-            onClick={() => setActiveKey(item.key)}
-          />
-        ))}
+        <AnimatePresence mode="popLayout">
+          {items.map((item) => (
+            <CardItem
+              active={active.key === item.key}
+              item={item}
+              key={item.key}
+              onClick={() => handleCardClick(item.key)}
+            />
+          ))}
+        </AnimatePresence>
       </motion.div>
       <div className="flex items-center gap-5">
         <div className="flex gap-3">
@@ -228,45 +253,40 @@ function SliderContainer({
 
 function CardItem({
   active,
-  activeIndex,
-  index,
   item,
   onClick,
 }: {
   active: boolean;
-  activeIndex: number;
-  index: number;
   item: Destination;
   onClick: () => void;
 }) {
-  const parallaxX = (activeIndex - index) * -22;
-
   return (
     <motion.button
-      animate={{ opacity: active ? 1 : 0.82, y: active ? -10 : 0 }}
-      className={`group relative h-[19rem] shrink-0 overflow-hidden rounded-xl bg-black/30 text-left shadow-[0_24px_55px_rgba(0,0,0,0.32)] outline-none transition-colors sm:h-[20rem] lg:h-[22rem] ${
-        active ? "w-[300px] ring-2 ring-brand-gold ring-offset-2 ring-offset-transparent lg:w-[360px]" : "w-[230px] hover:ring-1 hover:ring-white/40 sm:w-[250px] lg:w-[270px]"
+      animate={{ opacity: active ? 1 : 0.78, y: active ? -8 : 0 }}
+      className={`group relative h-[19rem] w-[260px] shrink-0 overflow-hidden rounded-xl bg-black/30 text-left shadow-[0_24px_55px_rgba(0,0,0,0.32)] outline-none sm:h-[20rem] sm:w-[280px] lg:h-[22rem] lg:w-[300px] ${
+        active ? "ring-2 ring-brand-gold ring-offset-2 ring-offset-transparent" : "hover:ring-1 hover:ring-white/40"
       }`}
       layout
       onClick={onClick}
-      transition={transition}
+      transition={cardTransition}
       type="button"
     >
       <motion.div
         animate={{
-          scale: active ? 1.1 : 1.02,
-          x: active ? 0 : parallaxX
+          scale: active ? 1.08 : 1.02
         }}
-        className={`${item.cardClass} absolute inset-y-0 -left-8 -right-8 bg-cover bg-center`}
-        transition={transition}
+        className={`${item.cardClass} absolute inset-y-0 -left-8 -right-8 bg-cover bg-center will-change-transform`}
+        transition={cardTransition}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/10 to-white/10" />
+      <div className={`absolute inset-0 transition-colors duration-500 ${
+        active ? "bg-gradient-to-t from-black/70 via-black/5 to-white/5" : "bg-gradient-to-t from-black/80 via-black/20 to-black/10"
+      }`} />
       <motion.div
         animate={{ opacity: 1, y: active ? -4 : 0 }}
         className="absolute bottom-0 left-0 p-6"
-        transition={{ ...transition, delay: active ? 0.08 : 0 }}
+        transition={{ ...cardTransition, delay: active ? 0.06 : 0 }}
       >
-        <div className="mb-5 h-0.5 w-5 bg-white/80" />
+        <div className={`mb-5 h-0.5 w-5 transition-colors duration-500 ${active ? "bg-brand-gold" : "bg-white/60"}`} />
         <p className="text-sm font-medium text-white/74">{item.label}</p>
         <p className="mt-3 text-3xl font-black uppercase leading-[0.9] text-white">{item.title}</p>
       </motion.div>
