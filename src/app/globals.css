@@ -21,6 +21,10 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+body:has(.home-showcase-page) .site-header {
+  display: none;
+}
+
 .container-page {
   width: min(1240px, calc(100% - 32px));
   margin: 0 auto;
@@ -47,19 +51,16 @@ a {
 
 .travel-hero-phu-quoc {
   background-image:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.2) 48%, rgba(0, 0, 0, 0.12)),
     url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85");
 }
 
 .travel-hero-da-nang {
   background-image:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.2) 48%, rgba(0, 0, 0, 0.12)),
     url("https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1800&q=85");
 }
 
 .travel-hero-nha-trang {
   background-image:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.2) 48%, rgba(0, 0, 0, 0.12)),
     url("https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1800&q=85");
 }
 

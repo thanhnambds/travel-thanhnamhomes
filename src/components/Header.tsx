@@ -10,7 +10,7 @@ const nav = [
 
 export function Header({ zaloUrl }: { zaloUrl: string }) {
   return (
-    <header className="sticky top-0 z-30 bg-white">
+    <header className="site-header sticky top-0 z-30 bg-white">
       <div className="bg-brand-black text-white">
         <div className="container-page flex min-h-9 items-center justify-center px-8 text-center text-xs leading-5">
           Combo là giá tham khảo. Thanh Nam kiểm tra lại vé và phòng trước khi giữ dịch vụ.
