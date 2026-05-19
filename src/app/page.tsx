@@ -14,36 +14,24 @@ export default function HomePage() {
     <>
       <section className="travel-home-hero relative min-h-[calc(100vh-68px)] overflow-hidden bg-brand-primary text-white">
         <div className="absolute inset-0 travel-home-hero-bg" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_54%,rgba(199,161,90,0.18),transparent_42%),linear-gradient(90deg,rgba(17,17,17,0.82),rgba(17,17,17,0.56)_52%,rgba(17,17,17,0.2))]" />
-        <div className="container-page relative grid min-h-[calc(100vh-68px)] content-center gap-12 py-24 lg:grid-cols-[minmax(0,760px)_minmax(360px,1fr)] lg:items-center">
-          <div>
-            <p className="section-label-dark">Thanh Nam Homes Travel</p>
-            <h1 className="max-w-4xl text-5xl font-medium leading-tight tracking-[-0.02em] text-white md:text-6xl lg:text-7xl">
-              Combo du lịch vé bay và khách sạn, tư vấn rõ giá trước khi giữ dịch vụ
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-white/72 md:text-lg">
-              Gợi ý combo từ dữ liệu vé bay tham khảo và bảng giá khách sạn tĩnh. Thanh Nam kiểm tra lại tình trạng vé,
-              phòng và điều kiện giá qua Zalo trước khi chốt lead.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link className="btn-brand-gold" href="/combo-hom-nay/">
-                <Plane size={18} />
-                Xem combo hôm nay
-              </Link>
-              <a className="btn-hero-outline" href={config.zaloUrl}>
-                <MessageCircle size={18} />
-                Chat Zalo
-              </a>
-            </div>
-            <div className="mt-7 flex flex-wrap gap-2">
-              <Proof text="Giá tham khảo, kiểm tra lại trước khi giữ" />
-              <Proof text="Không cam kết còn vé/phòng tự động" />
-              <Proof text="Chuyển lead qua Zalo 0965 325 555" />
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/15 bg-white/10 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur">
-            {combo ? <ComboCard combo={combo} compact /> : <EmptyCombo />}
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="container-page relative flex min-h-[calc(100vh-68px)] flex-col items-center justify-center py-24 text-center">
+          <p className="section-label-dark justify-center">Thanh Nam Homes Travel</p>
+          <h1 className="mx-auto mt-4 max-w-5xl text-5xl font-medium leading-tight tracking-[-0.02em] text-white md:text-6xl lg:text-7xl">
+            Tận hưởng kỳ nghỉ hoàn hảo với thiết kế lộ trình riêng
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
+            Khám phá các gói combo du lịch linh hoạt, vé máy bay và khách sạn đẳng cấp. Thanh Nam kiểm tra và hỗ trợ trực tiếp qua Zalo để đảm bảo trải nghiệm tốt nhất.
+          </p>
+          <div className="mt-9 flex flex-wrap justify-center gap-4">
+            <Link className="btn-brand-gold" href="/combo-hom-nay/">
+              <Plane size={18} />
+              Combo Today
+            </Link>
+            <a className="btn-hero-outline" href={config.zaloUrl}>
+              <MessageCircle size={18} />
+              Tư vấn Zalo
+            </a>
           </div>
         </div>
       </section>
