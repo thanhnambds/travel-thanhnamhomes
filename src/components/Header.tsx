@@ -35,11 +35,6 @@ export function Header({ zaloUrl }: { zaloUrl: string }) {
           Zalo
         </a>
       </div>
-      <div className="border-t border-brand-hairline bg-brand-primary text-white">
-        <div className="container-page flex min-h-8 items-center justify-center px-4 text-center text-xs leading-5 text-white/76">
-          Combo là giá tham khảo. Thanh Nam kiểm tra lại vé và phòng trước khi giữ dịch vụ.
-        </div>
-      </div>
     </header>
   );
 }
