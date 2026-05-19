@@ -1,0 +1,20 @@
+# DANH SÁCH LINK GOOGLE SHEET BẢNG GIÁ ĐỐI TÁC F1
+# Lưu ý: Các link dán vào đây cần được thiết lập quyền chia sẻ "Bất kỳ ai có đường liên kết đều có thể xem".
+
+# 1. Bảng giá Phú Quốc
+# Link: (Dán link của bạn vào đây...)
+
+# 2. Bảng giá Đà Nẵng 
+# Link: (Dán link của bạn vào đây...)
+
+# Vui lòng dán thử 1 link thực tế vào dòng trống phía dưới để tôi thử nghiệm đọc dữ liệu: 
+
+
+Bảng giá khách sạn toàn quốc: (bắc-trung-nam)
+https://docs.google.com/spreadsheets/d/1iKg4Vu6rSydNMGOJScHibOJLodRi7iVM8zWaB737Se4/edit?gid=1602890560#gid=1602890560 
+https://docs.google.com/spreadsheets/d/19WtS3E6daKQofzDDPTa1p9UncjI-E6zGVoMScCv4fU4/edit?gid=1602890560#gid=1602890560
+https://docs.google.com/spreadsheets/d/1_ZQx0Ohb2xseLXuzKsPeKej5xMfgKRbZszegCiCNQps/edit?gid=1602890560#gid=1602890560
+
+Tour: 
+https://docs.google.com/spreadsheets/d/1eXrinuLspzQwpLe4kz0mETubzepfo9UjfeuGVCM-aRw/edit?gid=1826806634#gid=1826806634
+https://docs.google.com/spreadsheets/d/1LIDk926R_olzH2suonm3ZBtFg6WSB_8AVPGmj0BN7oY/edit?gid=1291436086#gid=1291436086

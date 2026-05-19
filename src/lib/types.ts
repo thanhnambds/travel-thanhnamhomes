@@ -65,3 +65,26 @@ export interface SiteConfig {
     }
   >;
 }
+
+export type TourStatus = "draft" | "published" | "expired";
+
+export interface PublicTour {
+  id: string;
+  status: TourStatus;
+  title: string;
+  destination: string;
+  country: string;
+  duration: string;
+  airline: string;
+  departure_city: string;
+  departure_dates: string[];
+  price: number;
+  currency: "VND";
+  price_note: string;
+  program_url: string;
+  source_sheet_url: string;
+  source_sheet_name: string;
+  source_rows: number[];
+  updated_at: string;
+  public_notes: string[];
+}

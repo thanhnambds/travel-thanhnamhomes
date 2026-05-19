@@ -1,0 +1,22 @@
+[
+  {
+    "id": "shanghai-hangzhou-wuzhen-vj-2026-06-10",
+    "status": "published",
+    "title": "Thượng Hải - Hàng Châu - Ô Trấn",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "5N4Đ",
+    "airline": "VJ",
+    "departure_city": "Hà Nội",
+    "departure_dates": ["2026-06-10"],
+    "price": 13990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng chỗ và chính sách đối tác. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1yQQYC_bO7jngCz3-bXTPseqbXhAcnObO/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1eXrinuLspzQwpLe4kz0mETubzepfo9UjfeuGVCM-aRw/edit?gid=1921352544&range=A86:I87",
+    "source_sheet_name": "TRUNG QUỐC - HONGKONG",
+    "source_rows": [86, 87],
+    "updated_at": "2026-05-19T21:30:00+07:00",
+    "public_notes": ["Tour đang có giá thấp nhất trong nhóm Thượng Hải tháng 6 theo dữ liệu đã duyệt.", "Cần kiểm tra lại tình trạng chỗ trước khi nhận cọc."]
+  }
+]

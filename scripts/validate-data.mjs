@@ -15,6 +15,7 @@ function assertFile(relativePath) {
 assertFile("hotels.csv");
 assertFile("flights.mock.json");
 assertFile("config.json");
+assertFile("generated/tours-public.json");
 
 const config = readJson("data/config.json");
 if (!config.defaultDepartureCity) errors.push("config.defaultDepartureCity is required.");
@@ -57,6 +58,30 @@ for (const [index, flight] of (flightData.flights ?? []).entries()) {
   }
 }
 
+const publicTours = readJson("data/generated/tours-public.json");
+if (!Array.isArray(publicTours)) {
+  errors.push("tours-public.json must be an array.");
+}
+
+for (const [index, tour] of (Array.isArray(publicTours) ? publicTours : []).entries()) {
+  const label = `tours-public.json item ${index + 1}`;
+  for (const key of ["id", "status", "title", "destination", "country", "duration", "airline", "departure_city", "price", "price_note", "source_sheet_url", "updated_at"]) {
+    if (!tour[key]) errors.push(`${label}: ${key} is required.`);
+  }
+  if (tour.status !== "published") {
+    errors.push(`${label}: only published tours are allowed in tours-public.json.`);
+  }
+  if (!Array.isArray(tour.departure_dates) || tour.departure_dates.length === 0) {
+    errors.push(`${label}: departure_dates must include at least one date.`);
+  }
+  if (!Number.isFinite(tour.price) || tour.price <= 0) {
+    errors.push(`${label}: price must be a positive number.`);
+  }
+  if (!tour.price_note?.includes("Giá tham khảo tại thời điểm cập nhật")) {
+    errors.push(`${label}: price_note must include the required price disclaimer.`);
+  }
+}
+
 if (warnings.length) {
   console.warn(warnings.map((item) => `Warning: ${item}`).join("\n"));
 }
@@ -66,4 +91,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Data validation passed: ${hotels.length} hotels, ${flightData.flights.length} flights.`);
+console.log(`Data validation passed: ${hotels.length} hotels, ${flightData.flights.length} flights, ${publicTours.length} public tours.`);

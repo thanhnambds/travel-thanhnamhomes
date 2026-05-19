@@ -4,7 +4,7 @@ import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ChatbotWidget } from "@/components/ChatbotWidget";
-import { getConfig, getDailyCombo } from "@/lib/data";
+import { getConfig, getDailyCombo, getPublicTours } from "@/lib/data";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://travel.thanhnamhomes.vn"),
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   const config = getConfig();
   const combo = getDailyCombo();
+  const tours = getPublicTours();
 
   return (
     <html lang="vi">
@@ -25,7 +26,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         <Header zaloUrl={config.zaloUrl} />
         <main>{children}</main>
         <Footer />
-        <ChatbotWidget combo={combo} zaloUrl={config.zaloUrl} />
+        <ChatbotWidget combo={combo} tours={tours} zaloUrl={config.zaloUrl} />
       </body>
     </html>
   );

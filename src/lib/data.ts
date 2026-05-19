@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { Combo, SiteConfig } from "./types";
+import type { Combo, PublicTour, SiteConfig } from "./types";
 
 const rootDir = process.cwd();
 
@@ -23,6 +23,14 @@ export function getComboHistory() {
   );
 }
 
+export function getPublicTours(): PublicTour[] {
+  if (!fs.existsSync(path.join(rootDir, "data/generated/tours-public.json"))) {
+    return [];
+  }
+
+  return readJson<PublicTour[]>("data/generated/tours-public.json").filter((tour) => tour.status === "published");
+}
+
 export function isExpired(combo: Combo): boolean {
   return new Date(combo.expires_at).getTime() < Date.now();
 }
@@ -36,5 +44,12 @@ export function formatDate(value: string): string {
     day: "2-digit",
     month: "2-digit",
     year: "numeric"
+  }).format(new Date(`${value}T12:00:00+07:00`));
+}
+
+export function formatShortDate(value: string): string {
+  return new Intl.DateTimeFormat("vi-VN", {
+    day: "2-digit",
+    month: "2-digit"
   }).format(new Date(`${value}T12:00:00+07:00`));
 }
