@@ -98,21 +98,24 @@ export default function HomePage() {
               Xem tất cả điểm đến
             </Link>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3">
             <DestinationCard
               href="/combo-phu-quoc/"
-              title="Combo Phú Quốc"
+              title="Phú Quốc"
               description="Đảo ngọc thiên đường, resort nghỉ dưỡng biệt lập cao cấp, điểm hẹn hoàn hảo cho gia đình thượng lưu."
+              imageUrl="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80"
             />
             <DestinationCard
               href="/combo-da-nang/"
-              title="Combo Đà Nẵng"
+              title="Đà Nẵng"
               description="Khung giờ bay hoàng đạo, hệ thống khách sạn mặt biển Mỹ Khê hoặc resort bán đảo Sơn Trà đẳng cấp."
+              imageUrl="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=800&q=80"
             />
             <DestinationCard
               href="/combo-nha-trang/"
-              title="Combo Nha Trang"
+              title="Nha Trang"
               description="Vịnh biển thiên đường, khách sạn tầng cao view trọn vịnh, tích hợp dịch vụ đưa đón sân bay đặc quyền."
+              imageUrl="https://images.unsplash.com/photo-1583417657208-c4b12dc1b979?auto=format&fit=crop&w=800&q=80"
             />
           </div>
         </div>
@@ -146,17 +149,17 @@ function Proof({ text }: { text: string }) {
 
 function Info({ icon, title, text }: { icon: ReactNode; title: string; text: string }) {
   return (
-    <div className="rounded-2xl border border-brand-hairline bg-white p-7 shadow-soft">
-      <div className="mb-8 flex h-11 w-11 items-center justify-center rounded-full bg-brand-soft text-brand-goldDark">{icon}</div>
+    <div className="rounded-3xl bg-white p-8 shadow-airbnb">
+      <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-full bg-brand-soft text-brand-goldDark">{icon}</div>
       <h3 className="text-2xl font-medium text-brand-primary">{title}</h3>
-      <p className="mt-4 text-sm leading-7 text-brand-slate">{text}</p>
+      <p className="mt-4 text-[15px] leading-relaxed text-brand-slate">{text}</p>
     </div>
   );
 }
 
 function EmptyCombo() {
   return (
-    <div className="rounded-2xl border border-dashed border-brand-hairline bg-white p-6 text-center text-brand-slate">
+    <div className="rounded-3xl bg-white/50 p-8 text-center text-[15px] leading-relaxed text-brand-slate shadow-sm backdrop-blur">
       Hệ thống đang cập nhật quỹ phòng và chặng bay HOT nhất trong ngày. Vui lòng bấm Chat Zalo để nhận thiết kế combo
       ngay lập tức!
     </div>
