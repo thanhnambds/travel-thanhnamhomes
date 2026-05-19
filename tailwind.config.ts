@@ -30,12 +30,7 @@ const config: Config = {
         }
       },
       boxShadow: {
-        soft: "0 18px 45px rgba(24, 21, 18, 0.06)",
-        airbnb: "0 6px 16px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)"
-      },
-      borderRadius: {
-        "4xl": "2rem",
-        "5xl": "2.5rem"
+        soft: "0 18px 45px rgba(24, 21, 18, 0.06)"
       }
     }
   },

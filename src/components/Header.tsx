@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MessageCircle, Plane } from "lucide-react";
 
 const nav = [
-  ["Combo Today", "/combo-hom-nay/"],
+  ["Combo Hôm Nay", "/combo-hom-nay/"],
   ["Tour du lịch", "/tour-du-lich/"],
   ["Combo du lịch", "/combo-du-lich/"],
   ["Liên hệ", "/lien-he/"]
