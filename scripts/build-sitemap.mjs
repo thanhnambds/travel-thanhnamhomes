@@ -9,7 +9,6 @@ const urls = [
   "/combo-phu-quoc/",
   "/combo-da-nang/",
   "/combo-nha-trang/",
-  "/tour-trung-quoc/",
   "/ve-may-bay-khach-san/",
   "/lien-he/"
 ];

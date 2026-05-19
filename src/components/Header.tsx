@@ -5,7 +5,6 @@ const nav = [
   ["Trang chủ", "/"],
   ["Giới thiệu", "/gioi-thieu/"],
   ["Dịch vụ", "/dich-vu/"],
-  ["Tour Trung Quốc", "/tour-trung-quoc/"],
   ["Tin tức", "/tin-tuc/"],
   ["Liên hệ", "/lien-he/"]
 ];

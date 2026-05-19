@@ -5,11 +5,12 @@ import { ComboCard } from "@/components/ComboCard";
 import { DestinationCard } from "@/components/DestinationCard";
 import { TourCard } from "@/components/TourCard";
 import { PriceNote } from "@/components/PriceNote";
-import { getConfig, getDailyCombo } from "@/lib/data";
+import { formatShortDate, formatVnd, getConfig, getDailyCombo, getPublicTours } from "@/lib/data";
 
 export default function HomePage() {
   const config = getConfig();
   const combo = getDailyCombo();
+  const tours = getPublicTours();
 
   return (
     <>
@@ -131,56 +132,36 @@ export default function HomePage() {
       <section className="bg-white py-20">
         <div className="container-page">
           <div className="mb-10">
+            <p className="section-label">Tour đã duyệt</p>
             <h2 className="text-4xl font-medium leading-tight tracking-[-0.02em] text-brand-primary md:text-5xl">
               Các Tour Phổ Biến
             </h2>
+            <p className="mt-4 max-w-2xl text-brand-slate">
+              Những tour đang mở bán được lọc từ bảng giá đối tác và duyệt trước khi chatbot tư vấn cho khách.
+            </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <TourCard
-              href="#"
-              image="/images/tours/china.png"
-              location="Trung Quốc"
-              title="Tour nhóm nhỏ: Vạn Lý Trường Thành Mutianyu, Cung điện mùa..."
-              rating={5}
-              reviews={0}
-              tag="Tour 3 ngày 2 đêm"
-              price="6.000.000 ₫"
-              duration="2 Ngày"
-            />
-            <TourCard
-              href="#"
-              image="/images/tours/thailand.png"
-              location="Thái Lan"
-              title="Kỳ quan Tây Thái Lan: Phi Phi, Koh Phi Phi, Krabi & Xa hơn"
-              rating={5}
-              reviews={0}
-              tag="Tour trọn gói"
-              price="3.000.000 ₫"
-              duration="2 Ngày"
-            />
-            <TourCard
-              href="#"
-              image="/images/tours/bali.png"
-              location="Bali, Indonesia"
-              title="Bali Highlights: Một chuyến đi thiên đường ven biển đến thành..."
-              rating={5}
-              reviews={0}
-              tag="Nghỉ dưỡng"
-              price="3.800.000 ₫"
-              duration="2 Ngày"
-            />
-            <TourCard
-              href="#"
-              image="/images/tours/japan.png"
-              location="Tokyo, Nhật Bản"
-              title="Tokyo: Trải nghiệm hoa anh đào riêng tư - tuyệt vời nhất của..."
-              rating={5}
-              reviews={0}
-              tag="Nhật Bản"
-              price="1.000.000 ₫"
-              duration="2 Ngày"
-            />
-          </div>
+          {tours.length ? (
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {tours.map((tour) => (
+                <TourCard
+                  href={tour.program_url || tour.source_sheet_url}
+                  image={tourImage(tour.country)}
+                  location={tour.country}
+                  title={tour.title}
+                  rating={5}
+                  reviews={0}
+                  tag={`Khởi hành ${tour.departure_dates.map(formatShortDate).join(", ")}`}
+                  price={`${formatVnd(tour.price)}/người`}
+                  duration={tour.duration}
+                  key={tour.id}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-2xl border border-dashed border-brand-hairline bg-brand-stone p-6 text-brand-slate">
+              Chưa có tour public đã duyệt. Khi `tours-public.json` có dữ liệu, section này sẽ tự hiển thị tour.
+            </div>
+          )}
         </div>
       </section>
 
@@ -225,4 +206,13 @@ function EmptyCombo() {
       Hệ thống đang cập nhật những ưu đãi phòng và chặng bay tốt nhất ngày hôm nay. Vui lòng nhắn tin qua Zalo để chuyên viên thiết kế combo gửi báo giá trực tiếp cho bạn!
     </div>
   );
+}
+
+function tourImage(country: string): string {
+  const normalized = country.toLowerCase();
+  if (normalized.includes("trung")) return "/images/tours/china.png";
+  if (normalized.includes("thai") || normalized.includes("thái")) return "/images/tours/thailand.png";
+  if (normalized.includes("nhat") || normalized.includes("nhật")) return "/images/tours/japan.png";
+  if (normalized.includes("bali") || normalized.includes("indo")) return "/images/tours/bali.png";
+  return "/images/ha-long.png";
 }
