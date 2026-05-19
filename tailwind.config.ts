@@ -7,27 +7,30 @@ const config: Config = {
       colors: {
         brand: {
           black: "#000000",
-          ink: "#212121",
-          primary: "#17171c",
-          green: "#003c33",
-          navy: "#071829",
+          ink: "#2B2621",
+          primary: "#181512",
+          green: "#1D1A18",
+          navy: "#111111",
           blue: "#1863dc",
-          coral: "#ff7759",
-          softCoral: "#ffad9b",
-          stone: "#eeece7",
-          greenWash: "#edfce9",
+          coral: "#C7A15A",
+          softCoral: "#D7B874",
+          stone: "#F7F3EA",
+          soft: "#F6EFE1",
+          greenWash: "#F6EFE1",
           blueWash: "#f1f5ff",
-          muted: "#93939f",
-          slate: "#75758a",
-          hairline: "#d9d9dd",
-          border: "#e5e7eb",
+          muted: "#DED3C1",
+          slate: "#6F6A62",
+          hairline: "#DED3C1",
+          border: "#E9E0D2",
           focus: "#4c6ee6",
-          gold: "#f8bf2c",
-          videoGray: "#b7b7b7"
+          gold: "#C7A15A",
+          goldDark: "#8C6A2F",
+          goldLight: "#D7B874",
+          videoGray: "#F7F3EA"
         }
       },
       boxShadow: {
-        soft: "0 18px 45px rgba(0, 0, 0, 0.06)"
+        soft: "0 18px 45px rgba(24, 21, 18, 0.06)"
       }
     }
   },

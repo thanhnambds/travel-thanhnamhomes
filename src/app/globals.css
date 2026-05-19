@@ -11,18 +11,16 @@ html {
 }
 
 body {
-  background: #ffffff;
-  color: #212121;
-  font-family: "Unica77 Cohere Web", Inter, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f7f3ea;
+  color: #2b2621;
+  font-family: "Sofia Sans", Inter, Arial, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 button,
 a {
   -webkit-tap-highlight-color: transparent;
-}
-
-body:has(.home-showcase-page) .site-header {
-  display: none;
 }
 
 .container-page {
@@ -43,35 +41,82 @@ body:has(.home-showcase-page) .site-header {
   letter-spacing: 0;
 }
 
-.travel-hero-shell {
-  background-image:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.2) 48%, rgba(0, 0, 0, 0.12)),
-    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85");
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #181512;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-.travel-hero-phu-quoc {
-  background-image:
-    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85");
+.section-label::before {
+  content: "•";
+  color: #c7a15a;
+  font-size: 1.1em;
+  line-height: 1;
 }
 
-.travel-hero-da-nang {
-  background-image:
-    url("https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1800&q=85");
+.section-label-dark {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-.travel-hero-nha-trang {
-  background-image:
-    url("https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1800&q=85");
+.section-label-dark::before {
+  content: "•";
+  color: #c7a15a;
+  font-size: 1.1em;
+  line-height: 1;
 }
 
-.travel-card-phu-quoc {
-  background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80");
+.btn-brand-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1.5px solid #c7a15a;
+  background: #c7a15a;
+  color: #181512;
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: all 0.18s ease;
 }
 
-.travel-card-da-nang {
-  background-image: url("https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=600&q=80");
+.btn-brand-gold:hover {
+  background: #d7b874;
+  border-color: #d7b874;
 }
 
-.travel-card-nha-trang {
-  background-image: url("https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=600&q=80");
+.btn-hero-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.42);
+  color: #f7f3ea;
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: all 0.18s ease;
+}
+
+.btn-hero-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.72);
+}
+
+.travel-home-hero-bg {
+  background:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.82), rgba(17, 17, 17, 0.48) 54%, rgba(17, 17, 17, 0.12)),
+    url("https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1900&q=85") center / cover no-repeat,
+    #111111;
 }
