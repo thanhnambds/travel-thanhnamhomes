@@ -7,12 +7,12 @@ import { getDailyCombo } from "@/lib/data";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata(
-  "Combo du lịch vé máy bay và khách sạn",
-  "Danh sách combo du lịch tham khảo bay từ Hà Nội, khách sạn tĩnh, tư vấn chốt lead qua Zalo.",
-  "/combo-du-lich/"
+  "Dịch vụ du lịch và nghỉ dưỡng",
+  "Thanh Nam Travel cung cấp dịch vụ thiết kế tour, combo vé máy bay và khách sạn đẳng cấp.",
+  "/dich-vu/"
 );
 
-export default function ComboTravelPage() {
+export default function ServicesPage() {
   const combo = getDailyCombo();
 
   return (

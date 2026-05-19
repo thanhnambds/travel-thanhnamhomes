@@ -23,11 +23,10 @@ export function DestinationLanding({ slug, title, description }: { slug: string;
               ))}
             </ul>
           </div>
-          <div className="rounded-[22px] bg-brand-green p-6 text-white">
-            <h2 className="text-3xl font-normal">Cách chốt lead</h2>
-            <p className="mt-5 text-sm leading-6 text-brand-muted">
-              Khách gửi ngày đi, số người, ngân sách và tiêu chuẩn khách sạn qua Zalo. Thanh Nam kiểm tra lại vé và
-              phòng trước khi báo giá chính xác.
+          <div className="rounded-[22px] bg-[#0d9488] p-6 text-white">
+            <h2 className="text-3xl font-medium">Quy trình dịch vụ</h2>
+            <p className="mt-5 text-sm leading-6 text-white/90">
+              Quý khách vui lòng chia sẻ mong muốn về điểm đến, ngày đi, số lượng người và tiêu chuẩn khách sạn qua Zalo. Chuyên viên của Thanh Nam sẽ thiết kế và báo giá lộ trình hoàn hảo nhất dành riêng cho quý khách.
             </p>
             <a className="mt-6 inline-flex rounded-full bg-white px-5 py-3 text-sm font-medium text-brand-primary" href={config.zaloUrl}>
               Gửi Zalo

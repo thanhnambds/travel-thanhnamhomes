@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Check, ClipboardCheck, Hotel, MessageCircle, Plane } from "lucide-react";
 import { ComboCard } from "@/components/ComboCard";
 import { DestinationCard } from "@/components/DestinationCard";
+import { TourCard } from "@/components/TourCard";
 import { PriceNote } from "@/components/PriceNote";
 import { getConfig, getDailyCombo } from "@/lib/data";
 
@@ -122,6 +123,62 @@ export default function HomePage() {
               title="Hạ Long"
               description="Kỳ quan thiên nhiên thế giới. Trải nghiệm hải trình đẳng cấp trên những du thuyền 5 sao ôm trọn vẻ đẹp di sản."
               image="/images/ha-long.png"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="container-page">
+          <div className="mb-10">
+            <h2 className="text-4xl font-medium leading-tight tracking-[-0.02em] text-brand-primary md:text-5xl">
+              Các Tour Phổ Biến
+            </h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <TourCard
+              href="#"
+              image="/images/tours/china.png"
+              location="Trung Quốc"
+              title="Tour nhóm nhỏ: Vạn Lý Trường Thành Mutianyu, Cung điện mùa..."
+              rating={5}
+              reviews={0}
+              tag="Tour 3 ngày 2 đêm"
+              price="6.000.000 ₫"
+              duration="2 Ngày"
+            />
+            <TourCard
+              href="#"
+              image="/images/tours/thailand.png"
+              location="Thái Lan"
+              title="Kỳ quan Tây Thái Lan: Phi Phi, Koh Phi Phi, Krabi & Xa hơn"
+              rating={5}
+              reviews={0}
+              tag="Tour trọn gói"
+              price="3.000.000 ₫"
+              duration="2 Ngày"
+            />
+            <TourCard
+              href="#"
+              image="/images/tours/bali.png"
+              location="Bali, Indonesia"
+              title="Bali Highlights: Một chuyến đi thiên đường ven biển đến thành..."
+              rating={5}
+              reviews={0}
+              tag="Nghỉ dưỡng"
+              price="3.800.000 ₫"
+              duration="2 Ngày"
+            />
+            <TourCard
+              href="#"
+              image="/images/tours/japan.png"
+              location="Tokyo, Nhật Bản"
+              title="Tokyo: Trải nghiệm hoa anh đào riêng tư - tuyệt vời nhất của..."
+              rating={5}
+              reviews={0}
+              tag="Nhật Bản"
+              price="1.000.000 ₫"
+              duration="2 Ngày"
             />
           </div>
         </div>

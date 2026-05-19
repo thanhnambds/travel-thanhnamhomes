@@ -17,13 +17,13 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Liên hệ"
-        title="Gửi nhu cầu combo du lịch qua Zalo"
-        description="Cung cấp điểm đến, ngày đi, số người, ngân sách và tiêu chuẩn khách sạn để được kiểm tra giá mới nhất."
+        title="Kết Nối Với Chuyên Viên Cá Nhân"
+        description="Hãy chia sẻ mong muốn của bạn về điểm đến, ngân sách và tiêu chuẩn dịch vụ. Chúng tôi sẽ thiết kế một kỳ nghỉ hoàn hảo dành riêng cho bạn."
       />
       <section className="container-page grid gap-5 py-16 md:grid-cols-2">
         <a className="focus-ring rounded-[22px] border border-brand-hairline bg-brand-stone p-7" href={config.zaloUrl}>
           <MessageCircle className="text-brand-coral" size={28} />
-          <h2 className="mt-6 text-3xl font-normal text-brand-primary">Zalo Thanh Nam</h2>
+          <h2 className="mt-6 text-3xl font-normal text-brand-primary">Zalo Chuyên Viên</h2>
           <p className="mt-3 text-brand-slate">https://zalo.me/0965325555</p>
         </a>
         <div className="rounded-[22px] bg-brand-green p-7 text-white">
