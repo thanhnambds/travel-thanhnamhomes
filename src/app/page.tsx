@@ -98,21 +98,30 @@ export default function HomePage() {
               Xem tất cả điểm đến
             </Link>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <DestinationCard
               href="/combo-phu-quoc/"
-              title="Combo Phú Quốc"
+              title="Phú Quốc"
               description="Tuyệt tác đảo Ngọc xanh mát. Trải nghiệm không gian nghỉ dưỡng biệt lập, riêng tư dành riêng cho giới tinh hoa."
+              image="/images/phu-quoc.png"
             />
             <DestinationCard
               href="/combo-da-nang/"
-              title="Combo Đà Nẵng"
+              title="Đà Nẵng"
               description="Thành phố của những nhịp sống hiện đại. Tận hưởng tầm nhìn panorama ôm trọn biển Mỹ Khê hay không gian an yên tại bán đảo Sơn Trà."
+              image="/images/da-nang.png"
             />
             <DestinationCard
               href="/combo-nha-trang/"
-              title="Combo Nha Trang"
+              title="Nha Trang"
               description="Viên ngọc bích của biển Đông. Thư giãn tại các khách sạn sang trọng bậc nhất với tầm nhìn trực diện vịnh biển tuyệt đẹp."
+              image="/images/nha-trang.png"
+            />
+            <DestinationCard
+              href="/combo-ha-long/"
+              title="Hạ Long"
+              description="Kỳ quan thiên nhiên thế giới. Trải nghiệm hải trình đẳng cấp trên những du thuyền 5 sao ôm trọn vẻ đẹp di sản."
+              image="/images/ha-long.png"
             />
           </div>
         </div>
