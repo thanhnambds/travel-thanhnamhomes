@@ -1,21 +1,16 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { Sofia_Sans } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ChatbotWidget } from "@/components/ChatbotWidget";
 import { getConfig, getDailyCombo, getPublicTours } from "@/lib/data";
 
-const playfair = Playfair_Display({
-  subsets: ["vietnamese"],
-  variable: "--font-playfair",
-  display: "swap",
-});
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["vietnamese"],
-  variable: "--font-jakarta",
+const sofiaSans = Sofia_Sans({
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -34,8 +29,8 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
   const tours = getPublicTours();
 
   return (
-    <html lang="vi" className="scroll-smooth">
-      <body className={`${playfair.variable} ${plusJakarta.variable} antialiased`}>
+    <html lang="vi" className={sofiaSans.variable}>
+      <body className={sofiaSans.className}>
         <Header zaloUrl={config.zaloUrl} />
         <main>{children}</main>
         <Footer />
@@ -44,3 +39,4 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
     </html>
   );
 }
+

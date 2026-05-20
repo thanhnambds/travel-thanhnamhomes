@@ -17,24 +17,24 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="travel-home-hero relative min-h-[calc(100vh-72px)] overflow-hidden bg-brand-primary text-white">
+      <section className="travel-home-hero relative min-h-[calc(100vh-68px)] overflow-hidden bg-brand-primary text-white">
         <div className="absolute inset-0 travel-home-hero-bg" />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-primary/60 via-brand-primary/20 to-transparent" />
-        <div className="container-page relative flex min-h-[calc(100vh-72px)] flex-col items-center justify-center py-28 text-center z-10">
-          <p className="section-label-dark justify-center font-bold text-xs uppercase tracking-widest text-brand-goldLight">Thanh Nam Homes Travel</p>
-          <h1 className="display-type mx-auto mt-6 max-w-5xl text-5xl font-light leading-tight tracking-wide text-white md:text-6xl lg:text-7xl">
-            Kiến Tạo Kỳ Nghỉ Đẳng Cấp, <span className="text-brand-gold font-normal">Mang Dấu Ấn Riêng</span>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-transparent" />
+        <div className="container-page relative flex min-h-[calc(100vh-68px)] flex-col items-center justify-center py-24 text-center">
+          <p className="section-label-dark justify-center">Thanh Nam Homes Travel</p>
+          <h1 className="mx-auto mt-4 max-w-5xl text-5xl font-medium leading-tight tracking-[-0.02em] text-white md:text-6xl lg:text-7xl">
+            Kiến Tạo Kỳ Nghỉ Đẳng Cấp, Mang Dấu Ấn Của Riêng Bạn
           </h1>
-          <p className="mx-auto mt-8 max-w-3xl text-sm leading-8 text-white/75 md:text-base md:leading-8">
-            Trải nghiệm các gói combo du lịch linh hoạt kết hợp vé máy bay và không gian lưu trú sang trọng. Đội ngũ trợ lý chuyên nghiệp hỗ trợ 1:1, giúp quý khách tối ưu chi phí mà vẫn tận hưởng trọn vẹn từng khoảnh khắc độc bản.
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
+            Trải nghiệm các gói combo du lịch linh hoạt kết hợp vé máy bay và không gian nghỉ dưỡng sang trọng. Đội ngũ Thanh Nam Travel hỗ trợ 1:1, giúp bạn tối ưu chi phí mà vẫn tận hưởng trọn vẹn từng khoảnh khắc.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-5">
-            <Link className="btn-brand-gold uppercase tracking-wider text-xs font-bold" href="/combo-hom-nay/">
-              <Plane size={15} />
+          <div className="mt-9 flex flex-wrap justify-center gap-4">
+            <Link className="btn-brand-gold" href="/combo-hom-nay/">
+              <Plane size={18} />
               Combo Hôm Nay
             </Link>
-            <a className="btn-hero-outline uppercase tracking-wider text-xs font-bold" href={config.zaloUrl} target="_blank" rel="noreferrer">
-              <MessageCircle size={15} />
+            <a className="btn-hero-outline" href={config.zaloUrl}>
+              <MessageCircle size={18} />
               Tư vấn Zalo
             </a>
           </div>
@@ -147,7 +147,7 @@ export default function HomePage() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {popularTours.map((tour) => (
                 <TourCard
-                  href={tour.program_url || tour.source_sheet_url}
+                  href={`/tour/${tour.id}/`}
                   image={tourImage(tour.country)}
                   location={tour.country}
                   title={tour.title}

@@ -31,6 +31,10 @@ export function getPublicTours(): PublicTour[] {
   return readJson<PublicTour[]>("data/generated/tours-public.json").filter((tour) => tour.status === "published");
 }
 
+export function getPublicTourById(id: string): PublicTour | null {
+  return getPublicTours().find((tour) => tour.id === id) ?? null;
+}
+
 export function isExpired(combo: Combo): boolean {
   return new Date(combo.expires_at).getTime() < Date.now();
 }
