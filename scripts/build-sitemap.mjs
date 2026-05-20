@@ -3,6 +3,10 @@ import path from "node:path";
 import { readJson, rootDir } from "./shared.mjs";
 
 const config = readJson("data/config.json");
+const publicTours = fs.existsSync(path.join(rootDir, "data/generated/tours-public.json"))
+  ? readJson("data/generated/tours-public.json").filter((tour) => tour.status === "published")
+  : [];
+
 const urls = [
   "/",
   "/combo-du-lich/",
@@ -10,7 +14,8 @@ const urls = [
   "/combo-da-nang/",
   "/combo-nha-trang/",
   "/ve-may-bay-khach-san/",
-  "/lien-he/"
+  "/lien-he/",
+  ...publicTours.map((tour) => `/tour/${tour.id}/`)
 ];
 
 const now = new Date().toISOString();
