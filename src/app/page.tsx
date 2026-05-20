@@ -4,8 +4,10 @@ import { Check, ClipboardCheck, Hotel, MessageCircle, Plane } from "lucide-react
 import { ComboCard } from "@/components/ComboCard";
 import { DestinationCard } from "@/components/DestinationCard";
 import { TourCard } from "@/components/TourCard";
+import { TourSearchBox } from "@/components/TourSearchBox";
 import { PriceNote } from "@/components/PriceNote";
 import { formatShortDate, formatVnd, getConfig, getDailyCombo, getPublicTours } from "@/lib/data";
+import { tourHref, tourImage } from "@/lib/tour-helpers";
 
 export default function HomePage() {
   const config = getConfig();
@@ -38,6 +40,7 @@ export default function HomePage() {
               Tư vấn Zalo
             </a>
           </div>
+          <TourSearchBox className="mt-10 w-full max-w-5xl text-left" />
         </div>
       </section>
 
@@ -147,7 +150,7 @@ export default function HomePage() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {popularTours.map((tour) => (
                 <TourCard
-                  href={`/tour/${tour.id}/`}
+                  href={tourHref(tour)}
                   image={tourImage(tour.country)}
                   location={tour.country}
                   title={tour.title}
@@ -209,14 +212,4 @@ function EmptyCombo() {
       Hệ thống đang cập nhật những ưu đãi phòng và chặng bay tốt nhất ngày hôm nay. Vui lòng nhắn tin qua Zalo để chuyên viên thiết kế combo gửi báo giá trực tiếp cho bạn!
     </div>
   );
-}
-
-function tourImage(country: string): string {
-  const normalized = country.toLowerCase();
-  if (normalized.includes("trung") || normalized.includes("hong") || normalized.includes("dai") || normalized.includes("đài")) return "/images/tours/china.png";
-  if (normalized.includes("thai") || normalized.includes("thái")) return "/images/tours/thailand.png";
-  if (normalized.includes("nhat") || normalized.includes("nhật")) return "/images/tours/japan.png";
-  if (normalized.includes("han") || normalized.includes("hàn")) return "/images/tours/japan.png";
-  if (normalized.includes("bali") || normalized.includes("indo") || normalized.includes("malaysia") || normalized.includes("singapore")) return "/images/tours/bali.png";
-  return "/images/ha-long.png";
 }

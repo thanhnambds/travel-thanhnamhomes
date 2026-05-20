@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { CalendarDays, CheckCircle2, Clock, MapPin, MessageCircle, Plane, ShieldCheck, Star, Users } from "lucide-react";
 import { formatDate, formatShortDate, formatVnd, getConfig, getPublicTourById, getPublicTours } from "@/lib/data";
+import { tourImage } from "@/lib/tour-helpers";
 import type { PublicTour } from "@/lib/types";
 
 interface TourPageProps {
@@ -370,14 +371,4 @@ function getReturnDate(startDate: string, duration: string): string | null {
 
 function weekday(value: string): string {
   return new Intl.DateTimeFormat("vi-VN", { weekday: "long" }).format(new Date(`${value}T12:00:00+07:00`));
-}
-
-function tourImage(country: string): string {
-  const normalized = country.toLowerCase();
-  if (normalized.includes("trung") || normalized.includes("hong") || normalized.includes("dai") || normalized.includes("đài")) return "/images/tours/china.png";
-  if (normalized.includes("thai") || normalized.includes("thái")) return "/images/tours/thailand.png";
-  if (normalized.includes("nhat") || normalized.includes("nhật")) return "/images/tours/japan.png";
-  if (normalized.includes("han") || normalized.includes("hàn")) return "/images/tours/japan.png";
-  if (normalized.includes("bali") || normalized.includes("indo") || normalized.includes("malaysia") || normalized.includes("singapore")) return "/images/tours/bali.png";
-  return "/images/ha-long.png";
 }
