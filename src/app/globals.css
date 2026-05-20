@@ -116,7 +116,6 @@ a {
 
 .travel-home-hero-bg {
   background:
-    linear-gradient(90deg, rgba(17, 17, 17, 0.82), rgba(17, 17, 17, 0.48) 54%, rgba(17, 17, 17, 0.12)),
-    url("https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1900&q=85") center / cover no-repeat,
+    url("/images/hero_bg.png") center / cover no-repeat,
     #111111;
 }

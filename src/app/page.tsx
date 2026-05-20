@@ -16,7 +16,7 @@ export default function HomePage() {
     <>
       <section className="travel-home-hero relative min-h-[calc(100vh-68px)] overflow-hidden bg-brand-primary text-white">
         <div className="absolute inset-0 travel-home-hero-bg" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-transparent" />
         <div className="container-page relative flex min-h-[calc(100vh-68px)] flex-col items-center justify-center py-24 text-center">
           <p className="section-label-dark justify-center">Thanh Nam Homes Travel</p>
           <h1 className="mx-auto mt-4 max-w-5xl text-5xl font-medium leading-tight tracking-[-0.02em] text-white md:text-6xl lg:text-7xl">
