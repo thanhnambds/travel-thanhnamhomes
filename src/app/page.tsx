@@ -11,6 +11,9 @@ export default function HomePage() {
   const config = getConfig();
   const combo = getDailyCombo();
   const tours = getPublicTours();
+  const popularTours = tours
+    .filter((tour) => tour.departure_dates.some((date) => date.startsWith("2026-07")))
+    .sort((a, b) => a.price - b.price);
 
   return (
     <>
@@ -140,9 +143,9 @@ export default function HomePage() {
               Những tour đang mở bán được lọc từ bảng giá đối tác và duyệt trước khi chatbot tư vấn cho khách.
             </p>
           </div>
-          {tours.length ? (
+          {popularTours.length ? (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {tours.map((tour) => (
+              {popularTours.map((tour) => (
                 <TourCard
                   href={tour.program_url || tour.source_sheet_url}
                   image={tourImage(tour.country)}
@@ -210,9 +213,10 @@ function EmptyCombo() {
 
 function tourImage(country: string): string {
   const normalized = country.toLowerCase();
-  if (normalized.includes("trung")) return "/images/tours/china.png";
+  if (normalized.includes("trung") || normalized.includes("hong") || normalized.includes("dai") || normalized.includes("đài")) return "/images/tours/china.png";
   if (normalized.includes("thai") || normalized.includes("thái")) return "/images/tours/thailand.png";
   if (normalized.includes("nhat") || normalized.includes("nhật")) return "/images/tours/japan.png";
-  if (normalized.includes("bali") || normalized.includes("indo")) return "/images/tours/bali.png";
+  if (normalized.includes("han") || normalized.includes("hàn")) return "/images/tours/japan.png";
+  if (normalized.includes("bali") || normalized.includes("indo") || normalized.includes("malaysia") || normalized.includes("singapore")) return "/images/tours/bali.png";
   return "/images/ha-long.png";
 }
