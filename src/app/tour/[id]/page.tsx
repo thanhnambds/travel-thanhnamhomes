@@ -8,17 +8,18 @@ import { formatDate, formatShortDate, formatVnd, getConfig, getPublicTourById, g
 import type { PublicTour } from "@/lib/types";
 
 interface TourPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export function generateStaticParams() {
   return getPublicTours().map((tour) => ({ id: tour.id }));
 }
 
-export function generateMetadata({ params }: TourPageProps): Metadata {
-  const tour = getPublicTourById(params.id);
+export async function generateMetadata({ params }: TourPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const tour = getPublicTourById(id);
 
   if (!tour) {
     return {
@@ -32,9 +33,10 @@ export function generateMetadata({ params }: TourPageProps): Metadata {
   };
 }
 
-export default function TourDetailPage({ params }: TourPageProps) {
+export default async function TourDetailPage({ params }: TourPageProps) {
   const config = getConfig();
-  const tour = getPublicTourById(params.id);
+  const { id } = await params;
+  const tour = getPublicTourById(id);
 
   if (!tour) notFound();
 
@@ -87,23 +89,27 @@ export default function TourDetailPage({ params }: TourPageProps) {
             </div>
           </div>
 
-          <aside className="rounded-2xl border border-brand-hairline bg-brand-soft p-6">
-            <p className="text-sm font-semibold text-brand-goldDark">Giá tham khảo từ</p>
-            <p className="mt-2 text-4xl font-bold tracking-[-0.02em] text-brand-primary">{formatVnd(tour.price)}</p>
-            <p className="mt-1 text-sm text-brand-slate">/khách</p>
-            <div className="mt-5 grid gap-3 text-sm text-brand-slate">
-              <InfoLine icon={<Clock size={17} />} label="Thời lượng" value={tour.duration} />
-              <InfoLine icon={<Plane size={17} />} label="Hàng không" value={tour.airline} />
-              <InfoLine icon={<MapPin size={17} />} label="Điểm đến" value={tour.destination} />
+          <aside className="rounded-2xl border border-brand-hairline bg-brand-soft p-5">
+            <div className="flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-brand-goldDark">Giá tham khảo từ</p>
+                <p className="mt-1 text-3xl font-bold tracking-[-0.02em] text-brand-primary md:text-4xl">{formatVnd(tour.price)}</p>
+              </div>
+              <p className="pb-1 text-sm font-semibold text-brand-slate">/khách</p>
+            </div>
+            <div className="mt-5 grid gap-2 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              <InfoChip icon={<Clock size={16} />} label="Thời lượng" value={tour.duration} />
+              <InfoChip icon={<Plane size={16} />} label="Hàng không" value={tour.airline} />
+              <InfoChip icon={<MapPin size={16} />} label="Điểm đến" value={tour.destination} />
             </div>
             <a
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-primary px-5 py-3 text-sm font-bold text-white transition hover:bg-black"
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-primary px-5 py-3 text-sm font-bold text-white transition hover:bg-black"
               href={`${config.zaloUrl}?text=${zaloSummary}`}
             >
               <MessageCircle size={18} />
               Kiểm tra chỗ qua Zalo
             </a>
-            <p className="mt-4 text-xs leading-5 text-brand-slate">{tour.price_note}</p>
+            <p className="mt-3 text-xs leading-5 text-brand-slate">{tour.price_note}</p>
           </aside>
         </div>
       </section>
@@ -256,6 +262,18 @@ function InfoLine({ icon, label, value }: { icon: ReactNode; label: string; valu
         <span className="block text-xs uppercase tracking-wide text-brand-slate">{label}</span>
         <b className="font-semibold text-brand-primary">{value}</b>
       </span>
+    </div>
+  );
+}
+
+function InfoChip({ icon, label, value }: { icon: ReactNode; label: string; value: string }) {
+  return (
+    <div className="rounded-xl border border-brand-hairline bg-white/65 p-3">
+      <div className="flex items-center gap-2 text-brand-goldDark">
+        {icon}
+        <span className="text-[11px] font-bold uppercase tracking-wide text-brand-slate">{label}</span>
+      </div>
+      <p className="mt-1 line-clamp-2 text-sm font-semibold leading-5 text-brand-primary">{value}</p>
     </div>
   );
 }
