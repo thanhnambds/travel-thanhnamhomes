@@ -49,28 +49,28 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
   const zaloHref = `${zaloUrl}?text=${encodeURIComponent(summary)}`;
 
   return (
-    <div className="fixed bottom-4 right-4 z-40">
+    <div className="fixed bottom-6 right-6 z-40">
       {open && (
-        <div className="mb-3 w-[calc(100vw-32px)] max-w-md overflow-hidden rounded-[22px] border border-brand-hairline bg-white shadow-soft">
-          <div className="flex items-center justify-between border-b border-brand-hairline bg-brand-primary p-4 text-white">
+        <div className="mb-4 w-[calc(100vw-48px)] max-w-md overflow-hidden rounded-[24px] border border-brand-hairline/80 bg-white/95 backdrop-blur-md shadow-2xl transition-all duration-300">
+          <div className="flex items-center justify-between border-b border-brand-hairline/30 bg-gradient-to-r from-brand-primary to-brand-goldDark p-5 text-white">
             <div>
-              <p className="font-medium">Trợ lý tour & combo</p>
-              <p className="text-xs text-brand-muted">Chỉ tư vấn theo dữ liệu đã duyệt trên web.</p>
+              <p className="display-type text-lg font-normal text-white">Trợ lý du lịch cá nhân</p>
+              <p className="text-[10px] uppercase tracking-wider font-bold text-white/70">Tư vấn thông minh & chốt qua Zalo</p>
             </div>
-            <button className="focus-ring rounded-full p-2 text-white" onClick={() => setOpen(false)} aria-label="Đóng chat">
+            <button className="focus-ring rounded-full p-2 text-white/80 transition hover:bg-white/10 hover:text-white" onClick={() => setOpen(false)} aria-label="Đóng chat">
               <X size={18} />
             </button>
           </div>
-          <div className="max-h-[70vh] space-y-3 overflow-auto p-4">
-            <p className="rounded-lg bg-brand-stone p-3 text-sm leading-6 text-brand-ink">
-              Anh/chị hỏi tour hoặc combo cần tìm. Em sẽ lọc trong danh sách đang mở bán, sau đó tóm tắt để Thanh Nam kiểm tra lại qua Zalo.
+          <div className="max-h-[60vh] space-y-4 overflow-auto p-5">
+            <p className="rounded-xl bg-brand-soft border border-brand-coral/10 p-3.5 text-xs leading-6 text-brand-ink font-medium">
+              Xin chào! Tôi có thể hỗ trợ lọc nhanh hàng chục tour và combo đã duyệt trên hệ thống. Hãy hỏi nhanh (ví dụ: "Phú Quốc tháng 7") hoặc điền thông tin bên dưới, tôi sẽ tóm tắt nhu cầu gửi trực tiếp qua Zalo.
             </p>
-            <label className="block text-sm font-medium text-brand-ink">
-              Hỏi nhanh
-              <div className="mt-1 flex items-center gap-2 rounded-md border border-brand-hairline bg-white px-3 py-2">
-                <Search size={16} className="shrink-0 text-brand-slate" />
+            <label className="block text-xs font-bold uppercase tracking-wider text-brand-primary">
+              Hỏi nhanh hành trình
+              <div className="mt-1.5 flex items-center gap-2 rounded-lg border border-brand-hairline bg-white px-3 py-2.5 shadow-sm focus-within:border-brand-coral/60 transition-all">
+                <Search size={15} className="shrink-0 text-brand-slate" />
                 <input
-                  className="w-full text-sm outline-none"
+                  className="w-full text-sm outline-none bg-transparent"
                   value={form.question}
                   onChange={(event) => setForm({ ...form, question: event.target.value })}
                   placeholder="Ví dụ: Thượng Hải tháng 6 rẻ nhất"
@@ -81,22 +81,22 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
               <TourAnswer question={form.question} tours={suggestedTours} />
             )}
             <div className="grid gap-3">
-              <Field label="Điểm đến" value={form.destination} onChange={(value) => setForm({ ...form, destination: value })} placeholder={combo?.destination ?? "Phú Quốc, Đà Nẵng..."} />
-              <Field label="Ngày đi dự kiến" value={form.date} onChange={(value) => setForm({ ...form, date: value })} placeholder="Ví dụ: cuối tháng 6" />
+              <Field label="Điểm đến mong muốn" value={form.destination} onChange={(value) => setForm({ ...form, destination: value })} placeholder={combo?.destination ?? "Phú Quốc, Đà Nẵng..."} />
+              <Field label="Ngày khởi hành dự kiến" value={form.date} onChange={(value) => setForm({ ...form, date: value })} placeholder="Ví dụ: cuối tháng 6" />
               <div className="grid grid-cols-3 gap-2">
                 <Field label="Số đêm" value={form.nights} onChange={(value) => setForm({ ...form, nights: value })} placeholder="2" />
                 <Field label="Người lớn" value={form.adults} onChange={(value) => setForm({ ...form, adults: value })} placeholder="2" />
                 <Field label="Trẻ em" value={form.children} onChange={(value) => setForm({ ...form, children: value })} placeholder="0" />
               </div>
-              <Field label="Bay từ" value={form.departure} onChange={(value) => setForm({ ...form, departure: value })} placeholder="Hà Nội" />
+              <Field label="Nơi khởi hành (Bay từ)" value={form.departure} onChange={(value) => setForm({ ...form, departure: value })} placeholder="Hà Nội" />
               <div className="grid grid-cols-2 gap-2">
-                <Field label="Ngân sách" value={form.budget} onChange={(value) => setForm({ ...form, budget: value })} placeholder="10-15 triệu" />
-                <Field label="Sao KS" value={form.hotelStar} onChange={(value) => setForm({ ...form, hotelStar: value })} placeholder="4" />
+                <Field label="Dự kiến ngân sách" value={form.budget} onChange={(value) => setForm({ ...form, budget: value })} placeholder="10-15 triệu" />
+                <Field label="Tiêu chuẩn khách sạn" value={form.hotelStar} onChange={(value) => setForm({ ...form, hotelStar: value })} placeholder="4 sao" />
               </div>
-              <label className="text-sm font-medium text-brand-ink">
-                Ưu tiên
+              <label className="text-xs font-bold uppercase tracking-wider text-brand-primary">
+                Tiêu chí ưu tiên
                 <select
-                  className="mt-1 w-full rounded-md border border-brand-hairline bg-white px-3 py-2 text-sm"
+                  className="mt-1.5 w-full rounded-lg border border-brand-hairline bg-white px-3 py-2.5 text-sm focus:border-brand-coral/60 focus:outline-none"
                   value={form.priority}
                   onChange={(event) => setForm({ ...form, priority: event.target.value })}
                 >
@@ -106,27 +106,27 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
                 </select>
               </label>
             </div>
-            <div className="rounded-lg border border-brand-hairline bg-brand-blueWash p-3">
-              <p className="mono-label text-xs uppercase text-brand-slate">Tóm tắt gửi Zalo</p>
-              <p className="mt-2 text-sm leading-6 text-brand-ink">{summary}</p>
+            <div className="rounded-xl border border-brand-hairline/80 bg-brand-blueWash p-4">
+              <p className="mono-label text-[10px] uppercase font-bold text-brand-slate tracking-widest">Tóm tắt nhu cầu gửi Zalo</p>
+              <p className="mt-2 text-xs leading-5 text-brand-ink font-semibold italic">"{summary}"</p>
             </div>
-            <p className="text-xs leading-5 text-brand-slate">
-              Chatbot không cam kết còn vé, còn phòng hoặc giữ giá. Dữ liệu chỉ là tham khảo tại thời điểm cập nhật.
+            <p className="text-[10px] leading-relaxed text-brand-slate">
+              * Lưu ý: Giá trị combo và tình trạng chỗ/phòng có thể thay đổi liên tục. Chuyên viên sẽ đối chiếu trực tiếp khi nhận được yêu cầu qua Zalo.
             </p>
             <a
-              className="focus-ring flex items-center justify-center gap-2 rounded-full bg-brand-primary px-4 py-3 text-sm font-medium text-white"
+              className="focus-ring flex items-center justify-center gap-2 rounded-full bg-brand-gold px-4 py-3.5 text-xs font-bold uppercase tracking-widest text-brand-primary shadow-md hover:bg-brand-goldLight transition-all duration-300 hover:-translate-y-0.5"
               href={zaloHref}
               target="_blank"
               rel="noreferrer"
             >
-              <Send size={17} />
-              Gửi nhu cầu qua Zalo
+              <Send size={14} />
+              Gửi yêu cầu qua Zalo
             </a>
           </div>
         </div>
       )}
       <button
-        className="focus-ring flex h-14 w-14 items-center justify-center rounded-full bg-brand-coral text-white shadow-soft"
+        className="focus-ring relative flex h-14 w-14 items-center justify-center rounded-full bg-brand-coral text-white shadow-lg transition-transform duration-300 hover:scale-110 active:scale-95 pulse-gold-glow"
         onClick={() => setOpen((value) => !value)}
         aria-label="Mở chatbot"
       >
