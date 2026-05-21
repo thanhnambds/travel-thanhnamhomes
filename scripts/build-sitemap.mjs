@@ -13,6 +13,7 @@ const urls = [
   "/combo-phu-quoc/",
   "/combo-da-nang/",
   "/combo-nha-trang/",
+  "/combo-ha-long/",
   "/ve-may-bay-khach-san/",
   "/tim-kiem-tour/",
   "/lien-he/",

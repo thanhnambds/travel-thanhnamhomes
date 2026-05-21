@@ -26,6 +26,13 @@
       "marginPercent": 8,
       "preferredNights": 2,
       "audiences": ["gia đình", "cặp đôi", "nhóm bạn"]
+    },
+    "ha-long": {
+      "name": "Hạ Long",
+      "airport": "VDO",
+      "marginPercent": 8,
+      "preferredNights": 2,
+      "audiences": ["gia đình", "cặp đôi", "nhóm bạn"]
     }
   }
 }
