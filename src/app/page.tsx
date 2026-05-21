@@ -164,8 +164,8 @@ export default function HomePage() {
               ))}
             </div>
           ) : (
-            <div className="rounded-2xl border border-dashed border-brand-hairline bg-brand-stone p-6 text-brand-slate">
-              Chưa có tour public đã duyệt. Khi `tours-public.json` có dữ liệu, section này sẽ tự hiển thị tour.
+            <div className="rounded-2xl border border-dashed border-brand-hairline bg-brand-stone p-6 text-center text-brand-slate">
+              Chúng tôi đang cập nhật thêm những hành trình tuyệt vời. Xin vui lòng quay lại sau hoặc liên hệ trực tiếp để được tư vấn thiết kế tour riêng.
             </div>
           )}
         </div>
@@ -177,7 +177,7 @@ export default function HomePage() {
             <p className="section-label">Cam kết dịch vụ</p>
             <h2 className="mt-4 text-3xl font-medium leading-tight text-brand-primary">Đồng hành cùng bạn trên mỗi chuyến đi</h2>
             <p className="mt-5 text-sm leading-7 text-brand-slate">
-              Tính minh bạch và sự tận tâm là giá trị cốt lõi của Thanh Nam Travel. Mọi chi phí và lịch trình đều được kiểm chứng trực tiếp với hệ thống đối tác để đảm bảo quyền lợi tối đa cho bạn. Vui lòng kết nối qua Zalo để chúng tôi thiết kế chính xác hành trình bạn mong đợi.
+              Tính minh bạch và sự tận tâm là giá trị cốt lõi của Thanh Nam Travel. Mọi chi phí và lịch trình đều được kiểm chứng trực tiếp với hệ thống đối tác uy tín để đảm bảo trải nghiệm hoàn hảo nhất cho quý khách. Hãy kết nối trực tiếp với chuyên viên cá nhân của chúng tôi để bắt đầu thiết kế hành trình.
             </p>
           </div>
           <PriceNote />
@@ -209,7 +209,7 @@ function Info({ icon, title, text }: { icon: ReactNode; title: string; text: str
 function EmptyCombo() {
   return (
     <div className="rounded-2xl border border-dashed border-brand-hairline bg-white p-6 text-center text-brand-slate">
-      Hệ thống đang cập nhật những ưu đãi phòng và chặng bay tốt nhất ngày hôm nay. Vui lòng nhắn tin qua Zalo để chuyên viên thiết kế combo gửi báo giá trực tiếp cho bạn!
+      Các chuyên viên của chúng tôi đang tuyển chọn những ưu đãi phòng và chặng bay tốt nhất trong ngày. Quý khách vui lòng kết nối qua Zalo để nhận báo giá cá nhân hóa ngay lập tức!
     </div>
   );
 }

@@ -7,11 +7,10 @@ export function Footer() {
         <div>
           <p className="section-label-dark">Thanh Nam Homes Travel</p>
           <p className="mt-4 max-w-xl text-4xl font-medium leading-tight tracking-[-0.02em] text-white md:text-5xl">
-            Combo du lịch, chốt lead thủ công qua Zalo
+            Định chuẩn mới cho kỳ nghỉ độc bản
           </p>
           <p className="mt-5 max-w-xl text-sm leading-7 text-white/62">
-            Một nhánh nội dung thuộc hệ sinh thái Thanh Nam Homes. Website dùng dữ liệu tĩnh để gợi ý combo, sau đó tư vấn
-            viên kiểm tra lại giá và điều kiện dịch vụ trước khi chốt.
+            Thanh Nam Travel kiến tạo những hành trình nghỉ dưỡng sang trọng, được tinh chỉnh tinh tế theo từng sở thích cá nhân. Chúng tôi cam kết mang lại trải nghiệm dịch vụ 1:1 tận tâm và đẳng cấp nhất.
           </p>
         </div>
         <div className="flex flex-col gap-4 text-sm text-white/62 md:items-end md:justify-start">
@@ -20,7 +19,7 @@ export function Footer() {
             <Link className="transition-colors hover:text-white" href="/combo-phu-quoc/">Phú Quốc</Link>
             <Link className="transition-colors hover:text-white" href="/combo-da-nang/">Đà Nẵng</Link>
             <Link className="transition-colors hover:text-white" href="/combo-nha-trang/">Nha Trang</Link>
-            <Link className="transition-colors hover:text-white" href="/tour-trung-quoc/">Tour Trung Quốc</Link>
+            <Link className="transition-colors hover:text-white" href="/combo-ha-long/">Hạ Long</Link>
             <Link className="transition-colors hover:text-white" href="/lien-he/">Liên hệ</Link>
           </div>
           <p className="mt-4 text-xs text-white/45">© 2026 Thanh Nam Homes. All rights reserved.</p>
