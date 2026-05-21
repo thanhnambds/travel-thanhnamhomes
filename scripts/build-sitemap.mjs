@@ -16,6 +16,7 @@ const urls = [
   "/combo-ha-long/",
   "/ve-may-bay-khach-san/",
   "/tim-kiem-tour/",
+  "/tour-trung-quoc/",
   "/lien-he/",
   ...publicTours.map((tour) => `/tour/${tour.id}/`)
 ];

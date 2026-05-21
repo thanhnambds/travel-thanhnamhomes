@@ -20,6 +20,7 @@ export function Footer() {
             <Link className="transition-colors hover:text-white" href="/combo-phu-quoc/">Phú Quốc</Link>
             <Link className="transition-colors hover:text-white" href="/combo-da-nang/">Đà Nẵng</Link>
             <Link className="transition-colors hover:text-white" href="/combo-nha-trang/">Nha Trang</Link>
+            <Link className="transition-colors hover:text-white" href="/tour-trung-quoc/">Tour Trung Quốc</Link>
             <Link className="transition-colors hover:text-white" href="/lien-he/">Liên hệ</Link>
           </div>
           <p className="mt-4 text-xs text-white/45">© 2026 Thanh Nam Homes. All rights reserved.</p>
