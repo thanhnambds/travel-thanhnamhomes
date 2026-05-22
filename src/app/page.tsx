@@ -4,6 +4,7 @@ import { Check, ClipboardCheck, Hotel, MessageCircle, Plane } from "lucide-react
 import { ComboCard } from "@/components/ComboCard";
 import { DestinationCard } from "@/components/DestinationCard";
 import { TourCard } from "@/components/TourCard";
+import { TourSearchBox } from "@/components/TourSearchBox";
 import { PriceNote } from "@/components/PriceNote";
 import { formatShortDate, formatVnd, getConfig, getDailyCombo, getPublicTours } from "@/lib/data";
 import { tourHref, tourImage } from "@/lib/tour-helpers";
@@ -39,6 +40,7 @@ export default function HomePage() {
               Tư vấn Zalo
             </a>
           </div>
+          <TourSearchBox className="mt-10 w-full max-w-5xl text-left" />
         </div>
       </section>
 
