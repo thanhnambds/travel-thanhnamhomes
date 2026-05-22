@@ -43,9 +43,9 @@ export function DestinationLanding({ slug, title, description }: { slug: string;
 function NoCombo({ destination }: { destination: string }) {
   return (
     <div className="rounded-[22px] border border-brand-hairline bg-white p-7">
-      <h2 className="display-type text-4xl font-normal text-brand-primary">Chưa có combo published cho {destination}</h2>
+      <h2 className="display-type text-4xl font-normal text-brand-primary">Đang cập nhật hành trình cho {destination}</h2>
       <p className="mt-5 leading-7 text-brand-slate">
-        Landing page vẫn nhận lead. Chatbot sẽ tóm tắt nhu cầu để Thanh Nam kiểm tra giá thực tế qua Zalo.
+        Đội ngũ chuyên viên của chúng tôi đang tinh tuyển những hành trình bay và phòng nghỉ cao cấp nhất tại {destination}. Quý khách vui lòng kết nối qua Zalo để nhận báo giá cá nhân hóa và được thiết kế lộ trình riêng biệt.
       </p>
     </div>
   );

@@ -21,19 +21,18 @@ export default function TodayComboPage() {
     <>
       <PageHero
         eyebrow="Combo hôm nay"
-        title="Combo được duyệt để tư vấn trong ngày"
-        description="Nội dung được tạo từ dữ liệu tĩnh và chỉ dùng làm gợi ý bán lead. Giá cần được kiểm tra lại trước khi giữ dịch vụ."
+        title="Ưu Đãi Đặc Quyền Trong Ngày"
+        description="Tuyển tập những gói nghỉ dưỡng tinh hoa kết hợp vé máy bay và không gian lưu trú sang trọng, được các chuyên viên tuyển chọn và cập nhật mỗi ngày."
       />
       <section className="container-page py-16">
         {combo ? (
           <div className="space-y-4">
             <ExpiryNotice expiresAt={combo.expires_at} />
             <ComboCard combo={combo} />
-            <AdminLog combo={combo} />
           </div>
         ) : (
           <div className="rounded-[22px] border border-dashed border-brand-hairline bg-white p-7 text-brand-slate">
-            Chưa có combo published.
+            Hiện tại các chuyên viên đang tuyển chọn những ưu đãi phòng và chặng bay tốt nhất. Quý khách vui lòng kết nối qua Zalo để nhận báo giá cá nhân hóa.
           </div>
         )}
       </section>

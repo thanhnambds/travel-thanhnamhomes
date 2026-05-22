@@ -15,9 +15,6 @@ export function ComboCard({ combo, compact = false }: { combo: Combo; compact?: 
           <p className="section-label">{combo.destination}</p>
           <h2 className="mt-4 max-w-2xl text-3xl font-medium leading-tight tracking-[-0.02em] text-brand-primary md:text-4xl">{combo.title}</h2>
         </div>
-        <span className="m-7 rounded-full bg-brand-soft px-4 py-1.5 text-sm font-semibold text-brand-goldDark">
-          {combo.status}
-        </span>
       </div>
 
       <div className="grid gap-3 p-7 text-sm text-brand-slate md:grid-cols-2">
