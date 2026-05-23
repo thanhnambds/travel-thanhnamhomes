@@ -7,6 +7,7 @@ import { Faq } from "@/components/Faq";
 import { Check, ClipboardCheck, ShieldCheck, MapPin } from "lucide-react";
 import Link from "next/link";
 import { getConfig } from "@/lib/data";
+import { tourHref } from "@/lib/tour-helpers";
 
 export const metadata = pageMetadata(
   "Tour du lịch Trung Quốc cao cấp trọn gói từ Hà Nội",
@@ -47,7 +48,7 @@ export default function ChinaTourPage() {
               {chinaTours.map((tour) => (
                 <TourCard
                   key={tour.id}
-                  href={tour.program_url || tour.source_sheet_url}
+                  href={tourHref(tour)}
                   image={tourImage(tour.country)}
                   location={tour.country}
                   title={tour.title}

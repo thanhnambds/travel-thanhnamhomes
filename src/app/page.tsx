@@ -6,13 +6,14 @@ import { DestinationCard } from "@/components/DestinationCard";
 import { TourCard } from "@/components/TourCard";
 import { TourSearchBox } from "@/components/TourSearchBox";
 import { PriceNote } from "@/components/PriceNote";
-import { formatShortDate, formatVnd, getConfig, getDailyCombo, getPublicTours } from "@/lib/data";
+import { formatShortDate, formatVnd, getConfig, getDailyCombo, getPublicTours, getPublicHotels } from "@/lib/data";
 import { tourHref, tourImage } from "@/lib/tour-helpers";
 
 export default function HomePage() {
   const config = getConfig();
   const combo = getDailyCombo();
   const tours = getPublicTours();
+  const hotels = getPublicHotels();
   
   // Lọc tour khởi hành tháng 7/2026 và sắp xếp theo giá tăng dần
   const julyTours = tours
@@ -59,7 +60,7 @@ export default function HomePage() {
               Tư vấn Zalo
             </a>
           </div>
-          <TourSearchBox tours={tours} className="mt-10 w-full max-w-5xl text-left" />
+          <TourSearchBox tours={tours} hotels={hotels} className="mt-10 w-full max-w-5xl text-left" />
         </div>
       </section>
 
@@ -196,7 +197,7 @@ export default function HomePage() {
         <div className="container-page">
           <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div className="max-w-2xl">
-              <p className="section-label">Tour đã duyệt</p>
+              <p className="section-label">Tour nổi bật</p>
               <h2 className="text-4xl font-medium leading-tight tracking-[-0.02em] text-brand-primary md:text-5xl">
                 Các Tour Phổ Biến
               </h2>

@@ -88,3 +88,15 @@ export interface PublicTour {
   updated_at: string;
   public_notes: string[];
 }
+
+export interface PublicHotel {
+  id: string;
+  hotel_name: string;
+  original_name: string;
+  destination: string;
+  country: string;
+  supplier_name: string;
+  stars?: number | null;
+  source_sheet_url: string;
+  updated_at: string;
+}

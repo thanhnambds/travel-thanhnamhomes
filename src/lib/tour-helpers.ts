@@ -14,8 +14,9 @@ export function tourHref(tour: Pick<PublicTour, "id">): string {
   return `/tour/${tour.id}/`;
 }
 
-export function normalizeSearch(value: string): string {
-  return value
+export function normalizeSearch(value?: any): string {
+  if (value === null || value === undefined) return "";
+  return String(value)
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/đ/g, "d")

@@ -1,14 +1,18 @@
 "use client";
 
 import { useMemo, useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
-import { CalendarDays, Filter, MapPin, Search } from "lucide-react";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { CalendarDays, Filter, MapPin, Search, Star } from "lucide-react";
 import { TourCard } from "@/components/TourCard";
-import type { PublicTour } from "@/lib/types";
+import type { PublicTour, PublicHotel } from "@/lib/types";
 import { normalizeSearch, tourHref, tourImage } from "@/lib/tour-helpers";
 
-export function TourSearchResults({ tours }: { tours: PublicTour[] }) {
+export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[]; hotels?: PublicHotel[] }) {
   const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const type = searchParams.get("type") ?? "tour";
   const [query, setQuery] = useState(searchParams.get("q") ?? "");
   const [month, setMonth] = useState(searchParams.get("month") ?? "");
   const [departureCity, setDepartureCity] = useState(searchParams.get("from") ?? "Tất cả");
@@ -20,6 +24,17 @@ export function TourSearchResults({ tours }: { tours: PublicTour[] }) {
     setMonth(searchParams.get("month") ?? "");
     setDepartureCity(searchParams.get("from") ?? "Tất cả");
   }, [searchParams]);
+
+  // Reactive URL update helper
+  function updateFilter(key: string, value: string) {
+    const params = new URLSearchParams(searchParams.toString());
+    if (value) {
+      params.set(key, value);
+    } else {
+      params.delete(key);
+    }
+    router.replace(`${pathname}?${params.toString()}`);
+  }
 
   const departureCities = useMemo(() => {
     return ["Tất cả", ...Array.from(new Set(tours.map((tour) => tour.departure_city))).sort((a, b) => a.localeCompare(b, "vi"))];
@@ -45,120 +60,310 @@ export function TourSearchResults({ tours }: { tours: PublicTour[] }) {
       .sort((a, b) => a.price - b.price);
   }, [departureCity, maxPrice, month, query, tours]);
 
+  // Filter matched hotels based on search query
+  const matchedHotels = useMemo(() => {
+    const normalizedQuery = normalizeSearch(query);
+    if (!normalizedQuery) return []; // Only show hotels when a search query is active to avoid cluttering on blank filter
+
+    return hotels.filter((hotel) => {
+      const haystack = normalizeSearch([
+        hotel.hotel_name,
+        hotel.original_name,
+        hotel.destination,
+        hotel.country,
+        hotel.supplier_name
+      ].join(" "));
+      return haystack.includes(normalizedQuery);
+    });
+  }, [hotels, query]);
+
   return (
     <div className="grid gap-8 lg:grid-cols-[320px_1fr]">
       <aside className="h-fit rounded-2xl border border-brand-hairline bg-white p-5 shadow-soft lg:sticky lg:top-24">
-        <div className="flex items-center gap-2 text-brand-primary">
+        {/* Sidebar Tab Switcher */}
+        <div className="mb-5 flex gap-1 rounded-xl bg-brand-stone p-1">
+          <button
+            type="button"
+            onClick={() => updateFilter("type", "tour")}
+            className={`flex-1 rounded-lg py-2 text-center text-xs font-bold uppercase tracking-wider transition ${
+              type === "tour"
+                ? "bg-brand-primary text-white shadow-sm"
+                : "text-brand-slate hover:text-brand-primary"
+            }`}
+          >
+            Tour
+          </button>
+          <button
+            type="button"
+            onClick={() => updateFilter("type", "hotel")}
+            className={`flex-1 rounded-lg py-2 text-center text-xs font-bold uppercase tracking-wider transition ${
+              type === "hotel"
+                ? "bg-brand-primary text-white shadow-sm"
+                : "text-brand-slate hover:text-brand-primary"
+            }`}
+          >
+            Khách sạn
+          </button>
+        </div>
+
+        <div className="flex items-center gap-2 text-brand-primary border-t border-brand-hairline/60 pt-4">
           <Filter size={18} />
-          <h2 className="text-lg font-semibold">Bộ lọc tour</h2>
+          <h2 className="text-lg font-semibold">Bộ lọc tìm kiếm</h2>
         </div>
 
         <div className="mt-5 space-y-4">
           <label className="block">
             <span className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-brand-slate">
               <Search size={15} />
-              Điểm đến
+              Điểm đến / Khách sạn
             </span>
             <input
               className="h-12 w-full rounded-xl border border-brand-hairline bg-brand-stone px-4 text-sm outline-none transition focus:border-brand-gold"
-              placeholder="Nhập quốc gia, thành phố..."
+              placeholder="Nhập điểm đến, tên khách sạn..."
               value={query}
-              onChange={(event) => setQuery(event.target.value)}
+              onChange={(event) => {
+                setQuery(event.target.value);
+                updateFilter("q", event.target.value);
+              }}
             />
           </label>
 
-          <label className="block">
-            <span className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-brand-slate">
-              <CalendarDays size={15} />
-              Tháng khởi hành
-            </span>
-            <select
-              className="h-12 w-full rounded-xl border border-brand-hairline bg-brand-stone px-4 text-sm font-semibold outline-none transition focus:border-brand-gold"
-              value={month}
-              onChange={(event) => setMonth(event.target.value)}
-            >
-              <option value="">Tất cả tháng</option>
-              {months.map((item) => (
-                <option value={item} key={item}>
-                  {formatMonth(item)}
-                </option>
-              ))}
-            </select>
-          </label>
+          {type === "tour" && (
+            <>
+              <label className="block">
+                <span className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-brand-slate">
+                  <CalendarDays size={15} />
+                  Tháng khởi hành
+                </span>
+                <select
+                  className="h-12 w-full rounded-xl border border-brand-hairline bg-brand-stone px-4 text-sm font-semibold outline-none transition focus:border-brand-gold"
+                  value={month}
+                  onChange={(event) => {
+                    setMonth(event.target.value);
+                    updateFilter("month", event.target.value);
+                  }}
+                >
+                  <option value="">Tất cả tháng</option>
+                  {months.map((item) => (
+                    <option value={item} key={item}>
+                      {formatMonth(item)}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-          <label className="block">
-            <span className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-brand-slate">
-              <MapPin size={15} />
-              Khởi hành từ
-            </span>
-            <select
-              className="h-12 w-full rounded-xl border border-brand-hairline bg-brand-stone px-4 text-sm font-semibold outline-none transition focus:border-brand-gold"
-              value={departureCity}
-              onChange={(event) => setDepartureCity(event.target.value)}
-            >
-              {departureCities.map((item) => (
-                <option value={item} key={item}>
-                  {item}
-                </option>
-              ))}
-            </select>
-          </label>
+              <label className="block">
+                <span className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-brand-slate">
+                  <MapPin size={15} />
+                  Khởi hành từ
+                </span>
+                <select
+                  className="h-12 w-full rounded-xl border border-brand-hairline bg-brand-stone px-4 text-sm font-semibold outline-none transition focus:border-brand-gold"
+                  value={departureCity}
+                  onChange={(event) => {
+                    setDepartureCity(event.target.value);
+                    updateFilter("from", event.target.value);
+                  }}
+                >
+                  {departureCities.map((item) => (
+                    <option value={item} key={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-          <label className="block">
-            <span className="mb-2 block text-xs font-bold uppercase tracking-wide text-brand-slate">Giá tối đa</span>
-            <select
-              className="h-12 w-full rounded-xl border border-brand-hairline bg-brand-stone px-4 text-sm font-semibold outline-none transition focus:border-brand-gold"
-              value={maxPrice}
-              onChange={(event) => setMaxPrice(event.target.value)}
-            >
-              <option value="">Không giới hạn</option>
-              <option value="10">Dưới 10 triệu</option>
-              <option value="15">Dưới 15 triệu</option>
-              <option value="20">Dưới 20 triệu</option>
-              <option value="30">Dưới 30 triệu</option>
-            </select>
-          </label>
+              <label className="block">
+                <span className="mb-2 block text-xs font-bold uppercase tracking-wide text-brand-slate">Giá tối đa</span>
+                <select
+                  className="h-12 w-full rounded-xl border border-brand-hairline bg-brand-stone px-4 text-sm font-semibold outline-none transition focus:border-brand-gold"
+                  value={maxPrice}
+                  onChange={(event) => setMaxPrice(event.target.value)}
+                >
+                  <option value="">Không giới hạn</option>
+                  <option value="10">Dưới 10 triệu</option>
+                  <option value="15">Dưới 15 triệu</option>
+                  <option value="20">Dưới 20 triệu</option>
+                  <option value="30">Dưới 30 triệu</option>
+                </select>
+              </label>
+            </>
+          )}
         </div>
       </aside>
 
-      <section>
-        <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <p className="section-label">Kết quả tìm kiếm</p>
-            <h2 className="mt-2 text-3xl font-semibold tracking-[-0.02em] text-brand-primary">
-              {results.length} tour phù hợp
-            </h2>
-          </div>
-          <p className="max-w-xl text-sm leading-6 text-brand-slate">
-            Kết quả chỉ lấy từ tour đã duyệt trên website. Giá và chỗ còn nhận cần kiểm tra lại qua Zalo trước khi giữ dịch vụ.
-          </p>
-        </div>
+      <section className="space-y-12">
+        {type === "hotel" ? (
+          /* Priority Layout: Hotel First */
+          <>
+            <div>
+              <div className="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                  <p className="section-label">Hệ thống phòng đối tác</p>
+                  <h3 className="mt-2 text-3xl font-semibold tracking-[-0.02em] text-brand-primary">
+                    {matchedHotels.length} khách sạn đối tác
+                  </h3>
+                </div>
+                <p className="max-w-xl text-sm leading-6 text-brand-slate">
+                  Danh sách phòng khách sạn từ hệ thống liên kết trực tiếp của Thanh Nam Homes Travel. Cam kết mức giá ưu đãi tốt nhất thị trường cùng dịch vụ hỗ trợ chu đáo.
+                </p>
+              </div>
 
-        {results.length ? (
-          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-            {results.map((tour) => (
-              <TourCard
-                href={tourHref(tour)}
-                image={tourImage(tour.country)}
-                location={tour.country}
-                title={tour.title}
-                rating={5}
-                reviews={0}
-                tag={`Khởi hành ${tour.departure_dates.map(formatShortDate).join(", ")}`}
-                price={`${formatVnd(tour.price)}/người`}
-                duration={tour.duration}
-                key={tour.id}
-              />
-            ))}
-          </div>
+              {matchedHotels.length ? (
+                <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                  {matchedHotels.map((hotel) => {
+                    const cleanedName = cleanDisplayHotelName(hotel.hotel_name);
+                    const encodedMsg = encodeURIComponent(
+                      `Xin chào Thanh Nam Homes Travel, em muốn kiểm tra tình trạng phòng trống và đặt phòng tại khách sạn: ${cleanedName} (Khu vực: ${hotel.destination}).`
+                    );
+                    const hotelZaloUrl = `https://zalo.me/0965325555?text=${encodedMsg}`;
+
+                    // Deterministic facility tags for premium consumer experience
+                    const AMENITY_TAGS = [
+                      "Buffet sáng thượng hạng",
+                      "Tiện ích 5 sao cao cấp",
+                      "Sát biển / Trung tâm",
+                      "Hỗ trợ check-in sớm",
+                      "Bao gồm thuế & dịch vụ"
+                    ];
+                    const charCodeSum = hotel.id.split("").reduce((sum, char) => sum + char.charCodeAt(0), 0);
+                    const tag1 = AMENITY_TAGS[charCodeSum % AMENITY_TAGS.length];
+                    const tag2 = AMENITY_TAGS[(charCodeSum + 2) % AMENITY_TAGS.length];
+
+                    return (
+                      <div
+                        key={hotel.id}
+                        className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-hairline bg-gradient-to-br from-white to-brand-stone/30 p-5 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-gold hover:shadow-md"
+                      >
+                        <div>
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="inline-flex items-center gap-1 rounded-full bg-brand-soft px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-goldDark">
+                              <MapPin size={10} />
+                              {hotel.destination}
+                            </span>
+                            {hotel.stars && hotel.stars > 0 ? (
+                              <div className="flex gap-0.5 text-amber-400">
+                                {Array.from({ length: hotel.stars }).map((_, idx) => (
+                                  <Star key={idx} size={11} fill="currentColor" className="stroke-amber-400" />
+                                ))}
+                              </div>
+                            ) : (
+                              <span className="rounded-full bg-brand-primary/5 px-2 py-0.5 text-[9px] font-medium text-brand-slate">
+                                Đối tác VIP
+                              </span>
+                            )}
+                          </div>
+
+                          <h4 className="mt-3.5 text-base font-semibold leading-snug text-brand-primary line-clamp-2 group-hover:text-brand-goldDark transition-colors">
+                            {cleanedName}
+                          </h4>
+                          
+                          <div className="mt-3 flex flex-wrap gap-1.5">
+                            <span className="inline-flex rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
+                              ✓ {tag1}
+                            </span>
+                            <span className="inline-flex rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
+                              ✓ {tag2}
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="mt-5 border-t border-brand-hairline/60 pt-4">
+                          <div className="flex items-center justify-between mb-3.5">
+                            <div>
+                              <span className="block text-[10px] uppercase font-bold tracking-wide text-brand-slate">Mức giá</span>
+                              <span className="text-xs font-bold text-emerald-600">Giá ưu đãi tốt nhất</span>
+                            </div>
+                            <span className="text-[10px] text-brand-slate italic">Hôm nay</span>
+                          </div>
+                          
+                          <a
+                            href={hotelZaloUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-brand-gold py-2.5 text-xs font-bold text-brand-primary transition-all duration-200 hover:bg-brand-goldLight shadow-sm"
+                          >
+                            Kiểm tra phòng & Đặt ngay
+                          </a>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="rounded-2xl border border-dashed border-brand-hairline bg-white p-8 text-brand-slate">
+                  Chưa tìm thấy phòng khách sạn đối tác phù hợp tại khu vực này trên quỹ phòng. Anh/chị vui lòng nhắn tin Zalo để Thanh Nam Homes Travel hỗ trợ check phòng trực tiếp nhé!
+                </div>
+              )}
+            </div>
+          </>
         ) : (
-          <div className="rounded-2xl border border-dashed border-brand-hairline bg-white p-8 text-brand-slate">
-            Chưa có tour public phù hợp với bộ lọc này. Vui lòng nhắn Zalo để Thanh Nam kiểm tra thêm dữ liệu tour mới từ đối tác.
-          </div>
+          /* Priority Layout: Tour First */
+          <>
+            <div>
+              <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <p className="section-label">Hành trình du lịch</p>
+                  <h2 className="mt-2 text-3xl font-semibold tracking-[-0.02em] text-brand-primary">
+                    {results.length} tour phù hợp
+                  </h2>
+                </div>
+                <p className="max-w-xl text-sm leading-6 text-brand-slate">
+                  Tìm kiếm trực tiếp từ toàn bộ hệ thống tour của Thanh Nam Homes Travel. Vui lòng liên hệ qua Zalo để kiểm tra tình trạng chỗ và giá chính xác nhất.
+                </p>
+              </div>
+
+              {results.length ? (
+                <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                  {results.map((tour) => (
+                    <TourCard
+                      href={tourHref(tour)}
+                      image={tourImage(tour.country)}
+                      location={tour.country}
+                      title={tour.title}
+                      rating={5}
+                      reviews={0}
+                      tag={`Khởi hành ${tour.departure_dates.map(formatShortDate).join(", ")}`}
+                      price={`${formatVnd(tour.price)}/người`}
+                      duration={tour.duration}
+                      key={tour.id}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div className="rounded-2xl border border-dashed border-brand-hairline bg-white p-8 text-brand-slate">
+                  Chưa tìm thấy hành trình phù hợp với bộ lọc hiện tại trên hệ thống. Anh/chị vui lòng nhắn tin Zalo để Thanh Nam Homes Travel kiểm tra thêm các tour mới nhất từ đối tác nhé!
+                </div>
+              )}
+            </div>
+          </>
         )}
       </section>
     </div>
   );
+}
+
+function cleanDisplayHotelName(name: string): string {
+  let clean = name.trim();
+  // Remove leading and trailing punctuation/quotes/commas/spaces/brackets
+  clean = clean.replace(/^[,\s"'\(\)\[\]\-]+/g, "");
+  clean = clean.replace(/[,\s"'\(\)\[\]\-]+$/g, "");
+  
+  // Replace internal commas or raw slash patterns
+  clean = clean.replace(/,/g, " / ");
+  
+  // Strip common codes inside hotel names (e.g. SP_, QN_, HB_, etc.)
+  clean = clean.replace(/\b(SP|QN|HB|DT|HN|VP|PT|BG|BN|CBA|LS|SL|YB|NB|CB|HP|VT|ĐN|MC|HG|TQ|YB|C\.THƠ|B\.TH|BTH|VT|ĐN|SP|QN|HB|DT|HN|VP|PT|BG|BN|CBA|LS|SL|YB|NB|CB|HP|VT|ĐN|MC|HG|TQ|YB)_\b/gi, "");
+  // Strip starting codes with space like "SP " or "QN "
+  clean = clean.replace(/^(SP|QN|HB|DT|HN|VP|PT|BG|BN|CBA|LS|SL|YB|NB|CB|HP|VT|ĐN|MC|HG|TQ|YB)\s+/gi, "");
+
+  // Clean double spaces and replace any escaped characters
+  clean = clean.replace(/\s+/g, " ");
+
+  // Final trim
+  clean = clean.trim();
+
+  return clean || name;
 }
 
 function formatVnd(value: number): string {

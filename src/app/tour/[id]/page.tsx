@@ -207,7 +207,7 @@ export default async function TourDetailPage({ params }: TourPageProps) {
               {tour.public_notes.map((note) => (
                 <p key={note}>{note}</p>
               ))}
-              <p>Trang này trình bày dữ liệu tour đã duyệt trên website. Thanh Nam Travel sẽ kiểm tra lại giá, lịch bay, tình trạng chỗ và điều kiện thanh toán với đối tác trước khi xác nhận dịch vụ.</p>
+              <p>Trang này trình bày thông tin hành trình từ hệ thống tour du lịch của Thanh Nam Homes Travel. Chúng tôi sẽ kiểm tra lại giá, lịch bay, tình trạng chỗ và điều kiện thanh toán với đối tác trước khi xác nhận dịch vụ cho quý khách.</p>
             </div>
           </section>
         </div>
@@ -297,7 +297,7 @@ function TourPolicy({ title, items }: { title: string; items: string[] }) {
 
 function getHighlights(tour: PublicTour): string[] {
   return [
-    `Hành trình ${tour.title} được chọn từ dữ liệu tour đối tác đã duyệt.`,
+    `Hành trình ${tour.title} thuộc hệ thống tour du lịch đa dạng của Thanh Nam Homes Travel.`,
     `Khởi hành từ ${tour.departure_city}, phù hợp khách muốn đi theo đoàn và tối ưu chi phí.`,
     `Giá tham khảo từ ${formatVnd(tour.price)}/khách, cần kiểm tra lại trước khi giữ dịch vụ.`,
     `Thanh Nam Travel hỗ trợ lọc ngày đi, số lượng khách, trẻ em và yêu cầu riêng qua Zalo.`

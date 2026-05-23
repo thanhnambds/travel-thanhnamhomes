@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { Combo, PublicTour, SiteConfig } from "./types";
+import type { Combo, PublicTour, SiteConfig, PublicHotel } from "./types";
 
 const rootDir = process.cwd();
 
@@ -28,11 +28,31 @@ export function getPublicTours(): PublicTour[] {
     return [];
   }
 
-  return readJson<PublicTour[]>("data/generated/tours-public.json").filter((tour) => tour.status === "published");
+  const rawTours = readJson<PublicTour[]>("data/generated/tours-public.json").filter((tour) => tour.status === "published");
+  return rawTours.map((tour) => ({
+    ...tour,
+    program_url: "",
+    source_sheet_url: "",
+    source_sheet_name: "",
+    source_rows: []
+  }));
 }
 
 export function getPublicTourById(id: string): PublicTour | null {
   return getPublicTours().find((tour) => tour.id === id) ?? null;
+}
+
+export function getPublicHotels(): PublicHotel[] {
+  if (!fs.existsSync(path.join(rootDir, "data/generated/hotels-public.json"))) {
+    return [];
+  }
+  const rawHotels = readJson<PublicHotel[]>("data/generated/hotels-public.json");
+  return rawHotels.map((hotel) => ({
+    ...hotel,
+    original_name: "",
+    supplier_name: "",
+    source_sheet_url: ""
+  }));
 }
 
 export function isExpired(combo: Combo): boolean {
