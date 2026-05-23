@@ -1,599 +1,314 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Bot, MessageCircle, Send, X, ArrowRight, RotateCcw } from "lucide-react";
+import { Bot, MessageCircle, Send, X, RotateCcw, Loader2 } from "lucide-react";
 import type { Combo, PublicTour } from "@/lib/types";
+
+type GeminiMessage = {
+  role: "user" | "model";
+  parts: [{ text: string }];
+};
 
 type Message = {
   sender: "bot" | "user";
   text: string;
   timestamp: Date;
-  tourCard?: PublicTour;
-  actionButtons?: string[];
-  isZaloBridge?: boolean;
+  isLoading?: boolean;
 };
 
-// Cơ sở tri thức khổng lồ về Ăn - Ở - Chơi (Dining - Sightseeing - Lodging)
-const destinationGuides = {
-  danang: {
-    name: "Đà Nẵng",
-    dining: "Dạ, ẩm thực Đà Nẵng cực kỳ phong phú và ngon rẻ! Em xin gợi ý các món nhất định phải thử khi đến đây:\n\n" +
-            "1. **Hải sản tươi sống**: Bạn ghé quán *Năm Đảnh* (trong hẻm nhưng siêu rẻ) hoặc *Hải sản Bé Mặn* ngay mặt biển Mỹ Khê để ăn ghẹ, mực lá và chíp chíp hấp sả.\n" +
-            "2. **Bánh tráng cuốn thịt heo**: Quán *Mậu* hoặc quán *Trần* nổi tiếng với những lát thịt heo hai đầu da giòn ngọt cuộn kèm mắm nêm đậm đà.\n" +
-            "3. **Mì Quảng**: Ăn sáng chuẩn vị tại *Mì Quảng ếch Trang* (bày trên mẹt) hoặc *Mì Quảng Bà Mua*.\n" +
-            "4. **Đặc sản ăn vặt**: Bánh xèo nem lụi *Bà Dưỡng*, bê thui *Cầu Mống* châm mắm nêm thơm nức mũi.",
-    sightseeing: "Dạ, đến với thành phố đáng sống Đà Nẵng, em xin gợi ý lịch trình khám phá lý tưởng nhất:\n\n" +
-                 "1. **Bà Nà Hills**: Check-in Cầu Vàng (biểu tượng vươn tầm thế giới), đi cáp treo xuyên mây và vui chơi tại Fantasy Park cả ngày.\n" +
-                 "2. **Bán đảo Sơn Trà & Chùa Linh Ứng**: Chiêm bái tượng Phật Bà Quan Âm cao 67m ngắm trọn vẹn vịnh biển Đà Nẵng xanh ngắt.\n" +
-                 "3. **Phố cổ Hội An & Ngũ Hành Sơn**: Chiều leo núi đá Ngũ Hành Sơn huyền bí, tối di chuyển vào Hội An đi thuyền thả đèn hoa đăng lung linh trên sông Hoài.\n" +
-                 "4. **Cầu Rồng phun lửa**: Nếu Quý khách đi vào cuối tuần (Thứ 7, Chủ Nhật lúc 21:00), đừng bỏ lỡ chặng xem Cầu Rồng phun lửa và phun nước độc đáo nhé!",
-    lodging: "Dạ, các gói combo Đà Nẵng của Thanh Nam Homes Travel luôn được tinh tuyển các **khách sạn 4 sao sát biển Mỹ Khê** (dọc tuyến đường Võ Nguyên Giáp sầm uất). Khách sạn có hồ bơi vô cực trên tầng thượng ngắm bình minh biển, phòng ốc hiện đại view đại dương và bao gồm buffet sáng thượng hạng mỗi ngày ạ!"
-  },
-  phuquoc: {
-    name: "Phú Quốc",
-    dining: "Dạ, ẩm thực đảo Ngọc Phú Quốc mang hương vị biển cả hoang sơ nức lòng du khách:\n\n" +
-            "1. **Bún quậy Kiến Xây**: Món ăn độc đáo tự 'quậy' chả cá, chả tôm tươi rói với nước chấm tự pha chế theo khẩu vị.\n" +
-            "2. **Hải sản Hàm Ninh**: Ghẹ Hàm Ninh nhỏ nhưng cực kỳ chắc thịt, luộc chín chấm muối tiêu chanh, hoặc còi biên mai nướng muối ớt giòn ngọt.\n" +
-            "3. **Gỏi cá trích**: Cuộn kèm dừa nạo và rau rừng chấm nước sốt đậu phộng béo ngậy ngon tuyệt đỉnh tại Chợ đêm Dương Đông.\n" +
-            "4. **Bún kèn**: Món ăn sáng lạ miệng mang vị béo của nước cốt dừa và hương thơm cà ri đặc trưng chốn đảo Ngọc.",
-    sightseeing: "Dạ, Phú Quốc hiện là thiên đường giải trí đẳng cấp quốc tế với các điểm check-in không thể bỏ qua:\n\n" +
-                 "1. **Grand World Phú Quốc**: 'Thành phố không ngủ' rực rỡ sắc màu, chèo thuyền Gondola trên kênh đào Venice và xem show nghệ thuật triệu đô *Tinh Hoa Việt Nam*.\n" +
-                 "2. **Cáp treo Hòn Thơm**: Tuyến cáp treo 3 dây vượt biển dài nhất thế giới, dẫn sang công viên nước Aquatopia hiện đại hàng đầu Châu Á.\n" +
-                 "3. **VinWonders & Safari**: Công viên chủ đề thế giới cổ tích và vườn thú bán hoang dã lớn nhất Việt Nam, nơi Quý khách có thể ngắm thú thả tự do.\n" +
-                 "4. **Cano khám phá 4 đảo**: Đi cano lướt sóng qua Hòn Móng Tay, Hòn Gầm Ghì, Hòn Mây Rút để lặn ngắm rạn san hô tự nhiên đẹp nhất đảo.",
-    lodging: "Dạ, gói combo Phú Quốc của Thanh Nam Travel sử dụng các **Resort 4 sao đẳng cấp có bãi biển riêng** (khu vực Dương Đông hoặc Bãi Trường). Resort sở hữu khuôn viên vườn nhiệt đới xanh mát, hồ bơi sát biển view hoàng hôn buông xuống đẹp như tranh vẽ ạ!"
-  },
-  nhatrang: {
-    name: "Nha Trang",
-    dining: "Dạ, ẩm thực vịnh biển Nha Trang mang vị ngọt thanh thanh vô cùng cuốn hút:\n\n" +
-            "1. **Nem nướng Đặng Văn Quyên hoặc Vũ Thành An**: Miếng nem nướng thơm phức cuộn kèm bánh tráng chiên giòn, rau sống chấm nước sốt nếp ấm nóng đặc trưng.\n" +
-            "2. **Bún sứa Năm Beo**: Nước dùng thanh ngọt từ cá dầm, sứa biển giòn sần sật ăn kèm chả cá chiên dai ngon.\n" +
-            "3. **Bánh căn Nha Trang**: Những chiếc bánh căn đổ khuôn đất nóng hổi chứa mực sữa tươi rói hoặc tôm đất ngọt lịm chấm mắm nêm đậm vị.\n" +
-            "4. **Hải sản Tháp Bà**: Dãy phố hải sản tươi sống bắt trực tiếp tại bể, chế biến phong phú từ nướng mỡ hành, hấp sả đến xào tỏi ớt.",
-    sightseeing: "Dạ, Nha Trang sở hữu một trong những vịnh biển đẹp nhất thế giới cùng nhiều điểm vui chơi sôi động:\n\n" +
-                 "1. **VinWonders Nha Trang (Đảo Hòn Tre)**: Vượt biển bằng cáp treo thế hệ mới sang đảo vui chơi cả ngày với Vịnh phao nổi khổng lồ, đường trượt Alpine Coaster và show diễn thực cảnh Tata Show.\n" +
-                 "2. **Tháp Bà Ponagar**: Quần thể đền đài kiến trúc Chăm cổ kính linh thiêng nằm bên dòng sông Cái hiền hòa.\n" +
-                 "3. **Tour Cano 3 Đảo VIP**: Khám phá Vịnh San Hô, Làng Chài dùng cơm trưa hải sản trên bè, tắm bùn khoáng nóng và thư giãn tại resort Hòn Tằm cao cấp.\n" +
-                 "4. **Viện Hải Dương Học**: Khám phá thế giới đại dương thu nhỏ với hơn 20.000 mẫu sinh vật biển quý hiếm.",
-    lodging: "Dạ, gói combo Nha Trang bên em áp dụng cho các **khách sạn 5 sao cao cấp dọc tuyến đường Trần Phú** sầm uất. Quý khách chỉ cần bước qua đường là tới bãi biển Nha Trang cát mịn, phòng ngủ view trọn vẹn vịnh biển đón gió đại dương cực kỳ thư thái ạ!"
-  },
-  halong: {
-    name: "Hạ Long",
-    dining: "Dạ, đến Quảng Ninh thì ẩm thực mang đậm hương vị biển khơi kỳ quan:\n\n" +
-            "1. **Xôi / Bánh cuốn chả mực**: Chả mực giã tay chính gốc Hạ Long giòn sần sật ăn kèm bánh cuốn nóng hổi tráng mỏng.\n" +
-            "2. **Hải sản Cái Dăm**: Nơi tụ hội các quán hải sản lớn với đặc sản cù kỳ hấp, bề bề rang muối, tu hài nướng mỡ hành.\n" +
-            "3. **Sam biển**: Món ăn độc đáo chế biến thành nhiều vị như gỏi sam, sam xào sả ớt, trứng sam nướng vô cùng thơm ngậy.",
-    sightseeing: "Dạ, Hạ Long kỳ quan thế giới có những trải nghiệm nghỉ dưỡng đỉnh cao:\n\n" +
-                 "1. **Hải trình du thuyền 5 sao**: Đi du thuyền cao cấp len lỏi qua hàng ngàn đảo đá vôi, tham quan Động Thiên Cung, Hang Sửng Sốt, chèo thuyền kayak qua Hang Luồn hoang sơ.\n" +
-                 "2. **Đảo Ti Tốp**: Tắm mát tại bãi cát mịn vây quanh đảo hoặc leo núi lên đỉnh lầu vọng cảnh ngắm trọn vẹn vịnh biển di sản từ trên cao.\n" +
-                 "3. **Sun World Halong Complex**: Trải nghiệm cáp treo Nữ Hoàng vượt biển đạt kỷ lục Guinness ngắm toàn cảnh Vịnh Cửa Lục sang Đồi Huyền Bí Nhật Bản."
-  }
-};
+const WELCOME_TEXT =
+  "Xin chào! Em là **Nam** - Trợ lý tư vấn du lịch của **Thanh Nam Homes Travel** 🌟\n\nEm có thể giúp anh/chị:\n- 🗺️ Tư vấn tour & combo du lịch\n- 💰 Tính giá cho cả đoàn (người lớn, trẻ em)\n- 🍜 Gợi ý ăn gì, chơi gì, ở đâu\n- ✈️ Tư vấn lịch trình, thời điểm đi\n\nAnh/chị đang quan tâm đến điểm đến nào ạ?";
 
-export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; tours: PublicTour[]; zaloUrl: string }) {
+const QUICK_REPLIES = [
+  "Combo Đà Nẵng giá bao nhiêu?",
+  "Phú Quốc đi mấy ngày hợp lý?",
+  "3 người lớn 1 trẻ em 5 tuổi đi Nha Trang hết bao nhiêu?",
+  "Nha Trang ăn hải sản ở đâu ngon?",
+];
+
+export function ChatbotWidget({
+  combo,
+  tours,
+  zaloUrl,
+}: {
+  combo: Combo | null;
+  tours: PublicTour[];
+  zaloUrl: string;
+}) {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
+  const [history, setHistory] = useState<GeminiMessage[]>([]); // lịch sử gửi lên API
   const [inputValue, setInputValue] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   // Cuộn xuống cuối khi có tin nhắn mới
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, open]);
+  }, [messages]);
 
-  // Khởi tạo tin nhắn chào mừng mặc định
+  // Khởi tạo tin nhắn chào
   useEffect(() => {
     if (messages.length === 0) {
       resetChat();
     }
-  }, [messages]);
+  }, []);
+
+  // Focus input khi mở chat
+  useEffect(() => {
+    if (open) {
+      setTimeout(() => inputRef.current?.focus(), 300);
+    }
+  }, [open]);
 
   function resetChat() {
     setMessages([
       {
         sender: "bot",
-        text: "Kính chào Quý khách! Em là Trợ lý hành trình Concierge VIP từ **Thanh Nam Homes Travel**. Rất vinh dự được đồng hành cùng Quý khách thiết kế một kỳ nghỉ độc bản. Hôm nay Quý khách đang quan tâm đến điểm đến hay combo du lịch nào ạ?",
+        text: WELCOME_TEXT,
         timestamp: new Date(),
-        actionButtons: [
-          "Tìm Combo Đà Nẵng 3N2Đ",
-          "Tìm Combo Phú Quốc 3N2Đ",
-          "Tìm Combo Nha Trang 3N2Đ",
-          "Tư vấn thiết kế kỳ nghỉ riêng"
-        ]
-      }
+      },
     ]);
+    setHistory([]);
   }
 
-  function handleSend(text: string) {
-    if (!text.trim()) return;
+  async function handleSend(text: string) {
+    if (!text.trim() || isLoading) return;
 
-    // 1. Thêm tin nhắn của User
     const userMsg: Message = {
       sender: "user",
-      text: text,
-      timestamp: new Date()
+      text: text.trim(),
+      timestamp: new Date(),
     };
-    setMessages((prev) => [...prev, userMsg]);
-    setInputValue("");
 
-    // 2. Trả lời thông minh sau 600ms giả lập gõ
-    setTimeout(() => {
-      const reply = analyzeAndReply(text);
-      setMessages((prev) => [...prev, reply]);
-    }, 600);
-  }
-
-  function handleActionButtonClick(buttonText: string) {
-    if (
-      buttonText.includes("giữ chỗ") || 
-      buttonText.includes("Zalo") || 
-      buttonText.includes("tư vấn riêng") ||
-      buttonText.includes("Đặt combo")
-    ) {
-      triggerZaloRedirect();
-      return;
-    }
-
-    if (buttonText === "Tìm điểm đến khác" || buttonText === "Về Menu chính" || buttonText === "Menu chính") {
-      resetChat();
-      return;
-    }
-
-    // Chuyển nút hành động thành tin nhắn chat của user
-    let queryText = buttonText;
-    if (buttonText === "Tìm Combo Đà Nẵng 3N2Đ" || buttonText === "Combo Đà Nẵng 2.99M") queryText = "Đà Nẵng";
-    if (buttonText === "Tìm Combo Phú Quốc 3N2Đ" || buttonText === "Combo Phú Quốc 3.89M") queryText = "Phú Quốc";
-    if (buttonText === "Tìm Combo Nha Trang 3N2Đ" || buttonText === "Combo Nha Trang 3.49M") queryText = "Nha Trang";
-    if (buttonText === "Tư vấn thiết kế kỳ nghỉ riêng" || buttonText === "Thiết kế hành trình riêng") queryText = "Bespoke";
-
-    handleSend(queryText);
-  }
-
-  function triggerZaloRedirect() {
-    // Tìm tour cuối cùng được hiển thị trong đoạn chat
-    const lastTour = messages.slice().reverse().find((m) => m.tourCard)?.tourCard;
-    let zaloText = "";
-
-    if (lastTour) {
-      zaloText = `Kính gửi Thanh Nam Homes Travel, tôi quan tâm chương trình đặc quyền: ${lastTour.title} (${lastTour.duration}), bay ${lastTour.airline}, khởi hành dự kiến ngày ${lastTour.departure_dates.map(formatDate).join(", ")}, giá công bố ${formatVnd(lastTour.price)}/người. Vui lòng kết nối chuyên viên tư vấn và kiểm tra tình trạng giữ chỗ giúp tôi.`;
-    } else {
-      zaloText = `Kính gửi Thanh Nam Homes Travel, tôi vừa trò chuyện với Trợ lý ảo Concierge VIP trên website và muốn kết nối với Chuyên viên tư vấn để được hỗ trợ thiết kế Kỳ nghỉ Độc bản. Xin cảm ơn!`;
-    }
-
-    const finalZaloUrl = `${zaloUrl}?text=${encodeURIComponent(zaloText)}`;
-    window.open(finalZaloUrl, "_blank");
-
-    // Thêm tin nhắn xác nhận trong khung chat
+    // Thêm tin nhắn user + placeholder loading
     setMessages((prev) => [
       ...prev,
-      {
-        sender: "bot",
-        text: "Dạ, em đã chuyển tiếp thông tin chặng bay và đang kết nối Quý khách tới Zalo Chuyên viên VIP của Thanh Nam Travel. Chuyên viên sẽ lập tức phản hồi và hỗ trợ kiểm tra vé, phòng trống cho Quý khách ạ!",
-        timestamp: new Date()
-      }
+      userMsg,
+      { sender: "bot", text: "", timestamp: new Date(), isLoading: true },
     ]);
-  }
+    setInputValue("");
+    setIsLoading(true);
 
-  function analyzeAndReply(query: string): Message {
-    const normalized = normalize(query);
-    
-    // Khắc phục lỗi Regex: dùng \b hoặc khớp từ chính xác để tránh trùng "thi" với "hi"
-    const hasHello = /\b(chao|xin chao|hello|hi|bonjour)\b/.test(normalized);
-    const hasDaNang = /da nang|my khe|ba na/.test(normalized);
-    const hasPhuQuoc = /phu quoc|dao ngoc/.test(normalized);
-    const hasNhaTrang = /nha trang|tran phu/.test(normalized);
-    const hasHaLong = /ha long|tuan chau|du thuyen/.test(normalized);
-    const hasBespoke = /thiet ke|rieng|bespoke|tu van|yeu cau|ca nhan/.test(normalized);
-    const hasCheap = /re nhat|gia tot|gia re|uu dai|thap nhat|re/.test(normalized);
+    // Cập nhật history cho API
+    const newHistory: GeminiMessage[] = [
+      ...history,
+      { role: "user", parts: [{ text: text.trim() }] },
+    ];
 
-    // Bộ phân tích tính giá (Pricing Calculator) thông minh
-    const hasPricingCalc = /(\d+)\s*(nguoi|lon|be|tre|khach|tuoi)/i.test(normalized) || /tinh the nao|het bao nhieu|gia cho|gia tre em|them nguoi/i.test(normalized);
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: newHistory }),
+      });
 
-    // Bộ phân tích tư vấn Ăn - Ở - Chơi (Dining - Sightseeing - Lodging)
-    const hasDining = /an gi|cho an|quan ngon|dac san|hai san|nha hang|an uong/i.test(normalized);
-    const hasSightseeing = /choi gi|di dau|choi dau|diem den|lich trinh|tham quan|cho choi/i.test(normalized);
-    const hasLodging = /khach san|resort|cho o|nghi o|phong o/i.test(normalized);
+      const data = await res.json() as { text?: string; error?: string };
+      const replyText =
+        data.text ??
+        data.error ??
+        "Dạ, em đang gặp sự cố nhỏ. Anh/chị vui lòng thử lại sau ít giây hoặc liên hệ Zalo để được hỗ trợ ngay nhé!";
 
-    const now = new Date();
+      // Cập nhật history với cả 2 lượt
+      setHistory([
+        ...newHistory,
+        { role: "model", parts: [{ text: replyText }] },
+      ]);
 
-    // 1. Phân loại và trả lời tư vấn Ăn - Ở - Chơi dựa trên cơ sở tri thức (RAG local)
-    if (hasDining || hasSightseeing || hasLodging) {
-      // Xác định địa điểm được nhắc tới trong cuộc hội thoại
-      // Ưu tiên 1: keyword trong câu hỏi hiện tại
-      // Ưu tiên 2: chỉ quét tin nhắn của USER (không quét bot) để lấy context điểm đến gần nhất
-      let destKey: "danang" | "phuquoc" | "nhatrang" | "halong" = "danang"; // mặc định
-      if (hasPhuQuoc) {
-        destKey = "phuquoc";
-      } else if (hasNhaTrang) {
-        destKey = "nhatrang";
-      } else if (hasDaNang) {
-        destKey = "danang";
-      } else if (hasHaLong) {
-        destKey = "halong";
-      } else {
-        // Không tìm thấy trong câu hiện tại → tìm lại trong lịch sử (chỉ tin USER)
-        const userMessages = messages.filter((m) => m.sender === "user");
-        const lastUserWithDest = userMessages.slice().reverse().find((m) => {
-          const t = normalize(m.text);
-          return /phu quoc|dao ngoc/.test(t) || /nha trang|tran phu/.test(t) || /ha long|tuan chau/.test(t) || /da nang|my khe|ba na/.test(t);
-        });
-        if (lastUserWithDest) {
-          const t = normalize(lastUserWithDest.text);
-          if (/phu quoc|dao ngoc/.test(t)) destKey = "phuquoc";
-          else if (/nha trang|tran phu/.test(t)) destKey = "nhatrang";
-          else if (/ha long|tuan chau/.test(t)) destKey = "halong";
-          else destKey = "danang";
-        }
-      }
-      
-      const guide = destinationGuides[destKey];
-      let replyText = "";
-      let title = "";
-
-      if (hasDining) {
-        replyText = guide.dining;
-        title = `Ẩm thực & Quán ngon tại ${guide.name}`;
-      } else if (hasSightseeing) {
-        replyText = guide.sightseeing;
-        title = `Địa điểm vui chơi & Lịch trình gợi ý tại ${guide.name}`;
-      } else {
-        replyText = guide.lodging ?? "Dạ, khách sạn trong các gói combo của Thanh Nam Travel đều là tiêu chuẩn từ 4 đến 5 sao cao cấp, bao gồm buffet sáng và đầy đủ tiện nghi, nằm tại trung tâm điểm đến.";
-        title = `Tiêu chuẩn lưu trú tại ${guide.name}`;
-      }
-
-      return {
-        sender: "bot",
-        text: `🌟 **${title}**\n\n${replyText}\n\nQuý khách muốn em hỗ trợ thêm thông tin chặng bay hay cách thức đặt giữ phòng ưu đãi cho kỳ nghỉ này không ạ?`,
-        timestamp: now,
-        actionButtons: ["Xem giá Combo chặng này", "Hỏi điểm vui chơi khác", "Về Menu chính"]
-      };
-    }
-
-    // 2. Nếu khách hỏi về tính giá và đi thêm người (3 người lớn, trẻ em...)
-    if (hasPricingCalc) {
-      // Tìm tour thảo luận gần nhất, nếu không mặc định Đà Nẵng
-      const lastTour = messages.slice().reverse().find((m) => m.tourCard)?.tourCard ?? tours.find((t) => t.id === "combo-da-nang-3n2d") ?? tours[0];
-      
-      if (lastTour) {
-        // Trích xuất số lượng người lớn và trẻ em từ câu hỏi
-        let adultsCount = 2;
-        let childrenCount = 0;
-        let childAge = 6;
-
-        // Trích xuất người lớn
-        const adultMatch = normalized.match(/(\d+)\s*(nguoi lon|lon|adult)/);
-        if (adultMatch) {
-          adultsCount = parseInt(adultMatch[1]);
-        } else {
-          const generalMatch = normalized.match(/(\d+)\s*(nguoi|khach)/);
-          if (generalMatch) {
-            adultsCount = parseInt(generalMatch[1]);
-          }
-        }
-
-        // Trích xuất trẻ em / bé
-        const childMatch = normalized.match(/(\d+)\s*(be|tre em|tre con|tre|child)/);
-        if (childMatch) {
-          childrenCount = parseInt(childMatch[1]);
-        }
-
-        // Trích xuất tuổi của trẻ em (ví dụ: 6t, 6 tuổi)
-        const ageMatch = normalized.match(/(\d+)\s*(t|tuoi)/);
-        if (ageMatch) {
-          childAge = parseInt(ageMatch[1]);
-        }
-
-        const adultPrice = lastTour.price;
-        let childPrice = Math.round(adultPrice * 0.7); // Trẻ em 2-11 tuổi thường 70% giá combo
-        let ageLabel = `${childAge} tuổi (Tính 70% giá người lớn)`;
-
-        if (childAge < 2) {
-          childPrice = 500000; // Em bé dưới 2 tuổi tính vé máy bay rẻ + khách sạn free
-          ageLabel = "Dưới 2 tuổi (Chỉ phụ thu vé bay 500.000đ)";
-        } else if (childAge >= 12) {
-          childPrice = adultPrice; // Trẻ em từ 12 tuổi tính như người lớn
-          ageLabel = `${childAge} tuổi (Tính bằng giá người lớn)`;
-        }
-
-        const adultsTotal = adultsCount * adultPrice;
-        const childrenTotal = childrenCount * childPrice;
-        const grandTotal = adultsTotal + childrenTotal;
-
-        // Giải thích chính sách đi thêm người lớn thứ 3
-        let noteExtraBed = "";
-        if (adultsCount % 2 !== 0) {
-          noteExtraBed = `\n*(Lưu ý: Do đoàn mình lẻ ${adultsCount} người lớn nên phòng khách sạn sẽ kê thêm 1 giường phụ - Extra Bed hoặc tính phụ thu phòng đơn tùy resort)*`;
-        }
-
-        return {
+      // Thay thế loading bằng câu trả lời thật
+      setMessages((prev) => [
+        ...prev.filter((m) => !m.isLoading),
+        { sender: "bot", text: replyText, timestamp: new Date() },
+      ]);
+    } catch {
+      setMessages((prev) => [
+        ...prev.filter((m) => !m.isLoading),
+        {
           sender: "bot",
-          text: `Dạ, em xin phép tính toán chi tiết chi phí dự kiến cho đoàn mình đi **${lastTour.title}** (${lastTour.duration}) như sau:\n\n` +
-                `• **Người lớn**: ${adultsCount} khách x ${formatVnd(adultPrice)} = **${formatVnd(adultsTotal)}**\n` +
-                (childrenCount > 0 
-                  ? `• **Trẻ em (${ageLabel})**: ${childrenCount} bé x ${formatVnd(childPrice)} = **${formatVnd(childrenTotal)}**\n`
-                  : `\n`) +
-                `👉 **Tổng chi phí ước tính cả đoàn**: **${formatVnd(grandTotal)}**\n` +
-                `${noteExtraBed}\n\n` +
-                `Dạ, Quý khách thấy mức giá này phù hợp với kế hoạch chưa ạ? Em có thể kết nối ngay Chuyên viên VIP để kiểm tra giữ vé máy bay giờ đẹp và phòng sát biển cho đoàn mình không ạ?`,
-          timestamp: now,
-          tourCard: lastTour,
-          actionButtons: ["Đăng ký giữ chỗ đoàn ngay", "Tư vấn ngày bay khác", "Tìm điểm đến khác"]
-        };
-      }
+          text: "Dạ, mạng đang có vấn đề nhỏ. Anh/chị thử lại sau giây lát hoặc nhắn Zalo để em hỗ trợ ngay ạ!",
+          timestamp: new Date(),
+        },
+      ]);
+    } finally {
+      setIsLoading(false);
     }
-
-    if (hasHello) {
-      return {
-        sender: "bot",
-        text: "Dạ, em xin kính chào Quý khách! Chúc Quý khách một ngày tốt lành. Hôm nay em có thể giúp gì cho kỳ nghỉ của Quý khách ạ? Em đang có sẵn các gói combo Đà Nẵng, Phú Quốc, Nha Trang với giá ưu đãi đặc biệt đấy ạ!",
-        timestamp: now,
-        actionButtons: ["Combo Đà Nẵng 2.99M", "Combo Phú Quốc 3.89M", "Combo Nha Trang 3.49M", "Thiết kế hành trình riêng"]
-      };
-    }
-
-    if (hasDaNang) {
-      const daNangTour = tours.find((t) => t.id === "combo-da-nang-3n2d") ?? tours.find((t) => t.destination.includes("Đà Nẵng"));
-      if (daNangTour) {
-        return {
-          sender: "bot",
-          text: "Dạ, em xin đề xuất **Combo Đà Nẵng 3N2Đ** tinh tuyển dành cho Quý khách. Đây là gói hành trình nghỉ dưỡng sát biển cực kỳ bán chạy:",
-          timestamp: now,
-          tourCard: daNangTour,
-          actionButtons: ["Đăng ký giữ chỗ Đà Nẵng", "Tư vấn Ăn chơi Đà Nẵng", "Tìm điểm đến khác"]
-        };
-      }
-    }
-
-    if (hasPhuQuoc) {
-      const phuQuocTour = tours.find((t) => t.id === "combo-phu-quoc-3n2d") ?? tours.find((t) => t.destination.includes("Phú Quốc"));
-      if (phuQuocTour) {
-        return {
-          sender: "bot",
-          text: "Dạ, nghỉ dưỡng đảo Ngọc là lựa chọn tuyệt vời! Em xin đề xuất chương trình đặc quyền **Combo Phú Quốc 3N2Đ** với resort sang trọng sát biển:",
-          timestamp: now,
-          tourCard: phuQuocTour,
-          actionButtons: ["Đăng ký giữ chỗ Phú Quốc", "Tư vấn Ăn chơi Phú Quốc", "Tìm điểm đến khác"]
-        };
-      }
-    }
-
-    if (hasNhaTrang) {
-      const nhaTrangTour = tours.find((t) => t.id === "combo-nha-trang-3n2d") ?? tours.find((t) => t.destination.includes("Nha Trang"));
-      if (nhaTrangTour) {
-        return {
-          sender: "bot",
-          text: "Dạ, Nha Trang biển xanh cát trắng vẫy gọi! Em đề xuất **Combo Nha Trang 3N2Đ** nghỉ dưỡng 5 sao đắc địa mặt phố Trần Phú sầm uất:",
-          timestamp: now,
-          tourCard: nhaTrangTour,
-          actionButtons: ["Đăng ký giữ chỗ Nha Trang", "Tư vấn Ăn chơi Nha Trang", "Tìm điểm đến khác"]
-        };
-      }
-    }
-
-    if (hasHaLong) {
-      const haLongTour = tours.find((t) => t.destination.includes("Hạ Long"));
-      if (haLongTour) {
-        return {
-          sender: "bot",
-          text: "Dạ, hành trình khám phá vịnh di sản Hạ Long trên du thuyền 5 sao đẳng cấp dành cho Quý khách:",
-          timestamp: now,
-          tourCard: haLongTour,
-          actionButtons: ["Đăng ký giữ chỗ Hạ Long", "Tư vấn Ăn chơi Hạ Long", "Tìm điểm đến khác"]
-        };
-      } else {
-        return {
-          sender: "bot",
-          text: "Dạ, hiện tại các gói du thuyền Hạ Long 5 sao đang được cập nhật lại bảng giá ưu đãi chặng hè. Quý khách có muốn em kết nối Zalo chuyên viên gửi ngay bảng giá mới nhất trong vòng 5 phút không ạ?",
-          timestamp: now,
-          actionButtons: ["Kết nối Zalo tư vấn Hạ Long", "Về Menu chính"]
-        };
-      }
-    }
-
-    if (hasBespoke) {
-      return {
-        sender: "bot",
-        text: "Dạ, thiết kế hành trình thiết kế riêng biệt (Bespoke Journey) chính là dịch vụ đặc quyền định cao của **Thanh Nam Homes Travel**. Để lên lịch trình tinh chọn nhất, Quý khách vui lòng kết nối nhanh với Chuyên viên tư vấn VIP qua Zalo. Chuyên viên sẽ thiết kế sơ đồ chặng bay, đặt resort sang trọng biệt lập và lên lịch trình gửi Quý khách lập tức ạ!",
-        timestamp: now,
-        isZaloBridge: true,
-        actionButtons: ["Kết nối Zalo tư vấn riêng", "Về Menu chính"]
-      };
-    }
-
-    if (hasCheap) {
-      const sorted = [...tours].sort((a, b) => a.price - b.price);
-      if (sorted.length > 0) {
-        return {
-          sender: "bot",
-          text: `Dạ, em xin gợi ý chặng hành trình có giá ưu đãi đặc biệt tiết kiệm nhất hiện tại: **${sorted[0].title}** với giá công bố chỉ **${formatVnd(sorted[0].price)}/khách**.`,
-          timestamp: now,
-          tourCard: sorted[0],
-          actionButtons: ["Đặt combo giá rẻ này", "Tìm điểm đến khác"]
-        };
-      }
-    }
-
-    // Hỗ trợ tìm kiếm thông minh từ do
-    const queryWords = normalized
-      .split(/\s+/)
-      .filter((word) => word.length >= 3 && !["tour", "combo", "thang", "nhat", "gia", "nguoi"].includes(word));
-    
-    const matches = tours.filter((tour) => {
-      const haystack = normalize(`${tour.title} ${tour.destination} ${tour.country} ${tour.duration} ${tour.airline}`);
-      return queryWords.some((word) => haystack.includes(word));
-    });
-
-    if (matches.length > 0) {
-      return {
-        sender: "bot",
-        text: `Dạ, dựa trên tìm kiếm "${query}" của Quý khách, em đề xuất hành trình phù hợp nhất sau đây:`,
-        timestamp: now,
-        tourCard: matches[0],
-        actionButtons: ["Đặt giữ chỗ ngay", "Tìm điểm đến khác"]
-      };
-    }
-
-    // Fallback mặc định
-    return {
-      sender: "bot",
-      text: `Dạ, em đã ghi nhận yêu cầu tìm kiếm của Quý khách về: *"${query}"*. Do tình trạng vé máy bay khứ hồi và phòng khách sạn đối tác thay đổi liên tục theo giờ, em kính mời Quý khách kết nối trực tiếp với Chuyên viên tư vấn VIP qua Zalo để kiểm tra giá vé và phòng trống chính xác nhất tại thời điểm hiện tại cho Quý khách nhé!`,
-      timestamp: now,
-      isZaloBridge: true,
-      actionButtons: ["Kết nối nhanh Zalo Chuyên viên", "Về Menu chính"]
-    };
   }
 
   return (
     <div className="fixed bottom-6 right-6 z-40">
       {open && (
-        <div className="mb-4 w-[calc(100vw-48px)] max-w-md overflow-hidden rounded-[30px] border border-brand-hairline bg-white shadow-soft transition-all duration-300 animate-scaleUp">
+        <div className="mb-4 w-[calc(100vw-48px)] max-w-md overflow-hidden rounded-[28px] border border-brand-hairline bg-white shadow-2xl transition-all duration-300 animate-scaleUp">
           
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-brand-hairline bg-slate-900 p-5 text-white">
+          <div className="flex items-center justify-between bg-slate-900 px-5 py-4">
             <div className="flex items-center gap-3">
-              <Bot className="text-brand-gold animate-bounce" size={24} />
+              <div className="relative flex h-9 w-9 items-center justify-center rounded-full bg-brand-gold">
+                <Bot size={18} className="text-slate-900" />
+                <span className="absolute -right-0.5 -top-0.5 h-3 w-3 rounded-full border-2 border-slate-900 bg-emerald-400" />
+              </div>
               <div>
-                <p className="font-bold text-brand-gold tracking-wide">AI Concierge Assistant</p>
-                <p className="text-[10px] text-white/50">Thanh Nam Travel VIP Concierge</p>
+                <p className="text-sm font-bold text-white">Nam - Trợ lý Du lịch AI</p>
+                <p className="text-[11px] text-emerald-400">● Đang hoạt động</p>
               </div>
             </div>
-            <div className="flex items-center gap-1.5">
-              <button 
-                className="rounded-full p-2 text-white/60 transition hover:bg-white/10 hover:text-white"
+            <div className="flex items-center gap-1">
+              <button
+                className="rounded-full p-2 text-white/50 transition hover:bg-white/10 hover:text-white"
                 onClick={resetChat}
-                title="Bắt đầu lại cuộc hội thoại"
+                title="Bắt đầu lại"
                 aria-label="Làm mới chat"
               >
-                <RotateCcw size={16} />
+                <RotateCcw size={15} />
               </button>
-              <button 
-                className="rounded-full p-2 text-white/60 transition hover:bg-white/10 hover:text-white" 
-                onClick={() => setOpen(false)} 
+              <button
+                className="rounded-full p-2 text-white/50 transition hover:bg-white/10 hover:text-white"
+                onClick={() => setOpen(false)}
                 aria-label="Đóng chat"
               >
-                <X size={18} />
+                <X size={17} />
               </button>
             </div>
           </div>
 
-          {/* Chat Logs Area */}
-          <div className="flex h-[420px] flex-col gap-4 overflow-y-auto bg-slate-50 p-5">
+          {/* Chat Area */}
+          <div className="flex h-[400px] flex-col gap-3 overflow-y-auto bg-slate-50 p-4 scroll-smooth">
             {messages.map((msg, index) => (
-              <div 
+              <div
                 key={index}
-                className={`flex flex-col gap-2 ${msg.sender === "user" ? "items-end" : "items-start"}`}
+                className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
               >
-                {/* Bubble */}
-                <div 
-                  className={`max-w-[85%] rounded-[20px] p-4 text-sm leading-relaxed shadow-sm border ${
+                {msg.sender === "bot" && (
+                  <div className="mr-2 mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-900">
+                    <Bot size={13} className="text-brand-gold" />
+                  </div>
+                )}
+
+                <div
+                  className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-sm ${
                     msg.sender === "user"
-                      ? "rounded-tr-none bg-slate-900 text-white border-slate-950"
-                      : "rounded-tl-none bg-white text-brand-primary border-brand-hairline"
+                      ? "rounded-tr-none bg-slate-900 text-white"
+                      : "rounded-tl-none border border-brand-hairline bg-white text-brand-primary"
                   }`}
                 >
-                  <p className="whitespace-pre-line">{msg.text}</p>
+                  {msg.isLoading ? (
+                    <span className="flex items-center gap-1.5 text-brand-slate">
+                      <Loader2 size={14} className="animate-spin" />
+                      <span className="text-xs">Đang soạn câu trả lời...</span>
+                    </span>
+                  ) : (
+                    <div className="space-y-1 text-sm leading-relaxed">
+                      {renderMarkdown(msg.text)}
+                    </div>
+                  )}
                 </div>
-
-                {/* Structured Tour Card inside Chat Bubble */}
-                {msg.tourCard && (
-                  <div className="w-[85%] rounded-2xl border border-brand-hairline bg-white p-4 shadow-md animate-fadeIn mt-1.5">
-                    <p className="font-bold text-brand-primary text-sm">{msg.tourCard.title}</p>
-                    <ul className="mt-2 space-y-1.5 text-xs text-brand-slate">
-                      <li>• <strong>Thời gian:</strong> {msg.tourCard.duration}</li>
-                      <li>• <strong>Hàng không:</strong> {msg.tourCard.airline}</li>
-                      <li>• <strong>Khởi hành từ:</strong> {msg.tourCard.departure_city}</li>
-                      <li>• <strong>Các ngày:</strong> {msg.tourCard.departure_dates.map(formatDate).join(", ")}</li>
-                      <li>• <strong>Giá ưu đãi:</strong> <span className="text-sm font-bold text-brand-goldDark">{formatVnd(msg.tourCard.price)}/khách</span></li>
-                    </ul>
-                    <p className="mt-2 border-t border-brand-hairline pt-2 text-[10px] leading-relaxed text-brand-slate italic">{msg.tourCard.price_note}</p>
-                    {msg.tourCard.program_url && (
-                      <a 
-                        className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-brand-hairline px-3.5 py-1.5 text-[11px] font-bold text-brand-primary transition hover:bg-slate-50" 
-                        href={msg.tourCard.program_url} 
-                        target="_blank" 
-                        rel="noreferrer"
-                      >
-                        Chi tiết lịch trình <ArrowRight size={12} />
-                      </a>
-                    )}
-                  </div>
-                )}
-
-                {/* Quick Reply / Action Buttons */}
-                {msg.actionButtons && msg.actionButtons.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mt-1 max-w-[90%]">
-                    {msg.actionButtons.map((btn, btnIndex) => (
-                      <button
-                        key={btnIndex}
-                        onClick={() => handleActionButtonClick(btn)}
-                        className="rounded-full border border-brand-gold/30 bg-amber-50 px-3.5 py-2 text-xs font-bold text-brand-goldDark shadow-sm transition duration-300 hover:bg-brand-gold hover:text-brand-primary hover:border-brand-gold"
-                      >
-                        {btn}
-                      </button>
-                    ))}
-                  </div>
-                )}
               </div>
             ))}
+
+            {/* Quick replies - chỉ hiện sau tin chào đầu tiên */}
+            {messages.length === 1 && messages[0].sender === "bot" && (
+              <div className="flex flex-col gap-2 pl-9">
+                <p className="text-[11px] text-brand-slate">💡 Câu hỏi gợi ý:</p>
+                {QUICK_REPLIES.map((q, i) => (
+                  <button
+                    key={i}
+                    onClick={() => handleSend(q)}
+                    className="w-fit rounded-full border border-brand-gold/40 bg-amber-50 px-3.5 py-2 text-left text-xs font-medium text-brand-goldDark transition hover:bg-brand-gold hover:text-slate-900"
+                  >
+                    {q}
+                  </button>
+                ))}
+              </div>
+            )}
+
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Typing Sticky Input Bar */}
-          <form 
+          {/* Input Bar */}
+          <form
             onSubmit={(e) => {
               e.preventDefault();
               handleSend(inputValue);
             }}
-            className="flex items-center gap-2 border-t border-brand-hairline bg-white p-4"
+            className="flex items-center gap-2 border-t border-brand-hairline bg-white p-3"
           >
             <input
-              className="w-full rounded-full border border-brand-hairline bg-slate-50 px-4 py-3 text-sm text-brand-primary placeholder-brand-slate outline-none transition focus:border-brand-gold focus:bg-white focus:ring-1 focus:ring-brand-gold"
+              ref={inputRef}
+              className="w-full rounded-full border border-brand-hairline bg-slate-50 px-4 py-2.5 text-sm text-brand-primary placeholder-brand-slate outline-none transition focus:border-brand-gold focus:bg-white focus:ring-1 focus:ring-brand-gold"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              placeholder="Nhập nội dung chát với trợ lý ảo..."
+              placeholder="Hỏi về tour, giá, ăn chơi..."
+              disabled={isLoading}
             />
             <button
               type="submit"
-              disabled={!inputValue.trim()}
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-900 text-white shadow-soft transition duration-300 hover:scale-105 hover:bg-slate-800 disabled:opacity-40 disabled:hover:scale-100"
+              disabled={!inputValue.trim() || isLoading}
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 text-white shadow transition duration-300 hover:scale-105 hover:bg-slate-800 disabled:opacity-40 disabled:hover:scale-100"
               aria-label="Gửi tin nhắn"
             >
-              <Send size={16} className="text-brand-gold" />
+              {isLoading ? (
+                <Loader2 size={15} className="animate-spin text-brand-gold" />
+              ) : (
+                <Send size={15} className="text-brand-gold" />
+              )}
             </button>
           </form>
 
+          {/* Footer note */}
+          <div className="bg-white px-4 pb-3 text-center">
+            <p className="text-[10px] text-brand-slate">
+              Powered by Gemini AI · Câu trả lời mang tính tham khảo
+            </p>
+          </div>
         </div>
       )}
+
+      {/* Toggle Button */}
       <button
-        className="focus-ring flex h-14 w-14 items-center justify-center rounded-full bg-slate-900 text-white shadow-soft transition duration-300 hover:scale-105 hover:bg-slate-800 border border-brand-gold"
-        onClick={() => setOpen((value) => !value)}
+        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-slate-900 text-white shadow-lg transition duration-300 hover:scale-105 hover:bg-slate-800 border border-brand-gold"
+        onClick={() => setOpen((v) => !v)}
         aria-label="Mở chatbot"
       >
-        <MessageCircle size={24} className="text-brand-gold animate-pulse" />
+        {open ? (
+          <X size={22} className="text-brand-gold" />
+        ) : (
+          <>
+            <MessageCircle size={24} className="text-brand-gold" />
+            <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-[9px] font-bold text-white">
+              AI
+            </span>
+          </>
+        )}
       </button>
     </div>
   );
 }
 
-function normalize(value: string): string {
-  return value
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/đ/g, "d")
-    .replace(/[^\w\s/]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+// Lightweight inline markdown renderer - xử lý **bold**, bullet points, line breaks
+function renderMarkdown(text: string) {
+  return text.split("\n").map((line, i) => {
+    // Dòng trống
+    if (line.trim() === "") return <div key={i} className="h-1" />;
+
+    // Render **bold** inline
+    const parts = line.split(/(\*\*[^*]+\*\*)/g).map((part, j) => {
+      if (part.startsWith("**") && part.endsWith("**")) {
+        return <strong key={j} className="font-semibold text-slate-900">{part.slice(2, -2)}</strong>;
+      }
+      return part;
+    });
+
+    // Bullet point
+    if (line.trim().startsWith("- ") || line.trim().startsWith("• ")) {
+      return (
+        <div key={i} className="flex gap-2">
+          <span className="mt-0.5 shrink-0 text-brand-gold">•</span>
+          <span>{parts.map((p, j) => (typeof p === "string" ? p.replace(/^[-•]\s/, "") : p))}</span>
+        </div>
+      );
+    }
+
+    return <p key={i}>{parts}</p>;
+  });
 }
 
-function formatVnd(value: number): string {
-  return new Intl.NumberFormat("vi-VN").format(value) + "đ";
-}
-
-function formatDate(value: string): string {
-  return new Intl.DateTimeFormat("vi-VN", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric"
-  }).format(new Date(`${value}T12:00:00+07:00`));
-}
