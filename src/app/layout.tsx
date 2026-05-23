@@ -5,6 +5,7 @@ import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ChatbotWidget } from "@/components/ChatbotWidget";
+import { FloatingContact } from "@/components/FloatingContact";
 import { getConfig, getDailyCombo, getPublicTours } from "@/lib/data";
 
 const sofiaSans = Sofia_Sans({
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         <main>{children}</main>
         <Footer />
         <ChatbotWidget combo={combo} tours={tours} zaloUrl={config.zaloUrl} />
+        <FloatingContact zaloUrl={config.zaloUrl} />
       </body>
     </html>
   );
