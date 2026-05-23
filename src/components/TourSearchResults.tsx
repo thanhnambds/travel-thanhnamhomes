@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { CalendarDays, Filter, MapPin, Search } from "lucide-react";
 import { TourCard } from "@/components/TourCard";
@@ -13,6 +13,13 @@ export function TourSearchResults({ tours }: { tours: PublicTour[] }) {
   const [month, setMonth] = useState(searchParams.get("month") ?? "");
   const [departureCity, setDepartureCity] = useState(searchParams.get("from") ?? "Tất cả");
   const [maxPrice, setMaxPrice] = useState("");
+
+  // Sync URL search params to local filter state when search params change
+  useEffect(() => {
+    setQuery(searchParams.get("q") ?? "");
+    setMonth(searchParams.get("month") ?? "");
+    setDepartureCity(searchParams.get("from") ?? "Tất cả");
+  }, [searchParams]);
 
   const departureCities = useMemo(() => {
     return ["Tất cả", ...Array.from(new Set(tours.map((tour) => tour.departure_city))).sort((a, b) => a.localeCompare(b, "vi"))];

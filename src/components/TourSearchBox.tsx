@@ -15,7 +15,7 @@ interface TourSearchBoxProps {
 export function TourSearchBox({ className = "", compact = false, tours = [] }: TourSearchBoxProps) {
   const router = useRouter();
   const [query, setQuery] = useState("");
-  const [month, setMonth] = useState("2026-07");
+  const [month, setMonth] = useState("");
   const [departureCity, setDepartureCity] = useState("Hà Nội");
   const [showDropdown, setShowDropdown] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -83,6 +83,17 @@ export function TourSearchBox({ className = "", compact = false, tours = [] }: T
     return [...cities.sort((a, b) => a.localeCompare(b, "vi")), "Tất cả"];
   }, [tours]);
 
+  // Dynamic available months
+  const months = useMemo(() => {
+    if (!tours || tours.length === 0) return ["2026-06", "2026-07"];
+    return Array.from(new Set(tours.flatMap((tour) => tour.departure_dates.map((date) => date.slice(0, 7))))).sort();
+  }, [tours]);
+
+  function formatMonth(value: string): string {
+    const [year, month] = value.split("-");
+    return `Tháng ${Number(month)}/${year}`;
+  }
+
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const params = new URLSearchParams();
@@ -127,7 +138,7 @@ export function TourSearchBox({ className = "", compact = false, tours = [] }: T
                       setShowDropdown(false);
                       const params = new URLSearchParams();
                       params.set("q", item.destination);
-                      if (month) params.set("month", month);
+                      // Khi gõ chọn nhanh điểm đến, không gài cứng bộ lọc tháng để luôn tìm thấy kết quả
                       if (departureCity) params.set("from", departureCity);
                       router.push(`/tim-kiem-tour/?${params.toString()}`);
                     }}
@@ -165,12 +176,18 @@ export function TourSearchBox({ className = "", compact = false, tours = [] }: T
           <CalendarDays className="text-brand-slate" size={22} />
           <span className="min-w-0 flex-1">
             <span className="block text-xs font-bold uppercase tracking-wide text-brand-slate">Tháng đi</span>
-            <input
-              type="month"
+            <select
               className="mt-0.5 w-full bg-transparent text-base font-semibold outline-none"
               value={month}
               onChange={(event) => setMonth(event.target.value)}
-            />
+            >
+              <option value="">Tất cả tháng</option>
+              {months.map((item) => (
+                <option key={item} value={item}>
+                  {formatMonth(item)}
+                </option>
+              ))}
+            </select>
           </span>
         </label>
 
