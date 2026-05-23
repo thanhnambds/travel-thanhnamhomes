@@ -40,7 +40,7 @@ export default function HomePage() {
               Tư vấn Zalo
             </a>
           </div>
-          <TourSearchBox className="mt-10 w-full max-w-5xl text-left" />
+          <TourSearchBox tours={tours} className="mt-10 w-full max-w-5xl text-left" />
         </div>
       </section>
 

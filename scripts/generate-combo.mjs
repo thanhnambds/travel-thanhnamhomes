@@ -12,8 +12,8 @@ function flightHour(flight) {
 
 function hotelNightPrice(hotel, date) {
   const day = new Date(`${date}T12:00:00+07:00`).getDay();
-  if (day === 0 || day === 6) return toNumber(hotel.weekend_price);
-  return toNumber(hotel.weekday_price);
+  const price = day === 0 || day === 6 ? toNumber(hotel.weekend_price) : toNumber(hotel.weekday_price);
+  return price > 0 ? price + 30000 : 0;
 }
 
 function candidatePairs(destinationCode, nights) {

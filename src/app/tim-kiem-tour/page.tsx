@@ -25,7 +25,7 @@ export default function TourSearchPage() {
           <p className="mt-5 max-w-2xl text-base leading-7 text-white/75">
             Dữ liệu tìm kiếm chỉ lấy từ danh sách tour đã được duyệt để hiển thị trên website. Thanh Nam Travel sẽ kiểm tra lại giá thật và tình trạng chỗ qua Zalo trước khi xác nhận.
           </p>
-          <TourSearchBox className="mt-8" compact />
+          <TourSearchBox tours={tours} className="mt-8" compact />
         </div>
       </section>
 

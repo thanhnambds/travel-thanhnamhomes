@@ -1,9 +1,11 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
 import { getPublicTours, getDailyCombo, getConfig } from "@/lib/data";
 
-// Khởi tạo Gemini client từ server-side
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY ?? "");
+// v1beta + gemini-2.0-flash (confirmed available cho API key này)
+const GEMINI_API_URL =
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+
+
 
 function buildSystemPrompt(toursJson: string, comboJson: string, zaloUrl: string): string {
   return `Bạn là "Nam" - Trợ lý tư vấn du lịch chuyên nghiệp của **Thanh Nam Homes Travel**, một công ty du lịch cao cấp tại Việt Nam.
@@ -40,27 +42,27 @@ ${comboJson}
 - Lẻ người (3 người, 5 người...) sẽ có phụ phí giường phụ (Extra Bed)
 
 ## Khi cần kết nối nhân viên thật
-Khi khách muốn: đặt cọc, xác nhận phòng/vé, yêu cầu đặc biệt, hoặc câu hỏi quá cụ thể về ngày bay - hãy nhắc khách liên hệ Zalo: ${zaloUrl}
-Ví dụ: "Dạ để xác nhận tình trạng vé và phòng chính xác, em kính mời anh/chị liên hệ Zalo của Thanh Nam Travel nhé ạ! 📞"
+Khi khách muốn đặt cọc, xác nhận phòng/vé, hoặc câu hỏi cụ thể về ngày bay - nhắc liên hệ Zalo: ${zaloUrl}
 
 ## Giới hạn
 - KHÔNG bịa đặt giá hoặc ngày khởi hành không có trong danh sách tour
 - KHÔNG cam kết đặt phòng/vé mà chưa xác nhận với nhân viên thật
 - Nếu không có thông tin, trả lời thật thà và đề xuất liên hệ Zalo
-- Trả lời ngắn, tối đa 200 từ mỗi lần (trừ khi khách yêu cầu thêm thông tin)`;
+- Trả lời ngắn, tối đa 200 từ mỗi lần`;
 }
 
 export async function POST(req: NextRequest) {
   try {
-    const { messages } = await req.json() as {
+    const { messages } = (await req.json()) as {
       messages: Array<{ role: "user" | "model"; parts: [{ text: string }] }>;
     };
 
-    if (!process.env.GEMINI_API_KEY) {
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
       return NextResponse.json({ error: "GEMINI_API_KEY chưa được cấu hình" }, { status: 500 });
     }
 
-    // Lấy dữ liệu tour & combo hiện tại từ server
+    // Lấy dữ liệu tour & combo từ server
     const tours = getPublicTours();
     const combo = getDailyCombo();
     const config = getConfig();
@@ -70,14 +72,12 @@ export async function POST(req: NextRequest) {
         id: t.id,
         title: t.title,
         destination: t.destination,
-        country: t.country,
         duration: t.duration,
         airline: t.airline,
         departure_city: t.departure_city,
         departure_dates: t.departure_dates,
         price: t.price,
         price_note: t.price_note,
-        program_url: t.program_url,
         public_notes: t.public_notes,
       })),
       null,
@@ -85,50 +85,61 @@ export async function POST(req: NextRequest) {
     );
 
     const comboJson = combo
-      ? JSON.stringify({
-          title: combo.title,
-          destination: combo.destination,
-          duration: combo.duration,
-          airline: combo.airline,
-          hotel_name: combo.hotel_name,
-          hotel_star: combo.hotel_star,
-          total_price: combo.total_price,
-          price_note: combo.price_note,
-          included: combo.included,
-          child_policy: combo.child_policy,
-          expires_at: combo.expires_at,
-        }, null, 2)
+      ? JSON.stringify(
+          {
+            title: combo.title,
+            destination: combo.destination,
+            duration: combo.duration,
+            airline: combo.airline,
+            hotel_name: combo.hotel_name,
+            hotel_star: combo.hotel_star,
+            total_price: combo.total_price,
+            price_note: combo.price_note,
+            included: combo.included,
+            child_policy: combo.child_policy,
+          },
+          null,
+          2
+        )
       : "Không có combo đặc biệt hôm nay";
 
     const systemPrompt = buildSystemPrompt(toursJson, comboJson, config.zaloUrl);
 
-    // Dùng gemini-1.5-flash (ổn định, miễn phí)
-    const model = genAI.getGenerativeModel({
-      model: "gemini-1.5-flash",
-      systemInstruction: systemPrompt,
+    // Gọi Gemini v1 REST API trực tiếp bằng fetch
+    const response = await fetch(`${GEMINI_API_URL}?key=${apiKey}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        system_instruction: {
+          parts: [{ text: systemPrompt }],
+        },
+        contents: messages,
+        generationConfig: {
+          maxOutputTokens: 600,
+          temperature: 0.8,
+        },
+      }),
     });
 
-    // Chuyển đổi messages history thành format Gemini
-    const history = messages.slice(0, -1); // bỏ tin nhắn cuối (sẽ gửi riêng)
-    const lastMessage = messages[messages.length - 1];
+    if (!response.ok) {
+      const errText = await response.text();
+      throw new Error(`Gemini ${response.status}: ${errText}`);
+    }
 
-    const chat = model.startChat({
-      history: history,
-      generationConfig: {
-        maxOutputTokens: 600,
-        temperature: 0.8,
-      },
-    });
+    const data = await response.json() as {
+      candidates: Array<{
+        content: { parts: Array<{ text: string }> };
+      }>;
+    };
 
-    const result = await chat.sendMessage(lastMessage.parts[0].text);
-    const text = result.response.text();
+    const text = data.candidates?.[0]?.content?.parts?.[0]?.text ?? "Dạ, em không có câu trả lời phù hợp. Anh/chị vui lòng liên hệ Zalo để được hỗ trợ nhé!";
 
     return NextResponse.json({ text });
   } catch (error) {
     const msg = error instanceof Error ? error.message : String(error);
     console.error("Gemini API error:", msg);
     return NextResponse.json(
-      { error: `Lỗi kỹ thuật: ${msg}` },
+      { error: `Lỗi: ${msg}` },
       { status: 500 }
     );
   }

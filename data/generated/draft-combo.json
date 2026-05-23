@@ -22,10 +22,10 @@
     "children": 0
   },
   "base_flight_price": 5600000,
-  "hotel_price": 2360000,
+  "hotel_price": 2420000,
   "fees": 350000,
-  "margin": 581700,
-  "total_price": 8891700,
+  "margin": 585900,
+  "total_price": 8955900,
   "price_note": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng vé, phòng và chính sách của nhà cung cấp. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
   "included": [
     "Vé máy bay khứ hồi tham khảo cho 2 người lớn",
@@ -45,14 +45,14 @@
     "nhóm bạn"
   ],
   "status": "draft",
-  "generated_at": "2026-05-17T11:24:23.757+07:00",
-  "updated_at": "2026-05-17T11:24:23.757+07:00",
+  "generated_at": "2026-05-23T11:32:38.261+07:00",
+  "updated_at": "2026-05-23T11:32:38.261+07:00",
   "published_at": null,
   "expires_at": "2026-06-18T23:59:59+07:00",
   "source_log": {
     "flight_source": "mock-flight-provider",
     "hotel_source": "data/hotels.csv",
     "flight_updated_at": "2026-05-17T08:00:00+07:00",
-    "price_updated_at": "2026-05-17T11:24:23.757+07:00"
+    "price_updated_at": "2026-05-23T11:32:38.261+07:00"
   }
 }
