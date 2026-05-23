@@ -1,8 +1,8 @@
 "use client";
 
-import { FormEvent, useState, useRef, useEffect, useMemo } from "react";
-import { useRouter } from "next/navigation";
-import { CalendarDays, MapPin, Search, Users, Plane, Hotel } from "lucide-react";
+import { FormEvent, useState, useRef, useEffect, useMemo, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { CalendarDays, MapPin, Search, Users, Plane, Hotel, X } from "lucide-react";
 import type { PublicTour, PublicHotel } from "@/lib/types";
 import { normalizeSearch } from "@/lib/tour-helpers";
 
@@ -13,14 +13,36 @@ interface TourSearchBoxProps {
   hotels?: PublicHotel[];
 }
 
-export function TourSearchBox({ className = "", compact = false, tours = [], hotels = [] }: TourSearchBoxProps) {
+export function TourSearchBox(props: TourSearchBoxProps) {
+  return (
+    <Suspense fallback={<div className="h-16 w-full animate-pulse rounded-2xl bg-white/10" />}>
+      <TourSearchBoxInner {...props} />
+    </Suspense>
+  );
+}
+
+function TourSearchBoxInner({ className = "", compact = false, tours = [], hotels = [] }: TourSearchBoxProps) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<"tour" | "hotel">("tour");
   const [query, setQuery] = useState("");
   const [month, setMonth] = useState("");
   const [departureCity, setDepartureCity] = useState("Hà Nội");
   const [showDropdown, setShowDropdown] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Sync state with URL search parameters dynamically
+  useEffect(() => {
+    const q = searchParams.get("q") ?? "";
+    const type = searchParams.get("type") === "hotel" ? "hotel" : "tour";
+    const monthParam = searchParams.get("month") ?? "";
+    const fromParam = searchParams.get("from") ?? "Hà Nội";
+
+    setQuery(q);
+    setActiveTab(type);
+    setMonth(monthParam);
+    setDepartureCity(fromParam);
+  }, [searchParams]);
 
   // Close dropdown on click outside
   useEffect(() => {
@@ -219,6 +241,7 @@ export function TourSearchBox({ className = "", compact = false, tours = [], hot
           onClick={() => {
             setActiveTab("tour");
             setQuery("");
+            setShowDropdown(false);
           }}
           className={`flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-bold uppercase tracking-wide transition duration-200 ${
             activeTab === "tour"
@@ -234,6 +257,7 @@ export function TourSearchBox({ className = "", compact = false, tours = [], hot
           onClick={() => {
             setActiveTab("hotel");
             setQuery("");
+            setShowDropdown(false);
           }}
           className={`flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-bold uppercase tracking-wide transition duration-200 ${
             activeTab === "hotel"
@@ -257,6 +281,11 @@ export function TourSearchBox({ className = "", compact = false, tours = [], hot
           }
           value={query}
           onFocus={() => setShowDropdown(true)}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") {
+              setShowDropdown(false);
+            }
+          }}
           onChange={(event) => {
             setQuery(event.target.value);
             setShowDropdown(true);
@@ -265,7 +294,15 @@ export function TourSearchBox({ className = "", compact = false, tours = [], hot
 
         {/* Dropdown Suggestions - iVIVU Luxury Destination Grid Layout */}
         {showDropdown && (
-          <div className="absolute left-0 right-0 top-full z-50 mt-2 max-h-[460px] overflow-y-auto rounded-2xl border border-brand-hairline bg-white p-5 shadow-[0_24px_80px_rgba(0,0,0,0.18)]">
+          <div className="absolute left-0 right-0 top-full z-50 mt-2 max-h-[460px] overflow-y-auto rounded-2xl border border-brand-hairline bg-white p-5 shadow-[0_24px_80px_rgba(0,0,0,0.18)] pr-12 relative">
+            <button
+              type="button"
+              onClick={() => setShowDropdown(false)}
+              className="absolute right-4 top-4 rounded-full p-1.5 text-brand-slate hover:bg-brand-soft hover:text-brand-primary transition z-50 bg-white shadow-sm border border-brand-hairline/60"
+              title="Đóng bảng gợi ý"
+            >
+              <X size={16} />
+            </button>
             {query === "" ? (
               /* iVIVU Style Structured Hot Grid */
               <div className="space-y-5">
