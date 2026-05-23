@@ -120,15 +120,88 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
 
   function analyzeAndReply(query: string): Message {
     const normalized = normalize(query);
+    
+    // Khắc phục lỗi Regex: dùng \b hoặc khớp từ chính xác để tránh trùng "thi" với "hi"
+    const hasHello = /\b(chao|xin chao|hello|hi|bonjour)\b/.test(normalized);
     const hasDaNang = /da nang|my khe|ba na/.test(normalized);
     const hasPhuQuoc = /phu quoc|dao ngoc/.test(normalized);
     const hasNhaTrang = /nha trang|tran phu/.test(normalized);
     const hasHaLong = /ha long|tuan chau|du thuyen/.test(normalized);
     const hasBespoke = /thiet ke|rieng|bespoke|tu van|yeu cau|ca nhan/.test(normalized);
     const hasCheap = /re nhat|gia tot|gia re|uu dai|thap nhat|re/.test(normalized);
-    const hasHello = /chao|xin chao|hello|hi|bonjour/.test(normalized);
+
+    // Bộ phân tích tính giá (Pricing Calculator) thông minh
+    const hasPricingCalc = /(\d+)\s*(nguoi|lon|be|tre|khach|tuoi)/i.test(normalized) || /tinh the nao|het bao nhieu|gia cho|gia tre em/i.test(normalized);
 
     const now = new Date();
+
+    // 1. Nếu khách hỏi về tính giá (3 người lớn, trẻ em...)
+    if (hasPricingCalc) {
+      // Tìm tour thảo luận gần nhất, nếu không mặc định Đà Nẵng
+      const lastTour = messages.slice().reverse().find((m) => m.tourCard)?.tourCard ?? tours.find((t) => t.id === "combo-da-nang-3n2d") ?? tours[0];
+      
+      if (lastTour) {
+        // Trích xuất số lượng người lớn và trẻ em từ câu hỏi
+        let adultsCount = 2;
+        let childrenCount = 0;
+        let childAge = 6;
+
+        // Trích xuất người lớn
+        const adultMatch = normalized.match(/(\d+)\s*(nguoi lon|lon|adult)/);
+        if (adultMatch) {
+          adultsCount = parseInt(adultMatch[1]);
+        } else {
+          // Nếu chỉ ghi chung chung "3 người" hoặc "3 khách"
+          const generalMatch = normalized.match(/(\d+)\s*(nguoi|khach)/);
+          if (generalMatch) {
+            adultsCount = parseInt(generalMatch[1]);
+          }
+        }
+
+        // Trích xuất trẻ em / bé
+        const childMatch = normalized.match(/(\d+)\s*(be|tre em|tre con|tre|child)/);
+        if (childMatch) {
+          childrenCount = parseInt(childMatch[1]);
+        }
+
+        // Trích xuất tuổi của trẻ em (ví dụ: 6t, 6 tuổi)
+        const ageMatch = normalized.match(/(\d+)\s*(t|tuoi)/);
+        if (ageMatch) {
+          childAge = parseInt(ageMatch[1]);
+        }
+
+        // Tính toán chi tiết theo chính sách trẻ em và người lớn
+        const adultPrice = lastTour.price;
+        let childPrice = Math.round(adultPrice * 0.7); // Trẻ em 2-11 tuổi thường 70% giá combo (vé bay + giường phụ)
+        let ageLabel = `${childAge} tuổi (Tính 70% giá người lớn)`;
+
+        if (childAge < 2) {
+          childPrice = 500000; // Em bé dưới 2 tuổi tính vé máy bay rẻ + khách sạn free
+          ageLabel = "Dưới 2 tuổi (Chỉ phụ thu vé bay 500.000đ)";
+        } else if (childAge >= 12) {
+          childPrice = adultPrice; // Trẻ em từ 12 tuổi tính như người lớn
+          ageLabel = `${childAge} tuổi (Tính bằng giá người lớn)`;
+        }
+
+        const adultsTotal = adultsCount * adultPrice;
+        const childrenTotal = childrenCount * childPrice;
+        const grandTotal = adultsTotal + childrenTotal;
+
+        return {
+          sender: "bot",
+          text: `Dạ, em xin phép tính toán chi tiết chi phí dự kiến cho đoàn mình đi **${lastTour.title}** (${lastTour.duration}) như sau:\n\n` +
+                `• **Người lớn**: ${adultsCount} khách x ${formatVnd(adultPrice)} = **${formatVnd(adultsTotal)}**\n` +
+                (childrenCount > 0 
+                  ? `• **Trẻ em (${ageLabel})**: ${childrenCount} bé x ${formatVnd(childPrice)} = **${formatVnd(childrenTotal)}**\n\n`
+                  : `\n`) +
+                `👉 **Tổng chi phí ước tính cả đoàn**: <span className="text-base font-bold text-brand-goldDark">${formatVnd(grandTotal)}</span>\n\n` +
+                `Dạ, Quý khách thấy mức giá này phù hợp với kế hoạch chưa ạ? Em có thể kết nối ngay Chuyên viên VIP để kiểm tra giữ vé máy bay giờ đẹp và phòng sát biển cho đoàn mình không ạ?`,
+          timestamp: now,
+          tourCard: lastTour,
+          actionButtons: ["Đăng ký giữ chỗ đoàn ngay", "Tư vấn ngày bay khác", "Tìm điểm đến khác"]
+        };
+      }
+    }
 
     if (hasHello) {
       return {
