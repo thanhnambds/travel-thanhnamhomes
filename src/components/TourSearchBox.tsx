@@ -135,6 +135,29 @@ function TourSearchBoxInner({ className = "", compact = false, tours = [], hotel
     );
   }, [uniqueDestinations, query, activeTab]);
 
+  // Filter matched specific tours or hotels based on query when typing
+  const matchedSuggestions = useMemo(() => {
+    const normalized = normalizeSearch(query);
+    if (!normalized) return [];
+
+    if (activeTab === "tour") {
+      return tours
+        .filter((tour) => {
+          return normalizeSearch(tour.title).includes(normalized) ||
+                 normalizeSearch(tour.destination).includes(normalized) ||
+                 normalizeSearch(tour.country).includes(normalized);
+        })
+        .slice(0, 10);
+    } else {
+      return hotels
+        .filter((hotel) => {
+          return normalizeSearch(hotel.hotel_name).includes(normalized) ||
+                 normalizeSearch(hotel.destination).includes(normalized);
+        })
+        .slice(0, 10);
+    }
+  }, [tours, hotels, query, activeTab]);
+
   // Dynamic departure cities
   const departureCities = useMemo(() => {
     if (!tours || tours.length === 0) return ["Hà Nội", "Hồ Chí Minh", "Đà Nẵng", "Tất cả"];
@@ -311,42 +334,47 @@ function TourSearchBoxInner({ className = "", compact = false, tours = [], hotel
                     🔥 Địa điểm trong nước đang HOT nhất
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-3">
-                    {hotDomestic.map((item) => {
-                      const stats = getDestinationStats(item.name);
-                      const image = getDestinationImage(item.name);
-                      const displayCount = activeTab === "tour" 
-                        ? `${stats.tourCount} tour đang mở` 
-                        : `${stats.hotelCount} khách sạn`;
+                    {hotDomestic
+                      .filter((item) => {
+                        const stats = getDestinationStats(item.name);
+                        return activeTab === "tour" ? stats.tourCount > 0 : stats.hotelCount > 0;
+                      })
+                      .map((item) => {
+                        const stats = getDestinationStats(item.name);
+                        const image = getDestinationImage(item.name);
+                        const displayCount = activeTab === "tour" 
+                          ? `${stats.tourCount} tour đang mở` 
+                          : `${stats.hotelCount} khách sạn`;
 
-                      return (
-                        <button
-                          key={item.name}
-                          type="button"
-                          onClick={() => {
-                            setQuery(item.name);
-                            setShowDropdown(false);
-                            const params = new URLSearchParams();
-                            params.set("q", item.name);
-                            params.set("type", activeTab);
-                            if (activeTab === "tour" && departureCity) {
-                              params.set("from", departureCity);
-                            }
-                            router.push(`/tim-kiem-tour/?${params.toString()}`);
-                          }}
-                          className="flex items-center gap-3 rounded-xl p-2 text-left hover:bg-brand-soft transition duration-200 border border-brand-hairline/30 hover:border-brand-gold/40"
-                        >
-                          <img
-                            src={image}
-                            alt={item.name}
-                            className="w-11 h-11 rounded-lg object-cover shadow-sm bg-brand-stone"
-                          />
-                          <div className="min-w-0">
-                            <div className="font-bold text-xs text-brand-primary truncate">{item.name}</div>
-                            <div className="text-[10px] text-brand-slate font-medium truncate mt-0.5">{displayCount}</div>
-                          </div>
-                        </button>
-                      );
-                    })}
+                        return (
+                          <button
+                            key={item.name}
+                            type="button"
+                            onClick={() => {
+                              setQuery(item.name);
+                              setShowDropdown(false);
+                              const params = new URLSearchParams();
+                              params.set("q", item.name);
+                              params.set("type", activeTab);
+                              if (activeTab === "tour" && departureCity) {
+                                params.set("from", departureCity);
+                              }
+                              router.push(`/tim-kiem-tour/?${params.toString()}`);
+                            }}
+                            className="flex items-center gap-3 rounded-xl p-2 text-left hover:bg-brand-soft transition duration-200 border border-brand-hairline/30 hover:border-brand-gold/40"
+                          >
+                            <img
+                              src={image}
+                              alt={item.name}
+                              className="w-11 h-11 rounded-lg object-cover shadow-sm bg-brand-stone"
+                            />
+                            <div className="min-w-0">
+                              <div className="font-bold text-xs text-brand-primary truncate">{item.name}</div>
+                              <div className="text-[10px] text-brand-slate font-medium truncate mt-0.5">{displayCount}</div>
+                            </div>
+                          </button>
+                        );
+                      })}
                   </div>
                 </div>
 
@@ -394,75 +422,81 @@ function TourSearchBoxInner({ className = "", compact = false, tours = [], hotel
                   </div>
                 )}
               </div>
-            ) : filteredDestinations.length > 0 ? (
-              /* Matched Search Results */
+            ) : matchedSuggestions.length > 0 ? (
+              /* Matched Specific Search Results */
               <div>
                 <div className="px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-brand-slate border-b border-brand-hairline/60 mb-2">
-                  📍 Kết quả tìm thấy cho "{query}"
+                  📍 {activeTab === "tour" ? "Tour du lịch phù hợp" : "Khách sạn đối tác phù hợp"}
                 </div>
-                <div className="grid gap-1">
-                  {filteredDestinations.map((item) => {
-                    const stats = getDestinationStats(item.destination);
-                    const image = getDestinationImage(item.destination);
-                    const displayCount = activeTab === "tour" 
-                      ? `${stats.tourCount} tour đang mở` 
-                      : `${stats.hotelCount} khách sạn`;
-
-                    return (
+                <div className="grid gap-1.5 max-h-[300px] overflow-y-auto pr-1">
+                  {activeTab === "tour" ? (
+                    (matchedSuggestions as PublicTour[]).map((tour) => (
                       <button
-                        key={item.destination}
+                        key={tour.id}
                         type="button"
                         onClick={() => {
-                          setQuery(item.destination);
+                          setQuery(tour.title);
                           setShowDropdown(false);
-                          const params = new URLSearchParams();
-                          params.set("q", item.destination);
-                          params.set("type", activeTab);
-                          if (activeTab === "tour" && departureCity) {
-                            params.set("from", departureCity);
-                          }
-                          router.push(`/tim-kiem-tour/?${params.toString()}`);
+                          router.push(`/tour/${tour.id}/`);
                         }}
-                        className="flex items-center justify-between rounded-xl p-2 text-left hover:bg-brand-soft transition duration-200"
+                        className="flex items-center justify-between rounded-xl p-2 text-left hover:bg-brand-soft transition duration-200 border border-brand-hairline/20"
                       >
-                        <div className="flex items-center gap-3">
-                          <img
-                            src={image}
-                            alt={item.destination}
-                            className="w-10 h-10 rounded-lg object-cover shadow-sm"
-                          />
-                          <div>
-                            <span className="font-bold text-sm text-brand-primary">{item.destination}</span>
-                            <span className="ml-1.5 text-xs text-brand-slate">({item.country})</span>
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <Plane className="text-brand-goldDark shrink-0" size={15} />
+                          <div className="min-w-0">
+                            <div className="font-bold text-xs text-brand-primary truncate">{tour.title}</div>
+                            <div className="text-[10px] text-brand-slate font-medium truncate mt-0.5">
+                              {tour.destination} ({tour.country}) · {tour.duration}
+                            </div>
                           </div>
                         </div>
-                        <div className="text-right">
-                          {activeTab === "tour" ? (
-                            <>
-                              {item.minPrice > 0 ? (
-                                <div className="text-xs font-extrabold text-brand-goldDark">
-                                  Từ {new Intl.NumberFormat("vi-VN").format(item.minPrice)}đ
-                                </div>
-                              ) : (
-                                <div className="text-[10px] font-bold text-brand-goldDark">Giá ưu đãi</div>
-                              )}
-                              <div className="text-[10px] text-brand-slate mt-0.5">{displayCount}</div>
-                            </>
-                          ) : (
-                            <>
-                              <div className="text-xs font-extrabold text-brand-goldDark">Giá tốt nhất</div>
-                              <div className="text-[10px] text-brand-slate mt-0.5">{displayCount}</div>
-                            </>
-                          )}
+                        <div className="text-right shrink-0 ml-3">
+                          <div className="text-xs font-extrabold text-brand-goldDark">
+                            Từ {new Intl.NumberFormat("vi-VN").format(tour.price)}đ
+                          </div>
                         </div>
                       </button>
-                    );
-                  })}
+                    ))
+                  ) : (
+                    (matchedSuggestions as PublicHotel[]).map((hotel) => {
+                      const cleanedName = hotel.hotel_name;
+                      const encodedMsg = encodeURIComponent(
+                        `Xin chào Thanh Nam Homes Travel, em muốn kiểm tra tình trạng phòng trống và đặt phòng tại khách sạn: ${cleanedName} (Khu vực: ${hotel.destination}).`
+                      );
+                      const hotelZaloUrl = `https://zalo.me/0965325555?text=${encodedMsg}`;
+
+                      return (
+                        <a
+                          key={hotel.id}
+                          href={hotelZaloUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => setShowDropdown(false)}
+                          className="flex items-center justify-between rounded-xl p-2 text-left hover:bg-brand-soft transition duration-200 border border-brand-hairline/20"
+                        >
+                          <div className="flex items-center gap-2.5 min-w-0">
+                            <Hotel className="text-brand-goldDark shrink-0" size={15} />
+                            <div className="min-w-0">
+                              <div className="font-bold text-xs text-brand-primary truncate">{cleanedName}</div>
+                              <div className="text-[10px] text-brand-slate font-medium truncate mt-0.5">
+                                {hotel.destination} ({hotel.country})
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text-right shrink-0 ml-3">
+                            <span className="inline-flex rounded-full bg-emerald-50 px-2 py-0.5 text-[9px] font-bold text-emerald-700">
+                              Đặt ngay
+                            </span>
+                          </div>
+                        </a>
+                      );
+                    })
+                  )}
                 </div>
               </div>
             ) : (
               <div className="px-3 py-6 text-center text-xs font-medium text-brand-slate">
-                Không tìm thấy kết quả phù hợp cho "{query}"
+                Không tìm thấy {activeTab === "tour" ? "tour" : "khách sạn"} phù hợp cho "{query}"
               </div>
             )}
           </div>
