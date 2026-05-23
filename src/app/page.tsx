@@ -74,18 +74,56 @@ export default function HomePage() {
       </section>
 
       <section className="bg-white py-20">
-        <div className="container-page grid gap-10 lg:grid-cols-[0.78fr_1.22fr]">
-          <div>
-            <p className="section-label">Gợi ý hôm nay</p>
-            <h2 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.02em] text-brand-primary md:text-5xl">
-              Combo ưu đãi đặc biệt
-            </h2>
-            <p className="mt-6 text-brand-slate">
-              Tuyển tập những gói ưu đãi độc quyền được làm mới mỗi ngày. Số lượng có hạn - hãy kết nối với chuyên viên của chúng tôi ngay để nhận báo giá cá nhân hóa và giữ chỗ tốt nhất.
-            </p>
+        <div className="container-page">
+          <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div className="max-w-2xl">
+              <p className="section-label">Gợi ý hôm nay</p>
+              <h2 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.02em] text-brand-primary md:text-5xl">
+                Combo ưu đãi đặc biệt
+              </h2>
+              <p className="mt-4 text-brand-slate">
+                Tuyển chọn những gói combo du lịch nội địa hấp dẫn nhất với chi phí tối ưu, giúp bạn có một kỳ nghỉ đẳng cấp mà vẫn tiết kiệm.
+              </p>
+            </div>
+            <a className="btn-brand-gold shrink-0" href={config.zaloUrl}>
+              <MessageCircle size={18} />
+              Nhận báo giá qua Zalo
+            </a>
           </div>
-          <div className="rounded-2xl bg-brand-soft p-6">
-            {combo ? <ComboCard combo={combo} compact /> : <EmptyCombo />}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <TourCard
+              href="/combo-da-nang/"
+              image="/images/da-nang.png"
+              location="Đà Nẵng"
+              title="Combo Đà Nẵng 3N2Đ: Vé máy bay khứ hồi + Khách sạn 4 sao sát biển"
+              rating={4.9}
+              reviews={48}
+              tag="Giá tốt nhất: 2.990.000đ"
+              price="2.990.000đ/khách"
+              duration="3N2Đ"
+            />
+            <TourCard
+              href="/combo-phu-quoc/"
+              image="/images/phu-quoc.png"
+              location="Phú Quốc"
+              title="Combo Phú Quốc 3N2Đ: Vé máy bay khứ hồi + Resort 4 sao sát biển sang trọng"
+              rating={5.0}
+              reviews={36}
+              tag="Bán chạy nhất: 3.890.000đ"
+              price="3.890.000đ/khách"
+              duration="3N2Đ"
+            />
+            <TourCard
+              href="/combo-nha-trang/"
+              image="/images/nha-trang.png"
+              location="Nha Trang"
+              title="Combo Nha Trang 3N2Đ: Vé máy bay khứ hồi + Khách sạn 5 sao phố Trần Phú"
+              rating={4.8}
+              reviews={42}
+              tag="Ưu đãi hè: 3.490.000đ"
+              price="3.490.000đ/khách"
+              duration="3N2Đ"
+            />
           </div>
         </div>
       </section>
