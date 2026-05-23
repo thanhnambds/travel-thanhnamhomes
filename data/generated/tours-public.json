@@ -8,7 +8,11 @@
     "duration": "3N2Đ",
     "airline": "Vietnam Airlines khứ hồi",
     "departure_city": "Hà Nội",
-    "departure_dates": ["2026-06-18", "2026-07-05", "2026-07-19"],
+    "departure_dates": [
+      "2026-06-18",
+      "2026-07-05",
+      "2026-07-19"
+    ],
     "price": 2990000,
     "currency": "VND",
     "price_note": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng chỗ và chính sách đối tác. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
@@ -17,7 +21,9 @@
     "source_sheet_name": "NỘI ĐỊA",
     "source_rows": [],
     "updated_at": "2026-05-23T09:10:00+07:00",
-    "public_notes": ["Gói combo nội địa bán chạy nhất, ưu đãi khách sạn 4 sao sát biển."]
+    "public_notes": [
+      "Gói combo nội địa bán chạy nhất, ưu đãi khách sạn 4 sao sát biển."
+    ]
   },
   {
     "id": "combo-phu-quoc-3n2d",
@@ -28,7 +34,11 @@
     "duration": "3N2Đ",
     "airline": "Vé máy bay khứ hồi",
     "departure_city": "Hà Nội",
-    "departure_dates": ["2026-06-20", "2026-07-10", "2026-07-24"],
+    "departure_dates": [
+      "2026-06-20",
+      "2026-07-10",
+      "2026-07-24"
+    ],
     "price": 3890000,
     "currency": "VND",
     "price_note": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng chỗ và chính sách đối tác. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
@@ -37,7 +47,9 @@
     "source_sheet_name": "NỘI ĐỊA",
     "source_rows": [],
     "updated_at": "2026-05-23T09:10:00+07:00",
-    "public_notes": ["Combo nghỉ dưỡng đẳng cấp Phú Quốc với resort 4 sao sát biển."]
+    "public_notes": [
+      "Combo nghỉ dưỡng đẳng cấp Phú Quốc với resort 4 sao sát biển."
+    ]
   },
   {
     "id": "combo-nha-trang-3n2d",
@@ -48,7 +60,11 @@
     "duration": "3N2Đ",
     "airline": "Bamboo/Vietjet khứ hồi",
     "departure_city": "Hà Nội",
-    "departure_dates": ["2026-06-22", "2026-07-12", "2026-07-26"],
+    "departure_dates": [
+      "2026-06-22",
+      "2026-07-12",
+      "2026-07-26"
+    ],
     "price": 3490000,
     "currency": "VND",
     "price_note": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng chỗ và chính sách đối tác. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
@@ -57,7 +73,9 @@
     "source_sheet_name": "NỘI ĐỊA",
     "source_rows": [],
     "updated_at": "2026-05-23T09:10:00+07:00",
-    "public_notes": ["Khám phá vịnh biển đẹp nhất thế giới với lưu trú 5 sao trung tâm phố biển Trần Phú."]
+    "public_notes": [
+      "Khám phá vịnh biển đẹp nhất thế giới với lưu trú 5 sao trung tâm phố biển Trần Phú."
+    ]
   },
   {
     "id": "shanghai-hangzhou-wuzhen-vj-2026-06-10",
@@ -68,16 +86,24 @@
     "duration": "5N4Đ",
     "airline": "VJ",
     "departure_city": "Hà Nội",
-    "departure_dates": ["2026-06-10"],
+    "departure_dates": [
+      "2026-06-10"
+    ],
     "price": 13990000,
     "currency": "VND",
     "price_note": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng chỗ và chính sách đối tác. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
     "program_url": "https://docs.google.com/document/d/1yQQYC_bO7jngCz3-bXTPseqbXhAcnObO/edit",
     "source_sheet_url": "https://docs.google.com/spreadsheets/d/1eXrinuLspzQwpLe4kz0mETubzepfo9UjfeuGVCM-aRw/edit?gid=1921352544&range=A86:I87",
     "source_sheet_name": "TRUNG QUỐC - HONGKONG",
-    "source_rows": [86, 87],
+    "source_rows": [
+      86,
+      87
+    ],
     "updated_at": "2026-05-19T21:30:00+07:00",
-    "public_notes": ["Tour đang có giá thấp nhất trong nhóm Thượng Hải tháng 6 theo dữ liệu đã duyệt.", "Cần kiểm tra lại tình trạng chỗ trước khi nhận cọc."]
+    "public_notes": [
+      "Tour đang có giá thấp nhất trong nhóm Thượng Hải tháng 6 theo dữ liệu đã duyệt.",
+      "Cần kiểm tra lại tình trạng chỗ trước khi nhận cọc."
+    ]
   },
   {
     "id": "kunming-dali-road-2026-07",
@@ -88,16 +114,29 @@
     "duration": "4N4Đ",
     "airline": "Ô tô + tàu cao tốc",
     "departure_city": "Hà Nội",
-    "departure_dates": ["2026-07-01", "2026-07-08", "2026-07-15", "2026-07-22", "2026-07-29"],
+    "departure_dates": [
+      "2026-07-01",
+      "2026-07-08",
+      "2026-07-15",
+      "2026-07-22",
+      "2026-07-29"
+    ],
     "price": 7590000,
     "currency": "VND",
     "price_note": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng chỗ và chính sách đối tác. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
     "program_url": "https://docs.google.com/document/d/1cJIjwM-gwBTgkg-0zK2XUaC9Po_8kx7m/edit",
     "source_sheet_url": "https://docs.google.com/spreadsheets/d/1eXrinuLspzQwpLe4kz0mETubzepfo9UjfeuGVCM-aRw/edit?gid=1921352544&range=A240:I242",
     "source_sheet_name": "TRUNG QUỐC - HONGKONG",
-    "source_rows": [240, 241, 242],
+    "source_rows": [
+      240,
+      241,
+      242
+    ],
     "updated_at": "2026-05-20T14:50:00+07:00",
-    "public_notes": ["Tour Trung Quốc tháng 7 có giá thấp nhất trong dữ liệu đã duyệt.", "Cần kiểm tra lại tình trạng chỗ trước khi nhận cọc."]
+    "public_notes": [
+      "Tour Trung Quốc tháng 7 có giá thấp nhất trong dữ liệu đã duyệt.",
+      "Cần kiểm tra lại tình trạng chỗ trước khi nhận cọc."
+    ]
   },
   {
     "id": "bangkok-pattaya-vn-2026-07",
@@ -108,16 +147,34 @@
     "duration": "5N4Đ",
     "airline": "VN bay chiều - tối",
     "departure_city": "Hà Nội",
-    "departure_dates": ["2026-07-05", "2026-07-12", "2026-07-14", "2026-07-19", "2026-07-21", "2026-07-26", "2026-07-28"],
+    "departure_dates": [
+      "2026-07-05",
+      "2026-07-12",
+      "2026-07-14",
+      "2026-07-19",
+      "2026-07-21",
+      "2026-07-26",
+      "2026-07-28"
+    ],
     "price": 8390000,
     "currency": "VND",
     "price_note": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng chỗ và chính sách đối tác. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
     "program_url": "https://drive.google.com/file/d/1lZLTRTCbCRfXu4M1FomMfdJtNI-vyCUo/view",
     "source_sheet_url": "https://docs.google.com/spreadsheets/d/1eXrinuLspzQwpLe4kz0mETubzepfo9UjfeuGVCM-aRw/edit?gid=1905768660&range=A6:I31",
     "source_sheet_name": "THÁI LAN",
-    "source_rows": [6, 24, 25, 26, 27, 28],
+    "source_rows": [
+      6,
+      24,
+      25,
+      26,
+      27,
+      28
+    ],
     "updated_at": "2026-05-20T14:50:00+07:00",
-    "public_notes": ["Tour Thái Lan tháng 7 có giá thấp nhất trong dữ liệu đã duyệt.", "Cần kiểm tra lại tình trạng chỗ trước khi nhận cọc."]
+    "public_notes": [
+      "Tour Thái Lan tháng 7 có giá thấp nhất trong dữ liệu đã duyệt.",
+      "Cần kiểm tra lại tình trạng chỗ trước khi nhận cọc."
+    ]
   },
   {
     "id": "malaysia-singapore-vna-2026-07",
@@ -128,16 +185,23 @@
     "duration": "5N4Đ",
     "airline": "VNA",
     "departure_city": "Hà Nội",
-    "departure_dates": ["2026-07-07"],
+    "departure_dates": [
+      "2026-07-07"
+    ],
     "price": 13490000,
     "currency": "VND",
     "price_note": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng chỗ và chính sách đối tác. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
     "program_url": "https://docs.google.com/document/d/1xN7KG-EpPT5Cc_lVR2F_XOJCifcYJYjP/edit",
     "source_sheet_url": "https://docs.google.com/spreadsheets/d/1eXrinuLspzQwpLe4kz0mETubzepfo9UjfeuGVCM-aRw/edit?gid=2001771773&range=A4:I4",
     "source_sheet_name": "MALAYSIA - SINGAPORE",
-    "source_rows": [4],
+    "source_rows": [
+      4
+    ],
     "updated_at": "2026-05-20T14:50:00+07:00",
-    "public_notes": ["Tour Malaysia - Singapore tháng 7 có giá thấp nhất trong dữ liệu đã duyệt.", "Cần kiểm tra lại tình trạng chỗ trước khi nhận cọc."]
+    "public_notes": [
+      "Tour Malaysia - Singapore tháng 7 có giá thấp nhất trong dữ liệu đã duyệt.",
+      "Cần kiểm tra lại tình trạng chỗ trước khi nhận cọc."
+    ]
   },
   {
     "id": "taiwan-khh-tpe-vn-2026-07",
@@ -148,16 +212,27 @@
     "duration": "Đang cập nhật",
     "airline": "VN",
     "departure_city": "Hà Nội",
-    "departure_dates": ["2026-07-09", "2026-07-18", "2026-07-30"],
+    "departure_dates": [
+      "2026-07-09",
+      "2026-07-18",
+      "2026-07-30"
+    ],
     "price": 13590000,
     "currency": "VND",
     "price_note": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng chỗ và chính sách đối tác. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
     "program_url": "https://docs.google.com/spreadsheets/d/1LIDk926R_olzH2suonm3ZBtFg6WSB_8AVPGmj0BN7oY/edit?gid=842413480&range=A21:AD23",
     "source_sheet_url": "https://docs.google.com/spreadsheets/d/1LIDk926R_olzH2suonm3ZBtFg6WSB_8AVPGmj0BN7oY/edit?gid=842413480&range=A21:AD23",
     "source_sheet_name": "ĐÀI LOAN",
-    "source_rows": [21, 22, 23],
+    "source_rows": [
+      21,
+      22,
+      23
+    ],
     "updated_at": "2026-05-20T14:50:00+07:00",
-    "public_notes": ["Tour Đài Loan tháng 7 có giá thấp nhất trong dữ liệu đã duyệt.", "Cần kiểm tra lại lịch trình chi tiết trước khi tư vấn sâu."]
+    "public_notes": [
+      "Tour Đài Loan tháng 7 có giá thấp nhất trong dữ liệu đã duyệt.",
+      "Cần kiểm tra lại lịch trình chi tiết trước khi tư vấn sâu."
+    ]
   },
   {
     "id": "hong-kong-vna-2026-07-04",
@@ -168,16 +243,24 @@
     "duration": "4N3Đ",
     "airline": "VNA",
     "departure_city": "Hà Nội",
-    "departure_dates": ["2026-07-04"],
+    "departure_dates": [
+      "2026-07-04"
+    ],
     "price": 16690000,
     "currency": "VND",
     "price_note": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng chỗ và chính sách đối tác. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
     "program_url": "https://docs.google.com/document/d/1M3H5GJH2Q9wqNDds-VeTXVY5sJABL4te/edit",
     "source_sheet_url": "https://docs.google.com/spreadsheets/d/1eXrinuLspzQwpLe4kz0mETubzepfo9UjfeuGVCM-aRw/edit?gid=1921352544&range=A270:I271",
     "source_sheet_name": "TRUNG QUỐC - HONGKONG",
-    "source_rows": [270, 271],
+    "source_rows": [
+      270,
+      271
+    ],
     "updated_at": "2026-05-20T14:50:00+07:00",
-    "public_notes": ["Tour Hong Kong tháng 7 có giá thấp nhất trong dữ liệu đã duyệt.", "Cần kiểm tra lại tình trạng chỗ trước khi nhận cọc."]
+    "public_notes": [
+      "Tour Hong Kong tháng 7 có giá thấp nhất trong dữ liệu đã duyệt.",
+      "Cần kiểm tra lại tình trạng chỗ trước khi nhận cọc."
+    ]
   },
   {
     "id": "seoul-nami-summer-vj-2026-07",
@@ -188,16 +271,24 @@
     "duration": "5N4Đ",
     "airline": "Vietjet",
     "departure_city": "Hà Nội",
-    "departure_dates": ["2026-07-09"],
+    "departure_dates": [
+      "2026-07-09"
+    ],
     "price": 16700000,
     "currency": "VND",
     "price_note": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng chỗ và chính sách đối tác. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
     "program_url": "https://docs.google.com/document/d/1wgxZVx4VN7lHzX_AlCR5NdhIi0dYwJAU/edit",
     "source_sheet_url": "https://docs.google.com/spreadsheets/d/1eXrinuLspzQwpLe4kz0mETubzepfo9UjfeuGVCM-aRw/edit?gid=1832427392&range=A62:I68",
     "source_sheet_name": "HÀN QUỐC",
-    "source_rows": [62, 68],
+    "source_rows": [
+      62,
+      68
+    ],
     "updated_at": "2026-05-20T14:50:00+07:00",
-    "public_notes": ["Tour Hàn Quốc tháng 7 có giá thấp nhất trong dữ liệu đã duyệt.", "Ngày 02/07 có ghi đóng đoàn nên ưu tiên ngày 09/07 còn nhận."]
+    "public_notes": [
+      "Tour Hàn Quốc tháng 7 có giá thấp nhất trong dữ liệu đã duyệt.",
+      "Ngày 02/07 có ghi đóng đoàn nên ưu tiên ngày 09/07 còn nhận."
+    ]
   },
   {
     "id": "shizuoka-fuji-tokyo-vj-2026-07",
@@ -208,15 +299,3645 @@
     "duration": "5N4Đ",
     "airline": "Vietjet Air",
     "departure_city": "Hà Nội",
-    "departure_dates": ["2026-07-08", "2026-07-22", "2026-07-29"],
+    "departure_dates": [
+      "2026-07-08",
+      "2026-07-22",
+      "2026-07-29"
+    ],
     "price": 22900000,
     "currency": "VND",
     "price_note": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng chỗ và chính sách đối tác. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
     "program_url": "https://docs.google.com/document/d/106F4GA91v1gVBWaWLLotZkhNdQpbw04h/edit",
     "source_sheet_url": "https://docs.google.com/spreadsheets/d/1eXrinuLspzQwpLe4kz0mETubzepfo9UjfeuGVCM-aRw/edit?gid=2073745348&range=A36:J42",
     "source_sheet_name": "NHẬT BẢN",
-    "source_rows": [36, 40, 41, 42],
+    "source_rows": [
+      36,
+      40,
+      41,
+      42
+    ],
     "updated_at": "2026-05-20T14:50:00+07:00",
-    "public_notes": ["Tour Nhật Bản tháng 7 có giá thấp nhất trong dữ liệu đã duyệt.", "Cần kiểm tra lại tình trạng chỗ trước khi nhận cọc."]
+    "public_notes": [
+      "Tour Nhật Bản tháng 7 có giá thấp nhất trong dữ liệu đã duyệt.",
+      "Cần kiểm tra lại tình trạng chỗ trước khi nhận cọc."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-mot-hanh-trinh-5-quoc-gia-duc-ao-y-thuy--0",
+    "status": "published",
+    "title": "MỘT HÀNH TRÌNH 5 QUỐC GIA ĐỨC – ÁO – Ý – THỤY SỸ – PHÁP BAY VIETNAM AIRLINES",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "12N11Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-22",
+      "2026-06-19",
+      "2026-07-24",
+      "2026-10-02"
+    ],
+    "price": 91900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 5.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/u/1/d/1gybCbTwcW3lK-gmJziYP4ZnpRm6_qZFU/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-23T13:15:22.358Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 5.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-cung-duong-lang-man-chau-au-y-t-1",
+    "status": "published",
+    "title": "KHÁM PHÁ CUNG ĐƯỜNG LÃNG MẠN CHÂU ÂU Ý – THỤY SĨ – PHÁP BAY VIETNAM AIRLINES",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "11N10Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-29",
+      "2026-07-27",
+      "2026-08-24",
+      "2026-09-21",
+      "2026-10-19"
+    ],
+    "price": 92900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 5.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/u/1/d/1jd61EsGejJ_vdvr1e1V_IGRfcDE5DjvV/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-23T13:15:22.359Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 5.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-cung-duong-dep-nhat-nam-au-mien-2",
+    "status": "published",
+    "title": "KHÁM PHÁ CUNG ĐƯỜNG ĐẸP NHẤT NAM ÂU MIỀN NAM PHÁP – MONACO TÂY BAN NHA – BỒ ĐÀO NHA BAY TURKISH AIRLININES",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "10N9Đ BAY TK",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-28",
+      "2026-08-27",
+      "2026-09-30",
+      "2026-10-26"
+    ],
+    "price": 94900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 5.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1RN0Xssb5uRywCypp_3l0IcvevsZNpVkH/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-23T13:15:22.359Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 5.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-du-lich-dac-biet-6-nuoc-kha-3",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH DU LỊCH ĐẶC BIỆT 6 NƯỚC KHÁM PHÁ TÂY ÂU ĐỨC – THỤY SĨ – LUXEMBOURG HÀ LAN – BỈ – PHÁP BAY VIETNAM AIRLINES",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "11N10Đ BAY TK",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-23",
+      "2026-07-18",
+      "2026-10-17"
+    ],
+    "price": 79900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 5.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/u/1/d/12g8Ayg5zv8rf5dDi1mCrOSyLhiD1H09O/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-23T13:15:22.360Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 5.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-du-lich-bac-au-2026-dan-mac-4",
+    "status": "published",
+    "title": "Chương trình du lịch Bắc Âu 2026 ĐAN MẠCH – NA UY THỤY ĐIỂN – PHẦN LAN BAY TURKISH AIRLINES",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "10N9Đ BAY TK",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-30",
+      "2026-06-29",
+      "2026-07-13",
+      "2026-08-27",
+      "2026-09-26",
+      "2026-10-15"
+    ],
+    "price": 89900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 5.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1b23de7rm99ZDqZ5nG-_2sGHEAwUGBgKM/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-23T13:15:22.360Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 5.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-du-lich-dac-biet-6-nuoc-kha-5",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH DU LỊCH ĐẶC BIỆT 6 NƯỚC KHÁM PHÁ TÂY ÂU ĐỨC – THỤY SĨ – LUXEMBOURG HÀ LAN – BỈ – PHÁP BAY VIETNAM AIRLINES",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "10N9Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-23",
+      "2026-06-20",
+      "2026-07-18"
+    ],
+    "price": 79900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 4.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/12g8Ayg5zv8rf5dDi1mCrOSyLhiD1H09O/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-23T13:15:22.360Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 4.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-nam-au-nhung-canh-dong-hoa-oai--6",
+    "status": "published",
+    "title": "KHÁM PHÁ NAM ÂU NHỮNG CÁNH ĐỒNG HOA OẢI HƯƠNG BẤT TẬN MIỀN NAM PHÁP – MONACO TÂY BAN NHA – BỒ ĐÀO NHA BAY TURKISH AIRLININES",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "12N11Đ BAY TK",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-24",
+      "2026-07-17"
+    ],
+    "price": 94900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 5.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/13wFmrv6lfe-8BkmKj7SIEu3ReYFBjnRv/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-23T13:15:22.360Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 5.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-cung-duong-lang-man-chau-au-pha-7",
+    "status": "published",
+    "title": "KHÁM PHÁ CUNG ĐƯỜNG LÃNG MẠN CHÂU ÂU PHÁP – THỤY SỸ - Ý BAY VIETNAM AIRLINES",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "11N10Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-07-15"
+    ],
+    "price": 93900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 5.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1OwsKeYfOHUtT1XCQHzso93CV_QfOecYZ/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-23T13:15:22.361Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 5.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-cung-duong-lang-man-chau-au-y-t-8",
+    "status": "published",
+    "title": "KHÁM PHÁ CUNG ĐƯỜNG LÃNG MẠN CHÂU ÂU Ý – THỤY SĨ – PHÁP BAY VIETNAM AIRLINES",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "11N10Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-29",
+      "2026-07-27",
+      "2026-08-24",
+      "2026-09-21",
+      "2026-10-19"
+    ],
+    "price": 92900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 5.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1jd61EsGejJ_vdvr1e1V_IGRfcDE5DjvV/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-23T13:15:22.361Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 5.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-ha-noi-sydney-canberra-melbourn-9",
+    "status": "published",
+    "title": "KHÁM PHÁ HÀ NỘI – SYDNEY – CANBERRA - MELBOURNE - HÀ NỘI BAY VIETNAM AIRLINES",
+    "destination": "Úc",
+    "country": "Úc",
+    "duration": "7N6Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-21",
+      "2026-04-26",
+      "2026-04-28",
+      "2026-05-19",
+      "2026-06-02",
+      "2026-06-30",
+      "2026-07-07",
+      "2026-08-04",
+      "2026-09-15",
+      "2026-10-27",
+      "2026-11-17",
+      "2026-12-01",
+      "2026-12-29"
+    ],
+    "price": 59900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 5.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1Pr-mb4midqOFdZspIBsoQvM_Y0-pq5us/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      2
+    ],
+    "updated_at": "2026-05-23T13:15:22.361Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 5.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-melbourne-canberra-sydney-ha-noi--10",
+    "status": "published",
+    "title": "HÀ NỘI – MELBOURNE - CANBERRA– SYDNEY - HÀ NỘI (CUNG ĐƯỜNG KIM CƯƠNG ÚC) BAY VIETNAM AIRLINES",
+    "destination": "Úc",
+    "country": "Úc",
+    "duration": "7N6Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-26",
+      "2026-05-28",
+      "2026-06-11",
+      "2026-07-23",
+      "2026-08-20",
+      "2026-09-17",
+      "2026-10-10",
+      "2026-10-17",
+      "2026-11-19",
+      "2026-11-26",
+      "2026-12-10",
+      "2026-12-24",
+      "2026-12-31"
+    ],
+    "price": 64900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 5.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1LmJt9qpG8felOAv3Q_sUxl-jEMPMdQ9-/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      2
+    ],
+    "updated_at": "2026-05-23T13:15:22.361Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 5.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-trai-nghiem-nuoc-uc-voi-cung-duong-tour--11",
+    "status": "published",
+    "title": "TRẢI NGHIỆM NƯỚC ÚC VỚI CUNG ĐƯỜNG TOUR ĐỘC ĐÁO BAY VIETNAM AIRLINES",
+    "destination": "Úc",
+    "country": "Úc",
+    "duration": "8N7Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-07-31",
+      "2026-08-28",
+      "2026-09-25",
+      "2026-10-23",
+      "2026-12-18"
+    ],
+    "price": 66900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 5.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1x-WLvlRQxdd9UEKeRtFBEadw5CtMHs0r/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      2
+    ],
+    "updated_at": "2026-05-23T13:15:22.361Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 5.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-hanh-trinh-kham-pha-cung-duong-du-lich-d-12",
+    "status": "published",
+    "title": "HÀNH TRÌNH KHÁM PHÁ CUNG ĐƯỜNG DU LỊCH ĐẸP NHẤT VƯƠNG QUỐC ANH ENGLAND – XỨ WALES – SCOTLAND BAY VIETNAM AIRLINES",
+    "destination": "Anh",
+    "country": "Anh",
+    "duration": "9N8Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-24",
+      "2026-06-21",
+      "2026-07-06",
+      "2026-07-27",
+      "2026-08-16",
+      "2026-09-16"
+    ],
+    "price": 92900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 5.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1FbxLSx4TWqrydD_XYxHnuGz_Bhiy2qZQ/edit?rtpof=true&amp;tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      3
+    ],
+    "updated_at": "2026-05-23T13:15:22.361Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 5.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-hanh-trinh-vuot-thoi-gian-du-thuyen-5-am-13",
+    "status": "published",
+    "title": "HÀNH TRÌNH VƯỢT THỜI GIAN - DU THUYỀN 5* &amp; KỲ QUAN THẾ GIỚI AI CẬP 10 NGÀY – SỐNG TRỌN GIẤC MƠ CỔ ĐẠI BAY EMIRATES AIRLINES 5*",
+    "destination": "Dubai - Thổ Nhĩ Kỳ",
+    "country": "Dubai - Thổ Nhĩ Kỳ",
+    "duration": "10N9Đ BAY EK",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-24"
+    ],
+    "price": 77900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 4.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1V1JMrHnRydNAy5f-YkYXHy1m3ATpW2k9/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      4
+    ],
+    "updated_at": "2026-05-23T13:15:22.361Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 4.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-dat-nuoc-giao-thoa-nen-van-hoa--14",
+    "status": "published",
+    "title": "KHÁM PHÁ ĐẤT NƯỚC GIAO THOA NỀN VĂN HOÁ Á - ÂU THỔ NHĨ KỲ ISTANBUL – CANAKKALE – IZMIR – PAMUKKALE CAPPADOCIA – ISTANBUL BAY TURKISH AIRLINES",
+    "destination": "Dubai - Thổ Nhĩ Kỳ",
+    "country": "Dubai - Thổ Nhĩ Kỳ",
+    "duration": "8N7Đ BAY TK",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-03"
+    ],
+    "price": 46900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 3.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1NVJkZoMzK6ypYExzdFnWYfQNhBKbTYKx/edit?rtpof=true&amp;tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      4
+    ],
+    "updated_at": "2026-05-23T13:15:22.361Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 3.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-dat-nuoc-giao-thoa-nen-van-hoa--15",
+    "status": "published",
+    "title": "KHÁM PHÁ ĐẤT NƯỚC GIAO THOA NỀN VĂN HOÁ Á - ÂU THỔ NHĨ KỲ ISTANBUL – CANAKKALE – KUSADASI – IZMIR PAMUKKALE – CAPPADOCIA – ISTANBUL BAY TURKISH AIRLINES",
+    "destination": "Dubai - Thổ Nhĩ Kỳ",
+    "country": "Dubai - Thổ Nhĩ Kỳ",
+    "duration": "9N8Đ BAY TK",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-26",
+      "2026-05-22",
+      "2026-07-31"
+    ],
+    "price": 51900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 3.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/12Um86_gRobW0yqx7RoSEJWPOkXqgRQQL/edit#heading=h.xh24j4n6kx5s",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      4
+    ],
+    "updated_at": "2026-05-23T13:15:22.361Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 3.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-cac-tieu-vuong-quoc-a-rap-huyen-16",
+    "status": "published",
+    "title": "KHÁM PHÁ CÁC TIỂU VƯƠNG QUỐC Ả RẬP HUYỀN BÍ DUBAI – MIRACLE GARDEN- ABU DHABI BAY EMIRATE 5*",
+    "destination": "Dubai - Thổ Nhĩ Kỳ",
+    "country": "Dubai - Thổ Nhĩ Kỳ",
+    "duration": "6N5Đ BAY EK",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-21",
+      "2026-04-26",
+      "2026-04-28",
+      "2026-10-15",
+      "2026-10-27",
+      "2026-11-05",
+      "2026-11-18",
+      "2026-11-26",
+      "2026-12-09",
+      "2026-12-22",
+      "2026-12-23"
+    ],
+    "price": 27990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 2.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1tHcBA3-g05LIxzr-cxQdKpqVrH4em45d/edit?rtpof=true",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      4
+    ],
+    "updated_at": "2026-05-23T13:15:22.361Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 2.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-giao-thoa-nen-van-hoa-a-au--17",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH GIAO THOA NỀN VĂN HOÁ Á - ÂU THỔ NHĨ KỲ ISTANBUL – CANAKKALE – IZMIR – PAMUKKALE CAPPADOCIA – ISTANBUL BAY TURKISH AIRLINES",
+    "destination": "Dubai - Thổ Nhĩ Kỳ",
+    "country": "Dubai - Thổ Nhĩ Kỳ",
+    "duration": "6N5Đ BAY TK",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-06",
+      "2026-04-25",
+      "2026-05-14",
+      "2026-05-24",
+      "2026-05-26",
+      "2026-06-06",
+      "2026-06-15",
+      "2026-06-22",
+      "2026-06-26",
+      "2026-07-11",
+      "2026-08-14",
+      "2026-08-21",
+      "2026-08-28",
+      "2026-09-25"
+    ],
+    "price": 45900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 3.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1475AjmdEl9SffVcHv2BzgkUrPKAIeriZ/edit#heading=h.o2dz5ln7a8pe",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      4
+    ],
+    "updated_at": "2026-05-23T13:15:22.361Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 3.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-tim-ve-nen-van-minh-co-xua-nhat-ai-cap-c-18",
+    "status": "published",
+    "title": "TÌM VỀ NỀN VĂN MINH CỔ XƯA NHẤT AI CẬP CAIRO – BAHARIYA - LUXOR - BIỂN ĐỎ BAY EMIRATES 5*",
+    "destination": "Dubai - Thổ Nhĩ Kỳ",
+    "country": "Dubai - Thổ Nhĩ Kỳ",
+    "duration": "9N8Đ BAY EK",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-05",
+      "2026-12-30"
+    ],
+    "price": 71900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 5.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1uCr0tV9wMAExJpP3NudjZX4av_GNHKcD/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      4
+    ],
+    "updated_at": "2026-05-23T13:15:22.361Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 5.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-tim-ve-nen-van-minh-co-xua-nhat-ai-cap-c-19",
+    "status": "published",
+    "title": "TÌM VỀ NỀN VĂN MINH CỔ XƯA NHẤT AI CẬP CAIRO – BAHARIYA - LUXOR - BIỂN ĐỎ BAY EMIRATES 5*",
+    "destination": "Dubai - Thổ Nhĩ Kỳ",
+    "country": "Dubai - Thổ Nhĩ Kỳ",
+    "duration": "12N11Đ BAY EK",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-24",
+      "2026-10-22"
+    ],
+    "price": 82900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 5.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1zLpTn4JWRN2_1FFqu27Z5GPFDDuwd4D-/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      4
+    ],
+    "updated_at": "2026-05-23T13:15:22.362Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 5.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-mot-quoc-gia-hai-the-gioi-hoang-da-tron--20",
+    "status": "published",
+    "title": "MỘT QUỐC GIA, HAI THẾ GIỚI HOANG DÃ TRỌN BỘ SAFARI TRONG MỘT ĐIỂM ĐẾN! CHƯƠNG TRÌNH NAM PHI HẤP DẪN NHẤT 2026 BAY SINGAPORE AIRLINES",
+    "destination": "Dubai - Thổ Nhĩ Kỳ",
+    "country": "Dubai - Thổ Nhĩ Kỳ",
+    "duration": "8N7Đ BAY SQ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-10-03"
+    ],
+    "price": 79900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 4.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/19yg3vm2MRDE9srgpcl3ROEA-ZYnxZhPl/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      4
+    ],
+    "updated_at": "2026-05-23T13:15:22.362Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 4.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-tour-du-lich-nga-9-ngay-8-dem-he-2026-ba-21",
+    "status": "published",
+    "title": "Tour Du Lịch Nga 9 ngày 8 đêm hè 2026 Bay Vietnam Airlines",
+    "destination": "Nga",
+    "country": "Nga",
+    "duration": "9N8Đ BAY VNA",
+    "airline": "VNA",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-29",
+      "2026-06-26",
+      "2026-07-31",
+      "2026-08-28",
+      "2026-09-30",
+      "2026-10-09",
+      "2026-10-14"
+    ],
+    "price": 67900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 4.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/18dyDfPAbX2RtcfDhGAUpcyUrQgMgMksf/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      5
+    ],
+    "updated_at": "2026-05-23T13:15:22.362Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 4.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-thien-nhien-hung-vi-hoa-ky-bay--22",
+    "status": "published",
+    "title": "KHÁM PHÁ THIÊN NHIÊN HÙNG VĨ HOA KỲ BAY CHINA AIRLINES 5*",
+    "destination": "Mỹ",
+    "country": "Châu Mỹ",
+    "duration": "11N10Đ BAY EVA/CI",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-22",
+      "2026-05-22"
+    ],
+    "price": 105900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 6.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1l3qANu2ReEZM2GZiSZcMffz_jNvsYDue/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      6
+    ],
+    "updated_at": "2026-05-23T13:15:22.362Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 6.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-lien-tuyen-canada-2026-vancouver-victori-23",
+    "status": "published",
+    "title": "LIÊN TUYẾN CANADA 2026 VANCOUVER - VICTORIA - RICHMOND - TORONTO - THÁC NƯỚC NIAGARA FALLS - NGÀN ĐẢO - KINGSTON - MONTREAL - OTTAWA - QUEBEC BAY EVA AIRWAYS 5*",
+    "destination": "Mỹ",
+    "country": "Châu Mỹ",
+    "duration": "11N10Đ BAY EVA 5 SAO",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-24",
+      "2026-07-25"
+    ],
+    "price": 133900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 6.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1OHVAfMINI8GBWcv5STaGuUPzrTLtyILu/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      6
+    ],
+    "updated_at": "2026-05-23T13:15:22.362Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 6.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-tour-di-my-xem-bong-da-2026-tran-tu-ket--24",
+    "status": "published",
+    "title": "Tour đi Mỹ xem bóng đá 2026: Trận Tứ kết &amp; Khám phá Bờ Đông",
+    "destination": "Mỹ",
+    "country": "Châu Mỹ",
+    "duration": "10N9Đ BAY EVA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-11"
+    ],
+    "price": 136900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 6.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1umZM2xEDY_7Yp_4HRrqxDogoR-VKMJyr/edit?tab=t.0#heading=h.dofga517mrdf",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      6
+    ],
+    "updated_at": "2026-05-23T13:15:22.362Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 6.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-lien-tuyen-bo-tay-hoa-ky-cuba-mexico-tra-25",
+    "status": "published",
+    "title": "LIÊN TUYẾN BỜ TÂY HOA KỲ CUBA – MEXICO TRẬN KHAI MẠC GIẢI BÓNG ĐÁ THẾ GIỚI 2026 LAS VEGAS - RED ROCK CANYON - LOS ANGELES - SAN DIEGO - HAVANA - VARADERO - MEXICO CITY - TEOTIHUACAN BAY CHINA AIRLINES 5*",
+    "destination": "Mỹ",
+    "country": "Châu Mỹ",
+    "duration": "14N13D BAY CHINA AIRLINES 5*",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-01"
+    ],
+    "price": 199900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 7.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1S6e9xfBKHkd8Vp1SxhVNExaORLEWZgBX/edit?rtpof=true&amp;tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      6
+    ],
+    "updated_at": "2026-05-23T13:15:22.362Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 7.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-hanh-trinh-kham-pha-4-nuoc-nam-my-kham-p-26",
+    "status": "published",
+    "title": "HÀNH TRÌNH KHÁM PHÁ 4 NƯỚC NAM MỸ KHÁM PHÁ SÔNG BĂNG PERITO MORENO LỚN NHẤT NAM MỸ BRAZIL – PERU ARGENTINA – CHILE BAY TURKISH AIRLINES",
+    "destination": "Mỹ",
+    "country": "Châu Mỹ",
+    "duration": "18N13Đ BAY TK",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-16",
+      "2026-09-11",
+      "2026-11-02"
+    ],
+    "price": 298000000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 7.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1DGgHkAPT1ZaTO1uT31ACWw2atNIh8r1o/edit?rtpof=true",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      6
+    ],
+    "updated_at": "2026-05-23T13:15:22.362Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 7.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-du-lich-tour-chao-he-lien-tuyen-dong-tay-27",
+    "status": "published",
+    "title": "DU LỊCH TOUR CHÀO HÈ LIÊN TUYẾN ĐÔNG TÂY HOA KỲ 2026 BAY CHINA AIRLINES 5*",
+    "destination": "Mỹ",
+    "country": "Châu Mỹ",
+    "duration": "12N11Đ BAY CI/EVA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-23",
+      "2026-06-21",
+      "2026-07-29",
+      "2026-08-14"
+    ],
+    "price": 112900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 6.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1ZMeKel91Enfr4DVoSbAMtkgjJVTKAM40/edit?rtpof=true&amp;tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      6
+    ],
+    "updated_at": "2026-05-23T13:15:22.362Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 6.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-giai-bong-da-the-gioi-2026--28",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH Giải bóng đá thế giới 2026 – TRẬN TỨ KẾT 2 LIÊN TUYẾN ĐÔNG TÂY HOA KỲ BAY EVA AIR 5 SAO",
+    "destination": "Mỹ",
+    "country": "Châu Mỹ",
+    "duration": "11N10Đ BAY EVA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-07-04"
+    ],
+    "price": 139900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 7.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1anO2hRjJBPWUbHXAFI73Yi_y5nd537SZ/edit?tab=t.0#heading=h.ez8tzz1kbgus",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      6
+    ],
+    "updated_at": "2026-05-23T13:15:22.362Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 7.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-lien-tuyen-dong-tay-hoa-ky--29",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH LIÊN TUYẾN ĐÔNG TÂY HOA KỲ BAY EVA AIRLINES/CHINA AIRLINES 5 SAO",
+    "destination": "Mỹ",
+    "country": "Châu Mỹ",
+    "duration": "10N9Đ BAY EVA/CI",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-16",
+      "2026-06-06",
+      "2026-06-25",
+      "2026-07-18"
+    ],
+    "price": 95900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 6.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1LnvaV4eex6nBab3912CfmgYvULsloYsq/edit?rtpof=true&amp;tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      6
+    ],
+    "updated_at": "2026-05-23T13:15:22.362Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 6.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-tour-chao-mung-ngay-thong-nhat-30-4-lien-30",
+    "status": "published",
+    "title": "TOUR CHÀO MỪNG NGÀY THỐNG NHẤT 30/4 LIÊN TUYẾN ĐÔNG TÂY HOA KỲ 2026 BAY CHINA AIRLINES 5 SAO",
+    "destination": "Mỹ",
+    "country": "Châu Mỹ",
+    "duration": "10N9Đ BAY CI",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-26"
+    ],
+    "price": 94900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 6.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1YvZW2caUSgrhNMJokSuWOxdYqiHB7ZTf/edit?tab=t.0#heading=h.gjdgxs",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      6
+    ],
+    "updated_at": "2026-05-23T13:15:22.362Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 6.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-mot-quoc-gia-hai-the-gioi-hoang-da-tron--31",
+    "status": "published",
+    "title": "MỘT QUỐC GIA, HAI THẾ GIỚI HOANG DÃ TRỌN BỘ SAFARI TRONG MỘT ĐIỂM ĐẾN! CHƯƠNG TRÌNH NAM PHI HẤP DẪN NHẤT 2026 BAY SINGAPORE AIRLINES",
+    "destination": "Nam Phi",
+    "country": "Nam Phi",
+    "duration": "8N7Đ BAY SQ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-24"
+    ],
+    "price": 81900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 4.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1CQUW-rDr7UudS6e84nyj9t43HIcUdvHX/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      7
+    ],
+    "updated_at": "2026-05-23T13:15:22.362Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 4.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-mot-quoc-gia-hai-the-gioi-hoang-da-tron--32",
+    "status": "published",
+    "title": "MỘT QUỐC GIA, HAI THẾ GIỚI HOANG DÃ TRỌN BỘ SAFARI TRONG MỘT ĐIỂM ĐẾN! CHƯƠNG TRÌNH NAM PHI HẤP DẪN NHẤT 2026 HÀ NỘI – JOHANNESBURG – PRETORIA – GAME LODGE – CAPE TOWN – HÀ NỘI BAY SINGAPORE AIRLINES",
+    "destination": "Nam Phi",
+    "country": "Nam Phi",
+    "duration": "8N7Đ BAY SQ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-10-03",
+      "2026-10-14"
+    ],
+    "price": 79900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 4.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/19yg3vm2MRDE9srgpcl3ROEA-ZYnxZhPl/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      7
+    ],
+    "updated_at": "2026-05-23T13:15:22.362Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 4.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-tour-singapore-4-ngay-3-dem-kham-pha-tro-33",
+    "status": "published",
+    "title": "Tour Singapore 4 ngày 3 đêm: Khám phá trọn vẹn quốc đảo sư tử",
+    "destination": "Singapore",
+    "country": "Singapore - Malaysia",
+    "duration": "4N3Đ BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-03-28",
+      "2026-06-04",
+      "2026-06-11",
+      "2026-06-25",
+      "2026-07-02",
+      "2026-07-09",
+      "2026-07-16",
+      "2026-07-23",
+      "2026-07-30",
+      "2026-08-06",
+      "2026-08-13",
+      "2026-08-20",
+      "2026-08-27"
+    ],
+    "price": 13990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 700.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1KeF7r44y4LTVV9JC8LggPJv_aqUfguI1/edit?tab=t.0#heading=h.rjy80h0qfxf",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      8
+    ],
+    "updated_at": "2026-05-23T13:15:22.363Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 700.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-ha-noi-singapore-malaysia-ha-no-34",
+    "status": "published",
+    "title": "KHÁM PHÁ HÀ NỘI – SINGAPORE – MALAYSIA – HÀ NỘI BAY VIETJET",
+    "destination": "Singapore",
+    "country": "Singapore - Malaysia",
+    "duration": "5N4Đ BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-02-25",
+      "2026-03-11",
+      "2026-03-25",
+      "2026-04-08",
+      "2026-04-22",
+      "2026-05-06",
+      "2026-05-20",
+      "2026-06-03",
+      "2026-06-17",
+      "2026-07-01",
+      "2026-07-15",
+      "2026-07-29",
+      "2026-08-12",
+      "2026-08-26"
+    ],
+    "price": 11990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 700.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1c91bATyq8_bS0_Mvo88P21MZS9dsW6NT/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      8
+    ],
+    "updated_at": "2026-05-23T13:15:22.363Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 700.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-du-lich-ha-noi-malaysia-singapore-ha-noi-35",
+    "status": "published",
+    "title": "DU LỊCH HÀ NỘI – MALAYSIA – SINGAPORE – HÀ NỘI BAY VIETNAM AIRLINES",
+    "destination": "Singapore",
+    "country": "Singapore - Malaysia",
+    "duration": "5N4Đ &quot;VIETNAM AIRLINES (VNA) &quot;",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-04",
+      "2026-04-07",
+      "2026-04-28",
+      "2026-04-30",
+      "2026-05-19",
+      "2026-05-27",
+      "2026-06-02",
+      "2026-06-10",
+      "2026-06-23",
+      "2026-07-07",
+      "2026-07-21",
+      "2026-07-29",
+      "2026-08-04",
+      "2026-08-18",
+      "2026-09-01",
+      "2026-09-15"
+    ],
+    "price": 12990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 700.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1ugs2IM3cal5oxH8W2atk1VlGPKi8wV9d/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      8
+    ],
+    "updated_at": "2026-05-23T13:15:22.363Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 700.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-du-lich-ha-noi-singapore-malays-36",
+    "status": "published",
+    "title": "KHÁM PHÁ DU LỊCH HÀ NỘI – SINGAPORE – MALAYSIA – HÀ NỘI BAY VIETNAM AIRLINES",
+    "destination": "Singapore",
+    "country": "Singapore - Malaysia",
+    "duration": "5N4Đ &quot;VIETNAM AIRLINES (VNA) &quot;",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-15",
+      "2026-08-31"
+    ],
+    "price": 13990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 700.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/19JxWj0S7RU7-jEjjGHKVTkhJB5HwzvL3/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      8
+    ],
+    "updated_at": "2026-05-23T13:15:22.363Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 700.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-tour-truong-gia-gioi-phuong-hoang-co-tra-37",
+    "status": "published",
+    "title": "Tour Trương Gia Giới - Phượng Hoàng Cổ Trấn Từ Hà Nội 5N4Đ",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "5N4D BAY CZ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-01",
+      "2026-04-04",
+      "2026-04-05",
+      "2026-04-07",
+      "2026-04-11",
+      "2026-04-14",
+      "2026-04-18",
+      "2026-04-21",
+      "2026-04-25",
+      "2026-04-28",
+      "2026-04-30",
+      "2026-05-05",
+      "2026-05-09",
+      "2026-05-12",
+      "2026-05-16",
+      "2026-05-19",
+      "2026-05-23",
+      "2026-05-26",
+      "2026-05-30",
+      "2026-06-02",
+      "2026-06-06",
+      "2026-06-09",
+      "2026-06-13",
+      "2026-06-16",
+      "2026-06-20",
+      "2026-06-23",
+      "2026-06-27",
+      "2026-06-30",
+      "2026-07-04",
+      "2026-07-07",
+      "2026-07-11",
+      "2026-07-14",
+      "2026-07-18",
+      "2026-07-21",
+      "2026-07-25",
+      "2026-07-28",
+      "2026-08-01",
+      "2026-08-04",
+      "2026-08-08",
+      "2026-08-11",
+      "2026-08-15",
+      "2026-08-18",
+      "2026-08-22",
+      "2026-08-25",
+      "2026-08-29",
+      "2026-09-05",
+      "2026-09-08",
+      "2026-09-12",
+      "2026-09-15",
+      "2026-09-19",
+      "2026-09-22",
+      "2026-09-26",
+      "2026-09-29",
+      "2026-10-03",
+      "2026-10-06",
+      "2026-10-10",
+      "2026-10-13",
+      "2026-10-17",
+      "2026-10-20",
+      "2026-10-24",
+      "2026-10-27"
+    ],
+    "price": 8990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 800.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1HmidlokCUryJULJ_AWVXTHAHvAk0eDNv/edit?tab=t.0#heading=h.9xlfbbzceiuh",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      11
+    ],
+    "updated_at": "2026-05-23T13:15:22.363Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 800.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-ha-noi-truong-sa-truong-gia-gio-38",
+    "status": "published",
+    "title": "KHÁM PHÁ HÀ NỘI - TRƯỜNG SA - TRƯƠNG GIA GIỚI – PHƯỢNG HOÀNG CỔ TRẤN – THIÊN MÔN SƠN – HỒ BẢO PHONG BAY CHINA SOUTHERN AIR LINES",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "6N5Đ BAY &quot;China Southern Airlines (CZ) &quot;",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-01",
+      "2026-04-02",
+      "2026-04-04",
+      "2026-04-05",
+      "2026-04-09",
+      "2026-04-16",
+      "2026-04-23",
+      "2026-04-30",
+      "2026-05-07",
+      "2026-05-14",
+      "2026-05-21",
+      "2026-05-28",
+      "2026-06-04",
+      "2026-06-11",
+      "2026-06-18",
+      "2026-06-25",
+      "2026-07-02",
+      "2026-07-09",
+      "2026-07-16",
+      "2026-07-23",
+      "2026-07-30",
+      "2026-08-06",
+      "2026-08-13",
+      "2026-08-20",
+      "2026-08-27",
+      "2026-09-03",
+      "2026-09-10",
+      "2026-09-17",
+      "2026-09-24",
+      "2026-10-01",
+      "2026-10-08",
+      "2026-10-15",
+      "2026-10-22",
+      "2026-10-29"
+    ],
+    "price": 9490000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 800.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/13aSHkpo8Tw07TT3LGI1ZDNEwD3GTM439/edit?tab=t.0#heading=h.hlq67l1aogaj",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      11
+    ],
+    "updated_at": "2026-05-23T13:15:22.363Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 800.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-tour-bac-kinh-diem-den-cua-lich-39",
+    "status": "published",
+    "title": "KHÁM PHÁ TOUR BẮC KINH - ĐIỂM ĐẾN CỦA LỊCH SỬ",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "5N4Đ BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-03",
+      "2026-04-10",
+      "2026-04-17",
+      "2026-05-08",
+      "2026-05-15",
+      "2026-05-22",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-07-03",
+      "2026-07-10",
+      "2026-07-17",
+      "2026-07-24",
+      "2026-07-31",
+      "2026-08-07",
+      "2026-08-14",
+      "2026-08-21",
+      "2026-08-28",
+      "2026-09-04",
+      "2026-09-06",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-18",
+      "2026-09-19",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-10-09",
+      "2026-10-16"
+    ],
+    "price": 13690000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 800.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1ABg4jxOZA1Yz1bIQ8K8ccQZOvNFtgXiE/edit?rtpof=true&amp;sd=true&amp;tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      11
+    ],
+    "updated_at": "2026-05-23T13:15:22.363Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 800.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-giang-nam-thuy-huong-thuong-hai-o-tran-h-40",
+    "status": "published",
+    "title": "GIANG NAM – THUỶ HƯƠNG THƯỢNG HẢI – Ô TRẤN - HÀNG CHÂU BAY VIETJET AIR",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "5N4Đ BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-01",
+      "2026-04-04",
+      "2026-04-08",
+      "2026-04-15",
+      "2026-05-05",
+      "2026-05-06",
+      "2026-05-13",
+      "2026-05-20",
+      "2026-05-27",
+      "2026-06-03",
+      "2026-06-06",
+      "2026-06-10",
+      "2026-06-17",
+      "2026-06-24",
+      "2026-07-01",
+      "2026-07-07",
+      "2026-07-08",
+      "2026-07-15",
+      "2026-07-22",
+      "2026-07-29",
+      "2026-08-04",
+      "2026-08-05",
+      "2026-08-08",
+      "2026-08-12",
+      "2026-08-19",
+      "2026-08-22",
+      "2026-08-26",
+      "2026-08-29",
+      "2026-09-02",
+      "2026-09-09",
+      "2026-09-16",
+      "2026-09-23",
+      "2026-10-07",
+      "2026-10-10",
+      "2026-10-14",
+      "2026-10-21"
+    ],
+    "price": 12590000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 800.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1OLDz_UMEbzEptohyDV2AZz0kGFTwSMT3/edit?tab=t.0#heading=h.foclrbjb3ofe",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      11
+    ],
+    "updated_at": "2026-05-23T13:15:22.363Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 800.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-theo-dau-cac-trieu-dai-huy-hoang-tay-an--41",
+    "status": "published",
+    "title": "THEO DẤU CÁC TRIỀU ĐẠI HUY HOÀNG TÂY AN - LẠC DƯƠNG – TRỊNH CHÂU BAY VIETJET AIR",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "7N6Đ BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-03",
+      "2026-04-10",
+      "2026-04-17",
+      "2026-04-24",
+      "2026-05-15",
+      "2026-05-29",
+      "2026-06-05",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-07-17",
+      "2026-07-31",
+      "2026-08-14",
+      "2026-08-28",
+      "2026-09-18",
+      "2026-09-25",
+      "2026-10-09",
+      "2026-10-16"
+    ],
+    "price": 18390000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.200.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1x94QXS40B_3Fp53_B933bB_aF86ysfYm/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      11
+    ],
+    "updated_at": "2026-05-23T13:15:22.363Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.200.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-thuong-hai-o-tran-to-chau-bac-kinh-no-sh-42",
+    "status": "published",
+    "title": "THƯỢNG HẢI – Ô TRẤN – TÔ CHÂU – BẮC KINH NO SHOPPING BAY VIETNAMAIRLINES",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "6N5Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-26",
+      "2026-06-26",
+      "2026-07-17",
+      "2026-08-11",
+      "2026-09-29"
+    ],
+    "price": 24290000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1rLSvhA4EVcuwLFz_E1fefQn0aupjC4km/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      11
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-bac-kinh-to-chau-o-tran-thuong-hai-no-sh-43",
+    "status": "published",
+    "title": "BẮC KINH – TÔ CHÂU – Ô TRẤN – THƯỢNG HẢI - NO SHOPPING VIETNAM AIRLINES",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "6N5Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-17",
+      "2026-06-26",
+      "2026-07-31"
+    ],
+    "price": 24290000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/11fguk-5oT3afl5dDMHo6NLYIarAPiPgy/edit?rtpof=true&amp;sd=true&amp;tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      11
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-bac-kinh-to-chau-hang-chau-chu--44",
+    "status": "published",
+    "title": "KHÁM PHÁ BẮC KINH - TÔ CHÂU - HÀNG CHÂU - CHU GIA GIÁC - THƯỢNG HẢI BAY VIETNAM AIRLINES",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "7N6Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-08",
+      "2026-04-22",
+      "2026-04-26",
+      "2026-05-03",
+      "2026-05-20",
+      "2026-06-03",
+      "2026-07-04",
+      "2026-07-11",
+      "2026-07-26",
+      "2026-08-02",
+      "2026-08-19"
+    ],
+    "price": 22790000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1taTZ6A8ln8QWyMjBeM0UPz41j7Z1B6gL/edit?usp=sharing&amp;ouid=100346770524647268031&amp;rtpof=true&amp;sd=true",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      11
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-trung-hoa-xinh-dep-thuong-hai-c-45",
+    "status": "published",
+    "title": "KHÁM PHÁ TRUNG HOA XINH ĐẸP THƯỢNG HẢI - CHU GIA GIÁC - HÀNG CHÂU - TÔ CHÂU - BẮC KINH BAY VIETNAM AIRLINES",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "7N6Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-16",
+      "2026-06-06",
+      "2026-06-08",
+      "2026-07-08",
+      "2026-07-09",
+      "2026-07-29",
+      "2026-08-10",
+      "2026-08-24",
+      "2026-09-05",
+      "2026-09-13"
+    ],
+    "price": 22790000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1COFQ8Icn1Ia9IjGi-yNUxCAvzy2Y79hF/edit?usp=sharing&amp;ouid=100346770524647268031&amp;rtpof=true&amp;sd=true",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      11
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-hang-chau-thuong-hai-freeday-o-tran-no-s-46",
+    "status": "published",
+    "title": "HÀNG CHÂU – THƯỢNG HẢI – FREEDAY – Ô TRẤN NO SHOPPING BAY AIR CHINA",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "6N5Đ BAY CA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-03-27"
+    ],
+    "price": 15990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1dI48Zdf8xp_dvHXey0MDcngBGoMkvvqt/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      11
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-hang-chau-thuong-hai-freeday-o-tran-no-s-47",
+    "status": "published",
+    "title": "HÀNG CHÂU – THƯỢNG HẢI – FREEDAY – Ô TRẤN NO SHOPPING BAY AIR CHINA",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "6N5Đ BAY CA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-20"
+    ],
+    "price": 15990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/15SpFL2QPLlrQxNWoSuAAjxFr8dfO4lBu/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      11
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-cung-duong-vang-nhat-ban-no-shopping-bay-48",
+    "status": "published",
+    "title": "CUNG ĐƯỜNG VÀNG NHẬT BẢN NO SHOPPING BAY VIETNAM AIRLINES",
+    "destination": "Tokyo",
+    "country": "Nhật Bản",
+    "duration": "6N5Đ BAY &quot;VIETJET AIR (BÒ + GEISHA)&quot;",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-08-21"
+    ],
+    "price": 32990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 2.500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1unkO7SNQfFwB1baqrEnEBLiVd9z3ihjS/edit?tab=t.0#heading=h.7lti5ubnl9wl",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      12
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 2.500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-cung-duong-vang-nhat-ban-2026-n-49",
+    "status": "published",
+    "title": "KHÁM PHÁ CUNG ĐƯỜNG VÀNG NHẬT BẢN 2026 NARA – OSAKA – KYOTO – NAGOYA – PHÚ SĨ – TOKYO NO SHOPPING BAY VIETNAM AIRLINES",
+    "destination": "Tokyo",
+    "country": "Nhật Bản",
+    "duration": "6N5Đ BAY &quot;VIETJET AIR (BÒ + GEISHA)&quot;",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-09-18"
+    ],
+    "price": 32990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 2.500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/19vOPSkm8DpoV2jTnxFkoNGrLii3e6FS1/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      12
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 2.500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-nhat-ban-mua-he-ha-noi-osaka-ko-50",
+    "status": "published",
+    "title": "KHÁM PHÁ NHẬT BẢN MÙA HÈ: HÀ NỘI - OSAKA – KOBE – KYOTO – NAGOYA – NÚI PHÚ SĨ – TOKYO BAYB VIETNAM AIRLINES",
+    "destination": "Tokyo",
+    "country": "Nhật Bản",
+    "duration": "6N5Đ BAY &quot;Vietnam Airlines (có bò, Geisha)&quot;",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-08-27"
+    ],
+    "price": 34900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 3.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1dhTE916AT6LlDT-qaVzQdIWJwzD8xPu_/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      12
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 3.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-cung-duong-vang-nhat-ban-2026-kobe-osaka-51",
+    "status": "published",
+    "title": "CUNG ĐƯỜNG VÀNG NHẬT BẢN 2026: KOBE – OSAKA – KYOTO – NAGOYA – PHÚ SĨ – TOKYO NO SHOPPING",
+    "destination": "Tokyo",
+    "country": "Nhật Bản",
+    "duration": "6N5Đ BAY &quot;Vietnam Airlines (có bò, Geisha)&quot;",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-09-01"
+    ],
+    "price": 34990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 3.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/13C7CZfD8sVeG0NCKRtg-S6s1UxS1-83f/edit?tab=t.0#heading=h.7lti5ubnl9wl",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      12
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 3.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-nhat-ban-mua-he-ha-noi-nagoya-n-52",
+    "status": "published",
+    "title": "KHÁM PHÁ NHẬT BẢN MÙA HÈ: HÀ NỘI- NAGOYA – NARA– OSAKA- KYOTO – NAGOYA – NÚI PHÚ SĨ – TOKYO BAY VIETNAM AIRLINES",
+    "destination": "Tokyo",
+    "country": "Nhật Bản",
+    "duration": "6N5Đ BAY &quot;Vietnam Airlines (có bò, Geisha)&quot;",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-07-02",
+      "2026-09-29"
+    ],
+    "price": 32900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 3.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1AD5XhCXWU0dTkU3otu8t7vGWxMsdvzZx/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      12
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 3.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-tour-nhat-ban-gia-re-he-2026-ha-noi-shiz-53",
+    "status": "published",
+    "title": "TOUR NHẬT BẢN GIÁ RẺ HÈ 2026: HÀ NỘI - SHIZUOKA - NÚI PHÚ SĨ - TOKYO BAY VIETJET AIR",
+    "destination": "Tokyo",
+    "country": "Nhật Bản",
+    "duration": "6N5Đ BAY &quot;Vietnam Airlines (có bò, Geisha)&quot;",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-17",
+      "2026-06-24",
+      "2026-07-08",
+      "2026-07-22",
+      "2026-07-29",
+      "2026-08-05",
+      "2026-08-26",
+      "2026-09-09",
+      "2026-10-14",
+      "2026-10-21"
+    ],
+    "price": 22900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 2.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/106F4GA91v1gVBWaWLLotZkhNdQpbw04h/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      12
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 2.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-nhat-ban-mua-he-ha-noi-osaka-ko-54",
+    "status": "published",
+    "title": "KHÁM PHÁ NHẬT BẢN MÙA HÈ: HÀ NỘI- OSAKA – KOBE – KYOTO – NAGOYA – NÚI PHÚ SĨ – TOKYOBAY VIETNAM AIRLINES",
+    "destination": "Tokyo",
+    "country": "Nhật Bản",
+    "duration": "6N5Đ BAY &quot;Vietnam Airlines (có bò, Geisha)",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-07-16"
+    ],
+    "price": 34900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 3.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/u/1/d/16lr8G6akEFeUq-wTTKDon4U4nCtD1ZfB/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      12
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 3.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-mua-thu-nhat-ban-ha-noi-osaka-k-55",
+    "status": "published",
+    "title": "KHÁM PHÁ MÙA THU NHẬT BẢN HÀ NỘI – OSAKA – KOBE – KYOTO – NÚI PHÚ SĨ – TOKYO BAY VIETJET AIR",
+    "destination": "Tokyo",
+    "country": "Nhật Bản",
+    "duration": "6N5Đ BAY &quot;Vietnam Airlines (có bò, Geisha, cua)&quot;",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-10-15",
+      "2026-10-22",
+      "2026-10-29",
+      "2026-11-05",
+      "2026-11-12",
+      "2026-11-19",
+      "2026-11-26",
+      "2026-12-03",
+      "2026-12-10"
+    ],
+    "price": 30900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 2.500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/u/1/d/18wEX3-zEx_1LFCfQjHk16k3tgB7YYyEu/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      12
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 2.500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-tour-nhat-ban-6-ngay-5-dem-mua--56",
+    "status": "published",
+    "title": "KHÁM PHÁ TOUR NHẬT BẢN 6 NGÀY 5 ĐÊM: MÙA HÈ RỰC RỠ",
+    "destination": "Tokyo",
+    "country": "Nhật Bản",
+    "duration": "6N5Đ BAY &quot;Vietnam Airlines (có bò, Geisha, cua)&quot;",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-25",
+      "2026-07-02",
+      "2026-07-09"
+    ],
+    "price": 31900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 2.500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1gpzMNt_KXn5IstCbLagIxAvJLCyMzkbp/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      12
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 2.500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-mua-he-ruc-ro-nhat-ban-ha-noi-o-57",
+    "status": "published",
+    "title": "KHÁM PHÁ MÙA HÈ RỰC RỠ NHẬT BẢN: HÀ NỘI – OSAKA – KOBE – NAGOYA – KYOTO – NÚI PHÚ SĨ – TOKYO",
+    "destination": "Tokyo",
+    "country": "Nhật Bản",
+    "duration": "6N5Đ BAY &quot;Vietnam Airlines (có bò, Geisha, cua)&quot;",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-07-23",
+      "2026-07-30",
+      "2026-08-13",
+      "2026-08-27",
+      "2026-09-24"
+    ],
+    "price": 29900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 2.500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1dLi8kOGMLgKrk6JdnY4VZR-Pz3zP2iM0/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      12
+    ],
+    "updated_at": "2026-05-23T13:15:22.364Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 2.500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-mua-he-ruc-ro-tai-xu-so-kim-chi-58",
+    "status": "published",
+    "title": "KHÁM PHÁ MÙA HÈ RỰC RỠ TẠI “XỨ SỞ KIM CHI” HÀN QUỐC: HÀ NỘI - SEOUL-NAMI- EVERLAND-PAINTER SHOW BAY VIETJET AIR",
+    "destination": "Seoul",
+    "country": "Hàn Quốc",
+    "duration": "5N4Đ BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-11",
+      "2026-06-18",
+      "2026-07-09",
+      "2026-07-16",
+      "2026-07-23",
+      "2026-07-30",
+      "2026-08-06",
+      "2026-08-13",
+      "2026-08-20",
+      "2026-09-10",
+      "2026-09-17"
+    ],
+    "price": 15700000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.000.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/u/1/d/1wgxZVx4VN7lHzX_AlCR5NdhIi0dYwJAU/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      13
+    ],
+    "updated_at": "2026-05-23T13:15:22.365Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.000.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-mua-he-ha-noi-seoul-nami-ev-59",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH MÙA HÈ HÀ NỘI – SEOUL – NAMI – EVERLAND - THƯ VIỆN SÁCH BAY JEJU AIR",
+    "destination": "Seoul",
+    "country": "Hàn Quốc",
+    "duration": "5N4Đ BAY JEJU AIR",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-07-01",
+      "2026-07-15",
+      "2026-08-12",
+      "2026-08-28",
+      "2026-08-29",
+      "2026-09-23",
+      "2026-09-30"
+    ],
+    "price": 17900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/u/1/d/127e5ANDAcm617cs8NL_6SHruEScG6jI7/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      13
+    ],
+    "updated_at": "2026-05-23T13:15:22.365Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-busan-seoul-dao-nami-incheon-di-p-60",
+    "status": "published",
+    "title": "HÀ NỘI – BUSAN – SEOUL – ĐẢO NAMI – INCHEON - ĐI PHÀ CHO HẢI ÂU ĂN BAY VIETJET AIR (VỀ TRƯA)",
+    "destination": "Seoul",
+    "country": "Hàn Quốc",
+    "duration": "6N5Đ BAY VIETNAM AIRLINES",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-09",
+      "2026-06-16",
+      "2026-06-23",
+      "2026-07-07",
+      "2026-07-14",
+      "2026-08-04",
+      "2026-08-11",
+      "2026-08-18",
+      "2026-09-15",
+      "2026-10-27"
+    ],
+    "price": 18490000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/u/1/d/1LIPtrlU1krKMpygZPBAzGwFTeQsW2cCK/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      13
+    ],
+    "updated_at": "2026-05-23T13:15:22.365Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-mua-thu-han-quoc-ha-noi-busan-s-61",
+    "status": "published",
+    "title": "Khám phá mùa thu Hàn Quốc: HÀ NỘI – BUSAN – SEOUL – ĐẢO NAMI – INCHEON- ĐI PHÀ CHO HẢI ÂU ĂN BAY VIETJET AIR",
+    "destination": "Seoul",
+    "country": "Hàn Quốc",
+    "duration": "5N4Đ BAY VIETNAM AIRLINES (BAY SÁNG - SÁNG)&quot;",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-10-13",
+      "2026-10-16",
+      "2026-10-27",
+      "2026-10-30",
+      "2026-11-03",
+      "2026-11-06",
+      "2026-11-10",
+      "2026-11-13",
+      "2026-11-17",
+      "2026-11-20",
+      "2026-11-24",
+      "2026-11-27",
+      "2026-12-01",
+      "2026-12-04"
+    ],
+    "price": 18900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/u/1/d/1SA0X8-MECNPL0EcHwtWiMjhYRBiqKm3O/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      13
+    ],
+    "updated_at": "2026-05-23T13:15:22.365Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-busan-gyeongju-seoul-dao-nami-tau-62",
+    "status": "published",
+    "title": "HÀ NỘI – BUSAN –GYEONGJU – SEOUL – ĐẢO NAMI – TÀU ĐIỆN VEN BIỂN HAEUNDAE- CẦU KÍNH ORYUKDO- LÀNG VĂN HÓA HUINNYEOUL BAY VIETNAM AIRLINES",
+    "destination": "Seoul",
+    "country": "Hàn Quốc",
+    "duration": "6N5Đ BAY &quot;VIETNAM AIRLINES (BAY TỐI - TÓI)",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-07-11",
+      "2026-07-25",
+      "2026-09-21"
+    ],
+    "price": 20500000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/u/1/d/1Msk9pks1U1ue2ICKfC6rdn8S9cpOzjjG/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      13
+    ],
+    "updated_at": "2026-05-23T13:15:22.365Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-mua-he-tai-xu-so-kim-chi-nam-20-63",
+    "status": "published",
+    "title": "KHÁM PHÁ MÙA HÈ TẠI XỨ SỞ KIM CHI NĂM 2026 HÀ NỘI – BUSAN -SEOUL– ĐẢO NAMI – INCHEON- THƯ VIỆN SÁCH- ĐI PHÀ CHO HẢI ÂU ĂN BAY VIETJET AIR",
+    "destination": "Seoul",
+    "country": "Hàn Quốc",
+    "duration": "6N5Đ BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-16",
+      "2026-06-17",
+      "2026-07-01",
+      "2026-07-07",
+      "2026-07-14",
+      "2026-07-15",
+      "2026-07-22",
+      "2026-07-29",
+      "2026-07-31",
+      "2026-08-07",
+      "2026-08-14",
+      "2026-08-21",
+      "2026-09-11",
+      "2026-09-15",
+      "2026-10-06",
+      "2026-10-09"
+    ],
+    "price": 18900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1GCGW5oJi9UMrI3-8Loxn09udNLU4hkrz/edit?rtpof=true&amp;tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      13
+    ],
+    "updated_at": "2026-05-23T13:15:22.365Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-mua-he-ruc-ro-tai-xu-so-kim-chi-64",
+    "status": "published",
+    "title": "KHÁM PHÁ MÙA HÈ RỰC RỠ TẠI XỨ SỞ KIM CHI HÀ QUỐC 2026 HÀ NỘI – SEOUL – NAMI – EVERLAND – PAINTER SHOW – THƯ VIỆN SÁCH BAY VIETNAM AIRLINES",
+    "destination": "Seoul",
+    "country": "Hàn Quốc",
+    "duration": "5N4Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-15",
+      "2026-04-30",
+      "2026-05-13",
+      "2026-06-24",
+      "2026-07-30",
+      "2026-08-20"
+    ],
+    "price": 17500000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1Q7KaWWhtaXBl3wDD5gfvuIAEX-XwC-7K/edit?rtpof=true&amp;tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      13
+    ],
+    "updated_at": "2026-05-23T13:15:22.365Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-busan-gyeongju-seoul-dao-nami-tau-65",
+    "status": "published",
+    "title": "HÀ NỘI – BUSAN –GYEONGJU – SEOUL – ĐẢO NAMI – TÀU ĐIỆN VEN BIỂN HAEUNDAE- CẦU KÍNH ORYUKDO- LÀNG VĂN HÓA HUINNYEOUL BAY VIETNAM AIRLINES",
+    "destination": "Seoul",
+    "country": "Hàn Quốc",
+    "duration": "6N5Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-30",
+      "2026-06-27",
+      "2026-08-15",
+      "2026-08-28",
+      "2026-09-21"
+    ],
+    "price": 20500000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1Msk9pks1U1ue2ICKfC6rdn8S9cpOzjjG/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      13
+    ],
+    "updated_at": "2026-05-23T13:15:22.365Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-mua-he-xu-so-kim-chi-han-quoc-h-66",
+    "status": "published",
+    "title": "KHÁM PHÁ MÙA HÈ XỨ SỞ KIM CHI HÀN QUỐC HÀ NỘI – SEOUL – NAMI – EVERLAND –THƯ VIỆN SÁCH -PAINTER SHOW BAY VIETNAM AIRLINES",
+    "destination": "Seoul",
+    "country": "Hàn Quốc",
+    "duration": "5N4Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-23",
+      "2026-06-06",
+      "2026-06-18",
+      "2026-07-04",
+      "2026-09-25"
+    ],
+    "price": 17900000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 1.500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1Msk9pks1U1ue2ICKfC6rdn8S9cpOzjjG/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      13
+    ],
+    "updated_at": "2026-05-23T13:15:22.365Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 1.500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-dao-ngoc-dai-loan-trai-tim-cua--67",
+    "status": "published",
+    "title": "KHÁM PHÁ ĐẢO NGỌC ĐÀI LOAN “TRÁI TIM CỦA CHÂU Á” BAY VIETJET AIR",
+    "destination": "Đài Loan",
+    "country": "Đài Loan",
+    "duration": "5N4Đ BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-08",
+      "2026-04-15",
+      "2026-04-29",
+      "2026-05-20",
+      "2026-05-27",
+      "2026-06-03",
+      "2026-06-10",
+      "2026-07-08",
+      "2026-07-15",
+      "2026-08-05",
+      "2026-08-19",
+      "2026-09-16",
+      "2026-09-30",
+      "2026-10-07",
+      "2026-10-28",
+      "2026-11-11",
+      "2026-11-18",
+      "2026-11-25",
+      "2026-12-23",
+      "2026-12-30"
+    ],
+    "price": 11990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 800.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1XU8Mp14Yzy9f2u4CasoV7wHvyTGhH41N/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      14
+    ],
+    "updated_at": "2026-05-23T13:15:22.365Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 800.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-du-lich-thai-lan-bangkok-pa-68",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH DU LỊCH THÁI LAN: BANGKOK – PATTAYA- ĐẢO CORAL – SHOW ALCAZAR – BAIYOKE SKY 5 NGÀY 4 ĐÊM BAY VIETNAM AIRLINES",
+    "destination": "Bangkok",
+    "country": "Thái Lan",
+    "duration": "5N4D BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-03-03",
+      "2026-03-11",
+      "2026-03-14",
+      "2026-03-21",
+      "2026-03-25",
+      "2026-04-01",
+      "2026-04-04",
+      "2026-04-15",
+      "2026-04-25",
+      "2026-05-16",
+      "2026-05-20",
+      "2026-05-23",
+      "2026-05-28",
+      "2026-05-30"
+    ],
+    "price": 8290000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1wxGO4rNeTMWgmIN-x65Bma1YGYZNQCxG/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      15
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-du-lich-bangkok-pattaya-dao-69",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH DU LỊCH: BANGKOK – PATTAYA- ĐẢO CORAL – SHOW ALCAZAR – BAIYOKE SKY 5 NGÀY 4 ĐÊM BAY VIETNAM AIRLINES (BAY CHIỀU)",
+    "destination": "Bangkok",
+    "country": "Thái Lan",
+    "duration": "5N4D BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-02",
+      "2026-06-06",
+      "2026-06-07",
+      "2026-06-09",
+      "2026-06-14",
+      "2026-06-16",
+      "2026-06-18",
+      "2026-06-21",
+      "2026-06-23",
+      "2026-06-25",
+      "2026-06-28",
+      "2026-06-30",
+      "2026-07-02",
+      "2026-07-05",
+      "2026-07-07",
+      "2026-07-09",
+      "2026-07-12",
+      "2026-07-14",
+      "2026-07-19",
+      "2026-07-21",
+      "2026-07-23",
+      "2026-07-26",
+      "2026-07-28",
+      "2026-07-30",
+      "2026-08-02",
+      "2026-08-06",
+      "2026-08-08",
+      "2026-08-09",
+      "2026-08-30"
+    ],
+    "price": 8390000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 500.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://drive.google.com/file/d/1lZLTRTCbCRfXu4M1FomMfdJtNI-vyCUo/view",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      15
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 500.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-da-nang-son-tra-ba-na-pho-c-70",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH ĐÀ NẴNG – SƠN TRÀ – BÀ NÀ – PHỐ CỔ HỘI AN 4 NGÀY 3 ĐÊM BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3D BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-03-29",
+      "2026-03-30"
+    ],
+    "price": 6590000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1Jt6AfEBqAX460awC-be-CUr8Qy0wIxjt/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-ha-noi-da-nang-ba-na-hill-pho-c-71",
+    "status": "published",
+    "title": "KHÁM PHÁ HÀ NỘI – ĐÀ NẴNG – BÀ NÀ HILL – PHỐ CỔ HỘI AN - CỐ ĐÔ HUẾ – HÀ NỘI BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3D BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-03-27",
+      "2026-03-29"
+    ],
+    "price": 7190000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1CnBRv1BeyvnvPBXF_YqSscTvAi1LASf9/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-ha-noi-nha-trang-da-lat-ha-noi--72",
+    "status": "published",
+    "title": "KHÁM PHÁ HÀ NỘI - NHA TRANG - ĐÀ LẠT - HÀ NỘI BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "5N4Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-03-30"
+    ],
+    "price": 7990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1-pnzOyY4mA541SUxMioex7wh0mmn6Ovu/edit#heading=h.fnvq1dojtf83",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-ha-noi-da-lat-nha-trang-ha--73",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH HÀ NỘI - ĐÀ LẠT - NHA TRANG - HÀ NỘI 4 NGÀY 3 ĐÊM BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3DBAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-03-29"
+    ],
+    "price": 7790000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1R_ZAlMbw7obFO5GhrVwcAKMJnAzufASo/edit#heading=h.w5gr2lk7slt5",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-ha-noi-quy-nhon-ha-noi-3-ngay-2-74",
+    "status": "published",
+    "title": "KHÁM PHÁ HÀ NỘI – QUY NHƠN – HÀ NỘI 3 NGÀY 2 ĐÊM BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "3N2Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-03-29"
+    ],
+    "price": 5890000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1kmBEZJRstBLWIV6kCmca2q_Rhp3NpUN1/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-am-vang-dien-bien-phu-ha-noi-dien-bien-h-75",
+    "status": "published",
+    "title": "ÂM VANG ĐIỆN BIÊN PHỦ HÀ NỘI – ĐIỆN BIÊN – HÀ NỘI 3 NGÀY 2 ĐÊM (QUÀ TẶNG ÁO CỜ ĐỎ SAO VÀNG)",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "3N2Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-03-27",
+      "2026-03-29"
+    ],
+    "price": 5290000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1B-ZXznaGKKzp4K1lKjnh5TMoepdLwut3/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-ha-noi-can-tho-soc-trang-ba-76",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH HÀ NỘI – CẦN THƠ – SÓC TRĂNG – BẠC LIÊU CÀ MAU – ĐẤT MŨI – TIỀN GIANG – BẾN TRE TÂY NINH – SÀI GÒN – HÀ NỘI BAY VIETNAM AIRLINES (TRƯA - CHIỀU)",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "5N4Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-03-28",
+      "2026-03-31"
+    ],
+    "price": 9690000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1gmlIWeMq3x-NbSHJthxnAgNrGyi3zXVw/edit?usp=sharing&amp;ouid=115014203124988141254&amp;rtpof=true&amp;sd=true",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-dai-ngan-tay-nguyen-hung-vi-buon-me-thuo-77",
+    "status": "published",
+    "title": "ĐẠI NGÀN TÂY NGUYÊN HÙNG VĨ BUÔN MÊ THUỘT-KONTUM- PLEIKU BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3D BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-03-27",
+      "2026-03-30"
+    ],
+    "price": 6990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1t0Ks2Q3mh1CGkv5je56GayLi6U3V06ve/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-dai-ngan-tay-nguyen-hung-vi-pleiku-kontu-78",
+    "status": "published",
+    "title": "ĐẠI NGÀN TÂY NGUYÊN HÙNG VĨ PLEIKU-KONTUM-BUÔN MÊ THUỘT BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "5N4D BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-03-27",
+      "2026-03-28"
+    ],
+    "price": 7890000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1g0x4YOwKDpOZcSyZ5YL_c7crWdegpAIq/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-da-nang-ba-na-hill-pho-co-hoi-an--79",
+    "status": "published",
+    "title": "HÀ NỘI – ĐÀ NẴNG – BÀ NÀ HILL – PHỐ CỔ HỘI AN - CỐ ĐÔ HUẾ – HÀ NỘI BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3D BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-18",
+      "2026-05-27",
+      "2026-06-14",
+      "2026-07-06",
+      "2026-08-09",
+      "2026-08-19",
+      "2026-09-01"
+    ],
+    "price": 7390000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1r7KMf_P8fe8aCY3rU1f3yBhHigwKoSjs/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-da-nang-son-tra-ba-na-pho-co-hoi-an-bay--80",
+    "status": "published",
+    "title": "ĐÀ NẴNG – SƠN TRÀ – BÀ NÀ – PHỐ CỔ HỘI AN BAY VIETJET AIR",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3D BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-25",
+      "2026-04-29"
+    ],
+    "price": 8390000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1Qcz99GTJOOpWSAwrhYxG0XUs7mK4t9ZN/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-tham-quan-da-nang-son-tra-b-81",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH THAM QUAN ĐÀ NẴNG – SƠN TRÀ – BÀ NÀ – PHỐ CỔ HỘI AN BAY VIETJET AIR",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3D BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-21",
+      "2026-05-28",
+      "2026-06-25",
+      "2026-07-09",
+      "2026-07-30",
+      "2026-08-06",
+      "2026-08-27",
+      "2026-09-24"
+    ],
+    "price": 6290000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/172qBLKMr3CRxgSDQHM-rgndJXzXqq1jd/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-du-lich-da-nang-son-tra-ba-na-pho-co-hoi-82",
+    "status": "published",
+    "title": "DU LỊCH ĐÀ NẴNG – SƠN TRÀ – BÀ NÀ – PHỐ CỔ HỘI AN BAY VIETJET AIR",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3D BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-17",
+      "2026-05-31",
+      "2026-06-28",
+      "2026-07-26",
+      "2026-08-09",
+      "2026-08-23",
+      "2026-09-27"
+    ],
+    "price": 6290000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1LQ_pPXtOsDEatigSDyYyum52JCP0AvvD/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-co-do-hue-da-nang-ba-na-hill-pho--83",
+    "status": "published",
+    "title": "HÀ NỘI – CỐ ĐÔ HUẾ – ĐÀ NẴNG – BÀ NÀ HILL – PHỐ CỔ HỘI AN - HÀ NỘI BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3D BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-12",
+      "2026-04-22",
+      "2026-05-18",
+      "2026-05-26",
+      "2026-06-09",
+      "2026-06-28",
+      "2026-07-21",
+      "2026-07-25",
+      "2026-08-04",
+      "2026-08-12",
+      "2026-08-31"
+    ],
+    "price": 7390000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1mRGgf3rxvHCWDY7vrZq52mAtLo3FeiqA/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.366Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-da-nang-son-tra-ba-na-pho-co-hoi-an-bay--84",
+    "status": "published",
+    "title": "ĐÀ NẴNG – SƠN TRÀ – BÀ NÀ – PHỐ CỔ HỘI AN (BAY SUN PHUQUOC AIRWAYS)",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3D BAY SUN PHUQUOC AIRWAYS",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-22",
+      "2026-05-16",
+      "2026-05-21",
+      "2026-06-04",
+      "2026-06-30"
+    ],
+    "price": 6390000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/15UpEXntQ5E87pIT5Zr5XVO88N0MH_8UW/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-da-nang-son-tra-ba-na-pho-co-hoi-an-bay--85",
+    "status": "published",
+    "title": "ĐÀ NẴNG – SƠN TRÀ – BÀ NÀ – PHỐ CỔ HỘI AN BAY SUN PHÚ QUỐC AIRWAY",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3D BAY SUN PHUQUOC AIRWAYS",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-19",
+      "2026-05-09",
+      "2026-06-19",
+      "2026-06-29"
+    ],
+    "price": 6690000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1TDOMVkHQhLKtNEvHLWfmscfNS13ekxjY/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-du-lich-dip-le-da-nang-son-tra-ba-na-pho-86",
+    "status": "published",
+    "title": "DU LỊCH DỊP LỄ ĐÀ NẴNG – SƠN TRÀ – BÀ NÀ – PHỐ CỔ HỘI AN BAY VIETJET AIR",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3D BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-30"
+    ],
+    "price": 9490000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/13wGUNhAly3nKugPQHMdPqbF5nbh44YbG/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-da-nang-son-tra-ba-na-pho-co-hoi-an-bay--87",
+    "status": "published",
+    "title": "ĐÀ NẴNG – SƠN TRÀ – BÀ NÀ – PHỐ CỔ HỘI AN BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-14",
+      "2026-04-18",
+      "2026-05-09",
+      "2026-05-24",
+      "2026-06-01",
+      "2026-06-12",
+      "2026-06-20",
+      "2026-06-23",
+      "2026-06-25",
+      "2026-07-10",
+      "2026-07-27",
+      "2026-07-29",
+      "2026-08-03",
+      "2026-08-25",
+      "2026-08-31",
+      "2026-09-07"
+    ],
+    "price": 6790000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "google.com/url?q=https://docs.google.com/document/d/1uiMFYgqOGcOrPs2WztcmlmY63otHvZ65/edit&amp;sa=D&amp;source=editors&amp;ust=1773806323629550&amp;usg=AOvVaw0pjJRybVI0F3gYexbUi5TB",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-dong-phong-nha-bien-nhat-le-doi-c-88",
+    "status": "published",
+    "title": "HÀ NỘI - ĐỘNG PHONG NHA - BIỂN NHẬT LỆ - ĐỒI CÁT QUANG PHÚ - HÀ NỘI BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-18",
+      "2026-05-16",
+      "2026-05-28",
+      "2026-06-02",
+      "2026-06-28",
+      "2026-07-28",
+      "2026-08-05"
+    ],
+    "price": 6690000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1Hipi9FgGJO2aGqvTH_yD8M0A0TyAX6EJ/edit#heading=h.vmms2j6g1yjq",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-ly-son-quang-ngai-ha-noi-bay-viet-89",
+    "status": "published",
+    "title": "HÀ NỘI - LÝ SƠN – QUẢNG NGÃI – HÀ NỘI BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-09",
+      "2026-04-18",
+      "2026-05-08",
+      "2026-05-09",
+      "2026-05-30",
+      "2026-06-06",
+      "2026-06-07",
+      "2026-06-14"
+    ],
+    "price": 7090000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1qIAmyFpIr-U5HZo2SRwoNI5zUf_pwGJY/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-dai-ngan-tay-nguyen-hung-vi-pleiku-kontu-90",
+    "status": "published",
+    "title": "ĐẠI NGÀN TÂY NGUYÊN HÙNG VĨ PLEIKU-KONTUM-BUÔN MÊ THUỘT BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "5N4Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-21",
+      "2026-05-09",
+      "2026-05-14",
+      "2026-05-23",
+      "2026-06-14"
+    ],
+    "price": 7490000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/140u8C7LGUR8Yo_YtF7VQBzvAUzETJ0-W/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-can-tho-soc-trang-con-dao-bay-vie-91",
+    "status": "published",
+    "title": "HÀ NỘI – CẦN THƠ – SÓC TRĂNG - CÔN ĐẢO BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-11",
+      "2026-05-18",
+      "2026-05-30",
+      "2026-06-04",
+      "2026-06-19",
+      "2026-07-18",
+      "2026-08-26",
+      "2026-09-19",
+      "2026-09-24"
+    ],
+    "price": 8890000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1fzRv24FUE98NzZUPy0r0LoQ3jyEF4St4/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-sai-gon-cu-chi-tay-ninh-my-tho-be-92",
+    "status": "published",
+    "title": "HÀ NỘI - SÀI GÒN – CỦ CHI – TÂY NINH – MỸ THO – BẾN TRE - HÀ NỘI BAY SUN PHU QUOC AIRWAYS",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY SUN PHU QUOC AIRWAYS",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-19",
+      "2026-04-26",
+      "2026-05-31",
+      "2026-06-28",
+      "2026-07-05"
+    ],
+    "price": 8290000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1j2SN3PxiA9fI2YUi_dPQ44mqoYnraN6N/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-nam-bo-dip-le-ha-noi-can-tho-so-93",
+    "status": "published",
+    "title": "KHÁM PHÁ NAM BỘ DỊP LỄ HÀ NỘI – CẦN THƠ – SÓC TRĂNG – BẠC LIÊU CÀ MAU – ĐẤT MŨI – TIỀN GIANG – BẾN TRE -TÂY NINH – SÀI GÒN BAY VIETJET AIR",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "5N4D BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-29"
+    ],
+    "price": 29042026,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/u/0/d/1QrwVUdpE-AEu-UvvpCIDSmb2XdT-mGDm/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-du-lich-ha-noi-dao-ngoc-phu-quoc-bay-vie-94",
+    "status": "published",
+    "title": "DU LỊCH HÀ NỘI - ĐẢO NGỌC PHÚ QUỐC BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-21",
+      "2026-05-24",
+      "2026-05-27",
+      "2026-06-17",
+      "2026-06-29",
+      "2026-07-26",
+      "2026-08-02",
+      "2026-08-04",
+      "2026-08-17",
+      "2026-09-27"
+    ],
+    "price": 5890000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/u/0/d/1J1vNPAxvNPkyGt1J_74zFShICvusKMQW/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-dao-ngoc-phu-quoc-ve-chieu-bay-su-95",
+    "status": "published",
+    "title": "HÀ NỘI - ĐẢO NGỌC PHÚ QUỐC VỀ CHIỀU BAY SUN PHU QUOC AIRWAYS",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY SUN PHU QUOC AIRWAYS",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-14",
+      "2026-05-28",
+      "2026-06-25"
+    ],
+    "price": 7590000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1PAdk1If_e3bqrCLloH76znqmga8of7kg/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-du-lich-dip-le-30-4-ha-noi-dao-ngoc-phu--96",
+    "status": "published",
+    "title": "DU LỊCH DỊP LỄ 30/4 HÀ NỘI - ĐẢO NGỌC PHÚ QUỐC BAY SUN PHU QUOC AIRWAYS",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY SUN PHU QUOC AIRWAYS",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-14",
+      "2026-04-28",
+      "2026-04-30"
+    ],
+    "price": 6790000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1fHf6TIlVcSNjGy0kiPUqsdnSTcLoAkOm/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-du-lich-dip-le-30-4-ha-noi-dao-ngoc-phu--97",
+    "status": "published",
+    "title": "DU LỊCH DỊP LỄ 30/4 HÀ NỘI - ĐẢO NGỌC PHÚ QUỐC BAY SUN PHU QUOC AIRWAYS",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY SUN PHU QUOC AIRWAYS",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-08",
+      "2026-04-29",
+      "2026-05-17",
+      "2026-05-31",
+      "2026-06-21",
+      "2026-06-25",
+      "2026-07-16",
+      "2026-07-26"
+    ],
+    "price": 6590000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "google.com/url?q=https://docs.google.com/document/d/1EOEZzt_VKWDpyxQ_zYATT40t-C-40HPF/edit&amp;sa=D&amp;source=editors&amp;ust=1773806323668365&amp;usg=AOvVaw1jANEMRI5-819rTojQTz2c",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-ha-noi-dao-ngoc-phu-quoc-sun-ph-98",
+    "status": "published",
+    "title": "KHÁM PHÁ HÀ NỘI - ĐẢO NGỌC PHÚ QUỐC SUN PHUQUOC AIRWAYS",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY SUN PHU QUOC AIRWAYS",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-03-31"
+    ],
+    "price": 6590000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/u/0/d/1IjPZCjthOozukLBMhsJKkZQxOEZPMWSU/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-dip-le-30-4-ha-noi-dao-ngoc-99",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH DỊP LỄ 30/4 HÀ NỘI - ĐẢO NGỌC PHÚ QUỐC BAY SUN PHUQUOC AIRWAYS",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY SUN PHU QUOC AIRWAYS",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-30"
+    ],
+    "price": 8590000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1j4-FCvhggN-m8qvqQexU2_9BZz-VW-zx/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-le-30-4-ha-noi-dao-ngoc-phu-100",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH LỄ 30/4 HÀ NỘI - ĐẢO NGỌC PHÚ QUỐC BAY SUN PHUQUOC AIRWAYS",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY SUN PHU QUOC AIRWAYS",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-29",
+      "2026-05-01"
+    ],
+    "price": 7590000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1jhoITsC4KlHEQ-aldN08ERcvEqU2FxBk/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-dao-ngoc-phu-quoc-bay-sun-phu-quo-101",
+    "status": "published",
+    "title": "HÀ NỘI - ĐẢO NGỌC PHÚ QUỐC BAY SUN PHU QUOC AIRWAYS",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY SUN PHU QUOC AIRWAYS",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-17",
+      "2026-05-24",
+      "2026-06-28"
+    ],
+    "price": 6990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/u/0/d/1ru5kxbiSXwBNs9X8LydPHMe2crt3b-aC/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.367Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-du-lich-ha-noi-quy-nhon-phu-yen-ha-noi-b-102",
+    "status": "published",
+    "title": "DU LỊCH HÀ NỘI - QUY NHƠN – PHÚ YÊN – HÀ NỘI BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2002-06-02",
+      "2026-04-13",
+      "2026-04-18",
+      "2026-04-22",
+      "2026-05-11",
+      "2026-05-19",
+      "2026-05-21",
+      "2026-05-27",
+      "2026-05-30",
+      "2026-06-17",
+      "2026-06-29",
+      "2026-07-15",
+      "2026-07-28",
+      "2026-08-02",
+      "2026-08-26",
+      "2026-08-31",
+      "2026-09-16"
+    ],
+    "price": 6990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1z7wJoxqD3GeeXDUBluoM_R-g8ncvPX8Q/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.368Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-kham-pha-du-lich-ha-noi-quy-nhon-phu-yen-103",
+    "status": "published",
+    "title": "KHÁM PHÁ DU LỊCH HÀ NỘI - QUY NHƠN – PHÚ YÊN BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-14",
+      "2026-05-17",
+      "2026-05-25",
+      "2026-06-01",
+      "2026-06-09",
+      "2026-06-24",
+      "2026-07-27",
+      "2026-08-26",
+      "2026-09-27"
+    ],
+    "price": 6990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1mJ5avUdbRBkY_0qdHi4ECKMTmcxiw9YR/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.368Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-quy-nhon-phu-yen-xu-so-hoa-vang-c-104",
+    "status": "published",
+    "title": "HÀ NỘI - QUY NHƠN – PHÚ YÊN XỨ SỞ HOA VÀNG CỎ XANH BAY VIETJET AIR",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-16",
+      "2026-05-30",
+      "2026-06-27",
+      "2026-07-25",
+      "2026-08-01",
+      "2026-08-22",
+      "2026-08-29",
+      "2026-09-26"
+    ],
+    "price": 6990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1maK-KIZ_M1ZpUut0RJwWdQyBpfGEe2sw/edit",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.368Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-quy-nhon-phu-yen-xu-so-hoa-vang-c-105",
+    "status": "published",
+    "title": "HÀ NỘI - QUY NHƠN – PHÚ YÊN XỨ SỞ HOA VÀNG CỎ XANH BAY VIETJET AIR",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-17",
+      "2026-05-31",
+      "2026-06-28",
+      "2026-07-26",
+      "2026-08-09",
+      "2026-08-23",
+      "2026-09-27"
+    ],
+    "price": 6790000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1vEr54jCOB8aqrmz266IIU8vFeBaKOzmj/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.368Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-quy-nhon-phu-yen-xu-so-hoa-vang-c-106",
+    "status": "published",
+    "title": "HÀ NỘI - QUY NHƠN – PHÚ YÊN XỨ SỞ HOA VÀNG CỎ XANH BAY VIETJET AIR",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY VJ",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-25",
+      "2026-04-29",
+      "2026-04-30"
+    ],
+    "price": 10290000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/10BZnCj9BDtT4jvMQtjXJ_PVRH_tjv2o3/edit?tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.368Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-sai-gon-mui-ne-vung-tau-ha-noi-ba-107",
+    "status": "published",
+    "title": "HÀ NỘI – SÀI GÒN – MŨI NÉ – VŨNG TÀU – HÀ NỘI BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-30"
+    ],
+    "price": 10990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1rGgbgIyQiPuPFlORCUsq78HCfhzGM3V_/edit?rtpof=true&amp;sd=true&amp;tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.368Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-chuong-trinh-du-lich-ha-noi-sai-gon-mui--108",
+    "status": "published",
+    "title": "CHƯƠNG TRÌNH DU LỊCH HÀ NỘI – SÀI GÒN – MŨI NÉ – VŨNG TÀU – HÀ NỘI BAY VIETNAM AIRLINES",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "4N3Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-19",
+      "2026-05-23",
+      "2026-05-29",
+      "2026-06-20",
+      "2026-07-16",
+      "2026-07-29",
+      "2026-08-26",
+      "2026-09-26"
+    ],
+    "price": 939000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/1Of1BY6fjvpV2aBqRR06-USBQpeg1qtP5/edit?rtpof=true&amp;sd=true&amp;tab=t.0",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.368Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
+  },
+  {
+    "id": "f1-hoangviet-ha-noi-nha-trang-ha-noi-bay-vietnam-airl-109",
+    "status": "published",
+    "title": "HÀ NỘI – NHA TRANG – HÀ NỘI BAY VIETNAM AIRLINES 1",
+    "destination": "Trong nước",
+    "country": "Việt Nam",
+    "duration": "3N2Đ BAY VNA",
+    "airline": "Đang cập nhật",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-19",
+      "2026-05-10",
+      "2026-05-17",
+      "2026-06-03"
+    ],
+    "price": 6390000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. COM hoa hồng đại lý: 400.000đ. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+    "program_url": "https://docs.google.com/document/d/19qkeXzOQS7mqSvorf5J9WGcs9UMGr-lD/edit?usp=sharing&amp;ouid=101933081261523724370&amp;rtpof=true&amp;sd=true",
+    "source_sheet_url": "https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly",
+    "source_sheet_name": "Hoàng Việt Travel F1",
+    "source_rows": [
+      17
+    ],
+    "updated_at": "2026-05-23T13:15:22.368Z",
+    "public_notes": [
+      "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
+      "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
+    ]
   }
 ]
