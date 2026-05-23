@@ -199,10 +199,32 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
     // 1. Phân loại và trả lời tư vấn Ăn - Ở - Chơi dựa trên cơ sở tri thức (RAG local)
     if (hasDining || hasSightseeing || hasLodging) {
       // Xác định địa điểm được nhắc tới trong cuộc hội thoại
+      // Ưu tiên 1: keyword trong câu hỏi hiện tại
+      // Ưu tiên 2: chỉ quét tin nhắn của USER (không quét bot) để lấy context điểm đến gần nhất
       let destKey: "danang" | "phuquoc" | "nhatrang" | "halong" = "danang"; // mặc định
-      if (hasPhuQuoc || messages.some((m) => m.text.includes("Phú Quốc"))) destKey = "phuquoc";
-      else if (hasNhaTrang || messages.some((m) => m.text.includes("Nha Trang"))) destKey = "nhatrang";
-      else if (hasHaLong || messages.some((m) => m.text.includes("Hạ Long"))) destKey = "halong";
+      if (hasPhuQuoc) {
+        destKey = "phuquoc";
+      } else if (hasNhaTrang) {
+        destKey = "nhatrang";
+      } else if (hasDaNang) {
+        destKey = "danang";
+      } else if (hasHaLong) {
+        destKey = "halong";
+      } else {
+        // Không tìm thấy trong câu hiện tại → tìm lại trong lịch sử (chỉ tin USER)
+        const userMessages = messages.filter((m) => m.sender === "user");
+        const lastUserWithDest = userMessages.slice().reverse().find((m) => {
+          const t = normalize(m.text);
+          return /phu quoc|dao ngoc/.test(t) || /nha trang|tran phu/.test(t) || /ha long|tuan chau/.test(t) || /da nang|my khe|ba na/.test(t);
+        });
+        if (lastUserWithDest) {
+          const t = normalize(lastUserWithDest.text);
+          if (/phu quoc|dao ngoc/.test(t)) destKey = "phuquoc";
+          else if (/nha trang|tran phu/.test(t)) destKey = "nhatrang";
+          else if (/ha long|tuan chau/.test(t)) destKey = "halong";
+          else destKey = "danang";
+        }
+      }
       
       const guide = destinationGuides[destKey];
       let replyText = "";
