@@ -350,49 +350,49 @@ function TourSearchBoxInner({ className = "", compact = false, tours = [], hotel
                   </div>
                 </div>
 
-                <div>
-                  <div className="px-1 py-1 text-xs font-extrabold uppercase tracking-wider text-brand-slate border-b border-brand-hairline/60 pb-2">
-                    🌏 Địa điểm nước ngoài đang HOT nhất
-                  </div>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-3">
-                    {hotInternational.map((item) => {
-                      const stats = getDestinationStats(item.name);
-                      const image = getDestinationImage(item.name);
-                      const displayCount = activeTab === "tour" 
-                        ? `${stats.tourCount} tour đang mở` 
-                        : `${stats.hotelCount} khách sạn`;
+                {activeTab === "tour" && (
+                  <div>
+                    <div className="px-1 py-1 text-xs font-extrabold uppercase tracking-wider text-brand-slate border-b border-brand-hairline/60 pb-2">
+                      🌏 Địa điểm nước ngoài đang HOT nhất
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-3">
+                      {hotInternational.map((item) => {
+                        const stats = getDestinationStats(item.name);
+                        const image = getDestinationImage(item.name);
+                        const displayCount = `${stats.tourCount} tour đang mở`;
 
-                      return (
-                        <button
-                          key={item.name}
-                          type="button"
-                          onClick={() => {
-                            setQuery(item.name);
-                            setShowDropdown(false);
-                            const params = new URLSearchParams();
-                            params.set("q", item.name);
-                            params.set("type", activeTab);
-                            if (activeTab === "tour" && departureCity) {
-                              params.set("from", departureCity);
-                            }
-                            router.push(`/tim-kiem-tour/?${params.toString()}`);
-                          }}
-                          className="flex items-center gap-3 rounded-xl p-2 text-left hover:bg-brand-soft transition duration-200 border border-brand-hairline/30 hover:border-brand-gold/40"
-                        >
-                          <img
-                            src={image}
-                            alt={item.name}
-                            className="w-11 h-11 rounded-lg object-cover shadow-sm bg-brand-stone"
-                          />
-                          <div className="min-w-0">
-                            <div className="font-bold text-xs text-brand-primary truncate">{item.name}</div>
-                            <div className="text-[10px] text-brand-slate font-medium truncate mt-0.5">{displayCount}</div>
-                          </div>
-                        </button>
-                      );
-                    })}
+                        return (
+                          <button
+                            key={item.name}
+                            type="button"
+                            onClick={() => {
+                              setQuery(item.name);
+                              setShowDropdown(false);
+                              const params = new URLSearchParams();
+                              params.set("q", item.name);
+                              params.set("type", activeTab);
+                              if (activeTab === "tour" && departureCity) {
+                                params.set("from", departureCity);
+                              }
+                              router.push(`/tim-kiem-tour/?${params.toString()}`);
+                            }}
+                            className="flex items-center gap-3 rounded-xl p-2 text-left hover:bg-brand-soft transition duration-200 border border-brand-hairline/30 hover:border-brand-gold/40"
+                          >
+                            <img
+                              src={image}
+                              alt={item.name}
+                              className="w-11 h-11 rounded-lg object-cover shadow-sm bg-brand-stone"
+                            />
+                            <div className="min-w-0">
+                              <div className="font-bold text-xs text-brand-primary truncate">{item.name}</div>
+                              <div className="text-[10px] text-brand-slate font-medium truncate mt-0.5">{displayCount}</div>
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             ) : filteredDestinations.length > 0 ? (
               /* Matched Search Results */
