@@ -13,6 +13,63 @@ type Message = {
   isZaloBridge?: boolean;
 };
 
+// Cơ sở tri thức khổng lồ về Ăn - Ở - Chơi (Dining - Sightseeing - Lodging)
+const destinationGuides = {
+  danang: {
+    name: "Đà Nẵng",
+    dining: "Dạ, ẩm thực Đà Nẵng cực kỳ phong phú và ngon rẻ! Em xin gợi ý các món nhất định phải thử khi đến đây:\n\n" +
+            "1. **Hải sản tươi sống**: Bạn ghé quán *Năm Đảnh* (trong hẻm nhưng siêu rẻ) hoặc *Hải sản Bé Mặn* ngay mặt biển Mỹ Khê để ăn ghẹ, mực lá và chíp chíp hấp sả.\n" +
+            "2. **Bánh tráng cuốn thịt heo**: Quán *Mậu* hoặc quán *Trần* nổi tiếng với những lát thịt heo hai đầu da giòn ngọt cuộn kèm mắm nêm đậm đà.\n" +
+            "3. **Mì Quảng**: Ăn sáng chuẩn vị tại *Mì Quảng ếch Trang* (bày trên mẹt) hoặc *Mì Quảng Bà Mua*.\n" +
+            "4. **Đặc sản ăn vặt**: Bánh xèo nem lụi *Bà Dưỡng*, bê thui *Cầu Mống* châm mắm nêm thơm nức mũi.",
+    sightseeing: "Dạ, đến với thành phố đáng sống Đà Nẵng, em xin gợi ý lịch trình khám phá lý tưởng nhất:\n\n" +
+                 "1. **Bà Nà Hills**: Check-in Cầu Vàng (biểu tượng vươn tầm thế giới), đi cáp treo xuyên mây và vui chơi tại Fantasy Park cả ngày.\n" +
+                 "2. **Bán đảo Sơn Trà & Chùa Linh Ứng**: Chiêm bái tượng Phật Bà Quan Âm cao 67m ngắm trọn vẹn vịnh biển Đà Nẵng xanh ngắt.\n" +
+                 "3. **Phố cổ Hội An & Ngũ Hành Sơn**: Chiều leo núi đá Ngũ Hành Sơn huyền bí, tối di chuyển vào Hội An đi thuyền thả đèn hoa đăng lung linh trên sông Hoài.\n" +
+                 "4. **Cầu Rồng phun lửa**: Nếu Quý khách đi vào cuối tuần (Thứ 7, Chủ Nhật lúc 21:00), đừng bỏ lỡ chặng xem Cầu Rồng phun lửa và phun nước độc đáo nhé!",
+    lodging: "Dạ, các gói combo Đà Nẵng của Thanh Nam Homes Travel luôn được tinh tuyển các **khách sạn 4 sao sát biển Mỹ Khê** (dọc tuyến đường Võ Nguyên Giáp sầm uất). Khách sạn có hồ bơi vô cực trên tầng thượng ngắm bình minh biển, phòng ốc hiện đại view đại dương và bao gồm buffet sáng thượng hạng mỗi ngày ạ!"
+  },
+  phuquoc: {
+    name: "Phú Quốc",
+    dining: "Dạ, ẩm thực đảo Ngọc Phú Quốc mang hương vị biển cả hoang sơ nức lòng du khách:\n\n" +
+            "1. **Bún quậy Kiến Xây**: Món ăn độc đáo tự 'quậy' chả cá, chả tôm tươi rói với nước chấm tự pha chế theo khẩu vị.\n" +
+            "2. **Hải sản Hàm Ninh**: Ghẹ Hàm Ninh nhỏ nhưng cực kỳ chắc thịt, luộc chín chấm muối tiêu chanh, hoặc còi biên mai nướng muối ớt giòn ngọt.\n" +
+            "3. **Gỏi cá trích**: Cuộn kèm dừa nạo và rau rừng chấm nước sốt đậu phộng béo ngậy ngon tuyệt đỉnh tại Chợ đêm Dương Đông.\n" +
+            "4. **Bún kèn**: Món ăn sáng lạ miệng mang vị béo của nước cốt dừa và hương thơm cà ri đặc trưng chốn đảo Ngọc.",
+    sightseeing: "Dạ, Phú Quốc hiện là thiên đường giải trí đẳng cấp quốc tế với các điểm check-in không thể bỏ qua:\n\n" +
+                 "1. **Grand World Phú Quốc**: 'Thành phố không ngủ' rực rỡ sắc màu, chèo thuyền Gondola trên kênh đào Venice và xem show nghệ thuật triệu đô *Tinh Hoa Việt Nam*.\n" +
+                 "2. **Cáp treo Hòn Thơm**: Tuyến cáp treo 3 dây vượt biển dài nhất thế giới, dẫn sang công viên nước Aquatopia hiện đại hàng đầu Châu Á.\n" +
+                 "3. **VinWonders & Safari**: Công viên chủ đề thế giới cổ tích và vườn thú bán hoang dã lớn nhất Việt Nam, nơi Quý khách có thể ngắm thú thả tự do.\n" +
+                 "4. **Cano khám phá 4 đảo**: Đi cano lướt sóng qua Hòn Móng Tay, Hòn Gầm Ghì, Hòn Mây Rút để lặn ngắm rạn san hô tự nhiên đẹp nhất đảo.",
+    lodging: "Dạ, gói combo Phú Quốc của Thanh Nam Travel sử dụng các **Resort 4 sao đẳng cấp có bãi biển riêng** (khu vực Dương Đông hoặc Bãi Trường). Resort sở hữu khuôn viên vườn nhiệt đới xanh mát, hồ bơi sát biển view hoàng hôn buông xuống đẹp như tranh vẽ ạ!"
+  },
+  nhatrang: {
+    name: "Nha Trang",
+    dining: "Dạ, ẩm thực vịnh biển Nha Trang mang vị ngọt thanh thanh vô cùng cuốn hút:\n\n" +
+            "1. **Nem nướng Đặng Văn Quyên hoặc Vũ Thành An**: Miếng nem nướng thơm phức cuộn kèm bánh tráng chiên giòn, rau sống chấm nước sốt nếp ấm nóng đặc trưng.\n" +
+            "2. **Bún sứa Năm Beo**: Nước dùng thanh ngọt từ cá dầm, sứa biển giòn sần sật ăn kèm chả cá chiên dai ngon.\n" +
+            "3. **Bánh căn Nha Trang**: Những chiếc bánh căn đổ khuôn đất nóng hổi chứa mực sữa tươi rói hoặc tôm đất ngọt lịm chấm mắm nêm đậm vị.\n" +
+            "4. **Hải sản Tháp Bà**: Dãy phố hải sản tươi sống bắt trực tiếp tại bể, chế biến phong phú từ nướng mỡ hành, hấp sả đến xào tỏi ớt.",
+    sightseeing: "Dạ, Nha Trang sở hữu một trong những vịnh biển đẹp nhất thế giới cùng nhiều điểm vui chơi sôi động:\n\n" +
+                 "1. **VinWonders Nha Trang (Đảo Hòn Tre)**: Vượt biển bằng cáp treo thế hệ mới sang đảo vui chơi cả ngày với Vịnh phao nổi khổng lồ, đường trượt Alpine Coaster và show diễn thực cảnh Tata Show.\n" +
+                 "2. **Tháp Bà Ponagar**: Quần thể đền đài kiến trúc Chăm cổ kính linh thiêng nằm bên dòng sông Cái hiền hòa.\n" +
+                 "3. **Tour Cano 3 Đảo VIP**: Khám phá Vịnh San Hô, Làng Chài dùng cơm trưa hải sản trên bè, tắm bùn khoáng nóng và thư giãn tại resort Hòn Tằm cao cấp.\n" +
+                 "4. **Viện Hải Dương Học**: Khám phá thế giới đại dương thu nhỏ với hơn 20.000 mẫu sinh vật biển quý hiếm.",
+    lodging: "Dạ, gói combo Nha Trang bên em áp dụng cho các **khách sạn 5 sao cao cấp dọc tuyến đường Trần Phú** sầm uất. Quý khách chỉ cần bước qua đường là tới bãi biển Nha Trang cát mịn, phòng ngủ view trọn vẹn vịnh biển đón gió đại dương cực kỳ thư thái ạ!"
+  },
+  halong: {
+    name: "Hạ Long",
+    dining: "Dạ, đến Quảng Ninh thì ẩm thực mang đậm hương vị biển khơi kỳ quan:\n\n" +
+            "1. **Xôi / Bánh cuốn chả mực**: Chả mực giã tay chính gốc Hạ Long giòn sần sật ăn kèm bánh cuốn nóng hổi tráng mỏng.\n" +
+            "2. **Hải sản Cái Dăm**: Nơi tụ hội các quán hải sản lớn với đặc sản cù kỳ hấp, bề bề rang muối, tu hài nướng mỡ hành.\n" +
+            "3. **Sam biển**: Món ăn độc đáo chế biến thành nhiều vị như gỏi sam, sam xào sả ớt, trứng sam nướng vô cùng thơm ngậy.",
+    sightseeing: "Dạ, Hạ Long kỳ quan thế giới có những trải nghiệm nghỉ dưỡng đỉnh cao:\n\n" +
+                 "1. **Hải trình du thuyền 5 sao**: Đi du thuyền cao cấp len lỏi qua hàng ngàn đảo đá vôi, tham quan Động Thiên Cung, Hang Sửng Sốt, chèo thuyền kayak qua Hang Luồn hoang sơ.\n" +
+                 "2. **Đảo Ti Tốp**: Tắm mát tại bãi cát mịn vây quanh đảo hoặc leo núi lên đỉnh lầu vọng cảnh ngắm trọn vẹn vịnh biển di sản từ trên cao.\n" +
+                 "3. **Sun World Halong Complex**: Trải nghiệm cáp treo Nữ Hoàng vượt biển đạt kỷ lục Guinness ngắm toàn cảnh Vịnh Cửa Lục sang Đồi Huyền Bí Nhật Bản."
+  }
+};
+
 export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; tours: PublicTour[]; zaloUrl: string }) {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -67,7 +124,6 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
   }
 
   function handleActionButtonClick(buttonText: string) {
-    // Nếu là các nút giữ chỗ/Zalo chuyên viên
     if (
       buttonText.includes("giữ chỗ") || 
       buttonText.includes("Zalo") || 
@@ -131,11 +187,47 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
     const hasCheap = /re nhat|gia tot|gia re|uu dai|thap nhat|re/.test(normalized);
 
     // Bộ phân tích tính giá (Pricing Calculator) thông minh
-    const hasPricingCalc = /(\d+)\s*(nguoi|lon|be|tre|khach|tuoi)/i.test(normalized) || /tinh the nao|het bao nhieu|gia cho|gia tre em/i.test(normalized);
+    const hasPricingCalc = /(\d+)\s*(nguoi|lon|be|tre|khach|tuoi)/i.test(normalized) || /tinh the nao|het bao nhieu|gia cho|gia tre em|them nguoi/i.test(normalized);
+
+    // Bộ phân tích tư vấn Ăn - Ở - Chơi (Dining - Sightseeing - Lodging)
+    const hasDining = /an gi|cho an|quan ngon|dac san|hai san|nha hang|an uong/i.test(normalized);
+    const hasSightseeing = /choi gi|di dau|choi dau|diem den|lich trinh|tham quan|cho choi/i.test(normalized);
+    const hasLodging = /khach san|resort|cho o|nghi o|phong o/i.test(normalized);
 
     const now = new Date();
 
-    // 1. Nếu khách hỏi về tính giá (3 người lớn, trẻ em...)
+    // 1. Phân loại và trả lời tư vấn Ăn - Ở - Chơi dựa trên cơ sở tri thức (RAG local)
+    if (hasDining || hasSightseeing || hasLodging) {
+      // Xác định địa điểm được nhắc tới trong cuộc hội thoại
+      let destKey: "danang" | "phuquoc" | "nhatrang" | "halong" = "danang"; // mặc định
+      if (hasPhuQuoc || messages.some((m) => m.text.includes("Phú Quốc"))) destKey = "phuquoc";
+      else if (hasNhaTrang || messages.some((m) => m.text.includes("Nha Trang"))) destKey = "nhatrang";
+      else if (hasHaLong || messages.some((m) => m.text.includes("Hạ Long"))) destKey = "halong";
+      
+      const guide = destinationGuides[destKey];
+      let replyText = "";
+      let title = "";
+
+      if (hasDining) {
+        replyText = guide.dining;
+        title = `Ẩm thực & Quán ngon tại ${guide.name}`;
+      } else if (hasSightseeing) {
+        replyText = guide.sightseeing;
+        title = `Địa điểm vui chơi & Lịch trình gợi ý tại ${guide.name}`;
+      } else {
+        replyText = guide.lodging ?? "Dạ, khách sạn trong các gói combo của Thanh Nam Travel đều là tiêu chuẩn từ 4 đến 5 sao cao cấp, bao gồm buffet sáng và đầy đủ tiện nghi, nằm tại trung tâm điểm đến.";
+        title = `Tiêu chuẩn lưu trú tại ${guide.name}`;
+      }
+
+      return {
+        sender: "bot",
+        text: `🌟 **${title}**\n\n${replyText}\n\nQuý khách muốn em hỗ trợ thêm thông tin chặng bay hay cách thức đặt giữ phòng ưu đãi cho kỳ nghỉ này không ạ?`,
+        timestamp: now,
+        actionButtons: ["Xem giá Combo chặng này", "Hỏi điểm vui chơi khác", "Về Menu chính"]
+      };
+    }
+
+    // 2. Nếu khách hỏi về tính giá và đi thêm người (3 người lớn, trẻ em...)
     if (hasPricingCalc) {
       // Tìm tour thảo luận gần nhất, nếu không mặc định Đà Nẵng
       const lastTour = messages.slice().reverse().find((m) => m.tourCard)?.tourCard ?? tours.find((t) => t.id === "combo-da-nang-3n2d") ?? tours[0];
@@ -151,7 +243,6 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
         if (adultMatch) {
           adultsCount = parseInt(adultMatch[1]);
         } else {
-          // Nếu chỉ ghi chung chung "3 người" hoặc "3 khách"
           const generalMatch = normalized.match(/(\d+)\s*(nguoi|khach)/);
           if (generalMatch) {
             adultsCount = parseInt(generalMatch[1]);
@@ -170,9 +261,8 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
           childAge = parseInt(ageMatch[1]);
         }
 
-        // Tính toán chi tiết theo chính sách trẻ em và người lớn
         const adultPrice = lastTour.price;
-        let childPrice = Math.round(adultPrice * 0.7); // Trẻ em 2-11 tuổi thường 70% giá combo (vé bay + giường phụ)
+        let childPrice = Math.round(adultPrice * 0.7); // Trẻ em 2-11 tuổi thường 70% giá combo
         let ageLabel = `${childAge} tuổi (Tính 70% giá người lớn)`;
 
         if (childAge < 2) {
@@ -187,14 +277,21 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
         const childrenTotal = childrenCount * childPrice;
         const grandTotal = adultsTotal + childrenTotal;
 
+        // Giải thích chính sách đi thêm người lớn thứ 3
+        let noteExtraBed = "";
+        if (adultsCount % 2 !== 0) {
+          noteExtraBed = `\n*(Lưu ý: Do đoàn mình lẻ ${adultsCount} người lớn nên phòng khách sạn sẽ kê thêm 1 giường phụ - Extra Bed hoặc tính phụ thu phòng đơn tùy resort)*`;
+        }
+
         return {
           sender: "bot",
           text: `Dạ, em xin phép tính toán chi tiết chi phí dự kiến cho đoàn mình đi **${lastTour.title}** (${lastTour.duration}) như sau:\n\n` +
                 `• **Người lớn**: ${adultsCount} khách x ${formatVnd(adultPrice)} = **${formatVnd(adultsTotal)}**\n` +
                 (childrenCount > 0 
-                  ? `• **Trẻ em (${ageLabel})**: ${childrenCount} bé x ${formatVnd(childPrice)} = **${formatVnd(childrenTotal)}**\n\n`
+                  ? `• **Trẻ em (${ageLabel})**: ${childrenCount} bé x ${formatVnd(childPrice)} = **${formatVnd(childrenTotal)}**\n`
                   : `\n`) +
-                `👉 **Tổng chi phí ước tính cả đoàn**: <span className="text-base font-bold text-brand-goldDark">${formatVnd(grandTotal)}</span>\n\n` +
+                `👉 **Tổng chi phí ước tính cả đoàn**: **${formatVnd(grandTotal)}**\n` +
+                `${noteExtraBed}\n\n` +
                 `Dạ, Quý khách thấy mức giá này phù hợp với kế hoạch chưa ạ? Em có thể kết nối ngay Chuyên viên VIP để kiểm tra giữ vé máy bay giờ đẹp và phòng sát biển cho đoàn mình không ạ?`,
           timestamp: now,
           tourCard: lastTour,
@@ -220,7 +317,7 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
           text: "Dạ, em xin đề xuất **Combo Đà Nẵng 3N2Đ** tinh tuyển dành cho Quý khách. Đây là gói hành trình nghỉ dưỡng sát biển cực kỳ bán chạy:",
           timestamp: now,
           tourCard: daNangTour,
-          actionButtons: ["Đăng ký giữ chỗ Đà Nẵng", "Tìm điểm đến khác"]
+          actionButtons: ["Đăng ký giữ chỗ Đà Nẵng", "Tư vấn Ăn chơi Đà Nẵng", "Tìm điểm đến khác"]
         };
       }
     }
@@ -233,7 +330,7 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
           text: "Dạ, nghỉ dưỡng đảo Ngọc là lựa chọn tuyệt vời! Em xin đề xuất chương trình đặc quyền **Combo Phú Quốc 3N2Đ** với resort sang trọng sát biển:",
           timestamp: now,
           tourCard: phuQuocTour,
-          actionButtons: ["Đăng ký giữ chỗ Phú Quốc", "Tìm điểm đến khác"]
+          actionButtons: ["Đăng ký giữ chỗ Phú Quốc", "Tư vấn Ăn chơi Phú Quốc", "Tìm điểm đến khác"]
         };
       }
     }
@@ -246,7 +343,7 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
           text: "Dạ, Nha Trang biển xanh cát trắng vẫy gọi! Em đề xuất **Combo Nha Trang 3N2Đ** nghỉ dưỡng 5 sao đắc địa mặt phố Trần Phú sầm uất:",
           timestamp: now,
           tourCard: nhaTrangTour,
-          actionButtons: ["Đăng ký giữ chỗ Nha Trang", "Tìm điểm đến khác"]
+          actionButtons: ["Đăng ký giữ chỗ Nha Trang", "Tư vấn Ăn chơi Nha Trang", "Tìm điểm đến khác"]
         };
       }
     }
@@ -259,7 +356,7 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
           text: "Dạ, hành trình khám phá vịnh di sản Hạ Long trên du thuyền 5 sao đẳng cấp dành cho Quý khách:",
           timestamp: now,
           tourCard: haLongTour,
-          actionButtons: ["Đăng ký giữ chỗ Hạ Long", "Tìm điểm đến khác"]
+          actionButtons: ["Đăng ký giữ chỗ Hạ Long", "Tư vấn Ăn chơi Hạ Long", "Tìm điểm đến khác"]
         };
       } else {
         return {
@@ -274,7 +371,7 @@ export function ChatbotWidget({ combo, tours, zaloUrl }: { combo: Combo | null; 
     if (hasBespoke) {
       return {
         sender: "bot",
-        text: "Dạ, thiết kế hành trình thiết kế riêng biệt (Bespoke Journey) chính là dịch vụ đặc quyền đỉnh cao của **Thanh Nam Homes Travel**. Để lên lịch trình tinh chọn nhất, Quý khách vui lòng kết nối nhanh với Chuyên viên tư vấn VIP qua Zalo. Chuyên viên sẽ thiết kế sơ đồ chặng bay, đặt resort sang trọng biệt lập và lên lịch trình gửi Quý khách lập tức ạ!",
+        text: "Dạ, thiết kế hành trình thiết kế riêng biệt (Bespoke Journey) chính là dịch vụ đặc quyền định cao của **Thanh Nam Homes Travel**. Để lên lịch trình tinh chọn nhất, Quý khách vui lòng kết nối nhanh với Chuyên viên tư vấn VIP qua Zalo. Chuyên viên sẽ thiết kế sơ đồ chặng bay, đặt resort sang trọng biệt lập và lên lịch trình gửi Quý khách lập tức ạ!",
         timestamp: now,
         isZaloBridge: true,
         actionButtons: ["Kết nối Zalo tư vấn riêng", "Về Menu chính"]
