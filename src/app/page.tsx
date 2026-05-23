@@ -13,9 +13,28 @@ export default function HomePage() {
   const config = getConfig();
   const combo = getDailyCombo();
   const tours = getPublicTours();
-  const popularTours = tours
+  
+  // Lọc tour khởi hành tháng 7/2026 và sắp xếp theo giá tăng dần
+  const julyTours = tours
     .filter((tour) => tour.departure_dates.some((date) => date.startsWith("2026-07")))
     .sort((a, b) => a.price - b.price);
+
+  // Chọn lọc tour đa dạng quốc gia để hiển thị phong phú, tránh trùng lặp
+  const seenCountries = new Set<string>();
+  const diverseTours: typeof tours = [];
+  const remainingTours: typeof tours = [];
+
+  for (const tour of julyTours) {
+    if (!seenCountries.has(tour.country) && diverseTours.length < 8) {
+      diverseTours.push(tour);
+      seenCountries.add(tour.country);
+    } else {
+      remainingTours.push(tour);
+    }
+  }
+
+  // Lấy tối đa 8 tour hấp dẫn và giá tốt nhất
+  const popularTours = [...diverseTours, ...remainingTours].slice(0, 8);
 
   return (
     <>
@@ -175,31 +194,43 @@ export default function HomePage() {
 
       <section className="bg-white py-20">
         <div className="container-page">
-          <div className="mb-10">
-            <p className="section-label">Tour đã duyệt</p>
-            <h2 className="text-4xl font-medium leading-tight tracking-[-0.02em] text-brand-primary md:text-5xl">
-              Các Tour Phổ Biến
-            </h2>
-            <p className="mt-4 max-w-2xl text-brand-slate">
-              Những tour đang mở bán được lọc từ bảng giá đối tác và duyệt trước khi chatbot tư vấn cho khách.
-            </p>
+          <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div className="max-w-2xl">
+              <p className="section-label">Tour đã duyệt</p>
+              <h2 className="text-4xl font-medium leading-tight tracking-[-0.02em] text-brand-primary md:text-5xl">
+                Các Tour Phổ Biến
+              </h2>
+              <p className="mt-4 text-brand-slate">
+                Các hành trình nổi bật hàng đầu khởi hành trong tháng 7/2026, được tuyển chọn kỹ lưỡng với chi phí tối ưu nhất.
+              </p>
+            </div>
+            <Link className="hidden text-sm font-semibold text-brand-goldDark underline underline-offset-4 md:inline" href="/tim-kiem-tour/">
+              Xem tất cả tour
+            </Link>
           </div>
           {popularTours.length ? (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {popularTours.map((tour) => (
-                <TourCard
-                  href={tourHref(tour)}
-                  image={tourImage(tour.country)}
-                  location={tour.country}
-                  title={tour.title}
-                  rating={5}
-                  reviews={0}
-                  tag={`Khởi hành ${tour.departure_dates.map(formatShortDate).join(", ")}`}
-                  price={`${formatVnd(tour.price)}/người`}
-                  duration={tour.duration}
-                  key={tour.id}
-                />
-              ))}
+            <div>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {popularTours.map((tour) => (
+                  <TourCard
+                    href={tourHref(tour)}
+                    image={tourImage(tour.country)}
+                    location={tour.country}
+                    title={tour.title}
+                    rating={5}
+                    reviews={0}
+                    tag={`Khởi hành ${tour.departure_dates.map(formatShortDate).slice(0, 3).join(", ")}${tour.departure_dates.length > 3 ? "..." : ""}`}
+                    price={`${formatVnd(tour.price)}/người`}
+                    duration={tour.duration}
+                    key={tour.id}
+                  />
+                ))}
+              </div>
+              <div className="mt-12 text-center md:hidden">
+                <Link className="btn-brand-gold inline-flex" href="/tim-kiem-tour/">
+                  Xem tất cả tour
+                </Link>
+              </div>
             </div>
           ) : (
             <div className="rounded-2xl border border-dashed border-brand-hairline bg-brand-stone p-6 text-center text-brand-slate">
