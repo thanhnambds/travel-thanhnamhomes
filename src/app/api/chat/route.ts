@@ -102,9 +102,9 @@ export async function POST(req: NextRequest) {
 
     const systemPrompt = buildSystemPrompt(toursJson, comboJson, config.zaloUrl);
 
-    // Dùng gemini-2.0-flash (nhanh nhất, miễn phí)
+    // Dùng gemini-1.5-flash (ổn định, miễn phí)
     const model = genAI.getGenerativeModel({
-      model: "gemini-2.0-flash",
+      model: "gemini-1.5-flash",
       systemInstruction: systemPrompt,
     });
 
@@ -125,9 +125,10 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ text });
   } catch (error) {
-    console.error("Gemini API error:", error);
+    const msg = error instanceof Error ? error.message : String(error);
+    console.error("Gemini API error:", msg);
     return NextResponse.json(
-      { error: "Xin lỗi, em đang gặp sự cố kỹ thuật. Quý khách vui lòng thử lại sau hoặc liên hệ Zalo để được hỗ trợ ngay ạ!" },
+      { error: `Lỗi kỹ thuật: ${msg}` },
       { status: 500 }
     );
   }
