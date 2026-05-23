@@ -62,7 +62,11 @@ function parseDates(dateItems) {
       if (!match) continue;
       
       const m = match[1].padStart(2, "0");
-      const sectionYear = match[2] || year;
+      let sectionYear = match[2] || year;
+      const sYNum = parseInt(sectionYear, 10);
+      if (sYNum < 2025 || sYNum > 2035) {
+        sectionYear = "2026";
+      }
       
       const daysPart = section.slice(section.indexOf(":") + 1).trim();
       const numbers = daysPart.split(/[^0-9]+/).map(n => n.trim()).filter(Boolean);
@@ -87,6 +91,10 @@ function parseDates(dateItems) {
           let y = year;
           if (match[3]) {
             y = match[3].length === 2 ? "20" + match[3] : match[3];
+          }
+          const yNum = parseInt(y, 10);
+          if (yNum < 2025 || yNum > 2035) {
+            y = "2026";
           }
           dates.push(`${y}-${m}-${d}`);
         }
