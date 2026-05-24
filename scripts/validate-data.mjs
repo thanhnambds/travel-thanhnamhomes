@@ -73,6 +73,17 @@ for (const [index, tour] of (Array.isArray(publicTours) ? publicTours : []).entr
   }
   if (!Array.isArray(tour.departure_dates) || tour.departure_dates.length === 0) {
     errors.push(`${label}: departure_dates must include at least one date.`);
+  } else {
+    for (const [dIndex, date] of tour.departure_dates.entries()) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+        errors.push(`${label}: departure_dates[${dIndex}] "${date}" is not in YYYY-MM-DD format.`);
+      } else {
+        const d = new Date(`${date}T12:00:00+07:00`);
+        if (isNaN(d.getTime())) {
+          errors.push(`${label}: departure_dates[${dIndex}] "${date}" is an invalid calendar date.`);
+        }
+      }
+    }
   }
   if (!Number.isFinite(tour.price) || tour.price <= 0) {
     errors.push(`${label}: price must be a positive number.`);

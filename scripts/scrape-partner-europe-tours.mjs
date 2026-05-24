@@ -248,23 +248,40 @@ async function scrapeTab(tabSpec, today) {
         continue;
       }
       
-      // Parse departure date
-      const cleanDept = departureVal.replace(/\([^)]*\)/g, "").replace(/\n/g, " ").trim();
-      const dateParts = cleanDept.split("-")[0].trim().split("/");
-      if (dateParts.length < 2) {
-        skippedCount++;
-        continue;
+      // Parse departure date using robust RegExp-based extraction to support multiple dates and prevent invalid format crash
+      const extractedDates = [];
+      const dateRegex = /\b(\d{1,2})\s*[\/\-]\s*(\d{1,2})(?:\s*[\/\-]\s*(\d{2,4}))?\b/g;
+      
+      let match;
+      while ((match = dateRegex.exec(departureVal)) !== null) {
+        const rawDay = parseInt(match[1], 10);
+        const rawMonth = parseInt(match[2], 10);
+        let year = currentYear;
+        
+        if (match[3]) {
+          const rawYear = parseInt(match[3], 10);
+          if (match[3].length === 4) {
+            year = rawYear;
+          } else if (match[3].length === 2) {
+            year = 2000 + rawYear;
+          }
+        }
+        
+        if (rawDay >= 1 && rawDay <= 31 && rawMonth >= 1 && rawMonth <= 12) {
+          const dayStr = String(rawDay).padStart(2, "0");
+          const monthStr = String(rawMonth).padStart(2, "0");
+          const dateString = `${year}-${monthStr}-${dayStr}`;
+          
+          const departureDateObj = new Date(`${dateString}T12:00:00+07:00`);
+          
+          // Check if it's a valid date and in the FUTURE
+          if (!isNaN(departureDateObj.getTime()) && departureDateObj >= today) {
+            extractedDates.push(dateString);
+          }
+        }
       }
       
-      const day = dateParts[0].trim().padStart(2, "0");
-      const month = dateParts[1].trim().padStart(2, "0");
-      const year = dateParts[2] && dateParts[2].trim().length >= 4 ? parseInt(dateParts[2].trim(), 10) : currentYear;
-      
-      const dateString = `${year}-${month}-${day}`;
-      const departureDateObj = new Date(`${dateString}T12:00:00+07:00`);
-      
-      // QA Check: Departure date must be in the FUTURE
-      if (departureDateObj < today) {
+      if (extractedDates.length === 0) {
         skippedCount++;
         continue;
       }
@@ -286,7 +303,9 @@ async function scrapeTab(tabSpec, today) {
       
       const groupObj = tourGroups.get(uniqueGroupId);
       groupObj.prices.push(price);
-      groupObj.departureDates.push(dateString);
+      for (const dateStr of extractedDates) {
+        groupObj.departureDates.push(dateStr);
+      }
       validRowsCount++;
     }
     
