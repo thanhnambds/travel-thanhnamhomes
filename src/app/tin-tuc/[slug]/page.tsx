@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -77,17 +76,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
 
-      {/* Hero */}
+      {/* Hero có ảnh nền Unsplash */}
       <section className="relative overflow-hidden bg-brand-primary">
         <div className="absolute inset-0">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src={post.hero_image}
             alt={post.hero_alt}
-            fill
-            priority
-            className="object-cover opacity-35"
-            sizes="100vw"
-            unoptimized
+            className="h-full w-full object-cover opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-brand-primary" />
         </div>
@@ -120,7 +116,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {post.description}
           </p>
 
-          {/* CTA mềm ngay dưới hero */}
           <Link
             href={`${config.zaloUrl}?text=Tôi muốn tư vấn về ${post.title}`}
             className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
@@ -135,27 +130,26 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <section className="container-page py-14">
         <div className="mx-auto max-w-4xl">
           {post.sections.map((section, index) => (
-            <div key={index} className={`mb-14 ${index % 2 === 0 ? "" : ""}`}>
-              {/* Ảnh section */}
-              <div className="relative mb-6 h-64 w-full overflow-hidden rounded-2xl md:h-96">
-                <Image
+            <div key={index} className="mb-14">
+              {/* Ảnh section — dùng img thường để load ảnh Unsplash */}
+              <div className="mb-6 overflow-hidden rounded-2xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src={section.image}
                   alt={section.image_alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 896px"
-                  unoptimized
+                  className="h-64 w-full object-cover md:h-96"
+                  loading={index === 0 ? "eager" : "lazy"}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
 
-              {/* Tiêu đề và nội dung */}
               <h2 className="mb-4 text-2xl font-bold leading-snug text-brand-primary md:text-3xl">
                 {section.heading}
               </h2>
               <div className="prose prose-slate max-w-none text-brand-slate">
                 {section.content.split("\n\n").map((paragraph, pIndex) => (
-                  <p key={pIndex} className="mb-4 leading-8 text-brand-slate"
+                  <p
+                    key={pIndex}
+                    className="mb-4 leading-8 text-brand-slate"
                     dangerouslySetInnerHTML={{
                       __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-brand-primary">$1</strong>')
                     }}
@@ -163,7 +157,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 ))}
               </div>
 
-              {/* CTA mạnh sau mỗi section quan trọng */}
               {index === 1 && (
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link
@@ -184,7 +177,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           ))}
 
-          {/* FAQ Section */}
+          {/* FAQ */}
           {post.faq.length > 0 && (
             <div className="mb-14 rounded-2xl border border-brand-hairline bg-brand-soft p-6 md:p-8">
               <h2 className="mb-6 text-2xl font-bold text-brand-primary">Câu hỏi thường gặp</h2>
@@ -194,7 +187,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
                       <h3 className="text-base font-bold text-brand-primary">{item.q}</h3>
                       <span className="shrink-0 rounded-full border border-brand-hairline bg-white px-3 py-1 text-xs text-brand-slate group-open:bg-brand-primary group-open:text-white transition">
-                        {"{"}{"}"[0]}
+                        ▾
                       </span>
                     </summary>
                     <p className="mt-3 leading-7 text-brand-slate">{item.a}</p>
@@ -204,7 +197,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           )}
 
-          {/* CTA cuối bài mạnh nhất */}
+          {/* CTA cuối bài */}
           <div className="rounded-2xl bg-brand-primary p-8 text-center text-white">
             <p className="section-label-dark justify-center">Thanh Nam Travel</p>
             <h2 className="mt-3 text-2xl font-bold">Sẵn sàng lên kế hoạch cho chuyến đi?</h2>
@@ -240,14 +233,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   href={`/tin-tuc/${related.slug}/`}
                   className="group flex flex-col overflow-hidden rounded-2xl border border-brand-hairline bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <div className="relative h-44 w-full overflow-hidden">
-                    <Image
+                  <div className="h-44 w-full overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                       src={related.hero_image}
                       alt={related.hero_alt}
-                      fill
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      unoptimized
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      loading="lazy"
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-5">

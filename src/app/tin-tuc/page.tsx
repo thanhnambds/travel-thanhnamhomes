@@ -2,7 +2,6 @@ import { PageHero } from "@/components/PageHero";
 import { pageMetadata } from "@/lib/seo";
 import { getAllBlogPosts, formatBlogDate } from "@/lib/blog";
 import Link from "next/link";
-import Image from "next/image";
 import { Clock, Tag } from "lucide-react";
 
 export const metadata = pageMetadata(
@@ -35,14 +34,12 @@ export default function NewsPage() {
                 className="group focus-ring flex flex-col overflow-hidden rounded-2xl border border-brand-hairline bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-lg"
               >
                 {/* Ảnh bìa bài viết */}
-                <div className="relative h-52 w-full overflow-hidden">
-                  <Image
+                <div className="h-52 w-full overflow-hidden">
+                  <img
                     src={post.hero_image}
                     alt={post.hero_alt}
-                    fill
-                    className="object-cover transition duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    unoptimized
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
 
