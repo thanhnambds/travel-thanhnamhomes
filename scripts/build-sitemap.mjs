@@ -7,6 +7,10 @@ const publicTours = fs.existsSync(path.join(rootDir, "data/generated/tours-publi
   ? readJson("data/generated/tours-public.json").filter((tour) => tour.status === "published")
   : [];
 
+const blogPosts = fs.existsSync(path.join(rootDir, "data/blog-posts.json"))
+  ? readJson("data/blog-posts.json")
+  : [];
+
 const urls = [
   "/",
   "/combo-du-lich/",
@@ -19,6 +23,7 @@ const urls = [
   "/tour-trung-quoc/",
   "/tin-tuc/",
   "/lien-he/",
+  ...blogPosts.map((post) => `/tin-tuc/${post.slug}/`),
   ...publicTours.map((tour) => `/tour/${tour.id}/`)
 ];
 

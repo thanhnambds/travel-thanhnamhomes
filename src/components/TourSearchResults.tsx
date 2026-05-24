@@ -3,9 +3,11 @@
 import { useMemo, useState, useEffect } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { CalendarDays, Filter, MapPin, Search, Star, Plane, Hotel } from "lucide-react";
+import Link from "next/link";
 import { TourCard } from "@/components/TourCard";
 import type { PublicTour, PublicHotel } from "@/lib/types";
 import { normalizeSearch, tourHref, tourImage } from "@/lib/tour-helpers";
+
 
 export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[]; hotels?: PublicHotel[] }) {
   const searchParams = useSearchParams();
