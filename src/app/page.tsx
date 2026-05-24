@@ -64,35 +64,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container-page py-20">
-        <p className="section-label justify-center">
-          Vì sao chọn chúng tôi
-        </p>
-        <h2 className="mx-auto mt-3 max-w-3xl text-center text-4xl font-medium leading-tight tracking-[-0.02em] text-brand-primary md:text-5xl">
-          Trải nghiệm kỳ nghỉ đẳng cấp, thiết kế riêng cho bạn
-        </h2>
-        <p className="mx-auto mt-5 max-w-2xl text-center text-brand-slate">
-          Chúng tôi không chỉ cung cấp những chuyến đi, mà còn kiến tạo những trải nghiệm tinh tế. Từng chi tiết nhỏ đều được thiết kế khắt khe để hành trình của bạn trở nên độc bản.
-        </p>
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
-          <Info
-            icon={<Plane size={22} />}
-            title="Chủ Động Lịch Trình Bay"
-            text="Tối ưu hóa thời gian với các chuyến bay đẹp nhất từ các hãng hàng không uy tín, hoàn toàn phù hợp với kế hoạch cá nhân của gia đình bạn."
-          />
-          <Info
-            icon={<Hotel size={22} />}
-            title="Nghỉ Dưỡng Hạng Sang"
-            text="Hệ thống resort và khách sạn đối tác được tuyển chọn khắt khe, mang đến không gian lưu trú sang trọng, tầm nhìn tuyệt mỹ và tiện nghi bậc nhất."
-          />
-          <Info
-            icon={<ClipboardCheck size={22} />}
-            title="Chăm Sóc Đặc Quyền 1:1"
-            text="Chuyên viên cá nhân hỗ trợ trực tiếp từ khâu lên ý tưởng, kiểm tra tình trạng chỗ đến khi kết thúc hành trình, đảm bảo mọi trải nghiệm đều hoàn hảo."
-          />
-        </div>
-      </section>
-
       <section className="bg-white py-20">
         <div className="container-page">
           <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
@@ -145,6 +116,35 @@ export default function HomePage() {
               duration="3N2Đ"
             />
           </div>
+        </div>
+      </section>
+
+      <section className="container-page py-20">
+        <p className="section-label justify-center">
+          Vì sao chọn chúng tôi
+        </p>
+        <h2 className="mx-auto mt-3 max-w-3xl text-center text-4xl font-medium leading-tight tracking-[-0.02em] text-brand-primary md:text-5xl">
+          Trải nghiệm kỳ nghỉ đẳng cấp, thiết kế riêng cho bạn
+        </h2>
+        <p className="mx-auto mt-5 max-w-2xl text-center text-brand-slate">
+          Chúng tôi không chỉ cung cấp những chuyến đi, mà còn kiến tạo những trải nghiệm tinh tế. Từng chi tiết nhỏ đều được thiết kế khắt khe để hành trình của bạn trở nên độc bản.
+        </p>
+        <div className="mt-12 grid gap-4 md:grid-cols-3">
+          <Info
+            icon={<Plane size={22} />}
+            title="Chủ Động Lịch Trình Bay"
+            text="Tối ưu hóa thời gian với các chuyến bay đẹp nhất từ các hãng hàng không uy tín, hoàn toàn phù hợp với kế hoạch cá nhân của gia đình bạn."
+          />
+          <Info
+            icon={<Hotel size={22} />}
+            title="Nghỉ Dưỡng Hạng Sang"
+            text="Hệ thống resort và khách sạn đối tác được tuyển chọn khắt khe, mang đến không gian lưu trú sang trọng, tầm nhìn tuyệt mỹ và tiện nghi bậc nhất."
+          />
+          <Info
+            icon={<ClipboardCheck size={22} />}
+            title="Chăm Sóc Đặc Quyền 1:1"
+            text="Chuyên viên cá nhân hỗ trợ trực tiếp từ khâu lên ý tưởng, kiểm tra tình trạng chỗ đến khi kết thúc hành trình, đảm bảo mọi trải nghiệm đều hoàn hảo."
+          />
         </div>
       </section>
 

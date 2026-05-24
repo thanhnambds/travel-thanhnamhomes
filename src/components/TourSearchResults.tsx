@@ -2,7 +2,7 @@
 
 import { useMemo, useState, useEffect } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { CalendarDays, Filter, MapPin, Search, Star } from "lucide-react";
+import { CalendarDays, Filter, MapPin, Search, Star, Plane, Hotel } from "lucide-react";
 import { TourCard } from "@/components/TourCard";
 import type { PublicTour, PublicHotel } from "@/lib/types";
 import { normalizeSearch, tourHref, tourImage } from "@/lib/tour-helpers";
@@ -210,7 +210,7 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
               </div>
 
               {matchedHotels.length ? (
-                <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                <div className="flex flex-col gap-3">
                   {matchedHotels.map((hotel) => {
                     const cleanedName = cleanDisplayHotelName(hotel.hotel_name);
                     const encodedMsg = encodeURIComponent(
@@ -233,55 +233,52 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
                     return (
                       <div
                         key={hotel.id}
-                        className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-brand-hairline bg-gradient-to-br from-white to-brand-stone/30 p-5 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-brand-gold hover:shadow-md"
+                        className="group flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-xl border border-brand-hairline bg-white p-4 shadow-soft transition-all duration-300 hover:border-brand-gold hover:shadow-md"
                       >
-                        <div>
-                          <div className="flex items-center justify-between gap-2">
-                            <span className="inline-flex items-center gap-1 rounded-full bg-brand-soft px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-goldDark">
-                              <MapPin size={10} />
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="inline-flex items-center gap-1 rounded-full bg-brand-soft px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-brand-goldDark">
+                              <MapPin size={9} />
                               {hotel.destination}
                             </span>
                             {hotel.stars && hotel.stars > 0 ? (
                               <div className="flex gap-0.5 text-amber-400">
                                 {Array.from({ length: hotel.stars }).map((_, idx) => (
-                                  <Star key={idx} size={11} fill="currentColor" className="stroke-amber-400" />
+                                  <Star key={idx} size={10} fill="currentColor" className="stroke-amber-400" />
                                 ))}
                               </div>
                             ) : (
-                              <span className="rounded-full bg-brand-primary/5 px-2 py-0.5 text-[9px] font-medium text-brand-slate">
+                              <span className="rounded bg-brand-primary/5 px-2 py-0.5 text-[9px] font-semibold text-brand-slate">
                                 Đối tác VIP
                               </span>
                             )}
                           </div>
 
-                          <h4 className="mt-3.5 text-base font-semibold leading-snug text-brand-primary line-clamp-2 group-hover:text-brand-goldDark transition-colors">
+                          <h4 className="mt-2 text-sm sm:text-base font-bold leading-snug text-brand-primary group-hover:text-brand-goldDark transition-colors">
                             {cleanedName}
                           </h4>
-                          
-                          <div className="mt-3 flex flex-wrap gap-1.5">
-                            <span className="inline-flex rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
-                              ✓ {tag1}
-                            </span>
-                            <span className="inline-flex rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
-                              ✓ {tag2}
-                            </span>
-                          </div>
                         </div>
 
-                        <div className="mt-5 border-t border-brand-hairline/60 pt-4">
-                          <div className="flex items-center justify-between mb-3.5">
-                            <div>
-                              <span className="block text-[10px] uppercase font-bold tracking-wide text-brand-slate">Mức giá</span>
-                              <span className="text-xs font-bold text-emerald-600">Giá ưu đãi tốt nhất</span>
-                            </div>
-                            <span className="text-[10px] text-brand-slate italic">Hôm nay</span>
+                        <div className="flex flex-wrap gap-1.5 md:w-56 shrink-0 md:justify-center">
+                          <span className="inline-flex rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
+                            ✓ {tag1}
+                          </span>
+                          <span className="inline-flex rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
+                            ✓ {tag2}
+                          </span>
+                        </div>
+
+                        <div className="flex items-center justify-between md:flex-col md:items-end gap-3 md:w-52 shrink-0 border-t border-brand-hairline md:border-t-0 pt-3 md:pt-0">
+                          <div className="text-left md:text-right">
+                            <span className="block text-[10px] uppercase font-bold tracking-wide text-brand-slate">Mức giá</span>
+                            <span className="text-xs font-bold text-emerald-600">Giá ưu đãi tốt nhất</span>
                           </div>
                           
                           <a
                             href={hotelZaloUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-brand-gold py-2.5 text-xs font-bold text-brand-primary transition-all duration-200 hover:bg-brand-goldLight shadow-sm"
+                            className="inline-flex items-center justify-center rounded-xl bg-brand-gold px-4 py-2.5 text-xs font-bold text-brand-primary transition-all duration-200 hover:bg-brand-goldLight shadow-sm shrink-0"
                           >
                             Kiểm tra phòng & Đặt ngay
                           </a>
@@ -314,20 +311,72 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
               </div>
 
               {results.length ? (
-                <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                <div className="flex flex-col gap-3">
                   {results.map((tour) => (
-                    <TourCard
-                      href={tourHref(tour)}
-                      image={tourImage(tour.country)}
-                      location={tour.country}
-                      title={tour.title}
-                      rating={5}
-                      reviews={0}
-                      tag={`Khởi hành ${tour.departure_dates.map(formatShortDate).join(", ")}`}
-                      price={`${formatVnd(tour.price)}/người`}
-                      duration={tour.duration}
+                    <div
                       key={tour.id}
-                    />
+                      className="group flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-xl border border-brand-hairline bg-white p-4 shadow-soft transition-all duration-300 hover:border-brand-gold hover:shadow-md"
+                    >
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="inline-flex items-center gap-1 rounded-full bg-brand-soft px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-brand-goldDark">
+                            {tour.country}
+                          </span>
+                          <span className="text-[11px] text-brand-slate font-medium flex items-center gap-1">
+                            ✈️ {tour.airline}
+                          </span>
+                          <span className="text-[11px] text-brand-slate font-medium flex items-center gap-1">
+                            📍 Từ {tour.departure_city}
+                          </span>
+                        </div>
+                        <Link
+                          href={tourHref(tour)}
+                          className="mt-2 block text-sm sm:text-base font-bold leading-snug text-brand-primary group-hover:text-brand-goldDark transition-colors"
+                        >
+                          {tour.title}
+                        </Link>
+                      </div>
+
+                      <div className="flex items-center gap-1 text-xs font-bold text-brand-primary md:w-28 shrink-0 md:justify-center">
+                        <span className="rounded bg-brand-stone px-2.5 py-1 text-brand-primary">
+                          {tour.duration}
+                        </span>
+                      </div>
+
+                      <div className="md:w-56 shrink-0">
+                        <span className="block text-[9px] uppercase font-bold tracking-wider text-brand-slate mb-1">
+                          Lịch khởi hành gần nhất
+                        </span>
+                        <div className="flex flex-wrap gap-1">
+                          {tour.departure_dates.slice(0, 4).map((date) => (
+                            <span
+                              key={date}
+                              className="inline-flex rounded bg-sky-50 text-sky-700 px-1.5 py-0.5 text-[10px] font-bold"
+                            >
+                              {formatShortDate(date)}
+                            </span>
+                          ))}
+                          {tour.departure_dates.length > 4 && (
+                            <span className="inline-flex rounded bg-brand-stone/40 text-brand-slate px-1.5 py-0.5 text-[10px] font-medium">
+                              +{tour.departure_dates.length - 4} ngày khác
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="flex items-center justify-between md:flex-col md:items-end gap-3 md:w-44 shrink-0 border-t border-brand-hairline md:border-t-0 pt-3 md:pt-0">
+                        <div className="text-left md:text-right">
+                          <span className="block text-[9px] uppercase font-bold tracking-wider text-brand-slate">Giá tour</span>
+                          <span className="text-sm sm:text-base font-bold text-brand-primary">{formatVnd(tour.price)}/khách</span>
+                        </div>
+                        <Link
+                          href={tourHref(tour)}
+                          className="inline-flex items-center justify-center rounded-xl bg-brand-gold px-4 py-2 text-xs font-bold text-brand-primary transition-all duration-200 hover:bg-brand-goldLight shadow-sm shrink-0"
+                        >
+                          Xem chi tiết
+                        </Link>
+                      </div>
+                    </div>
                   ))}
                 </div>
               ) : (
