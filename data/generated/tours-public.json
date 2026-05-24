@@ -3939,5 +3939,958 @@
       "Nhà cung cấp: Hoàng Việt Travel (Đối tác chiến lược F1).",
       "Mức hoa hồng đại lý (COM) của bạn: 400.000đ."
     ]
+  },
+  {
+    "id": "f1-chau-au-tour-chau-au-cao-cap-4-nuoc-ph-0",
+    "status": "published",
+    "title": "Tour Châu Âu Cao Cấp 4 Nước: Pháp - Thụy Sĩ - Ý - Vatican 10N9Đ",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "10N9Đ",
+    "airline": "EMIRATES",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-07-15"
+    ],
+    "price": 79990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1pDi0QtSqq6k7OUgOXRThY8LCbkzn1uFL/edit?usp=sharing&ouid=111342256071374756865&rtpof=true&sd=true",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=427656824",
+    "source_sheet_name": "Đối tác F1 Châu Âu",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:35.965Z"
+  },
+  {
+    "id": "f1-chau-au-tour-du-lich-chau-au-cao-cap-1-1",
+    "status": "published",
+    "title": "Tour Du Lịch Châu Âu Cao Cấp 10N9Đ",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "10N9Đ",
+    "airline": "Qatar Airways",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-07-18",
+      "2026-08-01",
+      "2026-08-08",
+      "2026-08-29"
+    ],
+    "price": 75990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1QST3dh-DTXt6KbJNi4WjVfnTHAEq8pgg/edit?usp=sharing&ouid=111342256071374756865&rtpof=true&sd=true",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=427656824",
+    "source_sheet_name": "Đối tác F1 Châu Âu",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:35.965Z"
+  },
+  {
+    "id": "f1-chau-au-tour-chau-au-cao-cap-4-nuoc-ph-2",
+    "status": "published",
+    "title": "Tour Châu Âu Cao Cấp 4 Nước: Pháp - Thụy Sĩ - Ý - Vatican 10N9Đ",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "10N9Đ",
+    "airline": "EMIRATES",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-11-07",
+      "2026-11-21",
+      "2026-12-27"
+    ],
+    "price": 79990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1pDi0QtSqq6k7OUgOXRThY8LCbkzn1uFL/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=427656824",
+    "source_sheet_name": "Đối tác F1 Châu Âu",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:35.965Z"
+  },
+  {
+    "id": "f1-chau-au-tour-5-nuoc-tay-au-phap-luxemb-3",
+    "status": "published",
+    "title": "Tour 5 Nước Tây Âu: Pháp - Luxembourg - Đức - Bỉ - Hà Lan 10N9Đ",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "10N9Đ",
+    "airline": "Etihad Airways",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-28",
+      "2026-06-05",
+      "2026-06-11",
+      "2026-06-25",
+      "2026-07-09",
+      "2026-07-23",
+      "2026-08-06",
+      "2026-08-28",
+      "2026-11-09",
+      "2026-11-16",
+      "2026-11-23",
+      "2026-11-30",
+      "2026-12-07",
+      "2026-12-14",
+      "2026-12-21"
+    ],
+    "price": 74990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1oHyToSkT5dNoMdyUfldTmhPFSXmboxRE/edit?usp=sharing&ouid=111342256071374756865&rtpof=true&sd=true",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=427656824",
+    "source_sheet_name": "Đối tác F1 Châu Âu",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:35.965Z"
+  },
+  {
+    "id": "f1-chau-au-tour-han-quoc-cao-cap-5-ngay-4-4",
+    "status": "published",
+    "title": "Tour Hàn Quốc Cao Cấp 5 Ngày 4 Đêm (Hàng không Vietnam Airlines)",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "9N8Đ",
+    "airline": "Vietnam Airlines 4*",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-09",
+      "2026-06-24",
+      "2026-07-07",
+      "2026-07-14",
+      "2026-07-22",
+      "2026-08-12",
+      "2026-08-28",
+      "2026-11-14",
+      "2026-12-01",
+      "2026-12-21"
+    ],
+    "price": 69990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/18KZ0sc5nkQRCBqfohp28481VqkPybQOR/edit?usp=sharing&ouid=111342256071374756865&rtpof=true&sd=true",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=427656824",
+    "source_sheet_name": "Đối tác F1 Châu Âu",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:35.966Z"
+  },
+  {
+    "id": "f1-chau-au-tour-han-quoc-mua-hoa-anh-dao--5",
+    "status": "published",
+    "title": "Tour Hàn Quốc Mùa Hoa Anh Đào 5N4Đ",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "9N8Đ",
+    "airline": "Vietnam Airlines",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-26",
+      "2026-06-05",
+      "2026-06-16",
+      "2026-06-23",
+      "2026-06-30",
+      "2026-07-07",
+      "2026-07-14",
+      "2026-07-28",
+      "2026-08-04",
+      "2026-08-11",
+      "2026-08-18"
+    ],
+    "price": 73990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1G2Vb49N8MF2RnulWNUUN7mJNqDeiFkMm/edit?usp=sharing&ouid=111342256071374756865&rtpof=true&sd=true",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=427656824",
+    "source_sheet_name": "Đối tác F1 Châu Âu",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:35.966Z"
+  },
+  {
+    "id": "f1-chau-au-tour-sieu-du-lich-chau-au-5-nu-6",
+    "status": "published",
+    "title": "Tour Siêu Du Lịch Châu Âu 5 Nước 11N10Đ (Vietnam Airlines 4*)",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "11N10Đ",
+    "airline": "Vietnam Airlines 4*",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-15"
+    ],
+    "price": 79990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1nEnYvbV9IZUrmsema6h8xH67meN0EbIv/edit?usp=sharing&ouid=111342256071374756865&rtpof=true&sd=true",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=427656824",
+    "source_sheet_name": "Đối tác F1 Châu Âu",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:35.966Z"
+  },
+  {
+    "id": "f1-chau-au-tour-chau-au-mua-thu-vang-phap-7",
+    "status": "published",
+    "title": "Tour Châu Âu Mùa Thu Vàng: Pháp - Thụy Sĩ - Ý 11N10Đ",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "11N10Đ",
+    "airline": "Vietnam Airlines 4*",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-07-06",
+      "2026-07-18",
+      "2026-07-28",
+      "2026-08-01",
+      "2026-08-08",
+      "2026-08-24",
+      "2026-09-20",
+      "2026-10-20",
+      "2026-11-25",
+      "2026-11-30",
+      "2026-12-27"
+    ],
+    "price": 78990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1G1RaEwVziwOSE7ec0rYPiJUeLDZE8UkK/edit?usp=sharing&ouid=111342256071374756865&rtpof=true&sd=true",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=427656824",
+    "source_sheet_name": "Đối tác F1 Châu Âu",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:35.966Z"
+  },
+  {
+    "id": "f1-chau-au-tour-cao-cap-tay-au-phap-thuy--8",
+    "status": "published",
+    "title": "Tour Cao Cấp Tây Âu: Pháp - Thụy Sĩ - Ý - Vatican 10N9Đ (Bay Vietnam Airlines)",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "10N9Đ",
+    "airline": "Vietnam Airlines",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-27",
+      "2026-06-05",
+      "2026-06-14",
+      "2026-06-23",
+      "2026-06-30",
+      "2026-07-03",
+      "2026-07-12",
+      "2026-07-19",
+      "2026-07-26",
+      "2026-08-09",
+      "2026-08-16",
+      "2026-08-23"
+    ],
+    "price": 78990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/10oGtuNwjWbiwpkkRVYmiEF1_DmcjAImj/edit?usp=sharing&ouid=111342256071374756865&rtpof=true&sd=true",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=427656824",
+    "source_sheet_name": "Đối tác F1 Châu Âu",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:35.966Z"
+  },
+  {
+    "id": "f1-chau-au-tour-tay-au-thinh-vuong-phap-d-9",
+    "status": "published",
+    "title": "Tour Tây Âu Thịnh Vượng: Pháp - Đức - Bỉ - Hà Lan 11N10Đ",
+    "destination": "Châu Âu",
+    "country": "Châu Âu",
+    "duration": "11N10Đ",
+    "airline": "Vietnam Airlines",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-25",
+      "2026-06-07",
+      "2026-06-15",
+      "2026-06-21",
+      "2026-06-28",
+      "2026-07-05",
+      "2026-07-12",
+      "2026-07-20",
+      "2026-07-26",
+      "2026-08-03",
+      "2026-08-09",
+      "2026-08-16"
+    ],
+    "price": 82990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1TQPQVjiMuOvJmOV66lxG7gMZZaY8ZnzR/edit?usp=sharing&ouid=111342256071374756865&rtpof=true&sd=true",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=427656824",
+    "source_sheet_name": "Đối tác F1 Châu Âu",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:35.966Z"
+  },
+  {
+    "id": "f1-trung-quoc-tgg-phct-bay-vietjet-dung-bay-0",
+    "status": "published",
+    "title": "TGG - PHCT bay Vietjet (DỪNG BAY)",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "6N5D",
+    "airline": "Vietjet Air Charter",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-Lễ Lao Động: 30"
+    ],
+    "price": 13790000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=748989795",
+    "source_sheet_name": "Đối tác F1 Trung Quốc",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:36.347Z"
+  },
+  {
+    "id": "f1-trung-quoc-an-thi-phct-bay-vietjet-1",
+    "status": "published",
+    "title": "ÂN THI - PHCT bay Vietjet",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "6N5D",
+    "airline": "VJ",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-09: 27-Lễ 02"
+    ],
+    "price": 12490000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=748989795",
+    "source_sheet_name": "Đối tác F1 Trung Quốc",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:36.347Z"
+  },
+  {
+    "id": "f1-trung-quoc-truong-sa-tgg-phct-bay-cz-2",
+    "status": "published",
+    "title": "TRƯỜNG SA - TGG - PHCT Bay CZ",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "6N5D",
+    "airline": "CZ",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-4  30-23",
+      "4-4   29-25"
+    ],
+    "price": 11990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=748989795",
+    "source_sheet_name": "Đối tác F1 Trung Quốc",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:36.347Z"
+  },
+  {
+    "id": "f1-trung-quoc-thanh-do-cuu-trai-cau-3",
+    "status": "published",
+    "title": "THÀNH ĐÔ - CỬU TRẠI CÂU",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "5N4D",
+    "airline": "BAY CHENGDU AIRLINES\n\n (EU)",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-Lễ 30",
+      "2026-08-28",
+      "2026-08-Tháng 8: 28",
+      "2026-09-Lễ 2",
+      "2026-09-Tháng 9: 1",
+      "2026-09-Tháng 9: 29",
+      "2026-2026: 21, 28-Tháng 5",
+      "2026-2026: 7,14,21,28 Tháng 8-Tháng 7",
+      "2026-8, 1-Tháng 8,9: 31",
+      "2026-8, 29-Quốc khánh: 27",
+      "2026-9: 29-Lễ 2",
+      "2026-9: 31-Lễ 2"
+    ],
+    "price": 13490000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "Ctr mới - áp dụng từ tháng 7 trở đi. \nhttps://docs.google.com/document/d/1XuYeoE_hLGezhPchYeAx57WDfpSMkF4_/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=748989795",
+    "source_sheet_name": "Đối tác F1 Trung Quốc",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:36.348Z"
+  },
+  {
+    "id": "f1-trung-quoc-cat-bi-le-giang-bay-lucky-air--4",
+    "status": "published",
+    "title": "CÁT BI- LỆ GIANG Bay Lucky Air (CHECK C MAI HP)",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "6N5D",
+    "airline": "LUCKY AIR",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-8, 29-Quốc khánh: 27"
+    ],
+    "price": 16990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1OXPniWfSrXDEPioP6mupAJrB3eLqr-KH/edit?usp=drive_web&ouid=108657554887772103467&rtpof=true",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=748989795",
+    "source_sheet_name": "Đối tác F1 Trung Quốc",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:36.348Z"
+  },
+  {
+    "id": "f1-trung-quoc-hai-nam-huy-chuyen-check-cho-n-5",
+    "status": "published",
+    "title": "HẢI NAM ( hủy chuyến ) (check chỗ nhắn Dung)",
+    "destination": "Thượng Hải",
+    "country": "Trung Quốc",
+    "duration": "4N3D\nNO SHOP",
+    "airline": "BAMBOO",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-04-Tháng 4: 30",
+      "8-9 : 29-Lễ 2"
+    ],
+    "price": 10990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1KRPW_tDNfCjGSXv7by-uQIsxn-LJUnK6/edit?usp=drive_web&ouid=108657554887772103467&rtpof=true",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=748989795",
+    "source_sheet_name": "Đối tác F1 Trung Quốc",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:36.348Z"
+  },
+  {
+    "id": "f1-nhat-ban-ctc-nga-mi-lac-son-7n6d-0",
+    "status": "published",
+    "title": "CTC - NGA MI LẠC SƠN 7N6Đ",
+    "destination": "Tokyo",
+    "country": "Nhật Bản",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "Chengdu (EU)",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-09"
+    ],
+    "price": 15990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1ZTNvWOyJPtNa_TRfRmdEP_PlckQ3Tkpi/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=592197310",
+    "source_sheet_name": "Đối tác F1 Nhật Bản",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:36.714Z"
+  },
+  {
+    "id": "f1-nhat-ban-ctc-trung-khanh-7n6d-1",
+    "status": "published",
+    "title": "CTC - TRÙNG KHÁNH 7N6Đ",
+    "destination": "Tokyo",
+    "country": "Nhật Bản",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "Chengdu (EU)",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-09",
+      "2026-06-23",
+      "2026-06-30",
+      "2026-07-07",
+      "2026-07-14",
+      "2026-07-21",
+      "2026-07-28",
+      "2026-08-04",
+      "2026-08-11",
+      "2026-08-18",
+      "2026-08-25"
+    ],
+    "price": 16990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1U_Pbo59xafdWnx37XdJyaV-w3bUikYt5/edit?usp=drive_link&ouid=110892777269555914697&rtpof=true&sd=true",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=592197310",
+    "source_sheet_name": "Đối tác F1 Nhật Bản",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:36.714Z"
+  },
+  {
+    "id": "f1-nhat-ban-thanh-do-ctc-7n6d-lite-2",
+    "status": "published",
+    "title": "THÀNH ĐÔ - CTC 7N6D LITE",
+    "destination": "Tokyo",
+    "country": "Nhật Bản",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "Chengdu (EU)",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-07-07"
+    ],
+    "price": 10690000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1w_o4LXgpJlb1ugagasRELXBzjR2kEtmY/edit?usp=sharing&ouid=110892777269555914697&rtpof=true&sd=true",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=592197310",
+    "source_sheet_name": "Đối tác F1 Nhật Bản",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:36.715Z"
+  },
+  {
+    "id": "f1-nhat-ban-ctc-lac-son-7n6d-lite-3",
+    "status": "published",
+    "title": "CTC - LẠC SƠN 7N6D LITE",
+    "destination": "Tokyo",
+    "country": "Nhật Bản",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "Chengdu (EU)",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-07-07",
+      "2026-07-14",
+      "2026-07-21",
+      "2026-07-28",
+      "2026-08-04",
+      "2026-08-11",
+      "2026-08-18",
+      "2026-08-25"
+    ],
+    "price": 13590000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1tnWQWBZ3ueVfcBCf3Quh3zviNLErXxVg/edit?usp=drive_link&ouid=110892777269555914697&rtpof=true&sd=true",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=592197310",
+    "source_sheet_name": "Đối tác F1 Nhật Bản",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:36.715Z"
+  },
+  {
+    "id": "f1-han-quoc-ctrinh-moi-da-nang-thai-lan-5n-0",
+    "status": "published",
+    "title": "Ctrinh mới - ĐÀ NẴNG THÁI LAN 5N4Đ",
+    "destination": "Seoul",
+    "country": "Hàn Quốc",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "VIETJET",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-27",
+      "2026-05-29",
+      "2026-05-30",
+      "2026-06-22",
+      "2026-06-24",
+      "2026-07-01",
+      "2026-07-03",
+      "2026-07-04",
+      "2026-07-08",
+      "2026-07-09",
+      "2026-07-10",
+      "2026-07-11",
+      "2026-07-16"
+    ],
+    "price": 8290000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=1680885794",
+    "source_sheet_name": "Đối tác F1 Hàn Quốc",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:37.119Z"
+  },
+  {
+    "id": "f1-han-quoc-ghep-da-nang-thai-lan5n4d-1",
+    "status": "published",
+    "title": "GHÉP - ĐÀ NẴNG THÁI LAN5N4Đ",
+    "destination": "Seoul",
+    "country": "Hàn Quốc",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "VIETJET",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-05",
+      "2026-06-11",
+      "2026-06-12",
+      "2026-06-16",
+      "2026-06-19",
+      "2026-06-20",
+      "2026-06-25",
+      "2026-06-26",
+      "2026-06-27"
+    ],
+    "price": 8290000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=1680885794",
+    "source_sheet_name": "Đối tác F1 Hàn Quốc",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:37.119Z"
+  },
+  {
+    "id": "f1-han-quoc-https-docs-google-com-document-2",
+    "status": "published",
+    "title": "Https://docs.google.com/document/d/1-ZQ_H5w7xiOp-FT6u_FeAKHKkVMIfy-B1mq-wQMa19I/edit?tab=t.0",
+    "destination": "Seoul",
+    "country": "Hàn Quốc",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "VIETJET",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-07-17",
+      "2026-07-19",
+      "2026-08-06",
+      "2026-08-29",
+      "2026-08-30"
+    ],
+    "price": 7490000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/document/d/1-ZQ_H5w7xiOp-FT6u_FeAKHKkVMIfy-B1mq-wQMa19I/edit?tab=t.0",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=1680885794",
+    "source_sheet_name": "Đối tác F1 Hàn Quốc",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:37.119Z"
+  },
+  {
+    "id": "f1-thai-lan-seoul-nami-5n4d-2-doi-thanh-se-0",
+    "status": "published",
+    "title": "Seoul Nami 5N4Đ - 2 => Đổi thành: Seoul Nami 6N5Đ - 5",
+    "destination": "Bangkok",
+    "country": "Thái Lan",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "Vietjet Air (AH)",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-27"
+    ],
+    "price": 13990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=1198205320",
+    "source_sheet_name": "Đối tác F1 Thái Lan",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:37.858Z"
+  },
+  {
+    "id": "f1-thai-lan-busan-seoul-6n5d-2-1",
+    "status": "published",
+    "title": "Busan Seoul 6N5Đ - 2",
+    "destination": "Bangkok",
+    "country": "Thái Lan",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "Vietjet Air (AH)",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-29"
+    ],
+    "price": 15990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=1198205320",
+    "source_sheet_name": "Đối tác F1 Thái Lan",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:37.858Z"
+  },
+  {
+    "id": "f1-thai-lan-seoul-nami-5n4d-2-2",
+    "status": "published",
+    "title": "Seoul Nami 5N4Đ - 2",
+    "destination": "Bangkok",
+    "country": "Thái Lan",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "Vietjet Air (AH)",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-04",
+      "2026-06-20",
+      "2026-06-26",
+      "2026-07-03",
+      "2026-07-04",
+      "2026-07-08",
+      "2026-08-29",
+      "2026-10-15",
+      "2026-11-01",
+      "2026-11-14"
+    ],
+    "price": 15990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=1198205320",
+    "source_sheet_name": "Đối tác F1 Thái Lan",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:37.858Z"
+  },
+  {
+    "id": "f1-thai-lan-busan-seoul-6n5d-1-3",
+    "status": "published",
+    "title": "Busan Seoul 6N5Đ - 1",
+    "destination": "Bangkok",
+    "country": "Thái Lan",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "Vietjet Air (AH)",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-05",
+      "2026-06-25",
+      "2026-07-03",
+      "2026-10-16"
+    ],
+    "price": 18990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=1198205320",
+    "source_sheet_name": "Đối tác F1 Thái Lan",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:37.858Z"
+  },
+  {
+    "id": "f1-thai-lan-seoul-nami-5n4d-1-4",
+    "status": "published",
+    "title": "Seoul Nami 5N4Đ - 1",
+    "destination": "Bangkok",
+    "country": "Thái Lan",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "Vietjet Air (AH)",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-14",
+      "2026-06-15",
+      "2026-06-20",
+      "2026-06-21"
+    ],
+    "price": 14990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=1198205320",
+    "source_sheet_name": "Đối tác F1 Thái Lan",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:37.858Z"
+  },
+  {
+    "id": "f1-thai-lan-seoul-nami-5n4d-3-5",
+    "status": "published",
+    "title": "Seoul Nami 5N4Đ - 3",
+    "destination": "Bangkok",
+    "country": "Thái Lan",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "Vietjet Air (AH)",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-14",
+      "2026-06-21",
+      "2026-06-22",
+      "2026-10-18",
+      "2026-10-31"
+    ],
+    "price": 14990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=1198205320",
+    "source_sheet_name": "Đối tác F1 Thái Lan",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:37.858Z"
+  },
+  {
+    "id": "f1-singapore-no-shopping-0",
+    "status": "published",
+    "title": "NO SHOPPING",
+    "destination": "Singapore",
+    "country": "Singapore - Malaysia",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "Bay MU \n6N5Đ",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-25",
+      "2026-05-30",
+      "2026-06-02",
+      "2026-06-03",
+      "2026-06-04",
+      "2026-06-09",
+      "2026-06-16",
+      "2026-06-17",
+      "2026-06-20",
+      "2026-06-26",
+      "2026-06-27",
+      "2026-06-30",
+      "2026-07-04",
+      "2026-07-07",
+      "2026-07-10",
+      "2026-07-11",
+      "2026-07-14",
+      "2026-07-15",
+      "2026-07-16",
+      "2026-07-17",
+      "2026-07-21",
+      "2026-07-22",
+      "2026-07-25",
+      "2026-07-28",
+      "2026-07-30",
+      "2026-08-04",
+      "2026-08-06",
+      "2026-08-11",
+      "2026-08-13",
+      "2026-08-14",
+      "2026-08-18",
+      "2026-08-19",
+      "2026-08-20",
+      "2026-08-21",
+      "2026-08-25",
+      "2026-08-26",
+      "2026-08-27",
+      "2026-08-28",
+      "2026-08-29"
+    ],
+    "price": 17590000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=638133474",
+    "source_sheet_name": "Đối tác F1 Đông Nam Á",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:38.227Z"
+  },
+  {
+    "id": "f1-singapore-freeday-disneyland-1",
+    "status": "published",
+    "title": "FREEDAY - DISNEYLAND",
+    "destination": "Singapore",
+    "country": "Singapore - Malaysia",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "Bay HO\n5N5Đ",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-02",
+      "2026-06-03",
+      "2026-07-10",
+      "2026-07-28",
+      "2026-08-13"
+    ],
+    "price": 16990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=638133474",
+    "source_sheet_name": "Đối tác F1 Đông Nam Á",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:38.227Z"
+  },
+  {
+    "id": "f1-singapore-option-disneyland-2",
+    "status": "published",
+    "title": "OPTION DISNEYLAND",
+    "destination": "Singapore",
+    "country": "Singapore - Malaysia",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "Bay HO\n5N5Đ",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-17",
+      "2026-06-24",
+      "2026-07-15",
+      "2026-07-21",
+      "2026-08-18",
+      "2026-08-21"
+    ],
+    "price": 16990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=638133474",
+    "source_sheet_name": "Đối tác F1 Đông Nam Á",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:38.227Z"
+  },
+  {
+    "id": "f1-singapore-ngu-1-dem-ks-o-tran-3",
+    "status": "published",
+    "title": "NGỦ 1 ĐÊM KS Ô TRẤN",
+    "destination": "Singapore",
+    "country": "Singapore - Malaysia",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "Bay HO\n5N5Đ",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-06-29",
+      "2026-07-04",
+      "2026-07-25",
+      "2026-08-11",
+      "2026-08-26"
+    ],
+    "price": 16990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=638133474",
+    "source_sheet_name": "Đối tác F1 Đông Nam Á",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:30:38.227Z"
   }
 ]
