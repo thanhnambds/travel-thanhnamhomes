@@ -237,7 +237,7 @@ export default async function TourDetailPage({ params }: TourPageProps) {
             <p className="section-label">Điều khoản và lưu ý</p>
             <div className="mt-5 space-y-3 text-sm leading-7 text-brand-slate">
               <p>{tour.price_note}</p>
-              {tour.public_notes.map((note) => (
+              {(tour.public_notes || []).map((note) => (
                 <p key={note}>{note}</p>
               ))}
               <p>Trang này trình bày thông tin hành trình từ hệ thống tour du lịch của Thanh Nam Homes Travel. Chúng tôi sẽ kiểm tra lại giá, lịch bay, tình trạng chỗ và điều kiện thanh toán với đối tác trước khi xác nhận dịch vụ cho quý khách.</p>

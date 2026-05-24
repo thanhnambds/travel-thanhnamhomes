@@ -352,6 +352,7 @@ async function scrapeTab(tabSpec, today) {
         source_sheet_url: sheetUrl,
         source_sheet_name: tabSpec.sourceName,
         source_rows: [1],
+        public_notes: [],
         updated_at: new Date().toISOString()
       });
     }
