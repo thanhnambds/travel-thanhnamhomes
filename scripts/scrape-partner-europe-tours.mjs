@@ -15,6 +15,8 @@ const TABS = [
   { gid: "294941338", category: "Đài Loan", defaultDestination: "Đài Bắc", defaultCountry: "Đài Loan", sourceName: "Đối tác F1 Đài Loan" },
   { gid: "1198205320", category: "Thái Lan", defaultDestination: "Bangkok", defaultCountry: "Thái Lan", sourceName: "Đối tác F1 Thái Lan" },
   { gid: "638133474", category: "Singapore", defaultDestination: "Singapore", defaultCountry: "Singapore - Malaysia", sourceName: "Đối tác F1 Đông Nam Á" },
+  { gid: "1428187154", category: "Bali", defaultDestination: "Bali", defaultCountry: "Indonesia", sourceName: "Đối tác F1 Bali HN" },
+  { gid: "1420107123", category: "Bali", defaultDestination: "Bali", defaultCountry: "Indonesia", sourceName: "Đối tác F1 Bali HCM" },
   { gid: "1672152197", category: "Trong nước", defaultDestination: "Trong nước", defaultCountry: "Việt Nam", sourceName: "Đối tác F1 Nội Địa Bay" },
   { gid: "828333297", category: "Trong nước", defaultDestination: "Trong nước", defaultCountry: "Việt Nam", sourceName: "Đối tác F1 Nội Địa Bộ" }
 ];
@@ -28,11 +30,7 @@ const DOC_TITLES = {
   "1nEnYvbV9IZUrmsema6h8xH67meN0EbIv": "Tour Siêu Du Lịch Châu Âu 5 Nước 11N10Đ (Vietnam Airlines 4*)",
   "1G1RaEwVziwOSE7ec0rYPiJUeLDZE8UkK": "Tour Châu Âu Mùa Thu Vàng: Pháp - Thụy Sĩ - Ý 11N10Đ",
   "10oGtuNwjWbiwpkkRVYmiEF1_DmcjAImj": "Tour Cao Cấp Tây Âu: Pháp - Thụy Sĩ - Ý - Vatican 10N9Đ (Bay Vietnam Airlines)",
-  "1TQPQVjiMuOvJmOV66lxG7gMZZaY8ZnzR": "Tour Tây Âu Thịnh Vượng: Pháp - Đức - Bỉ - Hà Lan 11N10Đ",
-  
-  // Hàn Quốc
-  "18KZ0sc5nkQRCBqfohp28481VqkPybQOR": "Tour Hàn Quốc Cao Cấp 5 Ngày 4 Đêm (Hàng không Vietnam Airlines)",
-  "1G2Vb49N8MF2RnulWNUUN7mJNqDeiFkMm": "Tour Hàn Quốc Mùa Hoa Anh Đào 5N4Đ"
+  "1TQPQVjiMuOvJmOV66lxG7gMZZaY8ZnzR": "Tour Tây Âu Thịnh Vượng: Pháp - Đức - Bỉ - Hà Lan 11N10Đ"
 };
 
 // Robust CSV parser
@@ -110,7 +108,7 @@ function slugify(value) {
     .replace(/^-+|-+$/g, "");
 }
 
-// Intelligent dynamic column detection - keeping the FIRST match to prevent overlaps
+// Intelligent dynamic column detection
 function detectColumns(headers) {
   const mapping = {
     duration: -1,
@@ -157,7 +155,7 @@ function detectColumns(headers) {
     }
     
     // 6. Title
-    if (cleanHeader.includes("TUYẾN") || cleanHeader.includes("LỊCH TRÌNH") || cleanHeader.includes("CHƯƠNG TRÌNH") || cleanHeader.includes("TOUR SÀI GÒN") || cleanHeader.includes("HN -THÀNH ĐÔ")) {
+    if (cleanHeader.includes("TUYẾN") || cleanHeader.includes("LỊCH TRÌNH") || cleanHeader.includes("CHƯƠNG TRÌNH") || cleanHeader.includes("TOUR SÀI GÒN") || cleanHeader.includes("HN -THÀNH ĐÔ") || cleanHeader.includes("HÀ NỘI - BALI")) {
       if (mapping.title === -1) mapping.title = idx;
     }
   });
@@ -260,8 +258,6 @@ async function scrapeTab(tabSpec, today) {
       
       const day = dateParts[0].trim().padStart(2, "0");
       const month = dateParts[1].trim().padStart(2, "0");
-      
-      // Smart Year extraction: if year is in the date cell, use it! Otherwise, use currentYear
       const year = dateParts[2] && dateParts[2].trim().length >= 4 ? parseInt(dateParts[2].trim(), 10) : currentYear;
       
       const dateString = `${year}-${month}-${day}`;
@@ -307,7 +303,9 @@ async function scrapeTab(tabSpec, today) {
       
       // Build B2C Title
       let tourTitle = "";
-      if (group.docId && DOC_TITLES[group.docId]) {
+      if (tabSpec.category === "Bali") {
+        tourTitle = `Tour Du Lịch Đảo Thiên Đường Bali ${group.duration}`;
+      } else if (group.docId && DOC_TITLES[group.docId]) {
         tourTitle = DOC_TITLES[group.docId];
       } else if (group.title && group.title.length > 10) {
         tourTitle = group.title.replace(/\n/g, " ").replace(/\s+/g, " ").trim();
@@ -326,7 +324,7 @@ async function scrapeTab(tabSpec, today) {
         country: tabSpec.defaultCountry,
         duration: group.duration,
         airline: group.airline,
-        departure_city: "Hà Nội",
+        departure_city: tabSpec.gid === "1420107123" ? "TP. Hồ Chí Minh" : "Hà Nội",
         departure_dates: sortedDates,
         price: minPrice,
         currency: "VND",

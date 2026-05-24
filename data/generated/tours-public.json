@@ -3961,7 +3961,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:35.965Z"
+    "updated_at": "2026-05-24T15:41:48.028Z"
   },
   {
     "id": "f1-chau-au-tour-du-lich-chau-au-cao-cap-1-1",
@@ -3987,7 +3987,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:35.965Z"
+    "updated_at": "2026-05-24T15:41:48.032Z"
   },
   {
     "id": "f1-chau-au-tour-chau-au-cao-cap-4-nuoc-ph-2",
@@ -4012,7 +4012,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:35.965Z"
+    "updated_at": "2026-05-24T15:41:48.032Z"
   },
   {
     "id": "f1-chau-au-tour-5-nuoc-tay-au-phap-luxemb-3",
@@ -4049,12 +4049,12 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:35.965Z"
+    "updated_at": "2026-05-24T15:41:48.032Z"
   },
   {
-    "id": "f1-chau-au-tour-han-quoc-cao-cap-5-ngay-4-4",
+    "id": "f1-chau-au-tour-3-nuoc-co-kinh-phap-thuy--4",
     "status": "published",
-    "title": "Tour Hàn Quốc Cao Cấp 5 Ngày 4 Đêm (Hàng không Vietnam Airlines)",
+    "title": "Tour 3 Nước Cổ Kính: Pháp - Thụy Sĩ - Ý 9N8Đ (Hàng không Vietnam Airlines)",
     "destination": "Châu Âu",
     "country": "Châu Âu",
     "duration": "9N8Đ",
@@ -4081,12 +4081,12 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:35.966Z"
+    "updated_at": "2026-05-24T15:41:48.032Z"
   },
   {
-    "id": "f1-chau-au-tour-han-quoc-mua-hoa-anh-dao--5",
+    "id": "f1-chau-au-tour-tay-au-mua-he-phap-bi-ha--5",
     "status": "published",
-    "title": "Tour Hàn Quốc Mùa Hoa Anh Đào 5N4Đ",
+    "title": "Tour Tây Âu Mùa Hè: Pháp - Bỉ - Hà Lan - Đức 9N8Đ",
     "destination": "Châu Âu",
     "country": "Châu Âu",
     "duration": "9N8Đ",
@@ -4114,7 +4114,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:35.966Z"
+    "updated_at": "2026-05-24T15:41:48.032Z"
   },
   {
     "id": "f1-chau-au-tour-sieu-du-lich-chau-au-5-nu-6",
@@ -4137,7 +4137,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:35.966Z"
+    "updated_at": "2026-05-24T15:41:48.032Z"
   },
   {
     "id": "f1-chau-au-tour-chau-au-mua-thu-vang-phap-7",
@@ -4170,7 +4170,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:35.966Z"
+    "updated_at": "2026-05-24T15:41:48.032Z"
   },
   {
     "id": "f1-chau-au-tour-cao-cap-tay-au-phap-thuy--8",
@@ -4204,7 +4204,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:35.966Z"
+    "updated_at": "2026-05-24T15:41:48.032Z"
   },
   {
     "id": "f1-chau-au-tour-tay-au-thinh-vuong-phap-d-9",
@@ -4238,7 +4238,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:35.966Z"
+    "updated_at": "2026-05-24T15:41:48.032Z"
   },
   {
     "id": "f1-trung-quoc-tgg-phct-bay-vietjet-dung-bay-0",
@@ -4261,7 +4261,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:36.347Z"
+    "updated_at": "2026-05-24T15:41:48.415Z"
   },
   {
     "id": "f1-trung-quoc-an-thi-phct-bay-vietjet-1",
@@ -4284,7 +4284,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:36.347Z"
+    "updated_at": "2026-05-24T15:41:48.415Z"
   },
   {
     "id": "f1-trung-quoc-truong-sa-tgg-phct-bay-cz-2",
@@ -4308,7 +4308,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:36.347Z"
+    "updated_at": "2026-05-24T15:41:48.415Z"
   },
   {
     "id": "f1-trung-quoc-thanh-do-cuu-trai-cau-3",
@@ -4342,7 +4342,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:36.348Z"
+    "updated_at": "2026-05-24T15:41:48.416Z"
   },
   {
     "id": "f1-trung-quoc-cat-bi-le-giang-bay-lucky-air--4",
@@ -4365,7 +4365,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:36.348Z"
+    "updated_at": "2026-05-24T15:41:48.416Z"
   },
   {
     "id": "f1-trung-quoc-hai-nam-huy-chuyen-check-cho-n-5",
@@ -4389,7 +4389,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:36.348Z"
+    "updated_at": "2026-05-24T15:41:48.416Z"
   },
   {
     "id": "f1-nhat-ban-ctc-nga-mi-lac-son-7n6d-0",
@@ -4412,7 +4412,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:36.714Z"
+    "updated_at": "2026-05-24T15:41:48.776Z"
   },
   {
     "id": "f1-nhat-ban-ctc-trung-khanh-7n6d-1",
@@ -4445,7 +4445,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:36.714Z"
+    "updated_at": "2026-05-24T15:41:48.776Z"
   },
   {
     "id": "f1-nhat-ban-thanh-do-ctc-7n6d-lite-2",
@@ -4468,7 +4468,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:36.715Z"
+    "updated_at": "2026-05-24T15:41:48.776Z"
   },
   {
     "id": "f1-nhat-ban-ctc-lac-son-7n6d-lite-3",
@@ -4498,7 +4498,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:36.715Z"
+    "updated_at": "2026-05-24T15:41:48.776Z"
   },
   {
     "id": "f1-han-quoc-ctrinh-moi-da-nang-thai-lan-5n-0",
@@ -4533,7 +4533,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:37.119Z"
+    "updated_at": "2026-05-24T15:41:49.161Z"
   },
   {
     "id": "f1-han-quoc-ghep-da-nang-thai-lan5n4d-1",
@@ -4564,7 +4564,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:37.119Z"
+    "updated_at": "2026-05-24T15:41:49.161Z"
   },
   {
     "id": "f1-han-quoc-https-docs-google-com-document-2",
@@ -4591,7 +4591,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:37.119Z"
+    "updated_at": "2026-05-24T15:41:49.161Z"
   },
   {
     "id": "f1-thai-lan-seoul-nami-5n4d-2-doi-thanh-se-0",
@@ -4614,7 +4614,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:37.858Z"
+    "updated_at": "2026-05-24T15:41:49.901Z"
   },
   {
     "id": "f1-thai-lan-busan-seoul-6n5d-2-1",
@@ -4637,7 +4637,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:37.858Z"
+    "updated_at": "2026-05-24T15:41:49.901Z"
   },
   {
     "id": "f1-thai-lan-seoul-nami-5n4d-2-2",
@@ -4669,7 +4669,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:37.858Z"
+    "updated_at": "2026-05-24T15:41:49.901Z"
   },
   {
     "id": "f1-thai-lan-busan-seoul-6n5d-1-3",
@@ -4695,7 +4695,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:37.858Z"
+    "updated_at": "2026-05-24T15:41:49.901Z"
   },
   {
     "id": "f1-thai-lan-seoul-nami-5n4d-1-4",
@@ -4721,7 +4721,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:37.858Z"
+    "updated_at": "2026-05-24T15:41:49.901Z"
   },
   {
     "id": "f1-thai-lan-seoul-nami-5n4d-3-5",
@@ -4748,7 +4748,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:37.858Z"
+    "updated_at": "2026-05-24T15:41:49.901Z"
   },
   {
     "id": "f1-singapore-no-shopping-0",
@@ -4809,7 +4809,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:38.227Z"
+    "updated_at": "2026-05-24T15:41:50.287Z"
   },
   {
     "id": "f1-singapore-freeday-disneyland-1",
@@ -4836,7 +4836,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:38.227Z"
+    "updated_at": "2026-05-24T15:41:50.287Z"
   },
   {
     "id": "f1-singapore-option-disneyland-2",
@@ -4864,7 +4864,7 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:38.227Z"
+    "updated_at": "2026-05-24T15:41:50.287Z"
   },
   {
     "id": "f1-singapore-ngu-1-dem-ks-o-tran-3",
@@ -4891,6 +4891,37 @@
     "source_rows": [
       1
     ],
-    "updated_at": "2026-05-24T15:30:38.227Z"
+    "updated_at": "2026-05-24T15:41:50.287Z"
+  },
+  {
+    "id": "f1-bali-tour-du-lich-dao-thien-duong-b-0",
+    "status": "published",
+    "title": "Tour Du Lịch Đảo Thiên Đường Bali 5 Ngày 4 Đêm",
+    "destination": "Bali",
+    "country": "Indonesia",
+    "duration": "5 Ngày 4 Đêm",
+    "airline": "VIETJET",
+    "departure_city": "Hà Nội",
+    "departure_dates": [
+      "2026-05-25",
+      "2026-05-27",
+      "2026-05-31",
+      "2026-07-02",
+      "2026-07-05",
+      "2026-08-02",
+      "2026-08-09",
+      "2026-08-16",
+      "2026-08-23"
+    ],
+    "price": 16990000,
+    "currency": "VND",
+    "price_note": "Giá tham khảo tại thời điểm cập nhật từ đối tác F1. Vui lòng liên hệ để kiểm tra giá và tình trạng chỗ chính xác.",
+    "program_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/edit",
+    "source_sheet_url": "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv&gid=1428187154",
+    "source_sheet_name": "Đối tác F1 Bali HN",
+    "source_rows": [
+      1
+    ],
+    "updated_at": "2026-05-24T15:41:50.647Z"
   }
 ]
