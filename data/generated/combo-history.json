@@ -1,6 +1,19 @@
 [
   {
     "combo_id": "da-nang-2026-06-18-dn001",
+    "generated_at": "2026-05-24T14:45:06.322+07:00",
+    "published_at": "2026-05-24T15:16:44.252+07:00",
+    "destination": "Đà Nẵng",
+    "status": "published",
+    "source_log": {
+      "flight_source": "mock-flight-provider",
+      "hotel_source": "data/hotels.csv",
+      "flight_updated_at": "2026-05-17T08:00:00+07:00",
+      "price_updated_at": "2026-05-24T14:45:06.322+07:00"
+    }
+  },
+  {
+    "combo_id": "da-nang-2026-06-18-dn001",
     "generated_at": "2026-05-17T11:24:23.757+07:00",
     "published_at": "2026-05-17T11:24:59.121+07:00",
     "destination": "Đà Nẵng",

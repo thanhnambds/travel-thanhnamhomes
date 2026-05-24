@@ -1,1 +1,58 @@
-{}
+{
+  "combo_id": "da-nang-2026-06-18-dn001",
+  "title": "Combo Đà Nẵng 3 ngày 2 đêm bay từ Hà Nội, khách sạn 4 sao",
+  "slug": "combo-da-nang-3-ngay-2-dem-ha-noi-2026-06-18",
+  "destination": "Đà Nẵng",
+  "destination_slug": "da-nang",
+  "departure_city": "HAN",
+  "duration": "3 ngày 2 đêm",
+  "nights": 2,
+  "start_date": "2026-06-18",
+  "end_date": "2026-06-20",
+  "flight_summary": "HAN-DAD VN171 09:15-10:40, DAD-HAN VN174 16:20-17:45",
+  "airline": "Vietnam Airlines",
+  "outbound_flight_time": "09:15",
+  "return_flight_time": "16:20",
+  "hotel_name": "Han River Premier Hotel Da Nang",
+  "hotel_star": 4,
+  "room_type": "Deluxe City View",
+  "meal_plan": "Buffet sáng",
+  "guests": {
+    "adults": 2,
+    "children": 0
+  },
+  "base_flight_price": 5600000,
+  "hotel_price": 2420000,
+  "fees": 350000,
+  "margin": 585900,
+  "total_price": 8955900,
+  "price_note": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng vé, phòng và chính sách của nhà cung cấp. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+  "included": [
+    "Vé máy bay khứ hồi tham khảo cho 2 người lớn",
+    "2 đêm phòng Deluxe City View",
+    "Buffet sáng"
+  ],
+  "excluded": [
+    "Hành lý ký gửi nếu chưa bao gồm trong hạng vé",
+    "Xe đưa đón sân bay",
+    "Chi phí cá nhân và dịch vụ không nêu trong phần bao gồm"
+  ],
+  "cancellation_policy": "Hủy trước 7 ngày không phí; sau thời hạn áp dụng phí 1 đêm",
+  "child_policy": "Trẻ em dưới 6 tuổi ngủ chung miễn phí; phụ thu ăn sáng nếu phát sinh",
+  "suitable_for": [
+    "gia đình",
+    "cặp đôi",
+    "nhóm bạn"
+  ],
+  "status": "published",
+  "generated_at": "2026-05-24T14:45:06.322+07:00",
+  "updated_at": "2026-05-24T15:16:44.252+07:00",
+  "published_at": "2026-05-24T15:16:44.252+07:00",
+  "expires_at": "2026-06-18T23:59:59+07:00",
+  "source_log": {
+    "flight_source": "mock-flight-provider",
+    "hotel_source": "data/hotels.csv",
+    "flight_updated_at": "2026-05-17T08:00:00+07:00",
+    "price_updated_at": "2026-05-24T14:45:06.322+07:00"
+  }
+}

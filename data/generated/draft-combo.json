@@ -45,14 +45,14 @@
     "nhóm bạn"
   ],
   "status": "draft",
-  "generated_at": "2026-05-23T11:32:38.261+07:00",
-  "updated_at": "2026-05-23T11:32:38.261+07:00",
+  "generated_at": "2026-05-24T14:45:06.322+07:00",
+  "updated_at": "2026-05-24T14:45:06.322+07:00",
   "published_at": null,
   "expires_at": "2026-06-18T23:59:59+07:00",
   "source_log": {
     "flight_source": "mock-flight-provider",
     "hotel_source": "data/hotels.csv",
     "flight_updated_at": "2026-05-17T08:00:00+07:00",
-    "price_updated_at": "2026-05-23T11:32:38.261+07:00"
+    "price_updated_at": "2026-05-24T14:45:06.322+07:00"
   }
 }
