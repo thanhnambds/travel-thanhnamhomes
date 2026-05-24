@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import { Suspense } from "react";
 import { TourSearchBox } from "@/components/TourSearchBox";
 import { TourSearchResults } from "@/components/TourSearchResults";
 import { getPublicTours, getPublicHotels } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Tìm kiếm tour du lịch",
-  description: "Tìm kiếm tour du lịch theo điểm đến, tháng khởi hành, giá và nơi khởi hành trong toàn bộ hệ thống hành trình của Thanh Nam Travel."
-};
+export const metadata = pageMetadata(
+  "Tìm kiếm tour du lịch",
+  "Tìm kiếm tour du lịch theo điểm đến, tháng khởi hành, giá và nơi khởi hành trong toàn bộ hệ thống hành trình của Thanh Nam Travel.",
+  "/tim-kiem-tour/"
+);
 
 export default function TourSearchPage() {
   const tours = getPublicTours();

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /tim-kiem-tour/*?*
 
 Sitemap: https://travel.thanhnamhomes.vn/sitemap.xml

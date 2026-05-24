@@ -17,6 +17,7 @@ const urls = [
   "/ve-may-bay-khach-san/",
   "/tim-kiem-tour/",
   "/tour-trung-quoc/",
+  "/tin-tuc/",
   "/lien-he/",
   ...publicTours.map((tour) => `/tour/${tour.id}/`)
 ];
@@ -43,6 +44,7 @@ fs.writeFileSync(
   path.join(rootDir, "public", "robots.txt"),
   `User-agent: *
 Allow: /
+Disallow: /tim-kiem-tour/*?*
 
 Sitemap: ${config.siteUrl}/sitemap.xml
 `

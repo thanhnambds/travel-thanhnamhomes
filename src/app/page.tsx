@@ -8,6 +8,13 @@ import { TourSearchBox } from "@/components/TourSearchBox";
 import { PriceNote } from "@/components/PriceNote";
 import { formatShortDate, formatVnd, getConfig, getDailyCombo, getPublicTours, getPublicHotels } from "@/lib/data";
 import { tourHref, tourImage } from "@/lib/tour-helpers";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata(
+  "Travel Thanh Nam Homes - Vé máy bay, khách sạn & combo du lịch",
+  "Combo du lịch vé máy bay và khách sạn, thiết kế hành trình nghỉ dưỡng cao cấp, tư vấn trực tiếp qua Zalo 24/7.",
+  "/"
+);
 
 export default function HomePage() {
   const config = getConfig();

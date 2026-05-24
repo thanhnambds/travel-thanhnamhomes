@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { CalendarDays, CheckCircle2, Clock, MapPin, MessageCircle, Plane, ShieldCheck, Star, Users } from "lucide-react";
 import { formatDate, formatShortDate, formatVnd, getConfig, getPublicTourById, getPublicTours } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 import { tourImage } from "@/lib/tour-helpers";
 import type { PublicTour } from "@/lib/types";
 
@@ -28,10 +29,11 @@ export async function generateMetadata({ params }: TourPageProps): Promise<Metad
     };
   }
 
-  return {
-    title: `${tour.title} - ${formatVnd(tour.price)}/khách`,
-    description: `${tour.title}, khởi hành từ ${tour.departure_city}, giá tham khảo ${formatVnd(tour.price)}/khách. Thanh Nam Travel kiểm tra lại chỗ và giá trước khi giữ dịch vụ.`
-  };
+  const title = `${tour.title} - ${formatVnd(tour.price)}/khách`;
+  const description = `${tour.title}, khởi hành từ ${tour.departure_city}, giá tham khảo ${formatVnd(tour.price)}/khách. Thanh Nam Travel kiểm tra lại chỗ và giá trước khi giữ dịch vụ.`;
+  const path = `/tour/${tour.id}/`;
+
+  return pageMetadata(title, description, path);
 }
 
 export default async function TourDetailPage({ params }: TourPageProps) {
@@ -55,8 +57,39 @@ export default async function TourDetailPage({ params }: TourPageProps) {
     `Tôi quan tâm tour ${tour.title}, ${tour.duration}, khởi hành từ ${tour.departure_city}, giá tham khảo ${formatVnd(tour.price)}/khách. Vui lòng kiểm tra giúp tình trạng chỗ và giá mới nhất.`
   );
 
+  // Schema.org Structured Data
+  const tourSchema = {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": tour.title,
+    "description": tour.title + ", khởi hành từ " + tour.departure_city,
+    "touristType": ["Gia đình", "Cặp đôi", "Nhóm bạn"],
+    "offers": {
+      "@type": "Offer",
+      "price": tour.price,
+      "priceCurrency": "VND",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Thanh Nam Homes Travel",
+        "url": config.siteUrl
+      }
+    },
+    "departureTime": tour.departure_dates[0],
+    "duration": tour.duration,
+    "provider": {
+      "@type": "Organization",
+      "name": "Thanh Nam Homes Travel",
+      "url": config.siteUrl
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(tourSchema) }}
+      />
       <section className="bg-white">
         <div className="container-page py-6 text-sm text-brand-slate">
           <Link href="/" className="hover:text-brand-primary">Trang chủ</Link>
