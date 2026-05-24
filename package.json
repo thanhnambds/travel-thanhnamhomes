@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
+    "scrape:all": "node scripts/scrape-partner-hotels.mjs && node scripts/scrape-partner-tours.mjs && node scripts/scrape-partner-europe-tours.mjs",
     "validate:data": "node scripts/validate-data.mjs",
     "generate:combo": "node scripts/generate-combo.mjs",
     "publish:combo": "node scripts/publish-combo.mjs",
