@@ -8,6 +8,7 @@ import { formatDate, formatShortDate, formatVnd, getConfig, getPublicTourById, g
 import { pageMetadata } from "@/lib/seo";
 import { tourImage } from "@/lib/tour-helpers";
 import type { PublicTour } from "@/lib/types";
+import { TravelAIChatWidget } from "@/components/TravelAIChatWidget";
 
 interface TourPageProps {
   params: Promise<{
@@ -144,7 +145,7 @@ export default async function TourDetailPage({ params }: TourPageProps) {
               </div>
             </div>
             
-            <div className="mt-5">
+            <div className="mt-5 space-y-3">
               <a
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-primary py-3.5 text-sm font-bold text-white transition duration-300 hover:bg-brand-gold hover:text-brand-primary shadow-md hover:scale-[1.02] active:scale-95"
                 href={`${config.zaloUrl}?text=${zaloSummary}`}
@@ -152,6 +153,13 @@ export default async function TourDetailPage({ params }: TourPageProps) {
                 <MessageCircle size={18} className="text-brand-gold" />
                 Kiểm tra chỗ qua Zalo
               </a>
+              <TravelAIChatWidget
+                productId={tour.id}
+                productType="tour"
+                productTitle={tour.title}
+                initialPrice={tour.price}
+                zaloUrl={config.zaloUrl}
+              />
               <p className="mt-3 text-[11px] leading-5 text-brand-slate text-center">{tour.price_note}</p>
             </div>
           </aside>

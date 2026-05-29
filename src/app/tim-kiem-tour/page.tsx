@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { TourSearchBox } from "@/components/TourSearchBox";
 import { TourSearchResults } from "@/components/TourSearchResults";
-import { getPublicTours, getPublicHotels } from "@/lib/data";
+import { getPublicTours, getPublicHotels, getConfig } from "@/lib/data";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata(
@@ -13,6 +13,7 @@ export const metadata = pageMetadata(
 export default function TourSearchPage() {
   const tours = getPublicTours();
   const hotels = getPublicHotels();
+  const config = getConfig();
 
   return (
     <>
@@ -33,7 +34,7 @@ export default function TourSearchPage() {
 
       <section className="container-page py-14">
         <Suspense fallback={<div className="rounded-2xl bg-white p-8 text-brand-slate">Đang tải bộ lọc tour...</div>}>
-          <TourSearchResults tours={tours} hotels={hotels} />
+          <TourSearchResults tours={tours} hotels={hotels} zaloUrl={config.zaloUrl} />
         </Suspense>
       </section>
     </>

@@ -8,10 +8,11 @@ import Image from "next/image";
 import { TourCard } from "@/components/TourCard";
 import type { PublicTour, PublicHotel } from "@/lib/types";
 import { normalizeSearch, tourHref, tourImage } from "@/lib/tour-helpers";
+import { TravelAIChatWidget } from "@/components/TravelAIChatWidget";
 
 
 
-export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[]; hotels?: PublicHotel[] }) {
+export function TourSearchResults({ tours, hotels = [], zaloUrl }: { tours: PublicTour[]; hotels?: PublicHotel[]; zaloUrl: string }) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -389,17 +390,26 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between md:flex-col md:items-end gap-3 md:w-44 shrink-0 border-t border-brand-hairline md:border-t-0 pt-3 md:pt-0">
-                        <div className="text-left md:text-right">
+                      <div className="flex items-center justify-between md:flex-col md:items-end gap-2 md:w-44 shrink-0 border-t border-brand-hairline md:border-t-0 pt-3 md:pt-0">
+                        <div className="text-left md:text-right w-full">
                           <span className="block text-[9px] uppercase font-bold tracking-wider text-brand-slate">Giá tour</span>
                           <span className="text-sm sm:text-base font-bold text-brand-primary">{formatVnd(tour.price)}/khách</span>
                         </div>
-                        <Link
-                          href={tourHref(tour)}
-                          className="inline-flex items-center justify-center rounded-xl bg-brand-gold px-4 py-2 text-xs font-bold text-brand-primary transition-all duration-200 hover:bg-brand-goldLight shadow-sm shrink-0 hover:scale-[1.02]"
-                        >
-                          Xem chi tiết
-                        </Link>
+                        <div className="flex flex-col gap-1.5 w-full">
+                          <Link
+                            href={tourHref(tour)}
+                            className="inline-flex w-full items-center justify-center rounded-xl bg-brand-soft border border-brand-hairline px-4 py-2 text-xs font-bold text-brand-primary transition-all duration-200 hover:bg-brand-stone shadow-sm hover:scale-[1.02]"
+                          >
+                            Xem chi tiết
+                          </Link>
+                          <TravelAIChatWidget
+                            productId={tour.id}
+                            productType="tour"
+                            productTitle={tour.title}
+                            initialPrice={tour.price}
+                            zaloUrl={zaloUrl}
+                          />
+                        </div>
                       </div>
                     </div>
                   ))}

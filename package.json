@@ -12,11 +12,12 @@
     "normalize:data": "node scripts/normalize-data.mjs",
     "filter:public": "node scripts/filter-public-data.mjs",
     "validate:data": "node scripts/validate-data.mjs",
+    "validate:ai-sales": "node scripts/validate-ai-sales.mjs",
     "generate:combo": "node scripts/generate-combo.mjs",
     "publish:combo": "node scripts/publish-combo.mjs",
     "build:sitemap": "node scripts/build-sitemap.mjs",
     "travel:daily": "npm run scrape:tours && npm run scrape:hotels && npm run normalize:data && npm run filter:public && npm run generate:combo && npm run validate:data && npm run build:sitemap",
-    "prebuild": "npm run validate:data",
+    "prebuild": "npm run validate:data && npm run validate:ai-sales",
     "build": "npm run build:sitemap && next build",
     "lint": "next lint"
   },
