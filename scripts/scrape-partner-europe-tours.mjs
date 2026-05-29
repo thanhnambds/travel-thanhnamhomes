@@ -11,17 +11,17 @@ const rawToursPath = path.join(rootDir, "data/internal/europe-tours-raw.json");
 const spreadsheetBaseUrl = "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv";
 
 const TABS = [
-  { gid: "427656824", category: "Châu Âu", defaultDestination: "Châu Âu", defaultCountry: "Châu Âu", sourceName: "Đối tác F1 Châu Âu" },
-  { gid: "748989795", category: "Trung Quốc", defaultDestination: "Thượng Hải", defaultCountry: "Trung Quốc", sourceName: "Đối tác F1 Trung Quốc" },
-  { gid: "592197310", category: "Nhật Bản", defaultDestination: "Tokyo", defaultCountry: "Nhật Bản", sourceName: "Đối tác F1 Nhật Bản" },
-  { gid: "1680885794", category: "Hàn Quốc", defaultDestination: "Seoul", defaultCountry: "Hàn Quốc", sourceName: "Đối tác F1 Hàn Quốc" },
-  { gid: "294941338", category: "Đài Loan", defaultDestination: "Đài Bắc", defaultCountry: "Đài Loan", sourceName: "Đối tác F1 Đài Loan" },
-  { gid: "1198205320", category: "Thái Lan", defaultDestination: "Bangkok", defaultCountry: "Thái Lan", sourceName: "Đối tác F1 Thái Lan" },
-  { gid: "638133474", category: "Singapore", defaultDestination: "Singapore", defaultCountry: "Singapore - Malaysia", sourceName: "Đối tác F1 Đông Nam Á" },
-  { gid: "1428187154", category: "Bali", defaultDestination: "Bali", defaultCountry: "Indonesia", sourceName: "Đối tác F1 Bali HN" },
-  { gid: "1420107123", category: "Bali", defaultDestination: "Bali", defaultCountry: "Indonesia", sourceName: "Đối tác F1 Bali HCM" },
-  { gid: "1672152197", category: "Trong nước", defaultDestination: "Trong nước", defaultCountry: "Việt Nam", sourceName: "Đối tác F1 Nội Địa Bay" },
-  { gid: "828333297", category: "Trong nước", defaultDestination: "Trong nước", defaultCountry: "Việt Nam", sourceName: "Đối tác F1 Nội Địa Bộ" }
+  { gid: "427656824", category: "Châu Âu", defaultDestination: "Châu Âu", defaultCountry: "Châu Âu", sourceName: "CATTOUR Châu Âu" },
+  { gid: "748989795", category: "Trung Quốc", defaultDestination: "Thượng Hải", defaultCountry: "Trung Quốc", sourceName: "CATTOUR Trung Quốc" },
+  { gid: "592197310", category: "Nhật Bản", defaultDestination: "Tokyo", defaultCountry: "Nhật Bản", sourceName: "CATTOUR Nhật Bản" },
+  { gid: "1680885794", category: "Hàn Quốc", defaultDestination: "Seoul", defaultCountry: "Hàn Quốc", sourceName: "CATTOUR Hàn Quốc" },
+  { gid: "294941338", category: "Đài Loan", defaultDestination: "Đài Bắc", defaultCountry: "Đài Loan", sourceName: "CATTOUR Đài Loan" },
+  { gid: "1198205320", category: "Thái Lan", defaultDestination: "Bangkok", defaultCountry: "Thái Lan", sourceName: "CATTOUR Thái Lan" },
+  { gid: "638133474", category: "Singapore", defaultDestination: "Singapore", defaultCountry: "Singapore - Malaysia", sourceName: "CATTOUR Đông Nam Á" },
+  { gid: "1428187154", category: "Bali", defaultDestination: "Bali", defaultCountry: "Indonesia", sourceName: "CATTOUR Bali HN" },
+  { gid: "1420107123", category: "Bali", defaultDestination: "Bali", defaultCountry: "Indonesia", sourceName: "CATTOUR Bali HCM" },
+  { gid: "1672152197", category: "Trong nước", defaultDestination: "Trong nước", defaultCountry: "Việt Nam", sourceName: "CATTOUR Nội Địa Bay" },
+  { gid: "828333297", category: "Trong nước", defaultDestination: "Trong nước", defaultCountry: "Việt Nam", sourceName: "CATTOUR Nội Địa Bộ" }
 ];
 
 const DOC_TITLES = {
