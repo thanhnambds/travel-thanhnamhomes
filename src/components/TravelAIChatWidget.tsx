@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Bot, MessageCircle, Send, X, RotateCcw, Loader2, Sparkles, PhoneCall } from "lucide-react";
 import type { MessagePart } from "@/lib/lead-scoring";
 
@@ -40,6 +41,11 @@ export function TravelAIChatWidget({
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -169,7 +175,7 @@ Nhờ anh kiểm tra tình trạng chỗ và giá mới nhất giúp em.`;
         Hỏi AI về tư vấn chi tiết
       </button>
 
-      {open && (
+      {open && mounted && createPortal(
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
           <div className="relative flex h-[600px] w-full max-w-lg flex-col overflow-hidden rounded-[28px] border border-white/20 bg-white/90 shadow-2xl backdrop-blur-md transition-all animate-scaleUp">
             
@@ -314,7 +320,8 @@ Nhờ anh kiểm tra tình trạng chỗ và giá mới nhất giúp em.`;
             </div>
 
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
