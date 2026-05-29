@@ -1,6 +1,13 @@
 [
   {
     "combo_id": "da-nang-2026-06-18-dn001",
+    "generated_at": "2026-05-29T06:07:01.718+07:00",
+    "published_at": "2026-05-29T06:07:03.385+07:00",
+    "destination": "Đà Nẵng",
+    "status": "published"
+  },
+  {
+    "combo_id": "da-nang-2026-06-18-dn001",
     "generated_at": "2026-05-24T14:45:06.322+07:00",
     "published_at": "2026-05-24T15:16:44.252+07:00",
     "destination": "Đà Nẵng",

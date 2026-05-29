@@ -4,7 +4,7 @@
   "defaultDepartureCity": "HAN",
   "defaultMarginPercent": 8,
   "defaultFees": 350000,
-  "priceNote": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng vé, phòng và chính sách của nhà cung cấp. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
+  "priceNote": "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng vé, phòng và chính sách của đối tác. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
   "destinations": {
     "phu-quoc": {
       "name": "Phú Quốc",

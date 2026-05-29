@@ -119,3 +119,92 @@ a {
     url("/images/hero_bg.png") center / cover no-repeat,
     #111111;
 }
+
+/* Premium B2C Refinements */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.premium-shadow {
+  box-shadow: 0 10px 30px -10px rgba(24, 21, 18, 0.04), 0 1px 3px rgba(24, 21, 18, 0.02);
+}
+
+.gold-glow-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gold-glow-hover:hover {
+  border-color: #c7a15a !important;
+  box-shadow: 0 14px 35px -8px rgba(199, 161, 90, 0.15) !important;
+  transform: translateY(-2px);
+}
+
+.premium-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.premium-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.premium-scrollbar::-webkit-scrollbar-thumb {
+  background: #e2dacf;
+  border-radius: 99px;
+}
+
+.premium-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #c7a15a;
+}
+
+/* Vertical Timeline Classes */
+.timeline-line {
+  position: absolute;
+  left: 21px;
+  top: 36px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #c7a15a 0%, #e8e2d5 100%);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f7f3ea;
+  border: 3.5px solid #c7a15a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 0 0 4px rgba(199, 161, 90, 0.12);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+details[open] .timeline-dot {
+  background: #c7a15a;
+  box-shadow: 0 0 0 6px rgba(199, 161, 90, 0.22);
+}
+
+/* Page animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+

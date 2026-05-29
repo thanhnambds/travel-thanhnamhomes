@@ -90,72 +90,91 @@ export default async function TourDetailPage({ params }: TourPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(tourSchema) }}
       />
-      <section className="bg-white">
-        <div className="container-page py-6 text-sm text-brand-slate">
-          <Link href="/" className="hover:text-brand-primary">Trang chủ</Link>
-          <span className="px-2">/</span>
+      <section className="bg-[#f7f3ea]">
+        <div className="container-page py-5 text-xs font-semibold uppercase tracking-wider text-brand-slate flex items-center gap-2 flex-wrap">
+          <Link href="/" className="hover:text-brand-primary transition">Trang chủ</Link>
+          <span className="text-brand-goldDark">•</span>
           <span>{tour.country}</span>
-          <span className="px-2">/</span>
-          <span className="text-brand-primary">{tour.title}</span>
+          <span className="text-brand-goldDark">•</span>
+          <span className="text-brand-primary font-bold line-clamp-1">{tour.title}</span>
         </div>
       </section>
 
-      <section className="bg-white pb-10">
+      <section className="bg-[#f7f3ea] pb-10">
         <div className="container-page grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div>
-            <p className="section-label">{tour.country}</p>
-            <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-[-0.02em] text-brand-primary md:text-5xl">
+          <div className="flex flex-col justify-center">
+            <span className="inline-flex w-fit items-center gap-1 rounded bg-brand-gold px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-primary">
+              {tour.country}
+            </span>
+            <h1 className="mt-4 text-3xl font-extrabold leading-snug tracking-tight text-brand-primary md:text-4xl lg:text-5xl">
               Tour {tour.title} {tour.duration}
             </h1>
-            <div className="mt-5 flex flex-wrap gap-3 text-sm text-brand-slate">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-soft px-3 py-2">
-                <Star size={15} className="fill-brand-gold text-brand-gold" />
+            <div className="mt-5 flex flex-wrap gap-2.5 text-xs text-brand-slate">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white border border-brand-hairline px-3 py-2 font-semibold">
+                <Star size={13} className="fill-brand-gold text-brand-gold" />
                 9.0 Tuyệt vời
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-soft px-3 py-2">
-                <Plane size={15} />
-                Khởi hành từ: {tour.departure_city}
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white border border-brand-hairline px-3 py-2 font-semibold">
+                <Plane size={13} className="text-brand-goldDark" />
+                Khởi hành: {tour.departure_city}
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-soft px-3 py-2">
-                <ShieldCheck size={15} />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white border border-brand-hairline px-3 py-2 font-semibold">
+                <ShieldCheck size={13} className="text-brand-goldDark" />
                 Mã tour: {tour.id}
               </span>
             </div>
           </div>
 
-          <aside className="rounded-2xl border border-brand-hairline bg-brand-soft p-5">
-            <div className="flex flex-wrap items-end justify-between gap-3">
-              <div>
-                <p className="text-sm font-semibold text-brand-goldDark">Giá tham khảo từ</p>
-                <p className="mt-1 text-3xl font-bold tracking-[-0.02em] text-brand-primary md:text-4xl">{formatVnd(tour.price)}</p>
+          <aside className="relative overflow-hidden rounded-2xl border border-white/60 p-6 shadow-soft glass-panel backdrop-blur-md flex flex-col justify-between">
+            {/* Visual Gold Line accent */}
+            <div className="absolute left-0 right-0 top-0 h-1.5 bg-gradient-to-r from-brand-gold to-brand-goldDark" />
+            
+            <div className="mt-2">
+              <div className="flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-wider text-brand-goldDark">Giá tham khảo từ</p>
+                  <p className="mt-1 text-3xl font-extrabold tracking-tight text-brand-primary md:text-4xl">{formatVnd(tour.price)}</p>
+                </div>
+                <p className="pb-1 text-xs font-semibold text-brand-slate">/khách</p>
               </div>
-              <p className="pb-1 text-sm font-semibold text-brand-slate">/khách</p>
+              <div className="mt-5 grid gap-2 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+                <InfoChip icon={<Clock size={15} />} label="Thời lượng" value={tour.duration} />
+                <InfoChip icon={<Plane size={15} />} label="Hãng bay" value={tour.airline} />
+                <InfoChip icon={<MapPin size={15} />} label="Điểm đến" value={tour.destination} />
+              </div>
             </div>
-            <div className="mt-5 grid gap-2 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-              <InfoChip icon={<Clock size={16} />} label="Thời lượng" value={tour.duration} />
-              <InfoChip icon={<Plane size={16} />} label="Hàng không" value={tour.airline} />
-              <InfoChip icon={<MapPin size={16} />} label="Điểm đến" value={tour.destination} />
+            
+            <div className="mt-5">
+              <a
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-primary py-3.5 text-sm font-bold text-white transition duration-300 hover:bg-brand-gold hover:text-brand-primary shadow-md hover:scale-[1.02] active:scale-95"
+                href={`${config.zaloUrl}?text=${zaloSummary}`}
+              >
+                <MessageCircle size={18} className="text-brand-gold" />
+                Kiểm tra chỗ qua Zalo
+              </a>
+              <p className="mt-3 text-[11px] leading-5 text-brand-slate text-center">{tour.price_note}</p>
             </div>
-            <a
-              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-primary px-5 py-3 text-sm font-bold text-white transition hover:bg-black"
-              href={`${config.zaloUrl}?text=${zaloSummary}`}
-            >
-              <MessageCircle size={18} />
-              Kiểm tra chỗ qua Zalo
-            </a>
-            <p className="mt-3 text-xs leading-5 text-brand-slate">{tour.price_note}</p>
           </aside>
         </div>
       </section>
 
-      <section className="bg-white pb-12">
+      <section className="bg-[#f7f3ea] pb-12">
         <div className="container-page">
-          <div className="relative min-h-[320px] overflow-hidden rounded-2xl md:min-h-[460px]">
-            <Image src={image} alt={tour.title} fill priority className="object-cover" sizes="100vw" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 text-white">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/75">{tour.country}</p>
-              <h2 className="mt-2 max-w-3xl text-3xl font-semibold md:text-5xl">{tour.title}</h2>
+          <div className="relative min-h-[360px] overflow-hidden rounded-3xl md:min-h-[480px] shadow-lg group">
+            <Image
+              src={image}
+              alt={tour.title}
+              fill
+              priority
+              className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+            <div className="absolute bottom-8 left-8 right-8 text-white">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-goldLight">{tour.country}</p>
+              <h2 className="mt-2.5 max-w-3xl text-3xl font-extrabold tracking-tight leading-tight md:text-5xl drop-shadow">
+                {tour.title}
+              </h2>
             </div>
           </div>
         </div>
@@ -164,34 +183,45 @@ export default async function TourDetailPage({ params }: TourPageProps) {
       <section className="container-page grid gap-8 py-14 lg:grid-cols-[1fr_360px]">
         <div className="space-y-10">
           <section className="rounded-2xl border border-brand-hairline bg-white p-6 md:p-8">
-            <div className="flex items-center justify-between gap-4">
+            <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="section-label">Lịch trình và giá tour</p>
-                <h2 className="mt-3 text-3xl font-semibold text-brand-primary">Chọn ngày khởi hành</h2>
+                <h2 className="mt-3 text-3xl font-bold text-brand-primary">Chọn ngày khởi hành</h2>
               </div>
-              <span className="hidden rounded-full bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-primary md:inline-flex">
+              <span className="rounded-full bg-brand-soft px-3.5 py-1.5 text-xs font-bold text-brand-goldDark border border-brand-gold/10">
                 {departures.length} ngày mở bán
               </span>
             </div>
-            <div className="mt-6 overflow-hidden rounded-2xl border border-brand-hairline">
-              <div className="grid grid-cols-[1.1fr_1.1fr_0.9fr_1fr] bg-brand-soft px-4 py-3 text-xs font-bold uppercase tracking-wide text-brand-slate">
+            
+            <div className="mt-6 overflow-hidden rounded-2xl border border-brand-hairline/80">
+              <div className="grid grid-cols-[1.1fr_1.1fr_0.9fr_1fr] bg-brand-soft/70 px-4 py-3.5 text-[10px] font-bold uppercase tracking-wider text-brand-slate border-b border-brand-hairline">
                 <span>Khởi hành</span>
                 <span>Ngày về</span>
                 <span>Tình trạng</span>
                 <span className="text-right">Giá tour</span>
               </div>
               {departures.map((item) => (
-                <div className="grid grid-cols-[1.1fr_1.1fr_0.9fr_1fr] border-t border-brand-hairline px-4 py-4 text-sm text-brand-primary" key={item.start}>
-                  <span>
-                    <b className="block">{weekday(item.start)}</b>
-                    {formatDate(item.start)}
+                <div
+                  className="grid grid-cols-[1.1fr_1.1fr_0.9fr_1fr] border-t first:border-t-0 border-brand-hairline px-4 py-4 text-sm text-brand-primary hover:bg-brand-soft/20 transition-colors"
+                  key={item.start}
+                >
+                  <span className="leading-snug">
+                    <b className="block text-brand-goldDark font-bold">{weekday(item.start)}</b>
+                    <span className="text-xs text-brand-slate font-medium">{formatDate(item.start)}</span>
                   </span>
-                  <span>
-                    <b className="block">{item.end ? weekday(item.end) : "Đang cập nhật"}</b>
-                    {item.end ? formatDate(item.end) : "Liên hệ"}
+                  <span className="leading-snug">
+                    <b className="block text-brand-primary font-bold">{item.end ? weekday(item.end) : "Đang cập nhật"}</b>
+                    <span className="text-xs text-brand-slate font-medium">{item.end ? formatDate(item.end) : "Liên hệ"}</span>
                   </span>
-                  <span className="font-semibold text-brand-goldDark">Liên hệ</span>
-                  <span className="text-right font-bold">{formatVnd(tour.price)}/khách</span>
+                  <span className="flex items-center">
+                    <span className="inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-[10px] font-semibold text-amber-700 border border-amber-100/50">
+                      Liên hệ giữ chỗ
+                    </span>
+                  </span>
+                  <span className="text-right font-bold flex flex-col justify-center">
+                    <span className="text-brand-primary">{formatVnd(tour.price)}</span>
+                    <span className="text-[10px] text-brand-slate font-normal">/khách</span>
+                  </span>
                 </div>
               ))}
             </div>
@@ -202,8 +232,8 @@ export default async function TourDetailPage({ params }: TourPageProps) {
             <div className="mt-6 grid gap-4">
               {highlights.map((item) => (
                 <div className="flex gap-3 text-brand-primary" key={item}>
-                  <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-brand-goldDark" />
-                  <p className="leading-7">{item}</p>
+                  <CheckCircle2 size={18} className="mt-1 shrink-0 text-brand-goldDark" />
+                  <p className="leading-7 text-sm sm:text-base">{item}</p>
                 </div>
               ))}
             </div>
@@ -211,18 +241,33 @@ export default async function TourDetailPage({ params }: TourPageProps) {
 
           <section className="rounded-2xl border border-brand-hairline bg-white p-6 md:p-8">
             <p className="section-label">Chương trình tour</p>
-            <h2 className="mt-3 text-3xl font-semibold text-brand-primary">Lịch trình dự kiến</h2>
-            <div className="mt-6 divide-y divide-brand-hairline">
+            <h2 className="mt-3 text-3xl font-bold text-brand-primary">Lịch trình dự kiến</h2>
+            
+            <div className="relative mt-8 space-y-6 pl-10">
+              {/* Vertical line indicator */}
+              <div className="timeline-line" />
+
               {itinerary.map((day) => (
-                <details className="group py-4" open={day.day === 1} key={day.day}>
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
-                    <div>
-                      <p className="text-sm font-bold text-brand-goldDark">Ngày {day.day}</p>
-                      <h3 className="mt-1 text-xl font-semibold text-brand-primary">{day.title}</h3>
+                <details className="group relative pb-2" open={day.day === 1} key={day.day}>
+                  {/* Timeline dot */}
+                  <div className="timeline-dot animate-pulse-subtle" />
+
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 focus:outline-none select-none">
+                    <div className="flex-1">
+                      <span className="inline-flex items-center gap-1 rounded bg-brand-soft px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-goldDark">
+                        Ngày {day.day}
+                      </span>
+                      <h3 className="mt-2 text-lg sm:text-xl font-extrabold text-brand-primary group-hover:text-brand-goldDark transition-colors">
+                        {day.title}
+                      </h3>
                     </div>
-                    <span className="rounded-full border border-brand-hairline px-3 py-1 text-sm text-brand-slate group-open:bg-brand-soft">Xem</span>
+                    <span className="shrink-0 rounded-full border border-brand-hairline px-3 py-1 text-xs font-bold text-brand-slate transition-all duration-300 group-open:bg-brand-primary group-open:text-white group-open:border-brand-primary">
+                      {day.day === 1 ? "Đóng" : "Xem chi tiết"}
+                    </span>
                   </summary>
-                  <p className="mt-4 leading-7 text-brand-slate">{day.description}</p>
+                  <p className="mt-4 leading-8 text-brand-slate text-sm sm:text-base pl-2 border-l-2 border-brand-gold/30 animate-fade-in-up">
+                    {day.description}
+                  </p>
                 </details>
               ))}
             </div>
@@ -240,34 +285,56 @@ export default async function TourDetailPage({ params }: TourPageProps) {
               {(tour.public_notes || []).map((note) => (
                 <p key={note}>{note}</p>
               ))}
-              <p>Trang này trình bày thông tin hành trình từ hệ thống tour du lịch của Thanh Nam Homes Travel. Chúng tôi sẽ kiểm tra lại giá, lịch bay, tình trạng chỗ và điều kiện thanh toán với đối tác trước khi xác nhận dịch vụ cho quý khách.</p>
+              <p className="border-t border-brand-hairline/60 pt-4 text-xs italic">
+                Trang này trình bày thông tin hành trình từ hệ thống tour du lịch của Thanh Nam Homes Travel. Chúng tôi sẽ kiểm tra lại giá, lịch bay, tình trạng chỗ và điều kiện thanh toán với đối tác trước khi xác nhận dịch vụ cho quý khách.
+              </p>
             </div>
           </section>
         </div>
 
-        <aside className="h-fit rounded-2xl border border-brand-hairline bg-white p-6 shadow-soft lg:sticky lg:top-24">
-          <p className="section-label">Đặt tour ngay</p>
-          <h2 className="mt-3 text-2xl font-semibold text-brand-primary">Cần hỗ trợ giữ chỗ?</h2>
+        <aside className="relative overflow-hidden h-fit rounded-2xl border border-white/60 p-6 shadow-soft lg:sticky lg:top-24 glass-panel backdrop-blur-md">
+          {/* Accent top border */}
+          <div className="absolute left-0 right-0 top-0 h-1.5 bg-gradient-to-r from-brand-gold to-brand-goldDark" />
+          
+          <p className="section-label mt-2">Đặt tour ngay</p>
+          <h2 className="mt-3 text-2xl font-bold text-brand-primary">Cần hỗ trợ giữ chỗ?</h2>
           <p className="mt-3 text-sm leading-6 text-brand-slate">
             Gửi nhu cầu qua Zalo để Thanh Nam kiểm tra giá thật, số chỗ còn nhận và chính sách mới nhất.
           </p>
-          <div className="mt-5 rounded-2xl bg-brand-soft p-4">
-            <p className="text-sm text-brand-slate">Tổng giá tham khảo cho 2 người lớn</p>
-            <p className="mt-1 text-3xl font-bold text-brand-primary">{formatVnd(tour.price * 2)}</p>
+          <div className="mt-5 rounded-2xl bg-brand-soft/80 p-4 border border-brand-hairline/40">
+            <p className="text-[10px] font-bold text-brand-slate uppercase tracking-wider">Tổng giá tham khảo cho 2 người lớn</p>
+            <p className="mt-1 text-3xl font-extrabold text-brand-primary tracking-tight">{formatVnd(tour.price * 2)}</p>
           </div>
           <a
-            className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-gold px-5 py-3 text-sm font-bold text-brand-primary transition hover:bg-brand-gold/80"
+            className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-gold px-5 py-3.5 text-sm font-bold text-brand-primary transition duration-300 hover:bg-brand-goldLight shadow-sm hover:scale-[1.02] active:scale-95"
             href={`${config.zaloUrl}?text=${zaloSummary}`}
           >
             <MessageCircle size={18} />
             Gửi yêu cầu qua Zalo
           </a>
-          <div className="mt-5 grid gap-3 text-sm text-brand-slate">
+          <div className="mt-6 border-t border-brand-hairline/60 pt-5 grid gap-3 text-sm text-brand-slate">
             <InfoLine icon={<Users size={17} />} label="Khách" value="Người lớn, trẻ em" />
             <InfoLine icon={<CalendarDays size={17} />} label="Ngày đi gần nhất" value={formatShortDate(tour.departure_dates[0])} />
           </div>
         </aside>
       </section>
+
+      {/* Floating CTA Mobile Widget */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-brand-hairline/60 bg-white/95 p-4 shadow-[0_-5px_20px_rgba(24,21,18,0.06)] backdrop-blur-md md:hidden animate-fade-in-up">
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <p className="text-[9px] font-bold uppercase tracking-wider text-brand-slate">Giá tham khảo từ</p>
+            <p className="text-lg font-extrabold text-brand-primary">{formatVnd(tour.price)}<span className="text-[10px] font-normal text-brand-slate">/khách</span></p>
+          </div>
+          <a
+            className="inline-flex items-center gap-2 rounded-xl bg-brand-gold px-4 py-2.5 text-xs font-bold text-brand-primary transition-all duration-300 active:scale-95 shadow-sm"
+            href={`${config.zaloUrl}?text=${zaloSummary}`}
+          >
+            <MessageCircle size={15} />
+            Tư vấn Zalo ngay
+          </a>
+        </div>
+      </div>
 
       {relatedTours.length ? (
         <section className="container-page pb-16">

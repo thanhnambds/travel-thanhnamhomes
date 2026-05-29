@@ -133,7 +133,8 @@ const combo = {
   fees: selected.fees,
   margin: selected.margin,
   total_price: selected.totalPrice,
-  price_note: config.priceNote,
+  // Disclaimer chuẩn — không dùng "nhà cung cấp" hoặc bất kỳ thông tin B2B nào
+  price_note: "Giá tham khảo tại thời điểm cập nhật, có thể thay đổi theo tình trạng vé, phòng và chính sách của đối tác. Vui lòng liên hệ để kiểm tra giá chính xác trước khi giữ dịch vụ.",
   included: [
     `Vé máy bay khứ hồi tham khảo cho ${adults} người lớn`,
     `${selected.nights} đêm phòng ${selected.hotel.room_type}`,
@@ -148,6 +149,12 @@ const combo = {
   child_policy: selected.hotel.child_policy,
   suitable_for: selected.destination.audiences,
   status: "draft",
+  // === AI Sales / Lead metadata ===
+  stock_status: "need_check",
+  ai_sales_enabled: true,
+  lead_priority: "high",
+  handoff_required: true,
+  // === Timestamps ===
   generated_at: now,
   updated_at: now,
   published_at: null,
@@ -160,5 +167,10 @@ const combo = {
   }
 };
 
-writeJson("data/generated/draft-combo.json", combo);
+// Ghi draft vào data/internal/ (KHÔNG phải data/generated/)
+// draft-combo.json là file nháp nội bộ — chứa margin, fees, source_log
+writeJson("data/internal/draft-combo.json", combo);
 console.log(`Draft combo generated: ${combo.title} (${combo.total_price} VND).`);
+console.log(`✅ Saved to: data/internal/draft-combo.json`);
+console.log(`👉 Để publish: npm run publish:combo`);
+

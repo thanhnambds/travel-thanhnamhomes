@@ -54,8 +54,8 @@ export default function HomePage() {
           <h1 className="mx-auto mt-4 max-w-5xl text-5xl font-medium leading-tight tracking-[-0.02em] text-white md:text-6xl lg:text-7xl">
             Kiến Tạo Kỳ Nghỉ Đẳng Cấp, Mang Dấu Ấn Của Riêng Bạn
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/80 md:text-lg">
-            Trải nghiệm các gói combo du lịch linh hoạt kết hợp vé máy bay và không gian nghỉ dưỡng sang trọng. Đội ngũ Thanh Nam Travel hỗ trợ 1:1, giúp bạn tối ưu chi phí mà vẫn tận hưởng trọn vẹn từng khoảnh khắc.
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/95 md:text-lg">
+            Combo vé máy bay & không gian nghỉ dưỡng sang trọng. Thiết kế hành trình linh hoạt và tối ưu chi phí.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-4">
             <Link className="btn-brand-gold" href="/combo-hom-nay/">

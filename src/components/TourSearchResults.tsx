@@ -4,9 +4,11 @@ import { useMemo, useState, useEffect } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { CalendarDays, Filter, MapPin, Search, Star, Plane, Hotel } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { TourCard } from "@/components/TourCard";
 import type { PublicTour, PublicHotel } from "@/lib/types";
 import { normalizeSearch, tourHref, tourImage } from "@/lib/tour-helpers";
+
 
 
 export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[]; hotels?: PublicHotel[] }) {
@@ -81,15 +83,15 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
 
   return (
     <div className="grid gap-8 lg:grid-cols-[320px_1fr]">
-      <aside className="h-fit rounded-2xl border border-brand-hairline bg-white p-5 shadow-soft lg:sticky lg:top-24">
+      <aside className="h-fit rounded-2xl border border-white/60 p-5 shadow-soft lg:sticky lg:top-24 glass-panel backdrop-blur-md">
         {/* Sidebar Tab Switcher */}
-        <div className="mb-5 flex gap-1 rounded-xl bg-brand-stone p-1">
+        <div className="mb-5 flex gap-1 rounded-xl bg-brand-soft/80 p-1">
           <button
             type="button"
             onClick={() => updateFilter("type", "tour")}
-            className={`flex-1 rounded-lg py-2 text-center text-xs font-bold uppercase tracking-wider transition ${
+            className={`flex-1 rounded-lg py-2.5 text-center text-xs font-bold uppercase tracking-wider transition duration-300 ${
               type === "tour"
-                ? "bg-brand-primary text-white shadow-sm"
+                ? "bg-brand-primary text-white shadow-md scale-[1.02]"
                 : "text-brand-slate hover:text-brand-primary"
             }`}
           >
@@ -98,9 +100,9 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
           <button
             type="button"
             onClick={() => updateFilter("type", "hotel")}
-            className={`flex-1 rounded-lg py-2 text-center text-xs font-bold uppercase tracking-wider transition ${
+            className={`flex-1 rounded-lg py-2.5 text-center text-xs font-bold uppercase tracking-wider transition duration-300 ${
               type === "hotel"
-                ? "bg-brand-primary text-white shadow-sm"
+                ? "bg-brand-primary text-white shadow-md scale-[1.02]"
                 : "text-brand-slate hover:text-brand-primary"
             }`}
           >
@@ -109,18 +111,18 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
         </div>
 
         <div className="flex items-center gap-2 text-brand-primary border-t border-brand-hairline/60 pt-4">
-          <Filter size={18} />
-          <h2 className="text-lg font-semibold">Bộ lọc tìm kiếm</h2>
+          <Filter size={18} className="text-brand-goldDark" />
+          <h2 className="text-lg font-bold">Bộ lọc tìm kiếm</h2>
         </div>
 
-        <div className="mt-5 space-y-4">
+        <div className="mt-5 space-y-5">
           <label className="block">
             <span className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-brand-slate">
-              <Search size={15} />
+              <Search size={15} className="text-brand-goldDark" />
               Điểm đến / Khách sạn
             </span>
             <input
-              className="h-12 w-full rounded-xl border border-brand-hairline bg-brand-stone px-4 text-sm outline-none transition focus:border-brand-gold"
+              className="h-12 w-full rounded-xl border border-brand-hairline/80 bg-white px-4 text-sm outline-none transition-all duration-200 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold/15"
               placeholder="Nhập điểm đến, tên khách sạn..."
               value={query}
               onChange={(event) => {
@@ -134,11 +136,11 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
             <>
               <label className="block">
                 <span className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-brand-slate">
-                  <CalendarDays size={15} />
+                  <CalendarDays size={15} className="text-brand-goldDark" />
                   Tháng khởi hành
                 </span>
                 <select
-                  className="h-12 w-full rounded-xl border border-brand-hairline bg-brand-stone px-4 text-sm font-semibold outline-none transition focus:border-brand-gold"
+                  className="h-12 w-full rounded-xl border border-brand-hairline/80 bg-white px-4 text-sm font-semibold outline-none transition-all duration-200 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold/15"
                   value={month}
                   onChange={(event) => {
                     setMonth(event.target.value);
@@ -156,11 +158,11 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
 
               <label className="block">
                 <span className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-brand-slate">
-                  <MapPin size={15} />
+                  <MapPin size={15} className="text-brand-goldDark" />
                   Khởi hành từ
                 </span>
                 <select
-                  className="h-12 w-full rounded-xl border border-brand-hairline bg-brand-stone px-4 text-sm font-semibold outline-none transition focus:border-brand-gold"
+                  className="h-12 w-full rounded-xl border border-brand-hairline/80 bg-white px-4 text-sm font-semibold outline-none transition-all duration-200 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold/15"
                   value={departureCity}
                   onChange={(event) => {
                     setDepartureCity(event.target.value);
@@ -178,7 +180,7 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
               <label className="block">
                 <span className="mb-2 block text-xs font-bold uppercase tracking-wide text-brand-slate">Giá tối đa</span>
                 <select
-                  className="h-12 w-full rounded-xl border border-brand-hairline bg-brand-stone px-4 text-sm font-semibold outline-none transition focus:border-brand-gold"
+                  className="h-12 w-full rounded-xl border border-brand-hairline/80 bg-white px-4 text-sm font-semibold outline-none transition-all duration-200 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold/15"
                   value={maxPrice}
                   onChange={(event) => setMaxPrice(event.target.value)}
                 >
@@ -235,8 +237,20 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
                     return (
                       <div
                         key={hotel.id}
-                        className="group flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-xl border border-brand-hairline bg-white p-4 shadow-soft transition-all duration-300 hover:border-brand-gold hover:shadow-md"
+                        className="group animate-fade-in-up flex flex-col md:flex-row md:items-center gap-5 rounded-2xl border border-brand-hairline bg-white p-4 shadow-soft gold-glow-hover"
                       >
+                        {/* Hotel Image Panel */}
+                        <div className="relative h-36 w-full md:h-24 md:w-36 shrink-0 overflow-hidden rounded-xl bg-brand-stone">
+                          <Image
+                            src="/images/ha-long.png"
+                            alt={cleanedName}
+                            fill
+                            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                            sizes="(max-width: 768px) 100vw, 144px"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-40" />
+                        </div>
+
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap">
                             <span className="inline-flex items-center gap-1 rounded-full bg-brand-soft px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-brand-goldDark">
@@ -259,15 +273,15 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
                           <h4 className="mt-2 text-sm sm:text-base font-bold leading-snug text-brand-primary group-hover:text-brand-goldDark transition-colors">
                             {cleanedName}
                           </h4>
-                        </div>
 
-                        <div className="flex flex-wrap gap-1.5 md:w-56 shrink-0 md:justify-center">
-                          <span className="inline-flex rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
-                            ✓ {tag1}
-                          </span>
-                          <span className="inline-flex rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
-                            ✓ {tag2}
-                          </span>
+                          <div className="mt-3 flex flex-wrap gap-1.5">
+                            <span className="inline-flex rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
+                              ✓ {tag1}
+                            </span>
+                            <span className="inline-flex rounded bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-700">
+                              ✓ {tag2}
+                            </span>
+                          </div>
                         </div>
 
                         <div className="flex items-center justify-between md:flex-col md:items-end gap-3 md:w-52 shrink-0 border-t border-brand-hairline md:border-t-0 pt-3 md:pt-0">
@@ -280,7 +294,7 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
                             href={hotelZaloUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center rounded-xl bg-brand-gold px-4 py-2.5 text-xs font-bold text-brand-primary transition-all duration-200 hover:bg-brand-goldLight shadow-sm shrink-0"
+                            className="inline-flex items-center justify-center rounded-xl bg-brand-gold px-4 py-2.5 text-xs font-bold text-brand-primary transition-all duration-200 hover:bg-brand-goldLight shadow-sm shrink-0 hover:scale-[1.02]"
                           >
                             Kiểm tra phòng & Đặt ngay
                           </a>
@@ -317,18 +331,33 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
                   {results.map((tour) => (
                     <div
                       key={tour.id}
-                      className="group flex flex-col md:flex-row md:items-center justify-between gap-4 rounded-xl border border-brand-hairline bg-white p-4 shadow-soft transition-all duration-300 hover:border-brand-gold hover:shadow-md"
+                      className="group animate-fade-in-up flex flex-col md:flex-row md:items-center gap-5 rounded-2xl border border-brand-hairline bg-white p-4 shadow-soft gold-glow-hover"
                     >
+                      {/* Tour Image Panel */}
+                      <div className="relative h-36 w-full md:h-24 md:w-36 shrink-0 overflow-hidden rounded-xl bg-brand-stone">
+                        <Image
+                          src={tourImage(tour.country)}
+                          alt={tour.title}
+                          fill
+                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, 144px"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-40" />
+                        <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded bg-black/60 backdrop-blur-sm px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-white">
+                          ✈️ {tour.airline}
+                        </span>
+                      </div>
+
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
                           <span className="inline-flex items-center gap-1 rounded-full bg-brand-soft px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-brand-goldDark">
                             {tour.country}
                           </span>
-                          <span className="text-[11px] text-brand-slate font-medium flex items-center gap-1">
-                            ✈️ {tour.airline}
-                          </span>
-                          <span className="text-[11px] text-brand-slate font-medium flex items-center gap-1">
+                          <span className="text-[11px] text-brand-slate font-semibold flex items-center gap-1">
                             📍 Từ {tour.departure_city}
+                          </span>
+                          <span className="text-[11px] text-emerald-700 font-semibold flex items-center gap-1 bg-emerald-50 px-2 py-0.5 rounded">
+                            🕒 {tour.duration}
                           </span>
                         </div>
                         <Link
@@ -339,28 +368,22 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
                         </Link>
                       </div>
 
-                      <div className="flex items-center gap-1 text-xs font-bold text-brand-primary md:w-28 shrink-0 md:justify-center">
-                        <span className="rounded bg-brand-stone px-2.5 py-1 text-brand-primary">
-                          {tour.duration}
-                        </span>
-                      </div>
-
-                      <div className="md:w-56 shrink-0">
+                      <div className="md:w-48 shrink-0">
                         <span className="block text-[9px] uppercase font-bold tracking-wider text-brand-slate mb-1">
                           Lịch khởi hành gần nhất
                         </span>
                         <div className="flex flex-wrap gap-1">
-                          {tour.departure_dates.slice(0, 4).map((date) => (
+                          {tour.departure_dates.slice(0, 3).map((date) => (
                             <span
                               key={date}
-                              className="inline-flex rounded bg-sky-50 text-sky-700 px-1.5 py-0.5 text-[10px] font-bold"
+                              className="inline-flex rounded bg-sky-50 text-sky-700 px-1.5 py-0.5 text-[10px] font-bold border border-sky-100"
                             >
                               {formatShortDate(date)}
                             </span>
                           ))}
-                          {tour.departure_dates.length > 4 && (
-                            <span className="inline-flex rounded bg-brand-stone/40 text-brand-slate px-1.5 py-0.5 text-[10px] font-medium">
-                              +{tour.departure_dates.length - 4} ngày khác
+                          {tour.departure_dates.length > 3 && (
+                            <span className="inline-flex rounded bg-brand-stone/60 text-brand-slate px-1.5 py-0.5 text-[10px] font-semibold">
+                              +{tour.departure_dates.length - 3} ngày
                             </span>
                           )}
                         </div>
@@ -373,7 +396,7 @@ export function TourSearchResults({ tours, hotels = [] }: { tours: PublicTour[];
                         </div>
                         <Link
                           href={tourHref(tour)}
-                          className="inline-flex items-center justify-center rounded-xl bg-brand-gold px-4 py-2 text-xs font-bold text-brand-primary transition-all duration-200 hover:bg-brand-goldLight shadow-sm shrink-0"
+                          className="inline-flex items-center justify-center rounded-xl bg-brand-gold px-4 py-2 text-xs font-bold text-brand-primary transition-all duration-200 hover:bg-brand-goldLight shadow-sm shrink-0 hover:scale-[1.02]"
                         >
                           Xem chi tiết
                         </Link>

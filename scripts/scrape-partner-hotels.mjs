@@ -3,7 +3,10 @@ import path from "node:path";
 import https from "node:https";
 
 const rootDir = process.cwd();
-const outputFile = path.join(rootDir, "data/generated/hotels-public.json");
+// ⚠️  OUTPUT: data/internal/ — KHÔNG phải data/generated/
+// File này chứa dữ liệu raw B2B (supplier_name, source_sheet_url, original_name).
+// Để sinh file public sạch, chạy: npm run normalize:data && npm run filter:public
+const outputFile = path.join(rootDir, "data/internal/hotels-raw.json");
 
 const supplierName = "Viettrend Travel F1";
 
@@ -246,7 +249,10 @@ async function main() {
   
   fs.mkdirSync(path.dirname(outputFile), { recursive: true });
   fs.writeFileSync(outputFile, JSON.stringify(uniqueHotels, null, 2) + "\n");
-  console.log(`Saved clean hotel database to ${outputFile}`);
+  console.log(`\n✅ [RAW B2B] Saved ${uniqueHotels.length} hotels to: data/internal/hotels-raw.json`);
+  console.log(`⚠️  File này CHỨA dữ liệu B2B (supplier, sheet URL). Không deploy trực tiếp!`);
+  console.log(`👉 Bước tiếp theo: npm run normalize:data && npm run filter:public`);
+
 }
 
 main().catch(console.error);

@@ -6,3 +6,16 @@ node_modules
 .env.local
 npm-debug.log*
 tsconfig.tsbuildinfo
+
+# === B2B DATA PROTECTION ===
+# data/internal chứa dữ liệu raw từ partner F1 (supplier names, Google Sheet URLs, giá net).
+# TUYỆT ĐỐI KHÔNG commit thư mục này lên git.
+data/internal/*.json
+data/internal/*.csv
+data/internal/*.html
+# Chỉ giữ .gitkeep
+!data/internal/.gitkeep
+
+# draft-combo.json là file nháp nội bộ — đã chuyển sang data/internal/
+# File cũ ở data/generated/ cũng phải loại bỏ
+data/generated/draft-combo.json

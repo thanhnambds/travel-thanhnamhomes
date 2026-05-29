@@ -3,8 +3,14 @@ import path from "node:path";
 import https from "node:https";
 
 const rootDir = process.cwd();
-const localHtmlPath = "/Users/nam/.gemini/antigravity/brain/e2b28671-96d3-4d61-99ae-319dbc7f7b62/.system_generated/steps/1888/content.md";
-const toursPath = path.join(rootDir, "data/generated/tours-public.json");
+// ⚠️  OUTPUT: data/internal/ — KHÔNG phải data/generated/
+// File này chứa dữ liệu raw B2B từ đối tác Hoàng Việt Travel F1:
+//   - price_note với thông tin hoa hồng/COM
+//   - source_sheet_url (link trang đại lý)
+//   - source_sheet_name: "Hoàng Việt Travel F1"
+//   - public_notes với thông tin nội bộ
+// Để sinh file public sạch, chạy: npm run normalize:data && npm run filter:public
+const rawToursPath = path.join(rootDir, "data/internal/tours-raw.json");
 
 // Helper to slugify strings for IDs/slugs
 function slugify(value) {
@@ -261,40 +267,51 @@ function parseHtml(html) {
   return scrapedTours;
 }
 
-// Load, Merge, and Save
+// Load và lưu RAW vào data/internal/
 function run() {
+  // Tìm local HTML cache (được tạo bởi Chrome DevTools hoặc fetch thủ công)
+  // Fallback paths để tìm file content.md đã cache
+  const candidatePaths = [
+    "/Users/nam/.gemini/antigravity/brain/e2b28671-96d3-4d61-99ae-319dbc7f7b62/.system_generated/steps/1888/content.md",
+    path.join(rootDir, "scratch/hoangviet-partner-page.html"),
+    path.join(rootDir, "data/internal/hoangviet-partner-page.html"),
+  ];
+
   let html = "";
-  
-  if (fs.existsSync(localHtmlPath)) {
-    console.log("Loading partner page HTML from local cache file...");
-    html = fs.readFileSync(localHtmlPath, "utf8");
-  } else {
-    console.error("Local cached content.md not found. Please ensure URL was fetched first!");
+  let foundPath = "";
+  for (const p of candidatePaths) {
+    if (fs.existsSync(p)) {
+      foundPath = p;
+      break;
+    }
+  }
+
+  if (!foundPath) {
+    console.error("❌ Không tìm thấy file HTML cache của trang đại lý Hoàng Việt.");
+    console.error("   Hãy fetch trang https://www.hoangviettravel.com.vn/lich-tour-danh-cho-dai-ly");
+    console.error("   và lưu HTML vào: data/internal/hoangviet-partner-page.html");
     process.exit(1);
   }
-  
+
+  console.log(`Loading partner page HTML from: ${foundPath}`);
+  html = fs.readFileSync(foundPath, "utf8");
+
   const scrapedTours = parseHtml(html);
   console.log(`\nSuccessfully extracted ${scrapedTours.length} total tours from F1 partner.`);
-  
-  // Read existing tours database
-  let existingTours = [];
-  if (fs.existsSync(toursPath)) {
-    console.log("Reading existing website tours database...");
-    existingTours = JSON.parse(fs.readFileSync(toursPath, "utf8"));
+
+  if (scrapedTours.length === 0) {
+    console.warn("⚠️  Không tìm thấy tour nào. Kiểm tra lại file HTML cache.");
+    return;
   }
-  
-  // Remove older F1 partner tours to avoid duplicate accumulation
-  const nonPartnerTours = existingTours.filter(tour => tour.source_sheet_name !== "Hoàng Việt Travel F1");
-  console.log(`Kept ${nonPartnerTours.length} original tours (combos/curated tours).`);
-  
-  // Merge the new scraped F1 tours
-  const mergedTours = [...nonPartnerTours, ...scrapedTours];
-  
-  // Write back to tours-public.json
-  fs.mkdirSync(path.dirname(toursPath), { recursive: true });
-  fs.writeFileSync(toursPath, JSON.stringify(mergedTours, null, 2) + "\n");
-  console.log(`\nTours database successfully updated at: data/generated/tours-public.json`);
-  console.log(`Total tours now live on the site: ${mergedTours.length} tours.`);
+
+  // Ghi RAW data vào data/internal/ — KHÔNG ghi vào data/generated/
+  fs.mkdirSync(path.dirname(rawToursPath), { recursive: true });
+  fs.writeFileSync(rawToursPath, JSON.stringify(scrapedTours, null, 2) + "\n");
+
+  console.log(`\n✅ [RAW B2B] Saved ${scrapedTours.length} tours to: data/internal/tours-raw.json`);
+  console.log(`⚠️  File này CHỨA dữ liệu B2B (hoa hồng, supplier, link đại lý). Không deploy trực tiếp!`);
+  console.log(`👉 Bước tiếp theo: npm run normalize:data && npm run filter:public`);
 }
 
 run();
+

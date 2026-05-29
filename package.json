@@ -5,12 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "scrape:all": "node scripts/scrape-partner-hotels.mjs && node scripts/scrape-partner-tours.mjs && node scripts/scrape-partner-europe-tours.mjs",
+    "scrape:hotels": "node scripts/scrape-partner-hotels.mjs",
+    "scrape:tours": "node scripts/scrape-partner-tours.mjs",
+    "scrape:europe": "node scripts/scrape-partner-europe-tours.mjs",
+    "scrape:all": "npm run scrape:hotels && npm run scrape:tours && npm run scrape:europe",
+    "normalize:data": "node scripts/normalize-data.mjs",
+    "filter:public": "node scripts/filter-public-data.mjs",
     "validate:data": "node scripts/validate-data.mjs",
     "generate:combo": "node scripts/generate-combo.mjs",
     "publish:combo": "node scripts/publish-combo.mjs",
     "build:sitemap": "node scripts/build-sitemap.mjs",
-    "build": "npm run validate:data && npm run build:sitemap && next build",
+    "travel:daily": "npm run scrape:tours && npm run scrape:hotels && npm run normalize:data && npm run filter:public && npm run generate:combo && npm run validate:data && npm run build:sitemap",
+    "prebuild": "npm run validate:data",
+    "build": "npm run build:sitemap && next build",
     "lint": "next lint"
   },
   "dependencies": {

@@ -1,0 +1,134 @@
+{
+  "total_count": 2,
+  "jobs": [
+    {
+      "id": 77610042050,
+      "run_id": 26366098661,
+      "workflow_name": "Deploy static site",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/thanhnambds/travel-thanhnamhomes/actions/runs/26366098661",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOSf60ms8AAAASEetCwg",
+      "head_sha": "9af6bbe0ff147567cdc12d41a8c7c5d74a0889d9",
+      "url": "https://api.github.com/repos/thanhnambds/travel-thanhnamhomes/actions/jobs/77610042050",
+      "html_url": "https://github.com/thanhnambds/travel-thanhnamhomes/actions/runs/26366098661/job/77610042050",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-05-24T16:05:11Z",
+      "started_at": "2026-05-24T16:05:13Z",
+      "completed_at": "2026-05-24T16:05:48Z",
+      "name": "build",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-05-24T16:05:14Z",
+          "completed_at": "2026-05-24T16:05:16Z"
+        },
+        {
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-05-24T16:05:16Z",
+          "completed_at": "2026-05-24T16:05:17Z"
+        },
+        {
+          "name": "Setup Node",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-05-24T16:05:17Z",
+          "completed_at": "2026-05-24T16:05:17Z"
+        },
+        {
+          "name": "Install dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-05-24T16:05:17Z",
+          "completed_at": "2026-05-24T16:05:30Z"
+        },
+        {
+          "name": "Build static export",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 5,
+          "started_at": "2026-05-24T16:05:30Z",
+          "completed_at": "2026-05-24T16:05:45Z"
+        },
+        {
+          "name": "Upload artifact",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 6,
+          "started_at": "2026-05-24T16:05:45Z",
+          "completed_at": "2026-05-24T16:05:45Z"
+        },
+        {
+          "name": "Post Setup Node",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 11,
+          "started_at": "2026-05-24T16:05:45Z",
+          "completed_at": "2026-05-24T16:05:45Z"
+        },
+        {
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-05-24T16:05:45Z",
+          "completed_at": "2026-05-24T16:05:45Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-05-24T16:05:45Z",
+          "completed_at": "2026-05-24T16:05:46Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/thanhnambds/travel-thanhnamhomes/check-runs/77610042050",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000893,
+      "runner_name": "GitHub Actions 1000000893",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 77610078661,
+      "run_id": 26366098661,
+      "workflow_name": "Deploy static site",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/thanhnambds/travel-thanhnamhomes/actions/runs/26366098661",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOSf60ms8AAAASEevRxQ",
+      "head_sha": "9af6bbe0ff147567cdc12d41a8c7c5d74a0889d9",
+      "url": "https://api.github.com/repos/thanhnambds/travel-thanhnamhomes/actions/jobs/77610078661",
+      "html_url": "https://github.com/thanhnambds/travel-thanhnamhomes/actions/runs/26366098661/job/77610078661",
+      "status": "completed",
+      "conclusion": "skipped",
+      "created_at": "2026-05-24T16:05:48Z",
+      "started_at": "2026-05-24T16:05:48Z",
+      "completed_at": "2026-05-24T16:05:48Z",
+      "name": "deploy",
+      "steps": [
+
+      ],
+      "check_run_url": "https://api.github.com/repos/thanhnambds/travel-thanhnamhomes/check-runs/77610078661",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": null,
+      "runner_name": null,
+      "runner_group_id": null,
+      "runner_group_name": null
+    }
+  ]
+}

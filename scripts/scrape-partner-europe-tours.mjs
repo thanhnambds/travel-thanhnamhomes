@@ -3,7 +3,10 @@ import path from "node:path";
 import https from "node:https";
 
 const rootDir = process.cwd();
-const toursPath = path.join(rootDir, "data/generated/tours-public.json");
+// ⚠️  OUTPUT: data/internal/ — KHÔNG phải data/generated/
+// File này chứa dữ liệu raw B2B từ Google Sheets partner F1 (source_sheet_url, source_sheet_name, program_url Google Docs).
+// Để sinh file public sạch, chạy: npm run normalize:data && npm run filter:public
+const rawToursPath = path.join(rootDir, "data/internal/europe-tours-raw.json");
 
 const spreadsheetBaseUrl = "https://docs.google.com/spreadsheets/d/1cHIR4-aKnX6GUFnV2Ws8IWmXHECrUvvoVzGXiUjknt8/gviz/tq?tqx=out:csv";
 
@@ -384,32 +387,20 @@ async function main() {
   console.log(`\n==================================================`);
   console.log(`🎉 Scrape completed! Total F1 tours extracted: ${allParsedTours.length}`);
   console.log("==================================================");
-  
+
   if (allParsedTours.length === 0) {
     console.warn("No upcoming tours found across any tabs. Database update skipped.");
     return;
   }
-  
-  // Read existing tours database
-  let existingTours = [];
-  if (fs.existsSync(toursPath)) {
-    console.log("Reading existing website tours database...");
-    existingTours = JSON.parse(fs.readFileSync(toursPath, "utf8"));
-  }
-  
-  // Remove older F1 tours from ALL of our specific partner source names to prevent duplicates
-  const targetSourceNames = TABS.map(tab => tab.sourceName);
-  const cleanTours = existingTours.filter(tour => !targetSourceNames.includes(tour.source_sheet_name));
-  console.log(`Kept ${cleanTours.length} other custom combos/tours.`);
-  
-  // Merge the new scraped tours
-  const mergedTours = [...cleanTours, ...allParsedTours];
-  
-  // Write back to tours-public.json
-  fs.mkdirSync(path.dirname(toursPath), { recursive: true });
-  fs.writeFileSync(toursPath, JSON.stringify(mergedTours, null, 2) + "\n");
-  console.log(`\n✅ Tours database successfully updated at: data/generated/tours-public.json`);
-  console.log(`📈 Total tours now live on the site: ${mergedTours.length} tours.`);
+
+  // Ghi RAW data vào data/internal/ — KHÔNG ghi vào data/generated/
+  fs.mkdirSync(path.dirname(rawToursPath), { recursive: true });
+  fs.writeFileSync(rawToursPath, JSON.stringify(allParsedTours, null, 2) + "\n");
+
+  console.log(`\n✅ [RAW B2B] Saved ${allParsedTours.length} tours to: data/internal/europe-tours-raw.json`);
+  console.log(`⚠️  File này CHỨA dữ liệu B2B (source_sheet_url, Google Docs links). Không deploy trực tiếp!`);
+  console.log(`👉 Bước tiếp theo: npm run normalize:data && npm run filter:public`);
 }
 
 main().catch(console.error);
+
