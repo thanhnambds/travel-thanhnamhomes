@@ -2,7 +2,7 @@
 
 import { useMemo, useState, useEffect } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import { CalendarDays, Filter, MapPin, Search, Star, Plane, Hotel } from "lucide-react";
+import { CalendarDays, Filter, MapPin, Search, Star, Plane, Hotel, Sparkles } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { TourCard } from "@/components/TourCard";
@@ -22,6 +22,12 @@ export function TourSearchResults({ tours, hotels = [], zaloUrl }: { tours: Publ
   const [month, setMonth] = useState(searchParams.get("month") ?? "");
   const [departureCity, setDepartureCity] = useState(searchParams.get("from") ?? "Tất cả");
   const [maxPrice, setMaxPrice] = useState("");
+  const [activeChatProduct, setActiveChatProduct] = useState<{
+    id: string;
+    type: "tour" | "hotel" | "combo";
+    title: string;
+    price: number;
+  } | null>(null);
 
   // Sync URL search params to local filter state when search params change
   useEffect(() => {
@@ -402,13 +408,19 @@ export function TourSearchResults({ tours, hotels = [], zaloUrl }: { tours: Publ
                           >
                             Xem chi tiết
                           </Link>
-                          <TravelAIChatWidget
-                            productId={tour.id}
-                            productType="tour"
-                            productTitle={tour.title}
-                            initialPrice={tour.price}
-                            zaloUrl={zaloUrl}
-                          />
+                          <button
+                            type="button"
+                            onClick={() => setActiveChatProduct({
+                              id: tour.id,
+                              type: "tour",
+                              title: tour.title,
+                              price: tour.price
+                            })}
+                            className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-gold to-brand-goldDark py-3.5 text-sm font-bold text-brand-primary transition-all duration-300 hover:opacity-95 shadow-md active:scale-95"
+                          >
+                            <Sparkles size={16} className="text-brand-primary animate-pulse" />
+                            Hỏi AI về tư vấn chi tiết
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -423,6 +435,18 @@ export function TourSearchResults({ tours, hotels = [], zaloUrl }: { tours: Publ
           </>
         )}
       </section>
+      {activeChatProduct && (
+        <TravelAIChatWidget
+          productId={activeChatProduct.id}
+          productType={activeChatProduct.type}
+          productTitle={activeChatProduct.title}
+          initialPrice={activeChatProduct.price}
+          zaloUrl={zaloUrl}
+          renderTriggerButton={false}
+          externalOpen={!!activeChatProduct}
+          onExternalClose={() => setActiveChatProduct(null)}
+        />
+      )}
     </div>
   );
 }
